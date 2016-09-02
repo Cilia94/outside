@@ -1,0 +1,966 @@
+{
+   "prijzen":[
+      {
+         "activityId":61,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"10",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+
+
+
+      {
+         "activityId":89,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs Adventure Dropping",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"25",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            },
+            {
+               "header_nl":"Prijs Blinde Dropping",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"15",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            },
+            {
+               "header_nl":"Prijs Battlefield Dropping",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"20",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+
+      {
+         "activityId":94,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen (per persoon)",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Volwassenen",
+                     "prijs":"35",
+                     "info":true,
+                     "info_nl":"halve dag"
+                  },
+
+                  {
+                     "titelPrijs_nl":"Kinderen tot 12 jaar",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"halve dag"
+                  },
+                  {
+                     "titelPrijs_nl":"Optioneel",
+                     "prijs":"35",
+                     "info":true,
+                     "info_nl":"aperitief & hapjes + uitgebreide maaltijd + koffie",
+                     "catering": true
+                  }
+               ]
+            }
+         ]
+      },
+
+      {
+         "activityId":124,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"15",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":314,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"15",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":126,
+         "allePrijzen":[
+            {
+               "header_nl":"Richtprijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"95",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+
+       {
+         "activityId":130,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"35",
+                     "info":true,
+                     "info_nl":"",
+                     "catering":true
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":130,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"35",
+                     "info":true,
+                     "info_nl":"",
+                     "catering":true
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":133,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen per persoon",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Volwassenen",
+                     "prijs":"35",
+                     "info":false,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Kinderen tot 12 jaar",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"halve dag"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":246,
+         "catering":true,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen per persoon",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Volwassenen",
+                     "prijs":"35",
+                     "info":false,
+                     "info_nl":"Halve dag"
+                  },
+                  {
+                     "titelPrijs_nl":"Kinderen tot 12 jaar",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"Halve dag"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":137,
+         "allePrijzen":[
+            {
+               "header_nl":"Speed",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"35",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            },
+            {
+               "header_nl":"Speed II",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"50",
+                     "info":true,
+                     "info_nl":"met mini GP"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":169,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"15",
+                     "info":true,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Optioneel pamperpaal",
+                     "prijs":"+5",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":190,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"50",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            },
+            {
+               "header_nl":"Optioneel",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"vanaf 20",
+                     "info":true,
+                     "info_nl":"",
+                     "catering":true
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":194,
+         "allePrijzen":[
+            {
+               "header_nl":"Zonder monitor",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Halve dag",
+                     "prijs":"15",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Volledige dag",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  }
+
+               ]
+            },
+            {
+               "header_nl":"Met monitor",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Halve dag",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Volledige dag",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":204,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"50",
+                     "info":true,
+                     "info_nl":"Vanaf 10 deelnemers"
+                  },
+                  {
+                     "titelPrijs_nl":"Forfait",
+                     "prijs":"500",
+                     "info":true,
+                     "info_nl":"Met minder deelnemers kan de activiteit doorgaan, maar moet 500 euro forfait betaald worden."
+                  }
+
+               
+            
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":207,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"35",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            },
+            {
+               "header_nl":"Apero & Diner",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"70",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":210,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"45",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            },
+            {
+               "header_nl":"BBQ",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"vanaf 20",
+                     "info":true,
+                     "info_nl":"",
+                     "catering":true
+                  }
+               ]
+            }
+         ]
+      },
+       {
+         "activityId":213,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per groep",
+                     "prijs":"vanaf 3000",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+            
+         ]
+      },
+       {
+         "activityId":216,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs Muzikale fietstocht",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Met 1 muzikant",
+                     "prijs":"45",
+                     "info":true,
+                     "info_nl":"Halve dag (per persoon)"
+                  },
+                  {
+                     "titelPrijs_nl":"Met 2 muzikanten",
+                     "prijs":"50",
+                     "info":true,
+                     "info_nl":"Halve dag (per persoon)"
+                  }
+               ]
+            },
+            {
+               "header_nl":"Prijs Met authentieke Zwitserse Postbus",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Halve dag",
+                     "prijs":"45",
+                     "info":true,
+                     "info_nl":"Per persoon",
+                     "catering":true
+                  },
+                  {
+                     "titelPrijs_nl":"Huur bus",
+                     "prijs":"625",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            } 
+         ]
+      },
+      {
+         "activityId":222,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs 2-daagse",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen -18j",
+                     "prijs":"75",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Volwassenen",
+                     "prijs":"100",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  }
+               ]
+            },
+            {
+               "header_nl":"Prijs 3-daagse",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen -18j",
+                     "prijs":"100",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Volwassenen",
+                     "prijs":"125",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":225,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Smokkeltocht",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"Per persoon (drank inclusief)"
+                  },
+                  {
+                     "titelPrijs_nl":"Aperitief, hapjes en afsluitende maaltijd",
+                     "prijs":"35",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":228,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Met 2 praktische proeven",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Per extra praktische proef",
+                     "prijs":"+5",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":232,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Just Play",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Play & Taste",
+                     "prijs":"28",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Play & Dine",
+                     "prijs":"vanaf 40",
+                     "info":true,
+                     "info_nl":"Per persoon"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":243,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"35",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":254,
+         "allePrijzen":[
+            {
+               "header_nl":"Zonder begeleider",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Halve dag",
+                     "prijs":"15",
+                     "info":true,
+                     "info_nl":"per persoon (helm incl.)"
+                  },
+                  {
+                     "titelPrijs_nl":"Volledige dag",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"per persoon (helm incl.)"
+                  }
+
+               ]
+            },
+            {
+               "header_nl":"Met begeleider",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"Halve dag",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"per persoon (helm incl.)"
+                  },
+                  {
+                     "titelPrijs_nl":"Volledige dag",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"per persoon (helm incl.)"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":263,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"10",
+                     "info":false,
+                     "info_nl":""
+                  }
+
+               ]
+            },
+            {
+               "header_nl":"Optioneel",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"High Ropes",
+                     "prijs":"+10",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Death Ride",
+                     "prijs":"+5",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Pamperpaal",
+                     "prijs":"+5",
+                     "info":true,
+                     "info_nl":"per persoon"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":275,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs per persoon",
+               "subPrijzen":[
+
+                  {
+                     "titelPrijs_nl":"Algemene prijs",
+                     "prijs":"25",
+                     "info":false,
+                     "info_nl":""
+                  },
+
+               {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen & Studenten",
+                     "prijs":"19.5",
+                     "info":true,
+                     "info_nl":"Tijdens de week"
+                  },
+                  {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen & Studenten",
+                     "prijs":"22.5",
+                     "info":true,
+                     "info_nl":"Tijdens het weekend/vakantie"
+                  }
+               ]
+            },
+            {
+               "header_nl":"Prijzen extra paintballs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per 100 stuks",
+                     "prijs":"8",
+                     "info":false,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Per 1000 stuks",
+                     "prijs":"75",
+                     "info":false,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Per 2000 stuks",
+                     "prijs":"140",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":283,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen",
+               "subPrijzen":[
+
+                  {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"45",
+                     "info":false,
+                     "info_nl":""
+                  },
+
+               {
+                     "titelPrijs_nl":"Persoonlijke verzekering (per persoon)",
+                     "prijs":"1",
+                     "info":true,
+                     "info_nl":"Optioneel"
+                  }
+               ]
+            },
+            {
+               "header_nl":"Groepsformule (vanaf 15)",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"8",
+                     "info":false,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Persoonlijke verzekering (per persoon)",
+                     "prijs":"1",
+                     "info":true,
+                     "info_nl":"Optioneel"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":275,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs per persoon",
+               "subPrijzen":[
+
+                  {
+                     "titelPrijs_nl":"Algemene prijs",
+                     "prijs":"25",
+                     "info":false,
+                     "info_nl":""
+                  },
+
+               {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen & Studenten",
+                     "prijs":"19.5",
+                     "info":true,
+                     "info_nl":"Tijdens de week"
+                  },
+                  {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen & Studenten",
+                     "prijs":"22.5",
+                     "info":true,
+                     "info_nl":"Tijdens het weekend/vakantie"
+                  }
+               ]
+            },
+            {
+               "header_nl":"Prijzen extra paintballs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per 100 stuks",
+                     "prijs":"8",
+                     "info":false,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Per 1000 stuks",
+                     "prijs":"75",
+                     "info":false,
+                     "info_nl":""
+                  },
+                  {
+                     "titelPrijs_nl":"Per 2000 stuks",
+                     "prijs":"140",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":297,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijzen per persoon",
+               "subPrijzen":[
+
+                  {
+                     "titelPrijs_nl":"Zonder boogschieten",
+                     "prijs":"15",
+                     "info":true,
+                     "info_nl":"1.5 uur"
+                  },
+
+               {
+                     "titelPrijs_nl":"Met boogschieten",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"2 uur"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":320,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs om de kabelbaan exclusief voor uw groep af te huren",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"1 uur",
+                     "prijs":"175",
+                     "info":true,
+                     "info_nl":"Max 10 deelnemers"
+                  },
+                  {
+                     "titelPrijs_nl":"1.5 uur",
+                     "prijs":"245",
+                     "info":true,
+                     "info_nl":"Max 15 deelnemers"
+                  },
+                  {
+                     "titelPrijs_nl":"2 uur",
+                     "prijs":"310",
+                     "info":true,
+                     "info_nl":"Max 20 deelnemers"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":329,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs per persoon",
+               "subPrijzen":[
+                  {
+                     "titelPrijs_nl":"1 uur",
+                     "prijs":"25",
+                     "info":true,
+                     "info_nl":"Min 10 deelnemers"
+                  },
+                  {
+                     "titelPrijs_nl":"1.5 uur",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"Vanaf 20 deelnemers"
+                  },
+                  {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen & Studenten",
+                     "prijs":"20",
+                     "info":true,
+                     "info_nl":"Tijdens de week"
+                  },
+                  {
+                     "titelPrijs_nl":"Scholen & jeugdgroepen & Studenten",
+                     "prijs":"22.5",
+                     "info":true,
+                     "info_nl":"Tijdens het weekend/vakantie"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":348,
+         "allePrijzen":[
+            {
+               "header_nl":"Prijs",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per persoon",
+                     "prijs":"15",
+                     "info":false,
+                     "info_nl":""
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":897,
+         "allePrijzen":[
+            {
+               "header_nl":"Inclusief monitor",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Vanaf 10 personen",
+                     "prijs":"30",
+                     "info":false,
+                     "info_nl":"Per persoon"
+                  },
+                  {
+                     "titelPrijs_nl":"Vanaf 15 personen",
+                     "prijs":"25",
+                     "info":false,
+                     "info_nl":"Per persoon"
+               }
+               ]
+            },
+            {
+               "header_nl":"Huurprijs bumperbal zonder monitor",
+               "subPrijzen":[
+               {
+                     "titelPrijs_nl":"Per stuk",
+                     "prijs":"25",
+                     "info":false,
+                     "info_nl":" Bij levering verplaatsingskost 0.7 € / km"
+                  }
+               ]
+            }
+         ]
+      },
+      
+   
+   ]
+}

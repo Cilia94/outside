@@ -1,0 +1,193 @@
+
+
+.header-image-outside {
+    //width: 98vw;
+    height: 320px;
+    z-index: 1;
+    background-size: cover;
+    background-image: url('assets/images/header-outside-no-mask.png');
+    background-position: center;
+
+    //margin-left: -35px;
+    //margin-top: -20px;
+    position: relative;
+    -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    
+   
+}
+
+ .text-on-header{
+        position: absolute;
+        display: block;
+        z-index: 99;
+
+        //background-color: blue;
+        float: left;
+        margin-top: -150px;
+        width: 100%;
+
+        p{
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            height: 45px;
+
+        }
+    }
+
+    .text-shadow{
+        //width: 60%;
+    
+    background-image:  radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 30%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+    blend-mode: multiply;
+}
+
+.header-image-logo {
+    margin-top: -80vh;
+    margin-left: 20%;
+    width: 60%;
+    position: relative;
+    opacity: 0.85;
+}
+.intro-image {
+ 
+    //height: 500px;
+    //margin-left: -25px;
+    //margin-right: auto;
+
+    padding: 0px;
+    //width: 100vw;
+    //background-color: transparent;
+}
+.container-aanbod {
+    width:85%;
+    // float: left;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+
+    h1 {
+        font-family: $typewriter-font;
+        text-align: center;
+    }
+    .titel-img {
+        
+        margin-left: 25%;
+        width: 70%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    p {
+    text-align: center;
+    // float: left;
+    // margin-left: auto;
+    // margin-right: auto;
+    }
+}
+.gridLink {
+    display: block;
+    color: black;
+    position: relative;
+    height: 135px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    
+    
+    &:visited {
+        color: black;
+    }
+    &:hover {
+        text-decoration: underline;
+        color: $outside-bright-orange;
+    }
+    span {
+        //margin-top: 15px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        text-align: center;
+        //margin-bottom: 10px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+    }
+    //padding-bottom: 10px;
+}
+
+.container-aanbod-grid{
+    margin-top: 30px;
+}
+
+.grid {
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
+    //display: block;
+}
+.gridFlex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    /* works with row or column */
+    
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.imageGrid {
+
+    position: relative;
+
+
+    max-width: 100px;
+    max-height: 90px;
+    //float: left;
+    margin-left: auto;
+    margin-right: auto;
+    //margin-bottom: auto;
+    //margin-left: 35px;
+    padding-top: 15px;
+    display: block;
+}
+.gridItem {
+    width: 160px;
+    height: 160px;
+    //display: block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    //height: 250px;
+    //margin-right: 10px;
+    //padding: 15px 15px 55px 15px;
+    //padding-left: 30px;
+    //padding-right: 30px;
+    //padding-top: 15px;
+    //padding-bottom: 75px;
+    background-image: url('../assets/images/kader-grid.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.imageGrid {
+    z-index: 0;
+}
+.gridItem .nameGrid {
+    margin-top: -50px;
+    z-index: 99;
+}

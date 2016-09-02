@@ -1,0 +1,17 @@
+	{
+  "aanvraag_vragen": [
+    {
+      "id":0,
+      "activties_ids": [72,45,34],
+      "text_question_nl": "Uit hoeveel personen bestaat de groep?",
+      "text_question_fr": "Uit hoeveel personen bestaat de groep?",
+      "text_question_en": "Uit hoeveel personen bestaat de groep?",
+      "type":"number",
+    },
+     
+  
+
+
+  ]
+}
+

@@ -1,0 +1,153 @@
+.opmerking-container{
+    display: none;
+        border: solid 3px lighten($outside-flue-orange,0%);
+        //background-color: $outside-flue-orange;
+        border-radius: 10px;
+        //color: white;
+        padding: 2px;
+        margin-bottom: 35px;
+        margin-top: 25px;
+        background-color: lighten($outside-flue-orange,25%);
+
+
+        i{
+            color: darken($outside-flue-orange,5%);
+            
+            background-repeat: no-repeat;
+            font-size: 3em;
+            display: inline-block;
+
+            background-image: url('../assets/images/bg-pattern.jpg');
+            background-position: left center;
+
+            background-size: 74%;
+            
+    
+
+            float: left;
+            // -ms-transform: rotate(-17deg);
+            // -webkit-transform: rotate(-17deg); 
+            // transform: rotate(-17deg);
+            margin-top: -2.5px;
+            padding-right: 5px;
+            margin-left: -20px;
+        }
+
+        p{
+            text-align: left;
+            //float: left;
+            display: block;
+            width: 90%;
+            margin-top: 7px;
+            margin-left: 20px;
+        }
+    }
+
+    .bg-border{
+    
+    }
+
+.container-middle {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .titel-header {
+        font-family: $typewriter-font;
+        text-align: center;
+    }
+
+    .titel-img {
+    	margin-top: -15px;
+        margin-left: 25%;
+        //margin-left: 300px;
+        width: 50%;
+        max-width: 300px;
+        text-align: center;
+        margin-bottom: 25px;
+        //opacity: 0.7;
+    }
+}
+
+.fancy-divider{
+    background-image: url('./assets/images/fancy-divider.png');
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 17px;
+}
+
+.divider{
+
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.divider-no-padding{
+    height: 1px;
+    width: 100%;
+    background-color: black;
+  
+}
+
+.no-header{
+    margin-top: 100px;
+}
+
+.darker-bg{
+  background-image: url('../assets/images/bg-pattern.jpg'), radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+  background-blend-mode: multiply;
+
+
+}
+
+.darker-bg-2{
+  background-image: url('../assets/images/bg-pattern.jpg'), radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+  background-blend-mode: multiply;
+
+
+}
+
+.not-visible{
+    visibility: hidden;
+}
+
+.masked{
+    mask-image: url('assets/images/clipmask-lll.png');
+    -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+
+}
+
+.shadow{
+     -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+
+}
+
+.inner-shadow{
+    -webkit-box-shadow: inset 0px -15px 25px 0px rgba(0,0,0,0.9);
+-moz-box-shadow: inset 0px -15px 25px 0px rgba(0,0,0,0.9);
+box-shadow: inset 0px -15px 25px 0px rgba(0,0,0,0.9);
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.bg-pattern{
+    background-repeat: repeat;
+    background-image: url('../assets/images/bg-pattern.jpg');
+}

@@ -1,0 +1,365 @@
+.show-error, .show-succes{
+	width: 150px;
+	display: inline-block;
+}
+
+.show-error{
+	color: red;
+}
+
+.show-succes{
+	color: green;
+}
+
+// ul.prijzen{
+// 	background-color: $outside-flue-orange;
+// 	padding: 20px;
+// 	list-style: none;
+
+// 	li{
+
+// 		div{
+// 			display: inline-block;
+
+
+// 		ul{
+// 			margin-top: 5px;
+// 			padding: 5px;
+// 			margin-left: 20px;
+
+// 			li{
+
+
+
+// 			}
+// 		}
+// 	}
+// 	}
+
+// 	span{
+// 		padding: 5px;
+
+// 	}
+
+// 	.prijs{
+// 		background-color:lighten($outside-flue-orange, 20%);
+					
+// 				}
+
+// 	.titel{
+// 		font-size: 1.05em;
+// 		font-weight: bold;
+// 	}
+// }
+
+.contact-sections{
+
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: left;
+    align-items: left;
+
+    justify-content: center;
+
+    
+    flex-wrap: wrap;
+
+    margin: 10px -10px;
+
+    ul{
+
+    	margin: 10px 10px;
+
+    }
+
+    i{
+			color: $outside-light-bright-orange;
+			font-size: 1.5em;
+		}
+
+}
+
+ul.openingsuren{
+	background-color: #E0E0E0;
+	list-style: none;
+	padding-left: 0px;
+	width: 350px;
+	//height: 444px;
+	//margin-left: auto;
+	//margin-right: auto;
+	//padding: 10px;
+
+	.opmerking{
+		margin-top: 10px;
+		text-align: left;
+		margin-left: 5px;
+		font-size: 1em;
+		display: block;
+
+		//font-style: italic;
+	}
+
+	.header-openingsuren{
+		background-color: lightgrey;
+		padding: 10px 20px;
+
+		span{
+		font-weight: bolder;
+		margin-left: 8px;
+	}
+
+
+	}
+
+
+
+	li{
+		padding: 10px 20px;
+
+		.naam-dag{
+			font-weight: bolder;
+			width: 70px;
+			display: inline-block;
+		
+	}
+
+	
+	.beide-uren{
+		display: inline-block;
+		margin-left: 50px;
+		//float: right;
+
+
+
+	.uren{
+		display: inline-block;
+	}
+
+	.hele-dag{
+
+		text-align: center;
+		margin-left: 60px;
+	}
+
+	.voormiddag{
+
+	}
+
+	.namiddag{
+
+		margin-left: 20px;
+
+	}
+}
+
+
+
+
+	}
+
+	.li-opmerking{
+		padding: 0px 20px;
+	}
+
+
+}
+
+.top-border{
+			border-top: 4px solid lightgrey;
+		}
+
+.contact-info{
+
+
+	.adres-section{
+		//width: 100%;
+	}
+	
+	.contact-item{
+		&:not(.adres-section){
+		width: 350px;
+	}
+
+
+		
+	}
+	
+	list-style: none;
+	padding-left: 0px;
+	margin-bottom: 20px;
+
+
+	
+
+	.sub-contact-info{
+
+		
+
+		margin-bottom: 0px;
+
+		span.value-info{
+			margin-left: 34px;
+
+		}
+
+		span.name-info{
+			font-weight: bold;
+			margin-left: 10px;
+			//font-style: italic;
+
+
+		}
+
+	}
+
+	.sub-contact-header{
+		//background-color: lightgrey;
+		margin-bottom: 0px;
+	}
+
+	li{
+		flex-basis: 350px;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		background-color: #E0E0E0;
+		padding: 10px; 
+
+
+	&:not(.same-type-info-following){
+		margin-bottom: 5px;
+
+
+	}
+		
+
+		
+
+		span{
+
+			//font-size: 1.15em;
+
+		}
+		span.value-info{
+			margin-left: 5px;
+			display: inline-block;
+
+
+		}
+
+		span.name-info{
+			font-weight: bolder;
+			margin-left: 10px;
+
+
+		}
+	}
+}
+
+#contact-form{
+
+
+	margin-top: 25px;
+
+	.section-wrapper{
+
+	//background-color: #E3E3E3;
+	//padding: 20px 0px;
+
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: left;
+    align-items: left;
+
+    justify-content: center;
+    //space-between:
+
+    
+    flex-wrap: wrap;
+
+    margin: 0 -15px;
+    //padding: 10px;
+
+    section{
+    	//flex-basis: 350px;
+    	//margin-left: 10px; 
+    	margin: 0 15px;
+    }
+	}
+
+	h1{
+		margin-bottom: 15px;
+	}
+
+	.form-item{
+
+		margin-bottom: 10px;
+
+		input, textarea{
+
+			border: 1px solid lightgrey;
+			padding: 5px;
+
+		}
+
+		.error-field{
+			
+			border: 1px solid red;
+
+		}
+
+		.contact-label{
+
+			width: 90px;
+
+		}
+
+		.submit-form{
+			float: right;
+			background-color: $outside-flue-orange;
+			text-transform: uppercase;
+			font-weight: bolder;
+			padding: 7px;
+			color: black;
+			//height: 45px;
+
+			border: 1px solid black;
+			transition: background-color 0.25s;
+
+			&:hover{
+
+				background-color: #E56A34;
+				
+
+			}
+		}
+	}
+
+
+	.message-section{
+
+		//margin-left: 40px;
+
+		.message-item{
+			
+
+			.label-bericht{
+			display: block;
+		}
+
+		textarea{
+			display: block;
+			height: 110px;
+			width: 250px;
+
+			max-width: 400px;
+		}
+		}
+	}
+
+
+	
+}

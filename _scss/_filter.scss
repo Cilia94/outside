@@ -1,0 +1,81 @@
+.filter-photo{
+
+
+		width: 290px;
+		height: 125px;
+
+		background-size: cover;
+    	background-repeat: no-repeat;
+    	background-position: center; 
+
+}
+
+.filter-info-types{
+    margin-bottom: 10px;
+    background-color: #E3E3E3;
+    padding:5px;
+}
+
+
+
+.parameters{
+
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: left;
+    justify-content: left;
+    flex-wrap: wrap;
+
+    .parameter{
+    	//flex-basis: 200px;
+    	margin-right: 25px;
+    	margin-bottom: 5px;
+    }
+
+    select{
+    	background: rgba(0,0,0,0.04);
+    	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+
+    }
+
+}
+
+#grid-filter{
+
+	margin-top: 30px;
+
+.grid-sub{
+	//position: relative;
+    width: 300px;
+    min-height: 250px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    padding: 5px; 
+
+    h3{
+    	font-size: 1.25em;
+    }
+
+
+
+	img{
+	//width: 100%;
+	// width: 200px;
+ //    height: 200px;
+ //    vertical-align: top;
+ //    z-index: 0;
+ //    float: left;
+ //    object-fit: cover;
+
+	}
+	
+}
+}
+		//margin-top: -200px;

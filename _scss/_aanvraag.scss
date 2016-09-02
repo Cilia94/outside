@@ -1,0 +1,283 @@
+.container-aanvraag{
+
+	//margin-top: 150px;
+
+	.filter-aanvraag{
+		margin-left: 15px;
+		span{
+			color: lightgrey;
+			margin-right: 3px;
+
+		}
+	}
+
+	
+
+
+	.aanvraag-activiteiten-flex{
+		display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    //-webkit-align-items: center;
+    //align-items: center;
+    //-webkit-justify-content: center;
+    //justify-content: center;
+    flex-wrap: wrap;
+	}
+	.aanvraag-activiteiten{
+		background-color:$dark-grey;
+		background-color: rgba(42,42,42,1);
+		padding: 10px;
+
+	
+
+
+    .container-in-flex{
+    	//flex-basis: 300px;
+    	//flex-basis: 48%;
+    }
+
+	.activiteiten-zelf{
+
+		width: 65%;
+
+		.aanvraag-activity-type{
+
+			margin-top: 5px;
+			padding-top: 15px;
+
+			
+
+
+			//background-color: purple;
+
+			.activity-type-header{
+				background-color: $darker-grey;
+				display: block;
+				padding: 5px;
+
+			.link-type{
+				//display: inline-block;
+				color: white;
+				float: right;
+				margin-right: 15px;
+				//margin-top: 5px;
+				font-size: 1.5em;
+			}
+
+			.activity-type-h1{
+
+				font-size: 1.5em;
+				//float: left;
+				
+				padding: 5px;
+				color: $outside-light-bright-orange;
+				display: inline;
+
+			}
+		}
+
+		.items-in-type{
+			// display: -webkit-flex;
+   //  display: flex;
+   //  -webkit-flex-direction: row;
+   //  flex-direction: row;
+   //  //-webkit-align-items: center;
+   //  //align-items: center;
+   //  //-webkit-justify-content: center;
+   //  //justify-content: center;
+   //  flex-wrap: wrap;
+		}
+
+			article{
+				margin-top: 2.5px;
+				//display: block;
+				background-color: $mid-grey-1;
+				padding: 7.5px;
+				//width: 50%;
+				//display: inline-block;
+				margin-right: 10px;
+				//margin-left: auto;
+				//margin-right: auto;
+
+				//border: 1px solid rgba(255,255,255,0.2);
+				//border: 1px solid $darker-grey;
+
+				input[type="checkbox"]{
+					margin: 5px 6px;
+					border: 1px white solid;
+					background-color: black;
+					//-webkit-appearance: none;
+					//appearance: none;
+
+					//margin-left: 15px;
+					-ms-transform: scale(1.75); /* IE */
+  					-moz-transform: scale(1.75); /* FF */
+  					-webkit-transform: scale(1.75); /* Safari and Chrome */
+  					-o-transform: scale(1.75); /* Opera */
+				}
+
+				h2{
+					font-size: 1em;
+					color:lightgrey;
+
+					display: inline;
+					//margin-left: 5px;
+					width: 85%;
+				}
+
+				.activity-info-link{
+					float: right;
+					margin-right: 10px;
+					margin-top: 4px;
+					color:white;
+
+					&:hover{
+						color:$outside-light-bright-orange;
+					}
+				}
+
+			}
+		}
+
+		.single-type{
+		display: block;
+		//padding-top: 15px;
+		//margin-bottom: 50px;
+
+		p{
+			color: $outside-light-bright-orange;
+			font-size: 1.25em;
+			margin-left: 10px;
+
+		}
+	}
+
+
+	}
+	.container-winkelwagen{
+		
+		margin-left: 20px;
+		width: 30%;
+		margin-top: 17.5px;
+		//max-height: 500px;
+		
+
+		.container-winkelwagen-content{
+			padding: 5px;
+			position: relative;
+			background-color:  $mid-grey-1;
+
+			//height: 100%;
+
+
+
+			button{
+				bottom: 0;
+				margin-bottom: 15px;
+				right:0;
+				margin-right: 15px;
+
+				//margin-top: 20px;
+
+				position: absolute;
+				padding: 10px;
+				width: 79%;
+
+				background: none;
+				color: $mid-grey-2;
+				border: solid 1px $darker-grey;
+
+				-webkit-transition: background-color 0.3s;
+				transition: background-color 0.3s;
+
+				&:not(.not-active){
+					&:hover{
+						background-color: $darker-grey;
+						color:white;
+					}
+
+				}
+
+			}
+
+			.not-active{
+				opacity: 0.25;
+			}
+
+
+		}
+
+		h1{
+			color: white;
+			font-size: 1.5em;
+			text-align: center;
+			margin-bottom: 25px;
+		}
+
+		.geen-activiteiten{
+				color: darkgrey;
+				display: block;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+
+		ul.interesse-in{
+			list-style: none;
+			padding-left: 5px;
+			padding-right: 5px;
+
+
+			display: -webkit-flex;
+    		display: flex;
+    		-webkit-flex-direction: row;
+    		flex-direction: row;
+    		//-webkit-align-items: center;
+    		//align-items: center;
+    		//-webkit-justify-content: center;
+    		//justify-content: center;
+    		flex-wrap: wrap;
+
+    		margin-bottom: 85px;
+
+			
+			color:darkgrey;
+
+
+
+			li{
+				background-color: $darker-grey;
+				margin-right: 5px;
+				//display: block;
+				//position: absolute;
+				//margin-left: -35%;
+				padding: 5px;
+				margin-bottom: 5px;
+
+				//padding: 3px;
+
+			}
+		}
+		
+	}
+}
+	
+}
+
+@media only screen and (max-width:481px) {
+
+	
+
+	.container-aanvraag .aanvraag-activiteiten .activiteiten-zelf{
+		width: 100%;
+	}
+
+	.container-aanvraag .aanvraag-activiteiten .container-winkelwagen{
+		width: 100%;
+		margin-left: 0px;
+	}
+
+
+	
+}
