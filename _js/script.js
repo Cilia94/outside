@@ -59,14 +59,15 @@ function json_getTemplateId(key, data) {
 
 
 Handlebars.registerHelper("switch", function(value, options) {
-  this._switch_value_ = value;
+
+  //this._switch_value_ = value;
   var html = options.fn(this); // Process the body of the switch block
-  delete this._switch_value_;
+  delete this;
   return html;
 });
 
 Handlebars.registerHelper("case", function(value, options) {
-  if (value == this._switch_value_) {
+  if (value == this) {
     return options.fn(this);
   }
 });
@@ -463,7 +464,10 @@ Handlebars.registerHelper("case", function(value, options) {
       var location_filter = $('#location_filter').val();
       var category_filter = $('#category_filter').val();
       var participants_filter = $('#participants_filter').val();
-      var duration_filter = "3 à 4 uur";
+      var duration_filter = $('#duration_filter').val();
+      var price_filter = $('#price_filter').val();
+      console.log(duration_filter,price_filter);
+
 
       filteredData = $.grep(filteredData, function(element, index) {
         return element['sub_category'] == '0';
@@ -505,11 +509,35 @@ Handlebars.registerHelper("case", function(value, options) {
       }
       }
 
-      //   if(duration_filter != "all"){
-      //     filteredData = $.grep(filteredData, function (element, index) {
-      //     return element['duur'] == duration_filter;
-      // });
-      //   }
+        if(duration_filter != "all"){
+          filteredData = $.grep(filteredData, function(element, index) {
+          var durationArray = element['duurType'].split(',')
+          for(var i=0; i< durationArray.length; i++){
+            if(durationArray[i] !== ""){
+              return durationArray[i] == duration_filter
+
+              
+            }
+          }
+          //return element['locatieId'] == location_filter;
+        });
+        }
+
+        if(price_filter != "all"){
+
+          filteredData = $.grep(filteredData, function(element, index) {
+          var priceArray = element['prijsType'].split(',');
+
+          for(var i=0; i< priceArray.length; i++){
+            if(priceArray[i] !== ""){
+              return priceArray[i] == price_filter
+
+              
+            }
+          }
+          //return element['locatieId'] == location_filter;
+        });
+        }
 
       if (participants_filter != "") {
         filteredData = $.grep(filteredData, function(element, index) {
@@ -543,9 +571,38 @@ Handlebars.registerHelper("case", function(value, options) {
             }
           }
 
+          var prices = activity.prijsType.split(",");
+          var pricesActivity = [];
+          //console.log(locations);
+
+          for (var i = 0; i < prices.length; i++) {
+            if (prices[i] != "" && prices[i] != 0) {
+              //console.log(locations[i]); 
+
+              pricesActivity.push(prices[i])
+
+            }
+          }
+
+          var duration = activity.duurType.split(",");
+          var durationActivity = [];
+          //console.log(locations);
+
+          for (var i = 0; i < duration.length; i++) {
+            if (duration[i] != "" && duration[i] != 0) {
+              //console.log(locations[i]); 
+
+              durationActivity.push(duration[i])
+
+            }
+          }
+
 
 
           activity.locationsActivity = locationsActivity;
+          activity.pricesActivity = pricesActivity;
+          activity.durationActivity = durationActivity;
+          //console.log(pricesActivity);
           var html = activity_template(activity);
           $('#filtered-activities').append($(html));
         })
@@ -553,7 +610,26 @@ Handlebars.registerHelper("case", function(value, options) {
 
       } else {
 
-        var html = "<p> No activities match your search</p>";
+        var errorText;
+
+        switch (currentTaal){
+            case "NL":
+            errorText = "Er voldoen geen activiteiten aan deze voorkeuren";
+            break;
+
+             case "FR":
+             errorText = "No activities match your search";
+            
+            
+            break;
+
+             case "ENG":
+             errorText = "No activities match your search";
+            
+            break;
+          } 
+
+        var html = "<p>" + errorText + "</p>";
         $('#filtered-activities').append($(html));
 
       }

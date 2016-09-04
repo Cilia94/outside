@@ -1311,8 +1311,8 @@ footer p {
 
 .filter-info-types {
   margin-bottom: 10px;
-  background-color: #E3E3E3;
   padding: 5px;
+  display: inline-block;
 }
 
 .parameters {

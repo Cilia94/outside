@@ -13,14 +13,14 @@
     <img class="titel-img" src="css/assets/images/titel-underline.png">
 
 
-    <p>
+<!--     <p>
     Lorem ipsum dolor sit amet, 
     consectetur adipisicing elit. 
     Libero, aliquid aspernatur, 
     sapiente doloribus praesentium vel. 
     Ipsa dolorem deleniti voluptatibus fugit, 
     explicabo ipsum quos, nam commodi officia 
-    illo iste numquam sunt.</p>
+    illo iste numquam sunt.</p> -->
 
 
 <div class="parameters">
@@ -64,7 +64,7 @@
   </div>
 
   <div class="parameter">
-  <i class="fa fa-map-marker" aria-hidden="true"></i>
+ <i class="fa fa-clock-o" aria-hidden="true"></i>
             
     <span>
       <?php echo taal('Duur','',''); ?></span>
@@ -74,12 +74,12 @@
       <option value="1">Een aantal uren</option>
       <option value="2">Een halve dag</option>
       <option value="3">Een hele dag</option>
-      <option value="3">Meerdere dagen</option>
+      <option value="4">Meerdere dagen</option>
     </select>
   </div>
 
    <div class="parameter">
-  <i class="fa fa-map-marker" aria-hidden="true"></i>
+  <i class="fa fa-eur" aria-hidden="true"></i>
             
     <span>
       <?php echo taal('Prijsklasse','',''); ?>
@@ -89,7 +89,7 @@
       <option value="1">10€ - 25€</option>
       <option value="2">25€ - 40€</option>
       <option value="3">40€ - 55€</option>
-      <option value="3">> 55€</option>
+      <option value="4">> 55€</option>
     </select>
   </div>
 
@@ -173,15 +173,95 @@
 
 
         <section class="icons-praktisch">
+        {{#if minAantal}}
         <div class="filter-info-types">
         <article class="praktisch">
         <i class="fa fa-users" aria-hidden="true"></i>
         <span> vanaf {{minAantal}} personen</span>
         </article>
         </div>
+        {{/if}}
+
+        {{#if pricesActivity}}
+        <div class="filter-info-types">
+        {{#each pricesActivity}}
+        <article class="praktisch">
+        <i class="fa fa-euro" aria-hidden="true"></i>
+
+         <span>
+         {{#switch this}}
+         {{#case "1"}}
+         10-25
+        
+        {{/case}}
+
+        {{#case "2"}}
+        25-40
+        
+        {{/case}}
+
+        {{#case "3"}}
+        40-55
 
         
+        {{/case}}
         
+        {{#case "4"}}
+       55+
+        
+       
+        {{/case}}
+
+        {{/switch}}
+        </span>
+        </article>
+        {{/each}}
+       
+        
+        </div>
+         {{/if}}
+
+        {{#if durationActivity}}
+
+        <div class="filter-info-types">
+        {{#each durationActivity}}
+        <article class="praktisch">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+
+         <span>
+         {{#switch this}}
+         {{#case "1"}}
+         Enkele uren
+        
+        {{/case}}
+
+        {{#case "2"}}
+        Een halve dag
+        
+        {{/case}}
+
+        {{#case "3"}}
+        Een volledige dag
+
+        
+        {{/case}}
+        
+        {{#case "4"}}
+       Meerdere dagen
+        
+       
+        {{/case}}
+
+        {{/switch}}
+        </span>
+        </article>
+        {{/each}}
+        
+        </div>
+        {{/if}}
+
+        
+        {{#if locationsActivity}}
        <div class="filter-info-types">
         {{#each locationsActivity}}
         <article class="praktisch">
@@ -201,7 +281,9 @@
         </span>
 
         {{/if}}
+
         </div>
+        {{/if}}
         
        
          
