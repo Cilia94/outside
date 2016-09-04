@@ -532,9 +532,11 @@ Handlebars.registerHelper("case", function(value, options) {
         $(filteredData).each(function(index, activity) {
           var locations = activity.locatieId.split(",");
           var locationsActivity = [];
+          //console.log(locations);
 
           for (var i = 0; i < locations.length; i++) {
             if (locations[i] != "" && locations[i] != 0) {
+              //console.log(locations[i]); 
 
               locationsActivity.push(json_getById(locations[i], locationAdresses).adres)
 
