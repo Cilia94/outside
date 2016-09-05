@@ -124,7 +124,7 @@
 
         ?>
                     
-           </h2><a href="index.php?page=global&id={{id}}" class="activity-info-link">
+           </h2><a href="index.php?page=globalItem&id={{id}}" class="activity-info-link">
                 <i class=" fa fa-info-circle" 
                 aria-hidden="true"></i>
             </a>
@@ -162,7 +162,7 @@
 
         ?>
             </h1>
-            <a href="index.php?page=global&id={{id}}" class="link-type" data-type="outside-activiteiten">
+            <a href="index.php?page=globalItem&id={{id}}" class="link-type" data-type="outside-activiteiten">
           <span class="arrow-down glyphicon glyphicon-chevron-down"></span>
         </a>
     </div>

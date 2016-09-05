@@ -204,7 +204,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
       //console.log(kindOfPage, idOfActivity);
 
-      if(kindOfPage == "global&id" && idOfActivity){
+      if(kindOfPage == "globalItem&id" && idOfActivity){
         getAllPrices();
         getAllVerwacht();
         getAllPrograms()
@@ -220,7 +220,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function getAllPrices(){
       
-      $.getJSON('assets/prijzen.json', function(data){
+      $.getJSON('assets/data/prijzen.json', function(data){
       
       getSinglePrice(data.prijzen)
 })    
@@ -229,7 +229,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function getAllPrograms(){
       
-      $.getJSON('assets/programmas.json', function(data){
+      $.getJSON('assets/data/programmas.json', function(data){
       
       getSingleProgramme(data.programmas)
 })    
@@ -238,7 +238,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function getAllVerwacht(){
       
-      $.getJSON('assets/watVerwachten.json', function(data){
+      $.getJSON('assets/data/watVerwachten.json', function(data){
       
       getSingleVerwacht(data.wat_verwachten)
       
@@ -251,8 +251,7 @@ Handlebars.registerHelper("case", function(value, options) {
       var idOfActivity = window.location.search.split('&')[1].split('=')[1]
       
       var welke_template = json_getTemplateId(parseInt(idOfActivity),verwacht)
-      //console.log(welke_template)
-      console.log('get verwacht');
+      
 
       if(welke_template){
         if(welke_template.startTemplate){

@@ -1,9 +1,17 @@
+
 'use strict';
 
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
-var autoprefixer = require('autoprefixer');
+
+var processors = [
+
+      require("postcss-unprefix"),
+      require('autoprefixer')
+];
+
+//var autoprefixer = require('autoprefixer');
 
 var config = require('./_config'); //paths config..
 
@@ -87,12 +95,16 @@ module.exports = {
 
     return [
 
+    require("postcss-unprefix"),
+    require('autoprefixer'),
+   
+
       require('postcss-will-change'),
       require('postcss-cssnext')({
         browsers: ['IE >= 10', 'last 2 version'],
         features: {
           autoprefixer: {
-            cascase: false
+            cascase: true
           }
         }
       })

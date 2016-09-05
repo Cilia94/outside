@@ -76,12 +76,14 @@
 }
 
 .darker-bg {
+  background-image: url(assets/images/bg-pattern.jpg), -webkit-radial-gradient(center ellipse, rgba(0, 0, 0, 0.15) 0%, transparent 75%);
   background-image: url(assets/images/bg-pattern.jpg), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 75%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(166, 0, 0, 0)', endColorstr='rgba(0, 0, 0, 0)',GradientType=1 );
   background-blend-mode: multiply;
 }
 
 .darker-bg-2 {
+  background-image: url(assets/images/bg-pattern.jpg), -webkit-radial-gradient(center ellipse, rgba(0, 0, 0, 0.05) 0%, transparent 75%);
   background-image: url(assets/images/bg-pattern.jpg), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.05) 0%, transparent 75%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(166, 0, 0, 0)', endColorstr='rgba(0, 0, 0, 0)',GradientType=1 );
   background-blend-mode: multiply;
@@ -94,16 +96,10 @@
 .masked {
   -webkit-mask-image: url(assets/images/clipmask-lll.png);
           mask-image: url(assets/images/clipmask-lll.png);
-  -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
-  filter: url(#drop-shadow);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
   filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 .shadow {
-  -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
-  filter: url(#drop-shadow);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
   filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
@@ -146,10 +142,6 @@ nav.navbar {
   background-color: black;
   font-family: "ralewaymedium";
   margin-bottom: -20px;
-  -webkit-filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.3));
-  filter: url(#drop-shadow);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 nav.navbar li {
@@ -479,9 +471,9 @@ li a.active-item {
   background-position: center;
   position: relative;
   -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
-  filter: url(#drop-shadow);
+          filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="25" /><feOffset dx="13" dy="13" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.5)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+          filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
   -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 .text-on-header {
@@ -501,6 +493,7 @@ li a.active-item {
 }
 
 .text-shadow {
+  background-image: -webkit-radial-gradient(center ellipse, rgba(0, 0, 0, 0.75) 0%, transparent 30%);
   background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, transparent 30%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(166, 0, 0, 0)', endColorstr='rgba(0, 0, 0, 0)',GradientType=1 );
   blend-mode: multiply;
@@ -548,6 +541,7 @@ li a.active-item {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-radial-gradient(center ellipse, white 0%, rgba(255, 255, 255, 0) 100%);
   background: radial-gradient(ellipse at center, white 0%, rgba(255, 255, 255, 0) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='rgba(0, 255, 255, 1)',GradientType=1 );
@@ -589,10 +583,11 @@ li a.active-item {
 
 .gridFlex {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   /* works with row or column */
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
@@ -638,9 +633,6 @@ li a.active-item {
   background-position: center;
   -webkit-mask-image: url(assets/images/clipmask-lll.png);
           mask-image: url(assets/images/clipmask-lll.png);
-  -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
-  filter: url(#drop-shadow);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
   filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
@@ -704,9 +696,10 @@ ul.planning-from-template li p.info-planned-activity {
 
 .container-all-prices {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: start;
       align-items: flex-start;
   -ms-flex-wrap: wrap;
@@ -721,9 +714,10 @@ ul.planning-from-template li p.info-planned-activity {
 .prijzen_verwacht {
   margin-top: 30px;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -762,11 +756,12 @@ ul.prijzen li .prijs-container {
   width: 65px;
   height: 100%;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   text-align: center;
   position: absolute;
 }
@@ -812,9 +807,10 @@ ul.prijzen li p.info-prijs {
   list-style: none;
   margin-top: 25px;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: left;
       align-items: left;
   -ms-flex-wrap: wrap;
@@ -853,9 +849,10 @@ ul.prijzen li p.info-prijs {
 .photo-view-wrapper {
   height: 400px;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
 }
@@ -907,9 +904,10 @@ ul.prijzen li p.info-prijs {
 .activity-photos-grid {
   width: 80%;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
@@ -942,7 +940,6 @@ ul.prijzen li p.info-prijs {
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   transition: all 0.3s;
-  -webkit-transition: all 0.3s;
 }
 
 .activity-photos-grid .thumbOverlay:hover:after {
@@ -952,9 +949,10 @@ ul.prijzen li p.info-prijs {
 @media only screen and (min-width: 1200px) {
   ul.planning-from-template {
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     -ms-flex-direction: row;
-        flex-direction: row;
+    flex-direction: row;
     -ms-flex-align: start;
         align-items: flex-start;
     -ms-flex-wrap: wrap;
@@ -990,15 +988,15 @@ footer p {
 
 .container-aanvraag .aanvraag-activiteiten-flex {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .container-aanvraag .aanvraag-activiteiten {
-  background-color: #2a2a2a;
   background-color: #2a2a2a;
   padding: 10px;
 }
@@ -1043,13 +1041,10 @@ footer p {
   margin: 5px 6px;
   border: 1px white solid;
   background-color: black;
-  -ms-transform: scale(1.75);
   /* IE */
-  -moz-transform: scale(1.75);
   /* FF */
-  -webkit-transform: scale(1.75);
   /* Safari and Chrome */
-  -o-transform: scale(1.75);
+  transform: scale(1.75);
   /* Opera */
 }
 
@@ -1135,9 +1130,10 @@ footer p {
   padding-left: 5px;
   padding-right: 5px;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 85px;
@@ -1167,13 +1163,14 @@ footer p {
 
 .container-vrijgezellen ul.vrijgezellen-top section {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-pack: start;
       justify-content: flex-start;
   -ms-flex-align: start;
       align-items: flex-start;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1217,9 +1214,9 @@ footer p {
   margin-top: 35px;
   width: 95%;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
+          -ms-grid-row-align: flex-start;
       align-items: flex-start;
   -ms-flex-pack: start;
       justify-content: flex-start;
@@ -1317,9 +1314,10 @@ footer p {
 
 .parameters {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: left;
@@ -1372,9 +1370,10 @@ footer p {
 
 .contact-sections {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: left;
       align-items: left;
   -ms-flex-pack: center;
@@ -1510,9 +1509,10 @@ ul.openingsuren .li-opmerking {
 
 #contact-form .section-wrapper {
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: left;
       align-items: left;
   -ms-flex-pack: center;

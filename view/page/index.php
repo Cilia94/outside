@@ -1,10 +1,28 @@
-<div class="intro-image shadow ">
-    <div class="header-image-outside inner-shadow masked ">
-        
-    </div>
 
-   <!--  <img class="header-image-logo" src="css/assets/images/logo-outside-white.png"> -->
+
+<div class="intro-image shadow ">
+  <div class="header-image-outside inner-shadow masked ">
+        
+    </div> 
+
+
+
+
+
+
+
+    <!-- <div class="svgMask">
+    <svg width="100vw" height="300" baseProfile="full" version="1.2">
+        <defs>
+            <mask id="svgmask2" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" transform="scale(1)">
+                <image width="100%" height="300" xlink:href="http://thewebstorebyg.files.wordpress.com/2013/12/mask.png?w=400" />
+            </mask>
+        </defs>
+        <image id="the-mask" mask="url(#svgmask2)" width="100%" height="300" y="0" x="0" xlink:href="assets/images/header-outside-no-mask.png" />
+    </svg>
 </div>
+ -->
+
 <div class="text-on-header"><p class="text-shadow">Adventure and fun</p></div>
 
 <div class="container-middle container-aanbod">
@@ -48,21 +66,21 @@
         <div class="row gridFlex">
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=1" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=1" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-feesten.png">
                     <span>Outdoor activiteiten</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=2" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=2" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-feesten.png">
                     <span>Events</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=3" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=3" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-vrijgezellen.png">
                     <span>Vrijgezellenfeestjes actie fun</span>
                 </a>
@@ -73,28 +91,28 @@
             
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=4" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=4" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-jeugdgroepen.png">
                     <span>Jeugdgroepen -18J</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=5" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=5" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-school.png">
                     <span>Scholen sportdagen</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=6" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=6" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-pakket.png">
                     <span>Outdoor paketten</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=global&amp;id=7" class="gridLink">
+                <a href="index.php?page=globalItem&amp;id=7" class="gridLink">
                     <img class="imageGrid" src="css/assets/images/icons/icon-pakket.png">
                     <span>Vakantiehuizen</span>
                 </a>

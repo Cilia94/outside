@@ -40,7 +40,7 @@
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img class=\"subcategory-img\" 
                         src=\"css/assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
-                         echo "<a href=\"index.php?page=global&id={$activitySub['id']}\" class=\"gridLink-sub\">"; 
+                         echo "<a href=\"index.php?page=globalItem&id={$activitySub['id']}\" class=\"gridLink-sub\">"; 
                          echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
                 echo taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']); 

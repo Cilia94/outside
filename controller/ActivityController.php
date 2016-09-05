@@ -109,7 +109,7 @@ if(!empty($_GET['id'])){
 
     }
 
-    public function global(){
+    public function globalItem(){
 
         if(!empty($_GET['id'])){
 

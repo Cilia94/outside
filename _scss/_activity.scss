@@ -8,7 +8,7 @@
     background-position: center; 
     mask-image: url('assets/images/clipmask-lll.png');
     -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
-    filter: url(#drop-shadow);
+    //filter: url(#drop-shadow);
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }

@@ -121,7 +121,7 @@
       <img class="subcategory-img" 
       src="css/assets/images/activityPhotos/{{afbeelding}}_th.jpg">
                          
-      <a href="index.php?page=global&id={{id}}" class="gridLink-sub"> 
+      <a href="index.php?page=globalItem&id={{id}}" class="gridLink-sub"> 
       <div class="overlay-img">
         <span> 
         {{naam_nl}} 
@@ -132,13 +132,13 @@
 
   <div class="grid-sub">
         <div class="filtered-item">
-        <a href="index.php?page=global&id={{id}}">
+        <a href="index.php?page=globalItem&id={{id}}">
         <section style="background-image:url('css/assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
         
         </section>
         </a>
         <h3>
-        <a href="index.php?page=global&id={{id}}">
+        <a href="index.php?page=globalItem&id={{id}}">
         <?php 
         switch($_SESSION['session_taal']){
 

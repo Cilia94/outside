@@ -33,6 +33,7 @@
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/vendor/modernizr-mask.js"></script>
 </head>
 
 <body>
@@ -62,28 +63,28 @@
                                   <ul>
     
         
-        <li><a href="index.php?page=global&id=1">
+        <li><a href="index.php?page=globalItem&id=1">
         <?php echo taal('Outdoor activiteiten','','Outdoor activities'); ?></a>
          </li>
-        <li><a href="index.php?page=global&id=2">
+        <li><a href="index.php?page=globalItem&id=2">
         <?php echo taal('Events','','Parties'); ?>
         </a></li>
-        <li><a href="index.php?page=global&id=3">
+        <li><a href="index.php?page=globalItem&id=3">
         <?php echo taal('Vrijgezellenfeestjes','','Bachelor parties'); ?>
         </a></li>
-        <li><a href="index.php?page=global&id=4">
+        <li><a href="index.php?page=globalItem&id=4">
         <?php echo taal('Jeugdgroepen -18J','',''); ?>
         </a></li>
-        <li><a href="index.php?page=global&id=5">
+        <li><a href="index.php?page=globalItem&id=5">
         <?php echo taal('Scholen sportdagen','',''); ?>
         </a></li>
-        <li><a href="index.php?page=global&id=6">
+        <li><a href="index.php?page=globalItem&id=6">
         <?php echo taal('Outdoor paketten','',''); ?>
         </a></li>
-        <li><a href="index.php?page=global&id=7">
+        <li><a href="index.php?page=globalItem&id=7">
         <?php echo taal('Vakantiehuizen','',''); ?>
         </a></li>
-        <li><a href="index.php?page=global&id=8">
+        <li><a href="index.php?page=globalItem&id=8">
         <?php echo taal('Easy Leisure','',''); ?>
         </a></li>
 
@@ -169,9 +170,13 @@
     </div>
 
 
+
+
+
     <script src="js/vendor/fallback/fallback.min.js"></script>
     <script src="js/start.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
+    <!-- 
+    Google Analytics: change UA-XXXXX-X to be your site's ID. 
     <script>
         (function(b, o, i, l, e, r) {
             b.GoogleAnalyticsObject = l;
@@ -187,7 +192,8 @@
         }(window, document, 'script', 'ga'));
         ga('create', 'UA-XXXXX-X', 'auto');
         ga('send', 'pageview');
-    </script>-->
+    </script>
+    -->
 </body>
 
 </html>
