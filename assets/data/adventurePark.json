@@ -1,0 +1,17 @@
+{
+	"data_adventurePark":
+	[
+
+{
+	"id": 1,
+	"name": "yay",
+	"x":150,
+	"y":175,
+	"width": 171,
+	"image":"assets/images/canvas/paintballgun.png",
+	"height": 100,
+	"photos":[12],
+	"info":"Lorem ipsum" 
+}
+
+]}

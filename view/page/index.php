@@ -4,24 +4,8 @@
   <div class="header-image-outside inner-shadow masked ">
         
     </div> 
-
-
-
-
-
-
-
-    <!-- <div class="svgMask">
-    <svg width="100vw" height="300" baseProfile="full" version="1.2">
-        <defs>
-            <mask id="svgmask2" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" transform="scale(1)">
-                <image width="100%" height="300" xlink:href="http://thewebstorebyg.files.wordpress.com/2013/12/mask.png?w=400" />
-            </mask>
-        </defs>
-        <image id="the-mask" mask="url(#svgmask2)" width="100%" height="300" y="0" x="0" xlink:href="assets/images/header-outside-no-mask.png" />
-    </svg>
 </div>
- -->
+
 
 <div class="text-on-header"><p class="text-shadow">Adventure and fun</p></div>
 

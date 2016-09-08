@@ -71,6 +71,11 @@ $routes = array(
     'action' => 'feesten'
     ),
 
+   'adventurePark' => array(
+    'controller' => 'Page',
+    'action' => 'adventurePark'
+    ),
+
   'categorie' => array(
     'controller' => 'Activity',
     'action' => 'categorie'

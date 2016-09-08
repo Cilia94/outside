@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
+    
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="js/vendor/modernizr-mask.js"></script>
 </head>
@@ -42,7 +44,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <a href="index.php">
         <div class="outside-logo">
-            <img src="css/assets/images/logo-outside.png">
+            <img src="assets/images/logo-outside.png">
         </div>
         </a>
         <div class="navbar-header">
@@ -95,15 +97,12 @@
                 </li>
                 <div class="divider-menu">&nbsp;</div>
                 <li class="global-menu-item ">
-                    <a class="link-item" href="index.php?page=locaties">
-                    <?php echo taal('Onze locaties','Votre locations','Our locations'); ?>
+                    <a class="link-item" href="index.php?page=adventurePark">
+                    <?php echo taal('Ons park','Votre locations','Our locations'); ?>
                                     <span class="sr-only">(current)</span>
-                                     <span class="arrow-menu arrow-down glyphicon glyphicon-chevron-down"></span>
-                                  </a>
-                                   <ul>
-        <li><a href="index.php?page=locatie&id=1">Vlaanderen en de kust</a></li>
-        <li><a href="index.php?page=locatie&id=1">Heuvelland</a></li>
-      </ul>
+                                     </a>
+
+                                   
                 </li>
                 <div class="divider-menu">&nbsp;</div>
                 <li class="global-menu-item ">
@@ -173,8 +172,14 @@
 
 
 
-    <script src="js/vendor/fallback/fallback.min.js"></script>
-    <script src="js/start.js"></script>
+    <script type="text/javascript" src="js/vendor/fallback/fallback.min.js"></script>
+   
+    <script type="text/javascript" src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/vendor/magnific/magnific-popup.min.js">
+    </</script>
+  
+    <script type="text/javascript" src="js/start.js"></script>
+    
     <!-- 
     Google Analytics: change UA-XXXXX-X to be your site's ID. 
     <script>

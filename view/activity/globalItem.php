@@ -1,6 +1,6 @@
 <?php if($activity['grid_of'] != 'categories'){ ?>
 <div class="intro-image">
-    <div class="header-image-activity" style="background-image: url('css/assets/images/activityPhotos/<?php echo $activity['afbeelding'];?>.jpg')">
+    <div class="header-image-activity masked" style="background-image: url('assets/images/activityPhotos/<?php echo $activity['afbeelding'];?>.jpg')">
     </div>
 
 </div>
@@ -12,8 +12,10 @@
         ?>
 
     </h1>
+<div class="titel-img-container">
+    <img class="titel-img" src="assets/images/titel-underline.png">
+    </div>
 
-    <img class="titel-img" src="css/assets/images/titel-underline.png">
     <?php if(!empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
       ?>
     <ul class="grid-praktisch">
@@ -211,7 +213,7 @@
            
                         foreach ($photos as $photo){ 
                         echo "<div class=\"thumbOverlay\">";
-        echo "<img src=\"css/assets/images/activityPhotos/{$photo['bestandsnaam']}\" class=\"thumb\" alt=\"\">";
+        echo "<img src=\"assets/images/activityPhotos/{$photo['bestandsnaam']}\" class=\"thumb\" alt=\"\">";
         echo "</div>";
                   } 
             }
@@ -238,7 +240,7 @@
                   foreach ($activities as $activitySub) { 
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img class=\"subcategory-img\" 
-                        src=\"css/assets/images/activityPhotos/{$activitySub['afbeelding']}._th.jpg \">";
+                        src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}._th.jpg \">";
                          echo "<a href=\"index.php?page=globalItem&id={$activitySub['id']}\" class=\"gridLink-sub\">"; 
                          echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
@@ -271,7 +273,7 @@
                         echo "<div class=\"grid-sub\">"; 
 
                         echo "<img class=\"subcategory-img\" 
-                        src=\"css/assets/images/activityPhotos/{$category['afbeelding']}_th.jpg\">";
+                        src=\"assets/images/activityPhotos/{$category['afbeelding']}_th.jpg\">";
                          
                          echo "<a href=\"index.php?page=globalItem&id={$category['id']}\" class=\"gridLink-sub\">"; 
                          echo "<div class=\"overlay-img\">"; 

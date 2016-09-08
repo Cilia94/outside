@@ -29,8 +29,11 @@ class ActivityController extends Controller {
     public function index(){
 
 
+
         
     }
+
+    
 
     
 

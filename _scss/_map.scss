@@ -1,0 +1,289 @@
+.tip-device-width{
+		display: none;
+        .opmerking-container{
+            display: block;
+        }
+	}
+
+    
+	
+.container-map {
+    width: 100%;
+    //    position: relative;
+    // overflow: hidden;
+
+    p{
+        
+        font-weight: bolder;
+        font-style: italic;
+        text-align: center;
+        max-width: 300px;
+        font-size: 1.1em;
+        margin-top: 35px;
+        //display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        //width: 100%;
+    }
+}
+#map-outside {
+    //flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    //display: block;
+    margin-top: 25px;
+    width: 830px;
+    height: 550px;
+    #map-assets {
+        float: left;
+        margin-top: 0px;
+        z-index: 0;
+    }
+    .map-itself {
+        //display: none;
+        position: absolute;
+        //
+        //margin-top: 
+        //width: 100%;
+    }
+    .map-element {
+        mix-blend-mode:overlay;
+        position: absolute;
+        //float: left;
+    }
+    .map-asset {
+        z-index: 99;
+        position: absolute;
+        opacity: 0.75;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .map-outside-asset-bg {
+        //z-index: 1;
+        position: absolute;
+        //float: left;
+        //margin-top: -100px;
+        opacity: 0;
+        //transition: opacity 0.3s;
+    }
+    
+
+    //.active-map-element{
+        .map-asset-active {
+        opacity: 1;
+       
+    }
+    .map-outside-asset-bg-active {
+        
+        opacity: 1;
+    }
+
+
+    //}
+    #paintball {
+        margin-top: 100px;
+        margin-left: 100px;
+        //margin-left: -350px;
+    }
+    #paintball_bg {
+        margin-top: 60px;
+        margin-left: 60px;
+    }
+    #bmx {
+        margin-left: 220px;
+        margin-top: 200px;
+    }
+    #bmx_bg {
+        margin-left: 230px;
+        margin-top: 160px;
+    }
+    #kabelbaan {
+        margin-left: 325px;
+        margin-top: 65px;
+    }
+    #kabelbaan_bg {
+        margin-left: 325px;
+        margin-top: 65px;
+    }
+    #gracht {
+        margin-left: 360px;
+        margin-top: 165px;
+    }
+    #gracht_bg {
+        margin-left: 350px;
+        margin-top: 150px
+    }
+    #hoogte {
+        margin-left: 500px;
+        margin-top: 50px;
+    }
+    #hoogte_bg {
+        margin-left: 480px;
+        margin-top: 100px;
+    }
+    #boog {
+        margin-left: 470px;
+        margin-top: 290px;
+    }
+    #boog_bg {
+        margin-left: 460px;
+        margin-top: 260px;
+    }
+    #tipi1 {
+        margin-left: 460px;
+        margin-top: 200px;
+    }
+    #tipi1_bg {
+        margin-left: 460px;
+        margin-top: 200px;
+    }
+    #quad {
+        margin-left: 600px;
+        margin-top: 200px;
+    }
+    #quad_bg {
+        margin-left: 530px;
+        margin-top: 170px;
+        //width: 66%;
+    }
+}
+
+
+
+.map-items-text {
+    .map-item-text {
+        display: none;
+        min-width: 320px;
+        .item-text-header {
+            //padding: 0px;
+            //padding-left: 15px;
+            //padding-right: 15px;
+            //background-color: $outside-flue-orange;
+            h2 {
+                padding: 10px;
+                margin: 0px;
+                font-size: 1.25em;
+                font-weight: bolder;
+                display: inline-block;
+            }
+            .fancy-divider {
+                margin-top: -10px;
+                margin-left: -10px;
+            }
+            .arrow-map-item {
+                display: none;
+            }
+        }
+        .item-large-section {
+            //background-color: #E3E3E3;
+            //padding: 10px;
+            p {
+                text-align: left;
+            }
+            section.item-photos {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction: row;
+                flex-direction: row;
+                -webkit-align-items: center;
+                align-items: center;
+                //-webkit-justify-content: center;
+                //justify-content: center;
+                flex-wrap: wrap;
+                img {
+                    width: 200px;
+                    margin-right: 10px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 940px) {
+    .map-items-text {
+        .map-item-text {
+            margin-bottom: 5px;
+            display: block;
+            min-width: 320px;
+            .item-text-header {
+                padding: 0px;
+                padding-left: 15px;
+                //padding-right: 15px;
+                background-color: $outside-flue-orange;
+
+                a:link, a:visited{
+
+                    color: white;
+
+
+
+                }
+
+                a:hover{
+                    color: darken($outside-flue-orange,10%);
+                }
+
+                h2 {
+                    padding: 10px;
+                    margin: 0px;
+                    font-size: 1.25em;
+                    font-weight: bolder;
+                    display: inline-block;
+                }
+                .fancy-divider {
+                    display: none;
+                }
+                .arrow-map-item {
+                    display: inline-block;
+                    float: right;
+                    margin-right: 20px;
+                    margin-top: 10px;
+                    font-size: 1.5em;
+                }
+            }
+            .item-large-section {
+                background-color: #E3E3E3;
+                padding: 10px;
+                display: none;
+                p {
+                    text-align: left;
+                }
+                section.item-photos {
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-flex-direction: row;
+                    flex-direction: row;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    //-webkit-justify-content: center;
+                    //justify-content: center;
+                    flex-wrap: wrap;
+                    img {
+                        width: 300px;
+                        margin-right: 10px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .container-map {
+            display: none;
+        }
+}
+
+
+
+  @media screen and (max-width: 940px) {
+    
+
+    .tip-device-width{
+        display: block;
+    }
+
+    }
+
+   

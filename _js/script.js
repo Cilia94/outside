@@ -4,13 +4,10 @@ import {
   html
 } from './helpers/util.js';
 
-var locationAdresses;
-var allActivities;
+var locationAdresses,  allActivities, selectedActivities;
 var currentTaal = $('#current-taal').data('taal');
-var selectedActivities;
 
 
-//json_getById(locations[i], locationAdresses).adres
 function json_getById(key, data) {
   var found = null;
 
@@ -72,19 +69,40 @@ Handlebars.registerHelper("case", function(value, options) {
   }
 });
 
-// Handlebars.registerHelper('splitLocations', function(value, options){
-
-// })
 
 (function() {
 
     function init() {
+      console.log('init');
+      
+      $('.item-photos').each(function() { 
+    $(this).magnificPopup({
+        delegate: 'a', 
+        type: 'image',
+        gallery: {
+          enabled:true
+        }
+    });
+});
+
+
+
+    $('img').each(function(){
+    var filename = $(this).attr('src')
+    var filenameWithPath= filename.split('/')[filename.split.length];  
+    $(this).attr('alt', filenameWithPath.split('.')[0]);
+  } );
 
       selectedActivities = [];
       var url = window.location.pathname.split('?');
       var pageName = url[url.length - 1];
       var type = window.location.search;
       var pageType = type.split('=')[1];
+
+      if($('#canvas-map').length){
+   
+        setupCanvasMap();
+      }
 
 
 
@@ -97,9 +115,8 @@ Handlebars.registerHelper("case", function(value, options) {
       })
 
       getActivities();
-
       activePage();
-
+      setupMap();
       
 
       $('.change-taal').on('click', function() {
@@ -146,7 +163,6 @@ Handlebars.registerHelper("case", function(value, options) {
       }
 
       $('.link-type').on('click', function() {
-        //console.log($(this).data('type'));
         var thisItems = $(this).parent().parent().find('.items-in-type');
         if (thisItems.css('display') == "none") {
           $(this).parent().parent().find('.arrow-down').attr('class', 'arrow-down glyphicon glyphicon-chevron-down')
@@ -156,6 +172,163 @@ Handlebars.registerHelper("case", function(value, options) {
           $(this).parent().parent().find('.arrow-down').attr('class', 'arrow-down glyphicon glyphicon-chevron-up')
         }
       })
+    }
+
+    function setupMap(){
+
+      $(".map-asset").hover(
+        function(){
+        
+        
+        var asset_id = ($(this).data('asset-id'));
+        
+        $('.map-outside-asset-bg[data-asset-id="' + asset_id +'"]').css('opacity', 1);
+
+
+      },
+       function(){
+         var asset_id = ($(this).data('asset-id'));
+         //if(!$(this).parent().hasClass('active-map-element')){
+          //console.log('hover over')
+        
+        $('.map-outside-asset-bg[data-asset-id="' + asset_id +'"]').css('opacity', 0);
+      //}
+
+
+      })
+
+      $('.map-asset').on('click', function(e){
+        e.preventDefault();
+        $('.map-item-text').css('display','none');
+        // $('.map-element').removeClass('active-map-element');
+        // $(this).parent().addClass('active-map-element');
+        // $('.map-element:not(.active-map-element) .map-asset').css('opacity',0.7);
+        // $('.map-element:not(.active-map-element) .map-outside-asset-bg').css('opacity',0);
+
+        
+
+    //       .map-asset-active {
+    //     opacity: 1;
+       
+    // }
+    // .map-outside-asset-bg-active {
+        
+    //     opacity: 1;
+    // }
+
+
+        //$(this).parent().addClass('active-map-element');
+         // $(this).parent().find('.map-asset').css('opacity',1);
+         // $(this).parent().find('.map-outside-asset-bg').css('opacity',1);
+         var asset_id = ($(this).data('asset-id'));
+        $('.map-item-text[data-asset-id="' + asset_id +'"]').show();
+         $('html, body').animate({
+        scrollTop: $('.map-item-text[data-asset-id="' + asset_id +'"]').offset().top
+    }, 1000);
+
+
+      })
+
+      $('.arrow-map-item').on('click', function(e){
+        e.preventDefault();
+        console.log($(this));
+        if($(this).parent().parent().parent().find('.item-large-section').css('display') == 'none'){
+          $(this).parent().parent().parent().find('.item-large-section').show();
+          $(this).addClass('glyphicon-chevron-up');
+          $(this).removeClass('glyphicon-chevron-down');
+          
+        }else{
+
+        //console.log($(this).parent().parent().parent().data('asset-id'))
+        $(this).parent().parent().parent().find('.item-large-section').hide();
+        $(this).addClass('glyphicon-chevron-down');
+        $(this).removeClass('glyphicon-chevron-up');
+        
+
+      }
+      })
+    }
+
+    function setupCanvasMap(){
+      console.log('canvas');
+      paper.install(window);
+      paper.setup("canvas-map");
+
+      $.getJSON('assets/data/adventurePark.json').done(function(data){
+        //console.log(data)
+      var places = data.data_adventurePark;
+      //console.log("places",places);
+
+      var raster= new Raster("assets/images/canvas/outside_map_small.png");
+      raster.position= {x:415, y:275};
+      raster.on('click', function(){
+        console.log('rrrrr')
+      })
+
+    for(var i=0; i<places.length; i++){
+      var place= places[i];
+      console.log(place);
+      // var shape= new Shape.Rectangle({
+      //   x: place.x,
+      //   y: place.y
+      // },{
+      //   width: place.width,
+      //   height: place.height
+      // });
+
+      var shape = new Raster(
+        
+        place.image,
+        {
+         x: place.x,
+         y: place.y,
+         width: place.width,
+         height: place.height
+       }
+        )
+
+      shape.opacity= 0.5;
+      //shape.fillColor='white';
+      shape.obj=place;
+      var hoversPlace = false;
+      var tool = new paper.Tool(); // Again manually. Life is much easier with script type="text/paperscript"
+      tool.onMouseMove = function (event) { // Installig paperjs event 
+      var x = event.point.x;
+      var y = event.point.y;
+      // console.log("x min width", place.x - place.width)
+      // console.log("x plus width", place.x + place.width)
+      //  console.log("x min width", place.x - place.width)
+      // console.log("x plus width", place.x + place.width)
+      
+      
+      if(x >= place.x - place.width/2  && x< place.x + place.width/2 && y >=place.y - place.height/2 && y< place.y +place.height/2){
+        if(hoversPlace == false){
+          shape.opacity = 1;
+          //new Raster("assets/images/treasuremap.jpg");
+        //raster.position= {x:350, y:220};
+          console.log(x,y);
+          hoversPlace = true;
+
+        }
+
+      }else{
+        shape.opacity = 0.5;
+        hoversPlace = false;
+
+      }
+    }
+        shape.on('click', clickPlace);
+    }
+
+      });
+  
+
+      
+    }
+
+    function clickPlace(place){
+      console.log('clicked', this.obj)
+
     }
 
     function search() {
@@ -647,10 +820,10 @@ Handlebars.registerHelper("case", function(value, options) {
         $(overlay[index]).on('click', function() {
 
           $('.photo-view').attr('src', $(this).find('img').attr('src'));
-          var currentPhoto = $('.photo-view').attr('src');
+          //var currentPhoto = $('.photo-view').attr('src');
           //console.log(currentPhoto)
 
-          var currentIndex = photosSrc.indexOf(currentPhoto);
+          //var currentIndex = photosSrc.indexOf(currentPhoto);
           //console.log(currentIndex);
         })
 

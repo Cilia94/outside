@@ -3,8 +3,8 @@
 <div class="container-middle container-aanvraag no-header">
     <h1 class="titel-header">Aanvraagformulier</h1>
     <img class="titel-img" src="css/assets/images/titel-underline.png">
-<p> Duid de activiteit(en) aan waar u interesse in heeft</p>
-      
+<!-- <p class="center-text"> Duid de activiteit(en) aan waar u interesse in heeft</p>
+  -->     
       <!-- __________ STAP 1 ____________ --> 
 
     <div id="stap1" class="aanvraag-activiteiten">

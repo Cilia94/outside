@@ -24,6 +24,12 @@ class PageController extends Controller {
     public function contact(){
 
     }
+    
+    public function adventurePark(){
+
+
+        
+    }
 
    
 

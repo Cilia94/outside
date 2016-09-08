@@ -57,15 +57,21 @@
         text-align: center;
     }
 
+    .titel-img-container{
+        width: 100%;
+
+    }
+
     .titel-img {
     	margin-top: -15px;
-        margin-left: 25%;
-        //margin-left: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        display: block;
         width: 50%;
         max-width: 300px;
         text-align: center;
         margin-bottom: 25px;
-        //opacity: 0.7;
     }
 }
 
@@ -112,6 +118,10 @@
 
 }
 
+.center-text{
+    text-align: center;
+}
+
 .not-visible{
     visibility: hidden;
 }
@@ -129,11 +139,13 @@
 .masked{
 
     mask-image: url('assets/images/clipmask-lll.png');
+    mask-repeat: round;
+
     //mask:url(#svgMask);
-    -webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+    //-webkit-filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
     //filter: url(#drop-shadow);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    //-ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    //filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 
