@@ -89,8 +89,12 @@ Handlebars.registerHelper("case", function(value, options) {
 
     $('img').each(function(){
     var filename = $(this).attr('src')
-    var filenameWithPath= filename.split('/')[filename.split.length];  
+    //console.log(filename.split('/'))
+    if(filename){
+    var filenameWithPath= filename.split('/')[filename.split.length];
+
     $(this).attr('alt', filenameWithPath.split('.')[0]);
+  }
   } );
 
       selectedActivities = [];
