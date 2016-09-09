@@ -155,9 +155,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
         }
       });
-      if ($('.photo-view').length) {
-        //gallery();
-      }
+      
 
 
       // if(window.location.pathname==="/"){
@@ -166,9 +164,6 @@ Handlebars.registerHelper("case", function(value, options) {
 
       switch (pageType) {
 
-        case "activity":
-          //gallery();
-          break;
 
         case "aanvragen":
           setupAanvraagformulier();
@@ -202,11 +197,10 @@ Handlebars.registerHelper("case", function(value, options) {
       },
        function(){
          var asset_id = ($(this).data('asset-id'));
-         //if(!$(this).parent().hasClass('active-map-element')){
-          //console.log('hover over')
+         
         
         $('.map-outside-asset-bg[data-asset-id="' + asset_id +'"]').css('opacity', 0);
-      //}
+     
 
 
       })
@@ -214,26 +208,7 @@ Handlebars.registerHelper("case", function(value, options) {
       $('.map-asset').on('click', function(e){
         e.preventDefault();
         $('.map-item-text').css('display','none');
-        // $('.map-element').removeClass('active-map-element');
-        // $(this).parent().addClass('active-map-element');
-        // $('.map-element:not(.active-map-element) .map-asset').css('opacity',0.7);
-        // $('.map-element:not(.active-map-element) .map-outside-asset-bg').css('opacity',0);
-
         
-
-    //       .map-asset-active {
-    //     opacity: 1;
-       
-    // }
-    // .map-outside-asset-bg-active {
-        
-    //     opacity: 1;
-    // }
-
-
-        //$(this).parent().addClass('active-map-element');
-         // $(this).parent().find('.map-asset').css('opacity',1);
-         // $(this).parent().find('.map-outside-asset-bg').css('opacity',1);
          var asset_id = ($(this).data('asset-id'));
         $('.map-item-text[data-asset-id="' + asset_id +'"]').show();
          $('html, body').animate({
@@ -263,87 +238,6 @@ Handlebars.registerHelper("case", function(value, options) {
       })
     }
 
-    function setupCanvasMap(){
-      console.log('canvas');
-      paper.install(window);
-      paper.setup("canvas-map");
-
-      $.getJSON('assets/data/adventurePark.json').done(function(data){
-        //console.log(data)
-      var places = data.data_adventurePark;
-      //console.log("places",places);
-
-      var raster= new Raster("assets/images/canvas/outside_map_small.png");
-      raster.position= {x:415, y:275};
-      raster.on('click', function(){
-        console.log('rrrrr')
-      })
-
-    for(var i=0; i<places.length; i++){
-      var place= places[i];
-      console.log(place);
-      // var shape= new Shape.Rectangle({
-      //   x: place.x,
-      //   y: place.y
-      // },{
-      //   width: place.width,
-      //   height: place.height
-      // });
-
-      var shape = new Raster(
-        
-        place.image,
-        {
-         x: place.x,
-         y: place.y,
-         width: place.width,
-         height: place.height
-       }
-        )
-
-      shape.opacity= 0.5;
-      //shape.fillColor='white';
-      shape.obj=place;
-      var hoversPlace = false;
-      var tool = new paper.Tool(); // Again manually. Life is much easier with script type="text/paperscript"
-      tool.onMouseMove = function (event) { // Installig paperjs event 
-      var x = event.point.x;
-      var y = event.point.y;
-      // console.log("x min width", place.x - place.width)
-      // console.log("x plus width", place.x + place.width)
-      //  console.log("x min width", place.x - place.width)
-      // console.log("x plus width", place.x + place.width)
-      
-      
-      if(x >= place.x - place.width/2  && x< place.x + place.width/2 && y >=place.y - place.height/2 && y< place.y +place.height/2){
-        if(hoversPlace == false){
-          shape.opacity = 1;
-          //new Raster("assets/images/treasuremap.jpg");
-        //raster.position= {x:350, y:220};
-          console.log(x,y);
-          hoversPlace = true;
-
-        }
-
-      }else{
-        shape.opacity = 0.5;
-        hoversPlace = false;
-
-      }
-    }
-        shape.on('click', clickPlace);
-    }
-
-      });
-  
-
-      
-    }
-
-    function clickPlace(place){
-      console.log('clicked', this.obj)
-
-    }
 
     function search() {
 
@@ -487,36 +381,7 @@ Handlebars.registerHelper("case", function(value, options) {
         }
 
         }
-
-        // switch (welke_template.id){
-        //   case 1: 
-        //   break;
-
-        //   case 2:
-        //   break;
-
-        //   case 3:
-        //   //welke_template.startTemplate
-        //   break;
-
-        //   case 4:
-        //   break;
-
-        //   default:
-        //   console.log('default');
-        // }
       }
-
-    //   
-    //   var wat_verwacht = json_getByActivityId(idOfActivity, prijzen);
-    //   if(wat_verwacht){
-    //   console.log(wat_verwacht);
-    //   var prijsContainer = $('#handlebars-template-prijzen').text();
-    //   var prijs_template = Handlebars.compile(prijsContainer);
-
-    //       var html = prijs_template(prijs);
-    //       $('#append-prijzen').append($(html));
-    // }
 
     }
 
@@ -822,67 +687,6 @@ Handlebars.registerHelper("case", function(value, options) {
     }
 
 
-    // function gallery() {
-    //   var photos = $('.thumbOverlay .thumb');
-    //   var photosSrc = [];
-    //   var overlay = $('.thumbOverlay');
-    //   $('.photo-view').attr('src', photos[0].src);
-
-    //   overlay.each(function(index) {
-    //     var thumbSrc = $(this).find('img').attr('src');
-    //     photosSrc.push(thumbSrc.replace('_th', ''));
-    //     $(overlay[index]).on('click', function() {
-
-    //       $('.photo-view').attr('src', $(this).find('img').attr('src'));
-    //       //var currentPhoto = $('.photo-view').attr('src');
-    //       //console.log(currentPhoto)
-
-    //       //var currentIndex = photosSrc.indexOf(currentPhoto);
-    //       //console.log(currentIndex);
-    //     })
-
-    //   })
-
-    //   //var indexShow1 = photosSrc.indexOf($('.photo-view').attr('src'));
-
-    //   $('.index-current').html(1)
-
-    //   $('.index-max').html(photosSrc.length)
-
-    //   $('.arrow').on('click', function() {
-    //     var currentPhoto = $('.photo-view').attr('src');
-    //     if (currentPhoto.indexOf("http://localhost/outside") !== -1) {
-    //       currentPhoto = currentPhoto.replace("http://localhost/outside/", "");
-
-    //     }
-    //     var currentIndex = photosSrc.indexOf(currentPhoto);
-
-
-    //     if ($(this).hasClass('leftArrow')) {
-
-    //       if (currentIndex === 0) {
-    //         $('.photo-view').attr('src', photosSrc[photosSrc.length - 1]);
-
-    //       } else {
-    //         $('.photo-view').attr('src', photosSrc[currentIndex - 1]);
-    //       }
-    //     }
-    //     if ($(this).hasClass('rightArrow')) {
-
-    //       if (currentIndex === photosSrc.length - 1) {
-    //         $('.photo-view').attr('src', photosSrc[0]);
-
-    //       } else {
-    //         $('.photo-view').attr('src', photosSrc[currentIndex + 1]);
-    //       }
-    //     }
-
-    //     var indexShow = photosSrc.indexOf($('.photo-view').attr('src'));
-
-    //     $('.index-current').html(indexShow + 1)
-
-    //   })
-    // }
 
     function setupAanvraagformulier() {
 
