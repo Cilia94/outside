@@ -135,6 +135,7 @@ body {
   background-repeat: repeat;
   font-family: "ralewayregular";
   background-image: url(assets/images/bg-pattern.jpg);
+  overflow-x: hidden;
 }
 
 .clear {
@@ -321,7 +322,8 @@ li a.active-item {
   margin-right: 7px;
 }
 
-.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
   max-height: none;
 }
 
@@ -630,6 +632,7 @@ li a.active-item {
 }
 
 .header-image-activity {
+  width: 101%;
   background-image: url(assets/images/header-image-outside-2.png);
   height: 320px;
   background-size: cover;
@@ -858,6 +861,16 @@ ul.prijzen li p.info-prijs {
       justify-content: center;
 }
 
+.info-photos {
+  font-size: 1.05em;
+  text-align: center;
+  font-style: italic;
+  font-weight: bolder;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+}
+
 .activity-photos {
   width: 90%;
   margin-left: auto;
@@ -921,7 +934,7 @@ ul.prijzen li p.info-prijs {
 
 .activity-photos-grid .thumbOverlay {
   position: relative;
-  width: 80px;
+  width: 150px;
   margin-right: 20px;
   margin-bottom: 20px;
 }

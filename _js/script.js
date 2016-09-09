@@ -85,6 +85,16 @@ Handlebars.registerHelper("case", function(value, options) {
     });
 });
 
+      $('.activity-photos-grid').each(function() { 
+    $(this).magnificPopup({
+        delegate: 'a', 
+        type: 'image',
+        gallery: {
+          enabled:true
+        }
+    });
+});
+
 
 
     $('img').each(function(){
@@ -146,7 +156,7 @@ Handlebars.registerHelper("case", function(value, options) {
         }
       });
       if ($('.photo-view').length) {
-        gallery();
+        //gallery();
       }
 
 
@@ -157,7 +167,7 @@ Handlebars.registerHelper("case", function(value, options) {
       switch (pageType) {
 
         case "activity":
-          gallery();
+          //gallery();
           break;
 
         case "aanvragen":
@@ -532,7 +542,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function getSingleProgramme(programmas){
 
-      console.log("PROGRAMMA");
+      //console.log("PROGRAMMA");
       var idOfActivity = window.location.search.split('&')[1].split('=')[1]
       
       var programma = json_getByActivityId(idOfActivity, programmas);
@@ -812,67 +822,67 @@ Handlebars.registerHelper("case", function(value, options) {
     }
 
 
-    function gallery() {
-      var photos = $('.thumbOverlay .thumb');
-      var photosSrc = [];
-      var overlay = $('.thumbOverlay');
-      $('.photo-view').attr('src', photos[0].src);
+    // function gallery() {
+    //   var photos = $('.thumbOverlay .thumb');
+    //   var photosSrc = [];
+    //   var overlay = $('.thumbOverlay');
+    //   $('.photo-view').attr('src', photos[0].src);
 
-      overlay.each(function(index) {
-        var thumbSrc = $(this).find('img').attr('src');
-        photosSrc.push(thumbSrc.replace('_th', ''));
-        $(overlay[index]).on('click', function() {
+    //   overlay.each(function(index) {
+    //     var thumbSrc = $(this).find('img').attr('src');
+    //     photosSrc.push(thumbSrc.replace('_th', ''));
+    //     $(overlay[index]).on('click', function() {
 
-          $('.photo-view').attr('src', $(this).find('img').attr('src'));
-          //var currentPhoto = $('.photo-view').attr('src');
-          //console.log(currentPhoto)
+    //       $('.photo-view').attr('src', $(this).find('img').attr('src'));
+    //       //var currentPhoto = $('.photo-view').attr('src');
+    //       //console.log(currentPhoto)
 
-          //var currentIndex = photosSrc.indexOf(currentPhoto);
-          //console.log(currentIndex);
-        })
+    //       //var currentIndex = photosSrc.indexOf(currentPhoto);
+    //       //console.log(currentIndex);
+    //     })
 
-      })
+    //   })
 
-      //var indexShow1 = photosSrc.indexOf($('.photo-view').attr('src'));
+    //   //var indexShow1 = photosSrc.indexOf($('.photo-view').attr('src'));
 
-      $('.index-current').html(1)
+    //   $('.index-current').html(1)
 
-      $('.index-max').html(photosSrc.length)
+    //   $('.index-max').html(photosSrc.length)
 
-      $('.arrow').on('click', function() {
-        var currentPhoto = $('.photo-view').attr('src');
-        if (currentPhoto.indexOf("http://localhost/outside") !== -1) {
-          currentPhoto = currentPhoto.replace("http://localhost/outside/", "");
+    //   $('.arrow').on('click', function() {
+    //     var currentPhoto = $('.photo-view').attr('src');
+    //     if (currentPhoto.indexOf("http://localhost/outside") !== -1) {
+    //       currentPhoto = currentPhoto.replace("http://localhost/outside/", "");
 
-        }
-        var currentIndex = photosSrc.indexOf(currentPhoto);
+    //     }
+    //     var currentIndex = photosSrc.indexOf(currentPhoto);
 
 
-        if ($(this).hasClass('leftArrow')) {
+    //     if ($(this).hasClass('leftArrow')) {
 
-          if (currentIndex === 0) {
-            $('.photo-view').attr('src', photosSrc[photosSrc.length - 1]);
+    //       if (currentIndex === 0) {
+    //         $('.photo-view').attr('src', photosSrc[photosSrc.length - 1]);
 
-          } else {
-            $('.photo-view').attr('src', photosSrc[currentIndex - 1]);
-          }
-        }
-        if ($(this).hasClass('rightArrow')) {
+    //       } else {
+    //         $('.photo-view').attr('src', photosSrc[currentIndex - 1]);
+    //       }
+    //     }
+    //     if ($(this).hasClass('rightArrow')) {
 
-          if (currentIndex === photosSrc.length - 1) {
-            $('.photo-view').attr('src', photosSrc[0]);
+    //       if (currentIndex === photosSrc.length - 1) {
+    //         $('.photo-view').attr('src', photosSrc[0]);
 
-          } else {
-            $('.photo-view').attr('src', photosSrc[currentIndex + 1]);
-          }
-        }
+    //       } else {
+    //         $('.photo-view').attr('src', photosSrc[currentIndex + 1]);
+    //       }
+    //     }
 
-        var indexShow = photosSrc.indexOf($('.photo-view').attr('src'));
+    //     var indexShow = photosSrc.indexOf($('.photo-view').attr('src'));
 
-        $('.index-current').html(indexShow + 1)
+    //     $('.index-current').html(indexShow + 1)
 
-      })
-    }
+    //   })
+    // }
 
     function setupAanvraagformulier() {
 

@@ -197,6 +197,7 @@
                        // echo "<p >Er zijn geen foto's voor deze activiteit</p>"; 
                   }else{ 
       ?>
+       <!--
         <div class="photo-view-wrapper">
         <img src="" class="photo-view" alt="">
     </div>
@@ -207,14 +208,23 @@
             <i class="fa fa-arrow-circle-right arrow rightArrow" aria-hidden="true"></i>
         </div>
         <div class="clear">&nbsp;</div>
+    -->
+    <h1 class="titel-header">Fotos</h1>
+
+    <div class="titel-img-container">
+    <img class="titel-img" src="assets/images/titel-underline.png">
+    </div>
+    <p class="info-photos">Klik op een foto om hem in ware grote te bekijken</p>
 
         <div class="activity-photos-grid">
             <?php
            
                         foreach ($photos as $photo){ 
+                            echo "<a href=\"assets/images/activityPhotos/{$photo['bestandsnaam']}\">";
                         echo "<div class=\"thumbOverlay\">";
         echo "<img src=\"assets/images/activityPhotos/{$photo['bestandsnaam']}\" class=\"thumb\" alt=\"\">";
         echo "</div>";
+        echo "</a>";
                   } 
             }
              } 
