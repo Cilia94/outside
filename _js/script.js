@@ -74,6 +74,9 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function init() {
       console.log('init');
+      if($('#page-name').html()){
+      document.title = $('#page-name').html()
+    }
       
       $('.item-photos').each(function() { 
     $(this).magnificPopup({
@@ -286,6 +289,7 @@ Handlebars.registerHelper("case", function(value, options) {
       //console.log(kindOfPage, idOfActivity);
 
       if(kindOfPage == "globalItem&id" && idOfActivity){
+        console.log(json_getById(idOfActivity, allActivities))
         getAllPrices();
         getAllVerwacht();
         getAllPrograms()

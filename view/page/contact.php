@@ -8,7 +8,7 @@
 <div class="text-on-header"><p class="text-shadow">Adventure and fun</p></div>
  -->
 <div class="container-middle container-aanbod no-header">
-    <h1 class="titel-header">
+    <h1 id="page-name" class="titel-header">
         <?php 
         switch($_SESSION['session_taal']){
             case "NL":

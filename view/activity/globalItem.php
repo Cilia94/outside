@@ -7,7 +7,7 @@
 <?php } ?>
 <div class="container-middle container-info <?php if($activity['grid_of'] == 'categories'){ echo "no-header"; }?>">
 
-    <h1 class="titel-header">
+    <h1 id="page-name"class="titel-header">
         <?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
         ?>
 

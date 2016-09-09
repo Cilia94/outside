@@ -4,7 +4,7 @@
     </div> 
 </div>
 <div class="container-middle container-aanbod">
-    <h1 class="titel-header">
+    <h1 id="page-name" class="titel-header">
         <?php 
         switch($_SESSION['session_taal']){
             case "NL":

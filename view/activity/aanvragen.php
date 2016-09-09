@@ -1,7 +1,7 @@
 
 
 <div class="container-middle container-aanvraag no-header">
-    <h1 class="titel-header">Aanvraagformulier</h1>
+    <h1 id="page-name" class="titel-header">Aanvraagformulier</h1>
     <img class="titel-img" src="css/assets/images/titel-underline.png">
 <!-- <p class="center-text"> Duid de activiteit(en) aan waar u interesse in heeft</p>
   -->     
