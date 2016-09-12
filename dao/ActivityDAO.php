@@ -22,7 +22,7 @@ class ActivityDAO extends DAO {
 		
 		$sql = "SELECT * FROM (SELECT activiteitId,locatieId from `inhoud_activiteit_locatie`) as locatie
 				INNER JOIN inhoud ON inhoud.id = activiteitId
-				WHERE locatieId = :locatieId AND actief = 1 "
+				WHERE locatieId = :locatieId AND actief = 1 ";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':locatieId', $id);
 		$stmt->execute();
@@ -34,7 +34,7 @@ class ActivityDAO extends DAO {
 
 	//get all activities that belong to category with id x
 	public function getByCategory($id) {
-		$sql = "SELECT * FROM inhoud WHERE categorieId = :id AND actief = 1 "
+		$sql = "SELECT * FROM inhoud WHERE categorieId = :id AND actief = 1 ";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
 		$stmt->execute();

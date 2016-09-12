@@ -22,7 +22,7 @@ class LocationDAO extends DAO {
 	public function selectLocationsByActivity($id){
 		$sql = "SELECT * FROM (SELECT activiteitId,locatieId from `inhoud_activiteit_locatie`) as locatie
 				INNER JOIN inhoud_activiteit_locatie_type ON inhoud_activiteit_locatie_type.id = locatie.locatieId
-				WHERE activiteitId = :activiteitId "
+				WHERE activiteitId = :activiteitId ";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':activiteitId', $id);
 		$stmt->execute();
