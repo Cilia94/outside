@@ -17,21 +17,9 @@ class ActivityDAO extends DAO {
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
+	//get all activities with locationId x
 	public function selectByLocation($id){
 		
-		$sql = "SELECT * 
-						FROM `inhoud` 
-						WHERE `locatieId` LIKE :search AND `actief` = 1";
-		$stmt = $this->pdo->prepare($sql);
-		$stmt->bindValue(':search','%,' . $id . ',%' );
-
-		
-		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		if($result){
-			return $result;
-		}
-		return [];
 	}
 
 	//get all activities that belong to category with id x
