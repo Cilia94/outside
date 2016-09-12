@@ -4,27 +4,24 @@ require_once WWW_ROOT . 'controller' . DS . 'Controller.php';
 require_once WWW_ROOT . 'dao' . DS . 'ActivityDAO.php';
 require_once WWW_ROOT . 'dao' . DS . 'PhotoDAO.php';
 require_once WWW_ROOT . 'dao' . DS . 'LocationDAO.php';
+require_once WWW_ROOT . 'dao' . DS . 'CategoryDAO.php';
 
 
 class ActivityController extends Controller {
 
     private $activityDAO;
     private $photoDAO;
+    private $categoryDAO;
     
 
     function __construct() {
         $this->activityDAO = new ActivityDAO();
         $this->photoDAO = new PhotoDAO();
+        $this->categoryDAO = new CategoryDAO();
         $this->locationDAO = new LocationDAO();
     }
 
-//     public function possibleTypes( $table, $field )
-// {
-//     $type = $this->db->query( "SHOW COLUMNS FROM {$table} WHERE Field = '{$field}'" )->row( 0 )->Type;
-//     preg_match("/^enum\(\'(.*)\'\)$/", $type, $matches);
-//     $enum = explode("','", $matches[1]);
-//     return $enum;
-// }
+
 
     public function index(){
 
@@ -81,6 +78,13 @@ class ActivityController extends Controller {
         
     }
 
+    // public function all_categories(){
+    //     //nog veranderen
+    //     $this->set('categories',$this->categoryDAO->selectAll());
+        
+
+    // }
+
     public function locatie(){
 
 if(!empty($_GET['id'])){
@@ -102,12 +106,14 @@ if(!empty($_GET['id'])){
 
     }
 
-     public function categorie(){
+     public function category(){
 
         if(!empty($_GET['id'])){
-        $this->set('category',$this->activityDAO->getCategoryPage($_GET['id']));
+        $this->set('category',$this->categoryDAO->selectById($_GET['id']));
+        $this->set('activities',$this->activityDAO->getByCategory($_GET['id']));
         }else{
-        //$this->set('images',$this->imageDAO->selectByTourId(1));
+            header('Location: index.php');
+   
         }
 
     }
@@ -116,35 +122,31 @@ if(!empty($_GET['id'])){
 
         if(!empty($_GET['id'])){
 
-        $locatiesFromDB = $this->locationDAO->selectAll();
+        //$locatiesFromDB = $this->locationDAO->selectAll();
         $thisItem = $this->activityDAO->selectById($_GET['id']);
         if($thisItem){
 
-        if($thisItem['locatieId'] != "0"){
+  //       if($thisItem['locatieId'] != "0"){
 
-            $locations = explode(",", $thisItem['locatieId']);
-            $locationsActivity = [];
+  //           $locations = explode(",", $thisItem['locatieId']);
+  //           $locationsActivity = [];
 
-            for($i = 0; $i< count($locations); $i++){
-      if($locations[$i] != "" && $locations[$i] != 0){
+  //           for($i = 0; $i< count($locations); $i++){
+  //     if($locations[$i] != "" && $locations[$i] != 0){
 
-        for($j = 0; $j< count($locatiesFromDB); $j++){
-            if($locatiesFromDB[$j]['id'] == $locations[$i]){
-               array_push($locationsActivity, $locatiesFromDB[$j]['adres']);
+  //       for($j = 0; $j< count($locatiesFromDB); $j++){
+  //           if($locatiesFromDB[$j]['id'] == $locations[$i]){
+  //              array_push($locationsActivity, $locatiesFromDB[$j]['adres']);
 
-            }
-        }
-      }
-  }
+  //           }
+  //       }
+  //     }
+  // }
   
-    //if($thisItem['zelf_gekozen_locatie'] == 1){ 
-    //array_push($locationsActivity, "Locatie naar keuze!");
+   
+  //       $thisItem['adressen'] = $locationsActivity;
 
-    //}
-        
-        $thisItem['adressen'] = $locationsActivity;
-
-        }
+  //       }
 
         $this->set('activity',$thisItem);
         
@@ -152,20 +154,20 @@ if(!empty($_GET['id'])){
 
 
 
-        switch($thisItem['grid_of']){
+        // switch($thisItem['grid_of']){
 
-            case "photos":
-            $this->set("photos", $this->photoDAO->selectByActivityId($_GET['id']));
-        break;
+        //     case "photos":
+             $this->set("photos", $this->photoDAO->selectByActivityId($_GET['id']));
+        // break;
 
-            case "categories":
-            $this->set("categories", $this->activityDAO->selectByCategoryId($_GET['id']));
-        break;
+        //     case "categories":
+        //     $this->set("categories", $this->activityDAO->selectByCategoryId($_GET['id']));
+        // break;
 
-            case "activities":
-            $this->set("activities", $this->activityDAO->selectByActivityId($_GET['id']));
-        break;
-        }
+        //     case "activities":
+        //     $this->set("activities", $this->activityDAO->selectByActivityId($_GET['id']));
+        // break;
+        // }
     }else{
         header('Location: index.php');
     }
@@ -193,7 +195,7 @@ if(!empty($_GET['id'])){
 
     public function categoryOverview(){
 
-        $this->set("activities", $this->activityDAO->selectByCategoryId($_GET['id']));
+        $this->set("activities", $this->activityDAO->getByCategory($_GET['id']));
         
 
     }

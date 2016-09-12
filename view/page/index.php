@@ -35,7 +35,7 @@
 
         </h1>
    
-    <img class="titel-img" src="css/assets/images/titel-underline.png">
+    <img class="titel-img" src="assets/images/titel-underline.png">
 
 
     <p>
@@ -50,22 +50,22 @@
         <div class="row gridFlex">
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=1" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-feesten.png">
+                <a href="index.php?page=category&amp;id=1" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-feesten.png">
                     <span>Outdoor activiteiten</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=2" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-feesten.png">
+                <a href="index.php?page=category&amp;id=2" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-feesten.png">
                     <span>Events</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=3" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-vrijgezellen.png">
+                <a href="index.php?page=category&amp;id=3" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-vrijgezellen.png">
                     <span>Vrijgezellenfeestjes actie fun</span>
                 </a>
             </div>
@@ -75,29 +75,29 @@
             
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=4" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-jeugdgroepen.png">
+                <a href="index.php?page=category&amp;id=4" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-jeugdgroepen.png">
                     <span>Jeugdgroepen -18J</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=5" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-school.png">
+                <a href="index.php?page=category&amp;id=5" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-school.png">
                     <span>Scholen sportdagen</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=6" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-pakket.png">
+                <a href="index.php?page=category&amp;id=6" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-pakket.png">
                     <span>Outdoor paketten</span>
                 </a>
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=7" class="gridLink">
-                    <img class="imageGrid" src="css/assets/images/icons/icon-pakket.png">
+                <a href="index.php?page=category&amp;id=7" class="gridLink">
+                    <img class="imageGrid" src="assets/images/icons/icon-pakket.png">
                     <span>Vakantiehuizen</span>
                 </a>
             </div>

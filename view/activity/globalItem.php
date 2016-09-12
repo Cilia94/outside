@@ -1,11 +1,11 @@
-<?php if($activity['grid_of'] != 'categories'){ ?>
+
 <div class="intro-image">
     <div class="header-image-activity masked" style="background-image: url('assets/images/activityPhotos/<?php echo $activity['afbeelding'];?>.jpg')">
     </div>
 
 </div>
-<?php } ?>
-<div class="container-middle container-info <?php if($activity['grid_of'] == 'categories'){ echo "no-header"; }?>">
+
+<div class="container-middle container-info">
 
     <h1 id="page-name"class="titel-header">
         <?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
@@ -184,9 +184,7 @@
 </div>
 </div>
 
-    <?php switch ($activity[ 'grid_of']){ 
-
-      case 'photos': 
+    <?php 
 
         
 
@@ -232,78 +230,7 @@
 
         </div>
     </div>
-    <?php
 
-    break; 
-
-// __________________________________________________________________________
-
-
-    case 'activities': ?>
-
-    <div id="grid-feesten" class="container-sub-grid">
-        <div class="grid">
-            <div class="row gridFlex">
-
-                <?php 
-                if(isset($activities)){ 
-                  foreach ($activities as $activitySub) { 
-                        echo "<div class=\"grid-sub\">"; 
-                        echo "<img class=\"subcategory-img\" 
-                        src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}._th.jpg \">";
-                         echo "<a href=\"index.php?page=globalItem&id={$activitySub['id']}\" class=\"gridLink-sub\">"; 
-                         echo "<div class=\"overlay-img\">"; 
-                         echo "<span>"; 
-                taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']); 
-                echo "</span>"; 
-                echo "</div></a></div>"; 
-          } 
-    } ?>
-
-            </div>
-        </div>
-    </div>
-
-    <?php
-
-    break; 
-
-
-// __________________________________________________________________________
-
-    case 'categories': ?>
-
-    <div id="grid-feesten" class="container-sub-grid">
-        <div class="grid">
-            <div class="row gridFlex">
-
-                <?php 
-                if(isset($categories)){ 
-                  foreach ($categories as $category) { 
-                        echo "<div class=\"grid-sub\">"; 
-
-                        echo "<img class=\"subcategory-img\" 
-                        src=\"assets/images/activityPhotos/{$category['afbeelding']}_th.jpg\">";
-                         
-                         echo "<a href=\"index.php?page=globalItem&id={$category['id']}\" class=\"gridLink-sub\">"; 
-                         echo "<div class=\"overlay-img\">"; 
-                         echo "<span>"; 
-                echo taal($category['naam_nl'],$category['naam_fr'],$category['naam_en']); 
-                echo "</span>"; 
-                echo "</div></a></div>"; 
-          } 
-    } ?>
-
-            </div>
-        </div>
-    </div>
-
-    <?php break; 
-
-    default: 
-    //echo 'no grid'; 
-    break; 
-} ?>
 
 
 <?php include "templates_prijzen_programmas.php"; ?>

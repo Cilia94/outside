@@ -3,14 +3,14 @@ require_once WWW_ROOT . 'dao' . DIRECTORY_SEPARATOR . 'DAO.php';
 class ActivityDAO extends DAO {
 	
 	public function selectAll() {
-		$sql = "SELECT * FROM `activiteit` WHERE `actief` = 1 ORDER BY ID ASC";
+		$sql = "SELECT * FROM `inhoud` WHERE `actief` = 1 ORDER BY ID ASC";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function selectById($id) {
-		$sql = "SELECT * FROM `activiteit` WHERE `id` = :id ";
+		$sql = "SELECT * FROM `inhoud` WHERE `id` = :id ";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
 		$stmt->execute();
@@ -20,7 +20,7 @@ class ActivityDAO extends DAO {
 	public function selectByLocation($id){
 		
 		$sql = "SELECT * 
-						FROM `activiteit` 
+						FROM `inhoud` 
 						WHERE `locatieId` LIKE :search AND `actief` = 1";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':search','%,' . $id . ',%' );
@@ -34,6 +34,12 @@ class ActivityDAO extends DAO {
 		return [];
 	}
 
+	//get all activities that belong to category with id x
+	public function getByCategory($id) {
+	
+	
+	}
+
 
 
 
@@ -42,7 +48,7 @@ class ActivityDAO extends DAO {
 
 		public function selectByType($type) {
 		$sql = "SELECT * 
-						FROM `activiteit` 
+						FROM `inhoud` 
 						WHERE `typeId`= :typeId AND `actief` = 1";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':tag',$tag );
@@ -55,33 +61,6 @@ class ActivityDAO extends DAO {
 		return [];
 	}
 
-	public function selectByCategoryId($id) {
-		$sql = "SELECT * 
-						FROM `activiteit` 
-						WHERE `belongs_to_category`= :id AND `actief` = 1";
-		$stmt = $this->pdo->prepare($sql);
-		$stmt->bindValue(':id',$id );
-		
-		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		if($result){
-			return $result;
-		}
-		return [];
-	}
-
-
-
-
-	public function getCategoryPage($id) {
-		$sql = "SELECT * 
-						FROM `activiteit_categorie` 
-						WHERE `id`= :id";
-		$stmt = $this->pdo->prepare($sql);
-		$stmt->bindValue(':id', $id);
-		$stmt->execute();
-		return $stmt->fetch(PDO::FETCH_ASSOC);
-	}
 
 	
 

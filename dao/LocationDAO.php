@@ -18,23 +18,13 @@ class LocationDAO extends DAO {
 	}
 
 	
+	//select all locations of activity by id
+	public function selectLocationsByActivity($id){
 
-	// public function selectByLocation($id){
-	// 	WHERE (',' + RTRIM(MyColumn) + ',') LIKE '%,' + @search + ',%'
-		
-	// 	$sql = "SELECT * 
-	// 					FROM `activiteit` 
-	// 					WHERE (',' + RTRIM(`locatieId`) + ',') LIKE '%,' + :id + ',%'";
-	// 	$stmt = $this->pdo->prepare($sql);
-	// 	$stmt->bindValue(':id',$id );
-		
-	// 	$stmt->execute();
-	// 	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	// 	if($result){
-	// 		return $result;
-	// 	}
-	// 	return [];
-	// }
+	}
+
+
+	
 
 
 
