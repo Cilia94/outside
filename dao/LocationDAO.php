@@ -3,14 +3,21 @@ require_once WWW_ROOT . 'dao' . DIRECTORY_SEPARATOR . 'DAO.php';
 class LocationDAO extends DAO {
 	
 	public function selectAll() {
-		$sql = "SELECT * FROM `locatie` ORDER BY ID DESC";
+		$sql = "SELECT * FROM `inhoud_activiteit_locatie_type` ORDER BY ID DESC";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function selectAllLocationsWithActivities() {
+		$sql = "SELECT * FROM `inhoud_activiteit_locatie` ORDER BY ID DESC";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function selectById($id) {
-		$sql = "SELECT * FROM `locatie` WHERE `id` = :id";
+		$sql = "SELECT * FROM `inhoud_activiteit_locatie_type` WHERE `id` = :id";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
 		$stmt->execute();

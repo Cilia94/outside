@@ -50,15 +50,51 @@ class ActivityController extends Controller {
 
     public function all_locations(){
 
-       $results = $this->locationDAO->selectAll();
-            
-
+       $results = $this->locationDAO->selectAll();           
         header('Content-Type: application/json');
-
         echo json_encode($results);
-        //exit;
         die();
 
+
+    }
+
+    public function all_category_categories(){
+
+       $results = $this->categoryDAO->selectAllCategoriesWithActivities();
+        header('Content-Type: application/json');
+        echo json_encode($results);
+        die();
+
+    }
+
+    public function all_other_data(){
+       $resultsActivities = $this->activityDAO->selectAll();
+       $resultsCategories = $this->categoryDAO->selectAllCategoriesWithActivities();
+       $resultsLocations = $this->locationDAO->selectAllLocationsWithActivities();
+       $resultsAllLocations = $this->locationDAO->selectAll();
+       
+       $resultsPrices = $this->categoryDAO->selectAllPricesWithActivities();
+       $resultsDurations = $this->categoryDAO->selectAllDurationsWithActivities();
+       $dataObject = new ArrayObject();
+       $dataObject->append($resultsActivities);
+       $dataObject->append($resultsLocations);
+       $dataObject->append($resultsCategories);
+       //$dataObject->append($resultsPrices);
+       $dataObject->append($resultsDurations);
+       $dataObject->append($resultsAllLocations);
+
+        header('Content-Type: application/json');
+        echo json_encode($dataObject);
+        die();
+
+    }
+
+    public function all_category_types(){
+
+       $results = $this->categoryDAO->selectAllTypesWithActivities();
+        header('Content-Type: application/json');
+        echo json_encode($results);
+        die();
 
     }
 
@@ -111,6 +147,28 @@ if(!empty($_GET['id'])){
         if(!empty($_GET['id'])){
         $this->set('category',$this->categoryDAO->selectById($_GET['id']));
         $this->set('activities',$this->activityDAO->getByCategory($_GET['id']));
+        }else{
+            header('Location: index.php');
+   
+        }
+
+    }
+
+    public function categoryType(){
+
+        if(!empty($_GET['id'])){
+        $this->set('category',$this->categoryDAO->selectByTypeId($_GET['id']));
+
+        $idsOfActivities = $this->activityDAO->getByCategoryType($_GET['id']);
+        $activitiesOfType = [];
+        for ($i = 0; $i < count($idsOfActivities); $i++) {
+            $contentActivity = $this->activityDAO->selectById($idsOfActivities[$i]['activiteitId']);
+            array_push($activitiesOfType, $contentActivity);
+            //$activitiesOfType-> append($contentActivity);
+        }
+
+        $this->set('activities',$activitiesOfType);
+        //$this->set('activities',$idsOfActivities);
         }else{
             header('Location: index.php');
    

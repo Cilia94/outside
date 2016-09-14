@@ -67,26 +67,27 @@
         
         <li><a href="index.php?page=category&id=1">
         <?php echo taal('Outdoor activiteiten','','Outdoor activities'); ?></a>
+        
          </li>
         <li><a href="index.php?page=category&id=2">
         <?php echo taal('Events','','Parties'); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=3">
+        <li><a href="index.php?page=globalItem&id=485">
         <?php echo taal('Vrijgezellenfeestjes','','Bachelor parties'); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=4">
+        <li><a href="index.php?page=categoryType&id=4">
         <?php echo taal('Jeugdgroepen -18J','',''); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=5">
+        <li><a href="index.php?page=category&id=3">
         <?php echo taal('Scholen sportdagen','',''); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=6">
+        <li><a href="index.php?page=categoryType&id=3">
         <?php echo taal('Outdoor paketten','',''); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=7">
+        <li><a href="index.php?page=category&id=4">
         <?php echo taal('Vakantiehuizen','',''); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=8">
+        <li><a href="index.php?page=categoryType&id=2">
         <?php echo taal('Easy Leisure','',''); ?>
         </a></li>
 

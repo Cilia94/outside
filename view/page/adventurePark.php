@@ -5,26 +5,7 @@
 </div>
 <div class="container-middle container-aanbod">
     <h1 id="page-name" class="titel-header">
-        <?php 
-        switch($_SESSION['session_taal']){
-            case "NL":
-            ?>
-
-            Advonturen park
-            <?php break; 
-
-            case "FR":
-            ?>
-
-            Notre aanbod
-            <?php break; 
-
-            case "ENG":
-            ?>
-
-            Our aanbod
-            <?php break;
-            } ?>
+        <?php echo taal('Ons park','','Our park'); ?>
 
 
         </h1>

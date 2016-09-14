@@ -17,12 +17,78 @@
 
       <div class="aanvraag-activiteiten-flex">
     <div class="container-in-flex activiteiten-zelf">
+      <section class="aanvraag-activity-type overview-type">
+            <div class="activity-type-header">
+            <h1 class="activity-type-h1">
+            <?php 
+        
+         echo taal('Outdoor activiteiten','','Outdoor activities');
 
-     <section class="aanvraag-activity-type single-type">
+        ?>
+            </h1>
+            <a href="index.php?page=category&id=1" class="link-type" data-type="outside-activiteiten">
+          
+        </a>
+    </div>
+       <div id="items-type-1" class="items-in-type">
+       </div>
+     </section>
+      <section class="aanvraag-activity-type overview-type">
+            <div class="activity-type-header">
+            <h1 class="activity-type-h1">
+            <?php 
+        
+         echo taal('Feesten','','Events');
+
+        ?>
+            </h1>
+            <a href="index.php?page=category&id=2" class="link-type" data-type="outside-activiteiten">
+          
+        </a>
+    </div>
+       <div id="items-type-2" class="items-in-type">
+       </div>
+     </section>
+
+      <section class="aanvraag-activity-type overview-type">
+            <div class="activity-type-header">
+            <h1 class="activity-type-h1">
+            <?php 
+        
+         echo taal('Sportdag','','');
+
+        ?>
+            </h1>
+            <a href="index.php?page=category&id=3" class="link-type" data-type="outside-activiteiten">
+          
+        </a>
+    </div>
+       <div id="items-type-3" class="items-in-type">
+       </div>
+     </section>
+
+      <section class="aanvraag-activity-type overview-type">
+            <div class="activity-type-header">
+            <h1 class="activity-type-h1">
+            <?php 
+        
+         echo taal('Vakantiehuis','','');
+
+        ?>
+            </h1>
+            <a href="index.php?page=category&id=4" class="link-type" data-type="outside-activiteiten">
+          
+        </a>
+    </div>
+       <div id="items-type-4" class="items-in-type">
+       </div>
+     </section>
+
+     <!-- <section class="aanvraag-activity-type single-type">
        <p>Andere</p>
        <div class="items-in-type">
        </div>
-        </section>
+        </section> -->
         </div>
 
         <div class="container-in-flex container-winkelwagen">

@@ -81,6 +81,11 @@ $routes = array(
     'action' => 'category'
     ),
 
+  'categoryType' => array(
+    'controller' => 'Activity',
+    'action' => 'categoryType'
+    ),
+
   'locatie' => array(
     'controller' => 'Activity',
     'action' => 'locatie'
@@ -105,6 +110,21 @@ $routes = array(
     'controller' => 'Activity',
     'action' => 'all_activities'
     ),
+
+  'all_category_categories' => array(
+    'controller'=> 'Activity',
+    'action'=> 'all_category_categories'
+     ),
+
+  'all_other_data' => array(
+    'controller'=> 'Activity',
+    'action'=> 'all_other_data'
+     ),
+
+  'all_category_types' => array(
+    'controller'=> 'Activity',
+    'action'=> 'all_category_types'
+     ),
 
   'allLocations' => array(
     'controller' => 'Activity',

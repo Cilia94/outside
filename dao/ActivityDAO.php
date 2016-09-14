@@ -41,30 +41,16 @@ class ActivityDAO extends DAO {
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function getByCategoryType($id){
+		$sql = "SELECT * FROM (SELECT activiteitId,typeId from `inhoud_activiteit_categorie`) as type
+				INNER JOIN inhoud_activiteit_categorie_type ON inhoud_activiteit_categorie_type.id = type.typeId
+				WHERE typeId = :typeId ";
 
-
-
-
-
-
-		public function selectByType($type) {
-		$sql = "SELECT * 
-						FROM `inhoud` 
-						WHERE `typeId`= :typeId AND `actief` = 1";
 		$stmt = $this->pdo->prepare($sql);
-		$stmt->bindValue(':tag',$tag );
-		
+		$stmt->bindValue(':typeId', $id);
 		$stmt->execute();
-		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		if($result){
-			return $result;
-		}
-		return [];
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
-
-
-	
-
 
 
 

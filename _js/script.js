@@ -75,6 +75,8 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function init() {
       console.log('init');
+
+
       if ($('#page-name').html()) {
         document.title = $('#page-name').html()
       }
@@ -126,7 +128,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
 
 
-      $('.parameter-input').on('change', getActivities);
+      $
       $('#contact-form').on('submit', submitContact);
 
 
@@ -247,19 +249,10 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function search() {
 
-      var searchParameters = {
-
-        belongs_to_category: 2,
-        top_category: 0,
-        duur: '3 tot 4 uur'
-
-      };
-
       $.ajax({
-          url: 'index.php?page=all',
+          url: 'index.php?page=all_other_data',
           type: 'POST',
-          dataType: 'json',
-          data: searchParameters
+          dataType: 'json'
         })
         .done(function(data) {
           console.log(data);
@@ -455,23 +448,27 @@ Handlebars.registerHelper("case", function(value, options) {
     function getActivities() {
 
       $.ajax({
-          url: 'index.php?page=allLocations',
+          url: 'index.php?page=all_other_data',
           type: 'POST',
           dataType: 'json'
         })
         .done(function(data) {
+          var activitiesData = data[0];
+          var locationsData = data[1];
+          var typesData = data[2];
+          var durationsData = data[3];
+          var allLocations = data[4];
 
-          locationAdresses = data;
+          filterSearch(activitiesData,locationsData,typesData, durationsData, allLocations);
 
-          $.ajax({
-              url: 'index.php?page=all',
-              type: 'POST',
-              dataType: 'json'
-            })
-            .done(function(data) {
 
-              filterSearch(data);
-            });
+          $('.parameter-input').change(function(){
+            console.log('CHANGE');
+            
+            filterSearch(activitiesData,locationsData,typesData, durationsData, allLocations);
+          
+          })
+            
         });
     }
 
@@ -512,88 +509,60 @@ Handlebars.registerHelper("case", function(value, options) {
     }
 
 
-    function filterSearch(data) {
+    function filterSearch(data, locatieData, typeData, duurklasseData, allLocations) {
 
       $('#filtered-activities').empty();
+
       var activity = $('#handlebars-template-activity').text();
       var activity_template = Handlebars.compile(activity);
+      
 
       var filteredData = data;
+      //console.log(filteredData);
       var location_filter = $('#location_filter').val();
       var category_filter = $('#category_filter').val();
       var participants_filter = $('#participants_filter').val();
       var duration_filter = $('#duration_filter').val();
       var price_filter = $('#price_filter').val();
-      console.log(duration_filter, price_filter);
 
 
-      filteredData = $.grep(filteredData, function(element, index) {
-        return element['sub_category'] == '0';
-      });
+       if (duration_filter != "all") {
+         filteredData = $.grep(filteredData, function(element, index) {
 
-      if (category_filter != "all") {
-        filteredData = $.grep(filteredData, function(element, index) {
-          if (category_filter != 'easy-leisure') {
-            return element['belongs_to_category'] == category_filter;
-          } else {
+          for (var i = 0; i < duurklasseData.length; i++) {
+            if(duurklasseData[i].duurId == duration_filter){
+              if(element.id == duurklasseData[i].activiteitId){
+                return true;
+               }
+             }
+           }
+         });
+       }
 
-            return element['easy_leisure'] == 1;
+       if (location_filter != "all") {
+         filteredData = $.grep(filteredData, function(element, index) {
 
-
-          }
-        });
-      }
-      if (location_filter != "all") {
-        if (location_filter != "own-location") {
-          filteredData = $.grep(filteredData, function(element, index) {
-            var locationArray = element['locatieId'].split(',')
-            for (var i = 0; i < locationArray.length; i++) {
-              if (locationArray[i] !== "") {
-                return locationArray[i] == location_filter
-
-
-              }
-            }
-            //return element['locatieId'] == location_filter;
-          });
-        } else {
-          filteredData = $.grep(filteredData, function(element, index) {
-
-            return element['zelf_gekozen_locatie'] == 1
-          });
-
-
-
-        }
-      }
-
-      if (duration_filter != "all") {
-        filteredData = $.grep(filteredData, function(element, index) {
-          var durationArray = element['duurType'].split(',')
-          for (var i = 0; i < durationArray.length; i++) {
-            if (durationArray[i] !== "") {
-              return durationArray[i] == duration_filter
-
-
-            }
-          }
-          //return element['locatieId'] == location_filter;
-        });
-      }
+          for (var i = 0; i < locatieData.length; i++) {
+            if(locatieData[i].locatieId == location_filter){
+              if(element.id == locatieData[i].activiteitId){
+                return true;
+               }
+             }
+           }
+         });
+       }
 
       if (price_filter != "all") {
 
-        filteredData = $.grep(filteredData, function(element, index) {
-          var priceArray = element['prijsType'].split(',');
+          filteredData = $.grep(filteredData, function(element, index) {
+          return element['prijsklasseId'] == price_filter;
+        });
+      }
 
-          for (var i = 0; i < priceArray.length; i++) {
-            if (priceArray[i] !== "") {
-              return priceArray[i] == price_filter
+      if (category_filter != "all") {
 
-
-            }
-          }
-          //return element['locatieId'] == location_filter;
+          filteredData = $.grep(filteredData, function(element, index) {
+          return element['categorieId'] == category_filter;
         });
       }
 
@@ -610,57 +579,23 @@ Handlebars.registerHelper("case", function(value, options) {
         return element['actief'] == 1;
       });
 
-      filteredData = $.grep(filteredData, function(element, index) {
-        return element['top_category'] != 1;
-      });
+
+
+      
 
       if (filteredData.length > 0) {
         $(filteredData).each(function(index, activity) {
-          var locations = activity.locatieId.split(",");
-          var locationsActivity = [];
-          //console.log(locations);
-
-          for (var i = 0; i < locations.length; i++) {
-            if (locations[i] != "" && locations[i] != 0) {
-              //console.log(locations[i]); 
-
-              locationsActivity.push(json_getById(locations[i], locationAdresses).adres)
-
-            }
-          }
-
-          var prices = activity.prijsType.split(",");
-          var pricesActivity = [];
-          //console.log(locations);
-
-          for (var i = 0; i < prices.length; i++) {
-            if (prices[i] != "" && prices[i] != 0) {
-              //console.log(locations[i]); 
-
-              pricesActivity.push(prices[i])
-
-            }
-          }
-
-          var duration = activity.duurType.split(",");
-          var durationActivity = [];
-          //console.log(locations);
-
-          for (var i = 0; i < duration.length; i++) {
-            if (duration[i] != "" && duration[i] != 0) {
-              //console.log(locations[i]); 
-
-              durationActivity.push(duration[i])
-
-            }
-          }
-
-
-
-          activity.locationsActivity = locationsActivity;
-          activity.pricesActivity = pricesActivity;
-          activity.durationActivity = durationActivity;
-          //console.log(pricesActivity);
+          var activityLocations = [];
+              for (var i = 0; i < locatieData.length; i++) {
+              if(activity.id == locatieData[i].activiteitId){
+                var curr = json_getById(locatieData[i].locatieId, allLocations);
+                activityLocations.push(curr)
+               }
+             
+           }
+           
+           activity.locationsActivity = activityLocations;
+          
           var html = activity_template(activity);
           $('#filtered-activities').append($(html));
         })
@@ -696,7 +631,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
 
     function setupAanvraagformulier() {
-
+      $('.items-in-type').empty();
       // $.ajax({
       //     url: 'index.php?page=allCategories',
       //     type: 'POST',
@@ -720,8 +655,8 @@ Handlebars.registerHelper("case", function(value, options) {
           dataType: 'json'
         })
         .done(function(data) {
-            console.log(data)
-            $('.activiteiten-zelf').empty();
+            //console.log(data)
+            
             var activity_hb = $('#handlebars-template-activity-aanvraag').text();
             var activity_template = Handlebars.compile(activity_hb);
 
@@ -734,13 +669,15 @@ Handlebars.registerHelper("case", function(value, options) {
 
 
             $(allActivities).each(function(index, activity) {
+              //console.log(activity)
+              
 
-              //if (activity.top_category == 0) {
+        
               var html = activity_template(activity);
-              var typeOverview = $('#items-type-' + activity.belongs_to_category);
+              var typeOverview = $('#items-type-' + activity.categorieId);
               $(typeOverview).append($(html));
 
-              //}
+              
             })
 
             $('#filter-term').each(function() {
@@ -752,9 +689,10 @@ Handlebars.registerHelper("case", function(value, options) {
                       elem.data('oldVal', elem.val());
                       var searchTerm = $('#filter-term').val();
 
-                      //$(allActivities).each(function(index, activity) {
 
-                      //if (activity.top_category == 0) {
+                      $(allActivities).each(function(index, activity) {
+
+                      
                         switch (currentTaal) {
                           case "NL":
                             var termToCheck = activity.naam_nl.toLowerCase();
@@ -781,10 +719,10 @@ Handlebars.registerHelper("case", function(value, options) {
                           $('#activity-' + activity.id).show();
 
                         }
-                        }
-                      })
-                  //}
-                //});
+                        })
+                      }
+                  
+                });
             });
 
 

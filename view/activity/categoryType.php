@@ -3,7 +3,7 @@
 <div class="container-middle container-info no-header">
 
     <h1 id="page-name"class="titel-header">
-        <?php echo taal($category['type'],'','');
+        <?php echo taal($category['type_nl'],$category['type_fr'],$category['type_en']);
         ?>
 
     </h1>
@@ -13,6 +13,7 @@
 
    
 <div class="content_info">
+    <?php echo taal($category['inhoud_nl'],$category['inhoud_fr'],$category['inhoud_en']); ?>
 
 
 

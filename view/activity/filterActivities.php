@@ -4,7 +4,7 @@
 </div> -->
 
 <div class="container-middle container-aanbod no-header">
-    <h1 class="titel-header">
+    <h1 id="page-name" class="titel-header">
         <?php 
         echo taal('Vind je activiteit','',''); 
         ?>
@@ -29,10 +29,11 @@
     <span>
       <?php echo taal('Type','',''); ?></span>
     <select class="parameter-input" id="category_filter">
-      <option value="all">Alle</option>
-      <option value="1">Activiteiten</option>
-      <option value="5">Scholen</option>
-      <option value="easy-leisure">Easy Leisure</option>
+      <option value="all"><?php echo taal('Alle','','All'); ?></option>
+      <option value="1"><?php echo taal('Activiteiten','','Activities'); ?></option>
+       <option value="2"><?php echo taal('Feesten','','Parties'); ?></option>
+      <option value="3"><?php echo taal('Sportdag','',''); ?></option>
+      <option value="4"><?php echo taal('Vakantiehuizen','',''); ?></option>
     </select>
   </div>
 
@@ -46,9 +47,9 @@
     </span>
     <select class="parameter-input" id="location_filter">
       <option value="all">Alle</option>
-      <option value="own-location">Eigen locatie</option>
-      <option value="1">Poperinge</option>
-      <option value="2">Heuvelland</option>
+     <!--  <option value="own-location">Eigen locatie</option> -->
+      <option value="1">Heuvelland - Westhoek</option>
+      <option value="2">Vlaanderen & De Kust</option>
     </select>
   </div>
 
@@ -86,10 +87,11 @@
     </span>
     <select class="parameter-input" id="price_filter">
       <option value="all">Alle</option>
-      <option value="1">10€ - 25€</option>
-      <option value="2">25€ - 40€</option>
-      <option value="3">40€ - 55€</option>
-      <option value="4">> 55€</option>
+      <option value="1">€10 - €20</option>
+      <option value="2">€21 - €30</option>
+      <option value="3">€31 - €40</option>
+      <option value="4">€41 - €60</option>
+      <option value="5">€60+</option>
     </select>
   </div>
 
@@ -133,7 +135,7 @@
   <div class="grid-sub">
         <div class="filtered-item">
         <a href="index.php?page=globalItem&id={{id}}">
-        <section style="background-image:url('css/assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
+        <section style="background-image:url('assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
         
         </section>
         </a>
@@ -267,7 +269,8 @@
         <article class="praktisch">
          <i class="fa fa-map-marker" aria-hidden="true"></i>
          <span>
-        {{this}}
+
+        {{this.naam_nl}}
         </span>
         </article>
         {{/each}}
