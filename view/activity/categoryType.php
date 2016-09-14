@@ -24,6 +24,7 @@
                 <?php 
                 if(isset($activities)){ 
                   foreach ($activities as $activitySub) { 
+                    if($activitySub['id']){
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img class=\"subcategory-img\" 
                         src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
@@ -34,6 +35,7 @@
                 echo "</span>"; 
                 echo "</div></a></div>"; 
           } 
+      }
     } ?>
 
             </div>
