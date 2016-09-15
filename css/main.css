@@ -1,3 +1,9 @@
+ol, ul {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
 .opmerking-container {
   display: none;
   border: solid 3px #fe834d;
@@ -129,6 +135,16 @@
 .bg-pattern {
   background-repeat: repeat;
   background-image: url(assets/images/bg-pattern.jpg);
+}
+
+.content_info h1 {
+  font-size: 1.4em;
+  font-weight: bolder;
+}
+
+.content_info h2, .content_info h3 {
+  font-size: 1.15em;
+  font-weight: bold;
 }
 
 body {
@@ -991,6 +1007,64 @@ footer p {
   margin-bottom: 0px;
 }
 
+.container-aanvraag .stap-header {
+  padding: 10px;
+  background-color: #1a1a1a;
+  border-bottom: 3px solid #3a3a3a;
+  border-top: 5px solid #3a3a3a;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.container-aanvraag .stap-header li {
+  display: inline-block;
+  margin-right: 15px;
+  background-color: #1a1a1a;
+  padding: 5px 15px;
+}
+
+.container-aanvraag .stap-header .active {
+  background-color: #343434;
+}
+
+.container-aanvraag .stap-header span {
+  color: lightgrey;
+  font-size: 1.2em;
+}
+
+.container-aanvraag .container-stap-content {
+  width: 100%;
+  color: lightgrey;
+  padding: 5px;
+  position: relative;
+}
+
+.container-aanvraag .container-stap-content button {
+  padding: 10px;
+  width: 79%;
+  background: none;
+  color: #a1a1a1;
+  border: solid 1px #1a1a1a;
+  transition: background-color 0.3s;
+}
+
+.container-aanvraag .container-stap-content button:not(.not-active):hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.container-aanvraag .container-stap-content .not-active {
+  opacity: 0.25;
+}
+
+.container-aanvraag .container-stap-content h1 {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
 .container-aanvraag .filter-aanvraag {
   margin-left: 15px;
 }
@@ -1006,13 +1080,18 @@ footer p {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
+.container-aanvraag .aanvraag-container {
+  padding: 10px;
+}
+
 .container-aanvraag .aanvraag-activiteiten {
   background-color: #2a2a2a;
-  padding: 10px;
 }
 
 .container-aanvraag .aanvraag-activiteiten .activiteiten-zelf {
@@ -1096,42 +1175,6 @@ footer p {
   margin-top: 17.5px;
 }
 
-.container-aanvraag .aanvraag-activiteiten .container-winkelwagen .container-winkelwagen-content {
-  padding: 5px;
-  position: relative;
-  background-color: #3a3a3a;
-}
-
-.container-aanvraag .aanvraag-activiteiten .container-winkelwagen .container-winkelwagen-content button {
-  bottom: 0;
-  margin-bottom: 15px;
-  right: 0;
-  margin-right: 15px;
-  position: absolute;
-  padding: 10px;
-  width: 79%;
-  background: none;
-  color: #a1a1a1;
-  border: solid 1px #1a1a1a;
-  transition: background-color 0.3s;
-}
-
-.container-aanvraag .aanvraag-activiteiten .container-winkelwagen .container-winkelwagen-content button:not(.not-active):hover {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.container-aanvraag .aanvraag-activiteiten .container-winkelwagen .container-winkelwagen-content .not-active {
-  opacity: 0.25;
-}
-
-.container-aanvraag .aanvraag-activiteiten .container-winkelwagen h1 {
-  color: white;
-  font-size: 1.5em;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
 .container-aanvraag .aanvraag-activiteiten .container-winkelwagen .geen-activiteiten {
   color: darkgrey;
   display: block;
@@ -1150,7 +1193,7 @@ footer p {
   flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 85px;
+  margin-bottom: 15px;
   color: darkgrey;
 }
 
@@ -1159,6 +1202,62 @@ footer p {
   margin-right: 5px;
   padding: 5px;
   margin-bottom: 5px;
+}
+
+.container-stap-1 button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: red;
+}
+
+.container-stap-1 ul {
+  list-style: none;
+  height: 225px;
+}
+
+.container-stap-1 ul a, .container-stap-1 ul a:hover, .container-stap-1 ul a:visited {
+  list-style: none;
+  color: #a0a0a0;
+}
+
+.container-stap-1 ul li {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: solid 3px transparent;
+}
+
+.container-stap-1 ul li:hover {
+  border-color: #c83627;
+}
+
+.container-stap-1 ul .active {
+  border-color: #c83627;
+}
+
+.container-stap-1 ul .inactive {
+  opacity: 0.75;
+}
+
+.aanvraag-activiteiten-input {
+  background-color: #3a3a3a;
+  margin-left: 10px;
+  padding-bottom: 5px;
+}
+
+.aanvraag-activiteiten-input .vragen-input {
+  color: lightgrey;
+  padding: 10px;
+}
+
+.aanvraag-activiteiten-input .vragen-input span {
+  text-align: center;
+}
+
+.aanvraag-activiteiten-input .vragen-input ul {
+  list-style: none;
 }
 
 @media only screen and (max-width: 481px) {

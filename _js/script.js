@@ -4,9 +4,16 @@ import {
   html
 } from './helpers/util.js';
 
-var locationAdresses, allActivities, selectedActivities;
+var locationAdresses, selectedActivities;
 var currentTaal = $('#current-taal').data('taal');
 
+function compare(a,b,key) {
+  if (a[key] < b[key])
+    return -1;
+  if (a[key] > b[key])
+    return 1;
+  return 0;
+}
 
 function json_getById(key, data) {
   var found = null;
@@ -174,7 +181,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
 
         case "aanvragen":
-          setupAanvraagformulier();
+          stap1Aanvraagformulier();
 
           break;
       }
@@ -285,7 +292,7 @@ Handlebars.registerHelper("case", function(value, options) {
               //console.log(kindOfPage, idOfActivity);
 
               if (kindOfPage == "globalItem&id" && idOfActivity) {
-                console.log(json_getById(idOfActivity, allActivities))
+                //console.log(json_getById(idOfActivity, allActivities))
                 getAllPrices();
                 getAllVerwacht();
                 getAllPrograms()
@@ -312,7 +319,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
       $.getJSON('assets/data/programmas.json', function(data) {
 
-        getSingleProgramme(data.programmas)
+        getSingleProgram(data.programmas)
       })
 
     }
@@ -405,7 +412,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
     }
 
-    function getSingleProgramme(programmas) {
+    function getSingleProgram(programmas) {
 
       //console.log("PROGRAMMA");
       var idOfActivity = window.location.search.split('&')[1].split('=')[1]
@@ -518,6 +525,21 @@ Handlebars.registerHelper("case", function(value, options) {
       
 
       var filteredData = data;
+      filteredData.sort(function(a,b) {
+              switch(currentTaal){
+                case "NL":
+              return (a.naam_nl > b.naam_nl) ? 1 : ((b.naam_nl > a.naam_nl) ? -1 : 0);
+            break;
+
+            case "FR":
+              return (a.naam_fr > b.naam_fr) ? 1 : ((b.naam_fr > a.naam_fr) ? -1 : 0);
+            break;
+
+            case "ENG":
+              return (a.naam_en > b.naam_en) ? 1 : ((b.naam_en > a.naam_en) ? -1 : 0);
+            break;
+            } 
+            });
       //console.log(filteredData);
       var location_filter = $('#location_filter').val();
       var category_filter = $('#category_filter').val();
@@ -628,26 +650,44 @@ Handlebars.registerHelper("case", function(value, options) {
       }
     }
 
+    function stap1Aanvraagformulier(){
+      $('.container-stap-1 .type-groepen a').on('click', function(e){
+        e.preventDefault();
+        if($('.container-stap-1 .type-groepen li.active')){
+        $('.container-stap-1 .type-groepen li.active').removeClass('active');
+      }
+      $(this).find('li').addClass('active');
+      $('#to-step-2').attr('disabled',false);
+      if($('#to-step-2').hasClass('not-active')){
+        $('#to-step-2').removeClass('not-active');
+      }
+
+      })
+
+      $('#to-step-2').on('click', function(){
+        var typeId = $('.container-stap-1 .type-groepen a li.active').data('type-id');
+        var idCategorie;
+        if(typeId == 2 | typeId == 4){
+          idCategorie = 1;
+        }else if(typeId == 1){
+          idCategorie = 3
+        }else if (typeId == 3){
+          idCategorie = 2;
+        }
+        stap2Aanvraagformulier(idCategorie, typeId);
+        $('#stap1').hide();
+        $('#stap2').fadeIn();
+        $('.stap-header [data-stap-id=1]').removeClass('active');
+        $('.stap-header [data-stap-id=2]').addClass('active');
+
+      })
+    }
 
 
-    function setupAanvraagformulier() {
+
+    function stap2Aanvraagformulier(idCategorie, typeGroep) {
       $('.items-in-type').empty();
-      // $.ajax({
-      //     url: 'index.php?page=allCategories',
-      //     type: 'POST',
-      //     dataType: 'json'
-      //   })
-      //   .done(function(data) {
-      //     $(data).each(function(index, category) {
-
-      //         //if (activity.top_category == 1) {
-
-      //           var html = activity_overview_template(category);
-      //           $('.activiteiten-zelf').append($(html));
-
-      //         //}
-      //       })
-      //   });
+      
 
       $.ajax({
           url: 'index.php?page=all',
@@ -655,7 +695,14 @@ Handlebars.registerHelper("case", function(value, options) {
           dataType: 'json'
         })
         .done(function(data) {
-            //console.log(data)
+            //console.log(data, typeGroep);
+            var allActivities = [];
+            for(var i=0; i<data.length; i++){
+              if(data[i].categorieId == idCategorie){
+                allActivities.push(data[i]);
+              }
+
+            }
             
             var activity_hb = $('#handlebars-template-activity-aanvraag').text();
             var activity_template = Handlebars.compile(activity_hb);
@@ -663,21 +710,42 @@ Handlebars.registerHelper("case", function(value, options) {
             var activity_overview = $('#handlebars-template-overview').text();
             var activity_overview_template = Handlebars.compile(activity_overview);
 
-            allActivities = data;
+            //allActivities = data;
+            allActivities.sort(function(a,b) {
+              switch(currentTaal){
+                case "NL":
+              return (a.naam_nl > b.naam_nl) ? 1 : ((b.naam_nl > a.naam_nl) ? -1 : 0);
+            break;
+
+            case "FR":
+              return (a.naam_fr > b.naam_fr) ? 1 : ((b.naam_fr > a.naam_fr) ? -1 : 0);
+            break;
+
+            case "ENG":
+              return (a.naam_en > b.naam_en) ? 1 : ((b.naam_en > a.naam_en) ? -1 : 0);
+            break;
+            } 
+            });
+            //console.log(allActivities);
 
 
 
 
             $(allActivities).each(function(index, activity) {
-              //console.log(activity)
-              
-
-        
+             
               var html = activity_template(activity);
               var typeOverview = $('#items-type-' + activity.categorieId);
               $(typeOverview).append($(html));
 
               
+            })
+
+            $('.items-in-type').each(function(){
+              var hasChildren = $(this).children().length;
+              //console.log(this, hasChildren)
+              if(hasChildren == 0){
+                $(this).parent().hide();
+              }
             })
 
             $('#filter-term').each(function() {
@@ -726,13 +794,13 @@ Handlebars.registerHelper("case", function(value, options) {
             });
 
 
-          step1();
+          step2();
 
         })
 
   }
 
-  function step1() {
+  function step2() {
 
     var idSelected;
 
@@ -759,29 +827,29 @@ Handlebars.registerHelper("case", function(value, options) {
 
       if (selected.length > 0) {
 
-        $('#to-step-2').removeClass('not-active');
+        $('#to-step-3').removeClass('not-active');
         $('.geen-activiteiten').hide();
-        $('#to-step-2').attr('disabled', false)
+        $('#to-step-3').attr('disabled', false)
 
       } else {
         $('.geen-activiteiten').show();
-        $('#to-step-2').addClass('not-active');
-        $('#to-step-2').attr('disabled', true)
+        $('#to-step-3').addClass('not-active');
+        $('#to-step-3').attr('disabled', true)
 
       }
 
     })
 
-    $('#to-step-2').on('click', function() {
-      step2(idSelected);
+    $('#to-step-3').on('click', function() {
+      step3(idSelected);
     });
 
   }
 
-  function step2(ids) {
+  function step3(ids) {
     //console.log(ids);
-    $('#stap1').hide();
-    $('#stap2').show();
+    $('#stap2').hide();
+    $('#stap3').show();
     var idsActivties = ids;
     var chosenActivities = [];
     for (var i = 0; i < idsActivties.length; i++) {
