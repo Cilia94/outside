@@ -1447,6 +1447,100 @@
                ]
             }
          ]
+      },
+	  {
+         "activityId":410,
+         
+         "subProgrammas":[
+            {
+               "header_nl":"Programma",
+               "header_fr":"Programma",
+               "header_eng":"Programma",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Briefing + uitleg werking GPS",
+                     "titel_fr":"Briefing + uitleg werking GPS",
+                     "titel_en":"Briefing + uitleg werking GPS",
+                     "tijdstip":"14:00",
+                     "info":false
+                    },
+				  {
+                     "titel_nl":"Start van de GPS-Adventure",
+                     "titel_fr":"Start van de GPS-Adventure",
+                     "titel_en":"Start van de GPS-Adventure",
+                     "tijdstip":"14:15",
+                     "info":true,
+                     "info_nl":"Strijd op het scherpst van de snede, met oa GPS-oriëntatie, Go-cart race, teambuidlingsopdrachten, raadsels, fotoopdrachten & bedrijfsspecifieke cases.",
+                     "info_fr":"Strijd op het scherpst van de snede, met oa GPS-oriëntatie, Go-cart race, teambuidlingsopdrachten, raadsels, fotoopdrachten & bedrijfsspecifieke cases.",
+                     "info_en":"Strijd op het scherpst van de snede, met oa GPS-oriëntatie, Go-cart race, teambuidlingsopdrachten, raadsels, fotoopdrachten & bedrijfsspecifieke cases."
+                  
+                    },
+				  {
+                     "titel_nl":"Einde + prijsuitreiking",
+                     "titel_fr":"Einde + prijsuitreiking",
+                     "titel_en":"Einde + prijsuitreiking",
+                     "tijdstip":"17:00",
+                     "info":false
+                    }
+
+               ]
+            }
+         ]
+      },
+	  {
+         "activityId":374,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Duur & aanvangsuur van het programma kan aangepast worden aan de wensen van de klant!",
+         "opmerking_fr":"Opmerking: Duur & aanvangsuur van het programma kan aangepast worden aan de wensen van de klant!",
+         "opmerking_eng":"Opmerking: Duur & aanvangsuur van het programma kan aangepast worden aan de wensen van de klant!",
+               
+         "subProgrammas":[
+            {
+               "header_nl":"Programma",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontvangst met koffie",
+                     "titel_fr":"Ontvangst met koffie",
+                     "titel_en":"Ontvangst met koffie",
+                     "tijdstip":"13:30",
+                     "info":false
+                  },
+                  {
+                     "titel_nl":"Briefing + uitleg werking GPS",
+                     "titel_fr":"Briefing + uitleg werking GPS",
+                     "titel_en":"Briefing + uitleg werking GPS",
+                     "tijdstip":"13:45",
+                     "info":false
+                  },
+                  {
+                     "titel_nl":"Start van de GPS-Adventure",
+                     "titel_fr":"Start van de GPS-Adventure",
+                     "titel_en":"Start van de GPS-Adventure",
+                     "tijdstip":"14:00",
+                     "info":true,
+                     "info_nl":"Strijd op het scherpst van de snede, met oa GPS-oriëntatie, challenge parcours, boogschieten, High Ropes, fotoopdrachten, bedrijfsspecifieke cases.",
+                     "info_fr":"Strijd op het scherpst van de snede, met oa GPS-oriëntatie, challenge parcours, boogschieten, High Ropes, fotoopdrachten, bedrijfsspecifieke cases.",
+                     "info_en":"Strijd op het scherpst van de snede, met oa GPS-oriëntatie, challenge parcours, boogschieten, High Ropes, fotoopdrachten, bedrijfsspecifieke cases."
+                  },
+                  {
+                     "titel_nl":"Einde – mogelijkheid tot douchen",
+                     "titel_fr":"Einde – mogelijkheid tot douchen",
+                     "titel_en":"Einde – mogelijkheid tot douchen",
+                     "tijdstip":"17:00",
+                     "info":false
+                  },
+                  {
+                     "titel_nl":"Prijsuitreiking",
+                     "titel_fr":"Prijsuitreiking",
+                     "titel_en":"Prijsuitreiking",
+                     "tijdstip":"17:30",
+                     "info":false
+                  }
+               ]
+            }
+         ]
       }
 
    ]
