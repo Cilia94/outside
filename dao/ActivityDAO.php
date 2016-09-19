@@ -52,6 +52,27 @@ class ActivityDAO extends DAO {
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	//get all regular prices by id (typeId = 1)
+	public function getRegularPricesById($id){
+		$sql = "SELECT * FROM inhoud_prijs
+				WHERE activiteitId = :id AND typeId=1";
+
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+	
+	//get all supplement prices by id (typeId = 2)
+	public function getSupplementPricesById($id){
+		$sql = "SELECT * FROM inhoud_prijs
+				WHERE activiteitId = :id AND typeId=2";
+
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
 
 
 }
