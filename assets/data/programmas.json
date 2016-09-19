@@ -1117,13 +1117,13 @@
                      "titel_nl":"Einde activiteiten",
                      "titel_fr":"Einde activiteiten",
                      "titel_en":"Einde activiteiten",
-                     "tijdstip":"17:00",
+                     "tijdstip":"16:30",
                      "info":false
                      },
                   {
-                     "titel_nl":"Avondmaal",
-                     "titel_fr":"Avondmaal",
-                     "titel_en":"Avondmaal",
+                     "titel_nl":"Warm Avondmaal",
+                     "titel_fr":"Warm Avondmaal",
+                     "titel_en":"Warm Avondmaal",
                      "tijdstip":"18:00",
                      "info":false
                   }
@@ -1214,13 +1214,13 @@
                      "titel_nl":"Einde activiteiten",
                      "titel_fr":"Einde activiteiten",
                      "titel_en":"Einde activiteiten",
-                     "tijdstip":"17:00",
+                     "tijdstip":"16:30",
                      "info":false
                      },
                   {
-                     "titel_nl":"Avondmaal",
-                     "titel_fr":"Avondmaal",
-                     "titel_en":"Avondmaal",
+                     "titel_nl":"Warm Avondmaal",
+                     "titel_fr":"Warm Avondmaal",
+                     "titel_en":"Warm Avondmaal",
                      "tijdstip":"18:00",
                      "info":false
                   }
@@ -1246,9 +1246,9 @@
                      "info":false
 					 },
                   {
-                     "titel_nl":"Middagmaal",
-                     "titel_fr":"Middagmaal",
-                     "titel_en":"Middagmaal",
+                     "titel_nl":"Warm Middagmaal",
+                     "titel_fr":"Warm Middagmaal",
+                     "titel_en":"Warm Middagmaal",
                      "tijdstip":"12:00",
                      "info":false
                      },
@@ -1263,7 +1263,7 @@
                      "titel_nl":"Einde activiteiten",
                      "titel_fr":"Einde activiteiten",
                      "titel_en":"Einde activiteiten",
-                     "tijdstip":"17:00",
+                     "tijdstip":"16:30",
                      "info":false
                   },
                   {
@@ -1536,6 +1536,137 @@
                      "titel_fr":"Prijsuitreiking",
                      "titel_en":"Prijsuitreiking",
                      "tijdstip":"17:30",
+                     "info":false
+                  }
+               ]
+            }
+         ]
+      },
+	  {
+         "activityId":647,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Het programma en de duur van het verblijf kan je volledig vrij invullen.",
+         "opmerking_fr":"Opmerking: Het programma en de duur van het verblijf kan je volledig vrij invullen.",
+         "opmerking_eng":"Opmerking: Het programma en de duur van het verblijf kan je volledig vrij invullen.",
+         "subProgrammas":[
+            {
+               "header_nl":"Voorbeeldprogramma dag 1",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Aankomst + Installatie in de kamers",
+                     "titel_fr":"Aankomst + Installatie in de kamers",
+                     "titel_en":"Aankomst + Installatie in de kamers",
+                     "tijdstip":"Voormiddag",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"Opeten eigen lunchpakket",
+                     "titel_fr":"Opeten eigen lunchpakket",
+                     "titel_en":"Opeten eigen lunchpakket",
+                     "tijdstip":"12:00",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Bezoek Ieper WOI + In Flanders Field + Menenpoort",
+                     "titel_fr":"Bezoek Ieper WOI + In Flanders Field + Menenpoort",
+                     "titel_en":"Bezoek Ieper WOI + In Flanders Field + Menenpoort",
+                     "tijdstip":"13:30",
+                     "info":false,
+					 "info_nl":"",
+                     "info_fr":"",
+					 "info_en":""
+                     },
+                  {
+                     "titel_nl":"Warm avondmaal",
+                     "titel_fr":"Warm avondmaal",
+                     "titel_en":"Warm avondmaal",
+                     "tijdstip":"18:00",
+                     "info":false
+                     }
+               ]
+            },
+			{
+               "header_nl":"Voorbeeldprogramma dag 2",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"GPS-toch + muurklimmen",
+                     "titel_fr":"GPS-toch + muurklimmen",
+                     "titel_en":"GPS-toch + muurklimmen",
+                     "tijdstip":"09:30",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Middagmaal",
+                     "titel_fr":"Middagmaal",
+                     "titel_en":"Middagmaal",
+                     "tijdstip":"12:00",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Fietstocht & bezoek hopmuseum.",
+                     "titel_fr":"Fietstocht & bezoek hopmuseum.",
+                     "titel_en":"Fietstocht & bezoek hopmuseum.",
+                     "tijdstip":"13:30",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Avondmaal",
+                     "titel_fr":"Avondmaal",
+                     "titel_en":"Avondmaal",
+                     "tijdstip":"18:00",
+                     "info":false
+                  }
+               ]
+            },
+			{
+               "header_nl":"Voorbeeldprogramma dag 3",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"High ropes + death-ride + speleo",
+                     "titel_fr":"High ropes + death-ride + speleo",
+                     "titel_en":"High ropes + death-ride + speleo",
+                     "tijdstip":"09:30",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Warm middagmaal",
+                     "titel_fr":"Warm middagmaal",
+                     "titel_en":"Warm middagmaal",
+                     "tijdstip":"12:00",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Avontuurlijke Teambuilding",
+                     "titel_fr":"Avontuurlijke Teambuilding",
+                     "titel_en":"Avontuurlijke Teambuilding",
+                     "tijdstip":"13:30",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Einde activiteiten + vertrek",
+                     "titel_fr":"Einde activiteiten + vertrek",
+                     "titel_en":"Einde activiteiten + vertrek",
+                     "tijdstip":"...",
                      "info":false
                   }
                ]

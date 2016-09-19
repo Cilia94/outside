@@ -13,17 +13,18 @@
 
     </h1>
 <div class="titel-img-container">
-    <img class="titel-img" src="assets/images/titel-underline.png">
+    <!--<img class="titel-img" src="assets/images/titel-underline.png">-->
+	<img class="titel-img" src="assets/images/titel-img2.png">
     </div>
 
     <?php if(!empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
       ?>
     <ul class="grid-praktisch">
-        <?php if(!empty($activity[ 'minAantal'])){ ?>
+        <?php if(!empty($activity['minAantal'])){ ?>
         <li>
             <i class="fa fa-users" aria-hidden="true"></i>
             <span class="name-grid-item">
-                <?php echo taal('Min. aantal personen','',''); ?>
+                <?php echo taal('Min. aantal personen','Min. aantal personen','Min. aantal personen'); ?>
             </span>
             <span class="value-grid-item">
                 <?php echo $activity['minAantal']; ?>
@@ -34,11 +35,17 @@
 
         <?php } ?>
 
-        <?php if(!empty($activity['locatieId'])){ ?>
+        <?php if(!empty(taal($activity['afspraak_nl'],$activity['afspraak_fr'],$activity['afspraak_en']))){ ?>
         <li>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <span class="name-grid-item">
                 Plaats van afspraak
+            </span>
+			
+			<span class="value-grid-item">
+
+                <?php echo taal($activity['afspraak_nl'],$activity['afspraak_fr'],$activity['afspraak_en']); ?>
+
             </span>
 
             <!--
@@ -57,20 +64,23 @@
                 ?>
                 
             </span>
-        -->
+        
 
+		
         <?php for ($i = 0; $i < count($activity['adressen']); $i++){
             echo "<span class=\"value-grid-item\">";
             echo $activity['adressen'][$i];
             echo "</span>";
 
         }?>
+		-->
+		
         </li>
         <div class="clear">&nbsp;</div>
 
         <?php } ?>
 
-        <?php if(!empty($activity['duur'])){ ?>
+        <?php if(!empty(taal($activity['duur_nl'],$activity['duur_fr'],$activity['duur_en']))){ ?>
         <li>
             <i class="fa fa-clock-o" aria-hidden="true"></i>
             <span class="name-grid-item">
@@ -80,7 +90,7 @@
             </span>
             <span class="value-grid-item">
 
-                <?php echo $activity['duur']; ?>
+                <?php echo taal($activity['duur_nl'],$activity['duur_fr'],$activity['duur_en']); ?>
 
             </span>
         </li>
@@ -88,14 +98,14 @@
 
         <?php } ?>
 
-        <?php if(!empty($activity['idealePeriode'])){ ?>
+        <?php if(!empty(taal($activity['periode_nl'],$activity['periode_fr'],$activity['periode_en']))){ ?>
         <li>
             <i class="fa fa-calendar" aria-hidden="true"></i>
             <span class="name-grid-item">
-                Ideale periode
+                <?php echo taal("Ideale periode","Ideale periode","Ideale periode"); ?>
         </span>
             <span class="value-grid-item">
-                <?php echo $activity['idealePeriode']; ?>
+                <?php echo taal($activity['periode_nl'],$activity['periode_fr'],$activity['periode_en']); ?>
         </span>
         </li>
         <div class="clear">&nbsp;</div>
