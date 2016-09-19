@@ -1,6 +1,6 @@
 
 <div class="intro-image">
-    <div class="header-image-activity masked" style="background-image: url('assets/images/activityPhotos/<?php echo $activity['afbeelding'];?>.jpg')">
+    <div class="header-image-activity masked" style="background-image: url('assets/images/activityPhotos/<?php echo $activity['afbeelding_header'];?>.jpg')">
     </div>
 
 </div>
