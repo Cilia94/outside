@@ -792,6 +792,7 @@ Handlebars.registerHelper("case", function(value, options) {
             $('#filter-term').each(function() {
                 var elem = $(this);
                 elem.unbind('change');
+                $(this).val("");
                 elem.data('oldVal', elem.val());
                 elem.bind("propertychange change click keyup input paste", function(event) {
 
@@ -906,40 +907,24 @@ Handlebars.registerHelper("case", function(value, options) {
     
     
     var idsActivties = ids;
-    var multipleDays = false;
 
     var chosenActivities = [];
     for (var i = 0; i < idsActivties.length; i++) {
        for (var j = 0; j < activities.length; j++) {
         if(activities[j].id == idsActivties[i]){
           chosenActivities.push(activities[j])
-          if(activities[j].duurId == 4){
-            multipleDays = true;
-          }
+          // if(activities[j].duurId == 4){
+          //   multipleDays = true;
+          // }
         }
 
         }
     }
     console.log(chosenActivities);
 
-    if(multipleDays){
-
     $('#datePicker').multiDatesPicker({
 
     });
-  }else{
-
-    $('#datePicker').multiDatesPicker({
-      maxPicks:1
-
-    });
-
-  }
-
-  
-
-  
-
  
   $('#to-step-4').unbind('click');
    $('#to-step-4').on('click', function() {
