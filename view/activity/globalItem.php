@@ -16,10 +16,76 @@
     <!--<img class="titel-img" src="assets/images/titel-underline.png">-->
 	<img class="titel-img" src="assets/images/titel-img2.png">
     </div>
+	
+	<?php 	$prices_nl = explode(';', $activity['prijs_nl']);
+			$prices_fr = explode(';', $activity['prijs_fr']);
+			$prices_en = explode(';', $activity['prijs_en']);
+			$price_titles_nl = explode(';', $activity['prijs_titel_nl']);
+			$price_titles_fr = explode(';', $activity['prijs_titel_fr']);
+			$price_titles_en = explode(';', $activity['prijs_titel_en']);
+			$supplements_nl = explode(';', $activity['supplement_nl']) ;
+			$supplements_fr = explode(';', $activity['supplement_fr']) ;
+			$supplements_en = explode(';', $activity['supplement_en']) ;
+			$supplement_titles_nl = explode(';', $activity['supplement_titel_nl']);
+			$supplement_titles_en = explode(';', $activity['supplement_titel_fr']);
+			$supplement_titles_fr = explode(';', $activity['supplement_titel_en']);
+	?>
+	
 
-    <?php if(!empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
+    <?php if( !empty(taal($prices_nl,$prices_fr,$prices_en)) | !empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
       ?>
     <ul class="grid-praktisch">
+	
+		
+		
+		
+		
+		<?php
+			for ($x = 0; $x < sizeof(taal($prices_nl,$prices_fr,$prices_en)); $x++) {
+				?>
+					<?php if(!empty(taal($prices_nl[$x],$prices_fr[$x],$prices_en[$x]))){ ?>
+						<li>
+							<i class="fa fa-eur" aria-hidden="true"></i>
+							<span class="name-grid-item">
+								<?php echo taal($price_titles_nl[$x],$price_titles_fr[$x],$price_titles_en[$x]); ?>
+							</span>
+							<span class="value-grid-item">
+								<?php echo taal($prices_nl[$x],$prices_fr[$x],$prices_en[$x]); ?>
+								
+							</span>
+						</li>
+						<div class="clear">&nbsp;</div>
+
+					<?php } ?>
+				<?php
+			}
+		?> 
+		
+		
+		<?php
+			for ($x = 0; $x < sizeof(taal($supplements_nl,$supplements_fr,$supplements_en)); $x++) {
+				?>
+					<?php if(!empty(taal($supplements_nl[$x],$supplements_fr[$x],$supplements_en[$x]))){ ?>
+						<li>
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							<span class="name-grid-item">
+								<?php echo taal($supplement_titles_nl[$x],$supplement_titles_fr[$x],$supplement_titles_en[$x]); ?>
+							</span>
+							<span class="value-grid-item">
+								<?php echo taal($supplements_nl[$x],$supplements_fr[$x],$supplements_en[$x]); ?>
+								
+							</span>
+						</li>
+						<div class="clear">&nbsp;</div>
+
+					<?php } ?>
+				<?php
+			}
+		?> 
+		
+	
+	
+	
         <?php if(!empty($activity['minAantal'])){ ?>
         <li>
             <i class="fa fa-users" aria-hidden="true"></i>
