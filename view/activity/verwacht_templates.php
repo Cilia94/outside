@@ -40,6 +40,14 @@
 
 
     <ul data-template-id="4" class="verwacht-template verwacht">
+		<span>Prijzen extra paintballs:</span>
+        <section class="li-items">
+        <li>€8 per 100 stuks</li>
+        <li>€75 per 1000 stuks</li>
+         <li>€140 per 2000 stuks</li>
+		</section>
+		</br>
+	
         <span>Ieder teamlid wordt uitgerust met</span>
         <section class="li-items">
         <li>Een semi-automatisch paintball geweer, de zogenaamd Marker</li>
@@ -47,7 +55,7 @@
          <li>Een gezichtmasker en een body-protector</li>
          <li>100 paintballs in het magazijn (Hopper)</li>
          <li>2.5 uur speelplezier</li>
-</section>
+		</section>
     </ul>
 
      <ul data-template-id="5" class="verwacht-template verwacht">
