@@ -35,10 +35,6 @@
     <?php if( !empty(taal($prices_nl,$prices_fr,$prices_en)) | !empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
       ?>
     <ul class="grid-praktisch">
-	
-		
-		
-		
 		
 		<?php
 			for ($x = 0; $x < sizeof(taal($prices_nl,$prices_fr,$prices_en)); $x++) {
