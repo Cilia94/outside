@@ -1,7 +1,6 @@
-ol, ul {
+ul {
   list-style: none;
-  margin-left: 0px;
-  padding-left: 0px;
+  
 }
 
 .opmerking-container{
@@ -25,15 +24,9 @@ ol, ul {
 
             background-image: url('../assets/images/bg-pattern.jpg');
             background-position: left center;
-
             background-size: 74%;
-            
-    
 
             float: left;
-            // -ms-transform: rotate(-17deg);
-            // -webkit-transform: rotate(-17deg); 
-            // transform: rotate(-17deg);
             margin-top: -2.5px;
             padding-right: 5px;
             margin-left: -20px;
@@ -61,6 +54,8 @@ ol, ul {
     .titel-header {
         font-family: $typewriter-font;
         text-align: center;
+        font-size: 2.5em;
+        
     }
 
     .titel-img-container{
@@ -199,4 +194,16 @@ box-shadow: inset 0px -15px 25px 0px rgba(0,0,0,0.9);
     p{
 
     }
+}
+
+@media screen and (max-width: 380px) {
+
+    .container-middle {
+
+    .titel-header {
+        font-size: 2em;
+        
+    }
+}
+    
 }

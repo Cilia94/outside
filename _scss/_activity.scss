@@ -21,6 +21,10 @@
     display: none;
 }
 .content_info {
+
+    ul{
+        list-style: disc outside none;
+    }
     p {
         //display: block;
         //float: left;
@@ -109,6 +113,8 @@ ul.prijzen {
     li {
         //padding: 5px 20px;
         min-height: 55px;
+        height: auto !important;
+        height: 55px;
         //height: 100%;
         width: 100%;
         position: relative;
@@ -178,8 +184,8 @@ ul.prijzen {
     flex-direction: row;
     -webkit-align-items: left;
     align-items: left;
-    //-webkit-justify-content: center;
-    //justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
     flex-wrap: wrap;
     //flex-flow: row wrap;
     //     &:after {

@@ -58,6 +58,16 @@ class ActivityController extends Controller {
 
     }
 
+    public function all_prices(){
+
+       $results = $this->activityDAO->selectAllPrices();           
+        header('Content-Type: application/json');
+        echo json_encode($results);
+        die();
+
+
+    }
+
     public function all_category_categories(){
 
        $results = $this->categoryDAO->selectAllCategoriesWithActivities();
@@ -73,15 +83,16 @@ class ActivityController extends Controller {
        $resultsLocations = $this->locationDAO->selectAllLocationsWithActivities();
        $resultsAllLocations = $this->locationDAO->selectAll();
        
-       $resultsPrices = $this->categoryDAO->selectAllPricesWithActivities();
+       //$resultsPrices = $this->categoryDAO->selectAllPricesWithActivities();
        $resultsDurations = $this->categoryDAO->selectAllDurationsWithActivities();
        $dataObject = new ArrayObject();
        $dataObject->append($resultsActivities);
        $dataObject->append($resultsLocations);
        $dataObject->append($resultsCategories);
-       //$dataObject->append($resultsPrices);
+       
        $dataObject->append($resultsDurations);
        $dataObject->append($resultsAllLocations);
+       //$dataObject->append($resultsPrices);
 
         header('Content-Type: application/json');
         echo json_encode($dataObject);
@@ -154,6 +165,18 @@ if(!empty($_GET['id'])){
 
     }
 
+    public function getPriceByActivityId(){
+
+    
+         //$results = $this->activityDAO->getRegularPrices($_POST);
+            
+
+        header('Content-Type: application/json');
+            echo json_encode($results);
+            die();
+        
+    }
+
     public function categoryType(){
 
         if(!empty($_GET['id'])){
@@ -184,48 +207,9 @@ if(!empty($_GET['id'])){
         $thisItem = $this->activityDAO->selectById($_GET['id']);
         if($thisItem){
 
-  //       if($thisItem['locatieId'] != "0"){
-
-  //           $locations = explode(",", $thisItem['locatieId']);
-  //           $locationsActivity = [];
-
-  //           for($i = 0; $i< count($locations); $i++){
-  //     if($locations[$i] != "" && $locations[$i] != 0){
-
-  //       for($j = 0; $j< count($locatiesFromDB); $j++){
-  //           if($locatiesFromDB[$j]['id'] == $locations[$i]){
-  //              array_push($locationsActivity, $locatiesFromDB[$j]['adres']);
-
-  //           }
-  //       }
-  //     }
-  // }
-  
-   
-  //       $thisItem['adressen'] = $locationsActivity;
-
-  //       }
-
         $this->set('activity',$thisItem);
-        
-
-
-
-
-        // switch($thisItem['grid_of']){
-
-        //     case "photos":
              $this->set("photos", $this->photoDAO->selectByActivityId($_GET['id']));
-        // break;
-
-        //     case "categories":
-        //     $this->set("categories", $this->activityDAO->selectByCategoryId($_GET['id']));
-        // break;
-
-        //     case "activities":
-        //     $this->set("activities", $this->activityDAO->selectByActivityId($_GET['id']));
-        // break;
-        // }
+       
     }else{
         header('Location: index.php');
     }

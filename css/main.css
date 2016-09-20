@@ -1,7 +1,5 @@
-ol, ul {
+ul {
   list-style: none;
-  margin-left: 0px;
-  padding-left: 0px;
 }
 
 .opmerking-container {
@@ -45,6 +43,7 @@ ol, ul {
 .container-middle .titel-header {
   font-family: "traveling__typewriterregular";
   text-align: center;
+  font-size: 2.5em;
 }
 
 .container-middle .titel-img-container {
@@ -145,6 +144,12 @@ ol, ul {
 .content_info h2, .content_info h3 {
   font-size: 1.15em;
   font-weight: bold;
+}
+
+@media screen and (max-width: 380px) {
+  .container-middle .titel-header {
+    font-size: 2em;
+  }
 }
 
 body {
@@ -381,6 +386,8 @@ li a.active-item {
 .navbar-nav > li:hover > ul {
   left: auto;
   min-width: 100%;
+  width: auto !important;
+  width: 100%;
 }
 
 .navbar-nav > li li:hover > ul {
@@ -437,6 +444,8 @@ li a.active-item {
   .navbar-nav > li > ul {
     left: auto;
     min-width: 100%;
+    width: auto !important;
+    width: 100%;
   }
   .arrow-menu {
     display: none;
@@ -669,6 +678,10 @@ li a.active-item {
   display: none;
 }
 
+.content_info ul {
+  list-style: disc outside none;
+}
+
 .content_info p {
   text-align: left;
 }
@@ -762,6 +775,8 @@ ul.prijzen .header-prijzen {
 
 ul.prijzen li {
   min-height: 55px;
+  height: auto !important;
+  height: 55px;
   width: 100%;
   position: relative;
   overflow: auto;
@@ -833,6 +848,8 @@ ul.prijzen li p.info-prijs {
   flex-direction: row;
   -ms-flex-align: left;
       align-items: left;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1007,6 +1024,11 @@ footer p {
   margin-bottom: 0px;
 }
 
+.container-aanvraag .error-text {
+  color: red;
+  display: none;
+}
+
 .container-aanvraag .stap-header {
   padding: 10px;
   background-color: #1a1a1a;
@@ -1044,14 +1066,15 @@ footer p {
   padding: 10px;
   width: 79%;
   background: none;
-  color: #a1a1a1;
-  border: solid 1px #1a1a1a;
+  color: #cccccc;
+  border: solid 3px #cccccc;
+  background-color: transparent;
   transition: background-color 0.3s;
 }
 
 .container-aanvraag .container-stap-content button:not(.not-active):hover {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #cccccc;
+  color: black;
 }
 
 .container-aanvraag .container-stap-content .not-active {
@@ -1123,10 +1146,15 @@ footer p {
   display: inline;
 }
 
+.container-aanvraag .aanvraag-activiteiten .activiteiten-zelf .aanvraag-activity-type .items-in-type article label {
+  max-width: 90%;
+}
+
 .container-aanvraag .aanvraag-activiteiten .activiteiten-zelf .aanvraag-activity-type article {
   margin-top: 2.5px;
   background-color: #3a3a3a;
   padding: 7.5px;
+  max-width: 100%;
   margin-right: 10px;
 }
 
@@ -1134,11 +1162,7 @@ footer p {
   margin: 5px 6px;
   border: 1px white solid;
   background-color: black;
-  /* IE */
-  /* FF */
-  /* Safari and Chrome */
   transform: scale(1.75);
-  /* Opera */
 }
 
 .container-aanvraag .aanvraag-activiteiten .activiteiten-zelf .aanvraag-activity-type article h2 {
@@ -1204,15 +1228,40 @@ footer p {
   margin-bottom: 5px;
 }
 
-.container-stap-1 button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  color: red;
+.buttons {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 15px 0px;
+}
+
+button.next-step {
+  padding: 10px;
+  width: 40%;
+  background: none;
+  color: #cccccc;
+  border: solid 3px #cccccc;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+button.next-step:not(.not-active):hover {
+  background-color: #cccccc;
+  color: black;
 }
 
 .container-stap-1 ul {
   list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
   height: 225px;
 }
 
@@ -1258,6 +1307,86 @@ footer p {
 
 .aanvraag-activiteiten-input .vragen-input ul {
   list-style: none;
+}
+
+#stap3 p {
+  color: #FFF;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#stap3 #datePicker {
+  padding: 30px 0;
+}
+
+#stap3 #datePicker .ui-datepicker {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#stap3 #datePicker .ui-widget-header {
+  background: none;
+  background-color: #fe834d !important;
+  border: none;
+}
+
+#stap3 #datePicker .ui-state-highlight, #stap3 #datePicker .ui-widget-content .ui-state-highlight, #stap3 #datePicker .ui-widget-header .ui-state-highlight {
+  border: 1px solid #d94636;
+}
+
+#stap3 #datePicker .ui-state-highlight, #stap3 #datePicker .ui-widget-content .ui-state-highlight, #stap3 #datePicker .ui-widget-header .ui-state-highlight {
+  background: none;
+  background-color: #ffcab2;
+}
+
+#stap3 #datePicker .ui-state-active, #stap3 #datePicker .ui-widget-content .ui-state-active, #stap3 #datePicker .ui-widget-header .ui-state-active {
+  border: none;
+}
+
+#stap4 .container-form {
+  background-color: #3a3a3a;
+  padding: 20px;
+}
+
+#stap4 form.gegevens-form {
+  display: none;
+}
+
+#stap4 form.gegevens-form article.gegevens-article {
+  display: block;
+  color: white;
+  margin-bottom: 9px;
+}
+
+#stap4 form.gegevens-form article.gegevens-article label {
+  width: 150px;
+}
+
+#stap4 form.gegevens-form article.gegevens-article input {
+  padding: 4px;
+  padding-left: 8px;
+  border: 2px solid transparent;
+  background-color: #e1e1e1;
+  color: #2a2a2a;
+}
+
+#stap4 form.gegevens-form article.gegevens-article textarea {
+  padding: 4px;
+  border: 2px solid transparent;
+  background-color: #e1e1e1;
+  color: #2a2a2a;
+}
+
+#stap4 form.gegevens-form article.gegevens-article .error {
+  border: 2px solid red;
+}
+
+#stap4 form.gegevens-form article.gegevens-article .error-label {
+  color: red;
+}
+
+#stap4 button {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 481px) {
@@ -1458,6 +1587,8 @@ footer p {
 #grid-filter .grid-sub {
   width: 300px;
   min-height: 250px;
+  height: auto !important;
+  height: 250px;
   margin-right: 15px;
   margin-bottom: 15px;
   border: 1px solid black;
@@ -1838,6 +1969,8 @@ ul.openingsuren .li-opmerking {
 .map-items-text .map-item-text {
   display: none;
   min-width: 320px;
+  width: auto !important;
+  width: 320px;
 }
 
 .map-items-text .map-item-text .item-text-header h2 {
@@ -1884,6 +2017,8 @@ ul.openingsuren .li-opmerking {
     margin-bottom: 5px;
     display: block;
     min-width: 320px;
+    width: auto !important;
+    width: 320px;
   }
   .map-items-text .map-item-text .item-text-header {
     padding: 0px;
