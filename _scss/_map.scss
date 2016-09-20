@@ -155,6 +155,9 @@
     .map-item-text {
         display: none;
         min-width: 320px;
+        width: auto !important;
+        width: 320px;
+
         .item-text-header {
             //padding: 0px;
             //padding-left: 15px;
@@ -206,6 +209,8 @@
             margin-bottom: 5px;
             display: block;
             min-width: 320px;
+            width: auto !important;
+            width: 320px;
             .item-text-header {
                 padding: 0px;
                 padding-left: 15px;

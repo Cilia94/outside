@@ -31,9 +31,17 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
     
+    <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
+
+    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.css">
+    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.structure.css">
+    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+ 
+    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/prettify.css">
+
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="js/vendor/modernizr-mask.js"></script>
 </head>

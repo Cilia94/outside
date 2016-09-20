@@ -15,6 +15,9 @@
          <li data-stap-id="3" >
             <span>Stap 3</span>
          </li>
+          <li data-stap-id="4" >
+            <span>Stap 4</span>
+         </li>
       </ul>
       <div id="stap1" style="display:block" class="aanvraag-activiteiten aanvraag-container">
          
@@ -48,9 +51,9 @@
                   </ul>
 
                   
-                  
-                  <button disabled="true" class="next-step not-active" id="to-step-2">Volgende stap</button>
-               
+                  <div class="buttons">
+                  <button disabled="true" class="next-step not-active" id="to-step-2"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
+               </div>
             
             </div>  
             </div>
@@ -63,8 +66,25 @@
             <span>Filter</span>
             <input type="text" id="filter-term">
          </div>
+
+
          <div class="aanvraag-activiteiten-flex">
             <div class="container-in-flex container-stap-content activiteiten-zelf">
+               <section class="aanvraag-activity-type overview-type">
+                  <div class="activity-type-header">
+                     <h1 class="activity-type-h1">
+                        <?php 
+                           echo taal('Paketten','','Outdoor activities');
+                           
+                           ?>
+                     </h1>
+                     <a href="index.php?page=category&id=1" class="link-type" data-type="outside-activiteiten">
+                     </a>
+                  </div>
+                  <div id="items-type-pakket" class="items-in-type">
+                  </div>
+               </section>
+
                <section class="aanvraag-activity-type overview-type">
                   <div class="activity-type-header">
                      <h1 class="activity-type-h1">
@@ -79,6 +99,7 @@
                   <div id="items-type-1" class="items-in-type">
                   </div>
                </section>
+               
                <section class="aanvraag-activity-type overview-type">
                   <div class="activity-type-header">
                      <h1 class="activity-type-h1">
@@ -130,11 +151,16 @@
             <div class="container-in-flex container-stap-content container-winkelwagen">
                <div class="container-winkelwagen-content">
                   <h1>Interesse in</h1>
-                  <span class="geen-activiteiten">U hebt nog geen activiteiten aangeduid</span>
+                  <span class="geen-activiteiten">
+                    U hebt nog geen activiteiten aangeduid
+                  </span>
                   <ul class="interesse-in">
                   </ul>
-                  <button disabled="true" class="next-step not-active" id="to-step-3">Volgende stap</button>
+                  <div class="buttons">
+                  <button class="next-step ga-terug" data-stap="1"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+                  <button disabled="true" class="next-step not-active" id="to-step-3"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
                </div>
+             </div>
             </div>
          </div>
       </div>
@@ -142,61 +168,157 @@
 
       <div id="stap3" style="display:none" class="aanvraag-activiteiten aanvraag-container">
          <div class="aanvraag-activiteiten-flex">
-          <div class="container-in-flex container-winkelwagen">
+          <div class="container-in-flex container-stap-content container-winkelwagen">
                <div class="container-winkelwagen-content">
-                  <h1>Interesse in</h1>
+                 
                   
                   <ul class="interesse-in">
                   </ul>
-                <!--   <button disabled="true" class="next-step not-active" id="to-step-2">Volgende stap</button>
+                <!--   <button disabled="true" class="next-step not-active" id="to-step-2"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
                 -->
               </div>
             </div>
 
             <div class="container-in-flex activiteiten-zelf aanvraag-activiteiten-input">
-            
-            <div class="vragen-input">
-              <span>Gelieve onderstaande vragen te beantwoorden</span>
-              <div class="same-group">
-                <input id="same-group-checkbox" type="checkbox" />
-              <label for="same-group-checkbox">Deze activiteiten zijn voor dezelfde groep</label>
-                <ul class="same-group-questions">
-                  <li>
-                  <span>Mijn groep</span><br>
-                  <label for="input-same-amount">Bestaat uit </label>
-                  <input id="input-same-amount" type="number" />  
-                  </li>
-                </ul>
-                </div>
-              <ul>
-                <p>Mijn groep voor de activiteit <span class="name-activity">(Kruis)boogschieten</span></p>
-                  
-                <li>
-                  <label for="input-1">bestaat uit </label>
-                  <input id="input-1" type="number"  />
-                </li>
-                <li>
-                  <label for="input-1">heeft leden van de leeftijd</label>
-                  <input id="input-1" type="number" />
-                </li>
-              </ul>
-            </div>
-            </div>
-            
-         </div>
+            <p>Duid aan op welke dag(en) de activiteit(en) doorgaan.</p>
+            <div id="datePicker"></div>
+            <div class="buttons">
+            <button class="next-step ga-terug" data-stap="2"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+             <button class="next-step " id="to-step-4"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
+           </div>
+      </div>        
       </div>
+    </div>
 
       <div id="stap4" style="display:none" class="aanvraag-activiteiten aanvraag-container">
          <div class="aanvraag-activiteiten-flex">
-            <div class="container-in-flex activiteiten-zelf">
-            </div>
-            <div class="container-in-flex container-winkelwagen">
+            <div class="container-in-flex container-stap-content container-winkelwagen">
+               <div class="container-in-flex container-winkelwagen">
                <div class="container-winkelwagen-content">
-                  <h1>STAP333333333</h1>
-                  <span class="geen-activiteiten">STAP 333333333</span>
                   <ul class="interesse-in">
                   </ul>
-                  <button disabled="true" class="next-step not-active" id="to-step-2">Volgende stap</button>
+                  
+                  
+               </div>
+            </div>
+            </div>
+           
+
+            <div class="container-in-flex container-form">
+               <div class="container-winkelwagen-content">
+                <form id="form-standaard" class="gegevens-form">
+
+
+                <article class="gegevens-article">
+                  <label for="gegevens-naam">
+                    <?php echo taal('Naam','Nom','Name'); ?>
+                  </label>
+                  <input id="gegevens-naam" class="gegevens-input" type="text">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-tel">
+                    <?php echo taal('Telefoon nummer','','Telephone number'); ?>
+                  </label>
+                  <input id="gegevens-tel" class="gegevens-input" type="tel">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-mail">
+                    <?php echo taal('Email','Email','Email'); ?>
+                  </label>
+                  <input id="gegevens-mail" class="gegevens-input" type="email">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-deelnemers">
+                    <?php echo taal('Aantal deelnemers','',''); ?>
+                  </label>
+                  <input id="gegevens-deelnemers" class="gegevens-input" type="number" min="1">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-aankomst">
+                    <?php echo taal('Aankomst tijd','',''); ?>
+                  </label>
+                  <input id="gegevens-aankomst" class="gegevens-input" type="time">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-opmerkingen">
+                    <?php echo taal('Eventuele opmerkingen','',''); ?>
+                  </label>
+                  <textarea id="gegevens-opmerkingen" class="gegevens-input">
+                  </textarea>
+                </article>
+
+
+                </form>
+
+                <form id="form-school" style="display:none" class="gegevens-form">
+              
+
+                <article class="gegevens-article">
+                  <label for="gegevens-naam">
+                    <?php echo taal('Naam school','Nom','Name'); ?>
+                  </label>
+                  <input id="gegevens-naam" class="gegevens-input" type="text">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-tel">
+                    <?php echo taal('Telefoon nummer','','Telephone number'); ?>
+                  </label>
+                  <input id="gegevens-tel" class="gegevens-input" type="tel">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-mail">
+                    <?php echo taal('Email','Email','Email'); ?>
+                  </label>
+                  <input id="gegevens-mail" class="gegevens-input" type="email">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-deelnemers">
+                    <?php echo taal('Aantal leerlingen','',''); ?>
+                  </label>
+                  <input id="gegevens-deelnemers" class="gegevens-input" type="number" min="1">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-aankomst">
+                    <?php echo taal('Aankomst tijd','',''); ?>
+                  </label>
+                  <input id="gegevens-aankomst" class="gegevens-input" type="time">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-vertrek">
+                    <?php echo taal('Vertrek tijd','',''); ?>
+                  </label>
+                  <input id="gegevens-vertrek" class="gegevens-input" type="time">
+                </article>
+
+                <article class="gegevens-article">
+                  <label for="gegevens-opmerkingen">
+                    <?php echo taal('Eventuele opmerkingen','',''); ?>
+                  </label>
+                  <textarea id="gegevens-opmerkingen" class="gegevens-input">
+                  </textarea>
+                </article>
+
+
+                </form>
+
+                <p class="error-text">
+                  <?php echo taal('Gelieve alle velden in te vullen','','Please fill in all the fields'); ?>
+                </p>
+                  <div class="buttons">
+                  <button class="next-step ga-terug" data-stap="3"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+                  <button class="next-step not-active" id="send-form">
+                    <?php echo taal('Versturen','','Send'); ?>
+                  </button></div>
                </div>
             </div>
          </div>

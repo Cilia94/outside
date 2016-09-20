@@ -1,7 +1,7 @@
 
 <script id="handlebars-template-activity-aanvraag" type="text/template">
-  <article id="activity-{{id}}" class="">
-                <input type="checkbox" data-id="{{id}}" name="<?php 
+  <article id="activity-{{id}}" class=""><label>
+                <input type="checkbox"  data-id="{{id}}" name="<?php 
         switch($_SESSION['session_taal']){
 
           case 'NL': 
@@ -27,7 +27,7 @@
         }
 
         ?>" class="checkbox-activity">
-                <h2><?php 
+               <?php 
         switch($_SESSION['session_taal']){
 
           case 'NL': 
@@ -54,7 +54,9 @@
 
         ?>
                     
-           </h2><a href="index.php?page=globalItem&id={{id}}" class="activity-info-link">
+           </label>
+
+           <a href="index.php?page=globalItem&id={{id}}" class="activity-info-link">
                 <i class=" fa fa-info-circle" 
                 aria-hidden="true"></i>
             </a>

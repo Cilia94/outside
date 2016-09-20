@@ -1,5 +1,10 @@
 .container-aanvraag {
 
+	.error-text{
+		color: red;
+		display: none;
+	}
+
 
     .stap-header {
         padding: 10px;
@@ -38,14 +43,15 @@
                     padding: 10px;
                     width: 79%;
                     background: none;
-                    color: $mid-grey-2;
-                    border: solid 1px $darker-grey;
+                    color: darken(white,20%);
+                    border: solid 3px darken(white,20%);
+                    background-color: transparent;
                     -webkit-transition: background-color 0.3s;
                     transition: background-color 0.3s;
                     &:not(.not-active) {
                         &:hover {
-                            background-color: $darker-grey;
-                            color: white;
+                            background-color: darken(white,20%);
+                            color: black;
                         }
                     }
                 }
@@ -118,46 +124,30 @@
                     }
                 }
                 .items-in-type {
-                    // display: -webkit-flex;
-                    //  display: flex;
-                    //  -webkit-flex-direction: row;
-                    //  flex-direction: row;
-                    //  //-webkit-align-items: center;
-                    //  //align-items: center;
-                    //  //-webkit-justify-content: center;
-                    //  //justify-content: center;
-                    //  flex-wrap: wrap;
+
+                	article{
+                		label{
+                			max-width: 90%;
+                		}
+                	}
                 }
                 article {
                     margin-top: 2.5px;
                     //display: block;
                     background-color: $mid-grey-1;
                     padding: 7.5px;
-                    //width: 50%;
-                    //display: inline-block;
+                    max-width: 100%;
                     margin-right: 10px;
-                    //margin-left: auto;
-                    //margin-right: auto;
-                    //border: 1px solid rgba(255,255,255,0.2);
-                    //border: 1px solid $darker-grey;
+
                     input[type="checkbox"] {
                         margin: 5px 6px;
                         border: 1px white solid;
                         background-color: black;
-                        //-webkit-appearance: none;
-                        //appearance: none;
-                        //margin-left: 15px;
+
                         -ms-transform: scale(1.75);
-                        /* IE */
-                        
-                        -moz-transform: scale(1.75);
-                        /* FF */
-                        
-                        -webkit-transform: scale(1.75);
-                        /* Safari and Chrome */
-                        
-                        -o-transform: scale(1.75);
-                        /* Opera */
+                         -moz-transform: scale(1.75);
+                         -webkit-transform: scale(1.75);
+                          -o-transform: scale(1.75);
                     }
                     h2 {
                         font-size: 1em;
@@ -236,16 +226,54 @@
 
 }
 
+.buttons{
+
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0px;
+
+}
+button.next-step {
+                    
+                    
+                    padding: 10px;
+
+                    width: 40%;
+                    background: none;
+                    color: darken(white,20%);
+                    border: solid 3px darken(white,20%);
+                    background-color: transparent;
+                    -webkit-transition: background-color 0.3s;
+                    transition: background-color 0.3s;
+                    margin-bottom: 10px;
+                    margin-right: 10px;
+
+                    &:not(.not-active) {
+                        &:hover {
+                            background-color: darken(white,20%);
+                            color: black;
+                        }
+                    }
+                }
+
+        #to-step-4 {
+
+        }
+
 .container-stap-1{
-	button{
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-		color:red;
-	}
+	
 	ul{
 		list-style: none;
+		margin-left: 0px;
+  		padding-left: 0px;
 		height: 225px;
+
+
 		a, a:hover, a:visited{
 				list-style: none;
 				color: darken(lightgrey,20%);
@@ -295,7 +323,110 @@
             list-style: none;
         }
     }
+
 }
+
+#stap3{
+
+
+	p{
+		color: #FFF;
+		text-align: center;
+		margin-top: 15px;
+	}
+
+
+    #datePicker{
+    	padding: 30px 0;
+
+    	.ui-datepicker{
+    		margin-left: auto;
+    		margin-right: auto;
+
+    	}
+
+    	.ui-widget-header{
+    		background: none;
+    		background-color: $outside-flue-orange!important;
+    		border:none;
+    	}
+
+    	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+			border: 1px solid $outside-light-orange;
+			}
+
+    	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+			background: none;
+    		background-color: lighten($outside-flue-orange,20%);
+    	
+    	}
+
+    	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+			border: none;
+    	}
+    }
+}
+
+#stap4{
+	.container-form{
+		background-color: $mid-grey-1;
+		padding: 20px;
+		//width: 70%;
+	}
+
+	form.gegevens-form{
+		display: none;
+
+		article.gegevens-article{
+			display: block;
+			color: white;
+			margin-bottom: 9px;
+
+			label{
+				width: 150px;
+			}
+
+			input{
+
+				padding: 4px;
+				padding-left: 8px;
+				border: 2px solid transparent;
+				background-color: lighten($mid-grey-2, 25%);
+				color: $dark-grey;
+
+			}
+
+			textarea{
+
+				padding: 4px;
+				
+				border: 2px solid transparent;
+				background-color: lighten($mid-grey-2, 25%);
+				color: $dark-grey;
+
+			}
+
+			input[type="text"], input[type="email"]{
+				
+			}
+
+			.error{
+				border: 2px solid red;
+			}
+
+			.error-label{
+				color:red;
+			}
+
+
+		}
+	}
+	button{
+		margin-top: 20px;
+				
+			}
+}
+
 @media only screen and (max-width: 481px) {
     .container-aanvraag .aanvraag-activiteiten .activiteiten-zelf {
         width: 100%;

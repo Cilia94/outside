@@ -4,9 +4,9 @@ import {
   html
 } from './helpers/util.js';
 
-var locationAdresses, selectedActivities;
+var locationAdresses;
 var currentTaal = $('#current-taal').data('taal');
-
+var typeGroepId_global;
 function compare(a,b,key) {
   if (a[key] < b[key])
     return -1;
@@ -122,7 +122,7 @@ Handlebars.registerHelper("case", function(value, options) {
         }
       });
 
-      selectedActivities = [];
+      
       var url = window.location.pathname.split('?');
       var pageName = url[url.length - 1];
       var type = window.location.search;
@@ -663,9 +663,10 @@ Handlebars.registerHelper("case", function(value, options) {
       }
 
       })
-
+      $('#to-step-2').unbind('click');
       $('#to-step-2').on('click', function(){
         var typeId = $('.container-stap-1 .type-groepen a li.active').data('type-id');
+        typeGroepId_global = typeId;
         var idCategorie;
         if(typeId == 2 | typeId == 4){
           idCategorie = 1;
@@ -686,20 +687,34 @@ Handlebars.registerHelper("case", function(value, options) {
 
 
     function stap2Aanvraagformulier(idCategorie, typeGroep) {
-      $('.items-in-type').empty();
       
+      $('.ga-terug').on('click', function(){
+        var goToStap = $(this).data('stap');
+        $('#stap' + parseInt(goToStap + 1)).hide();
+        //console.log($('#stap' + parseInt(goToStap + 1)));
+        $('#stap' + goToStap).fadeIn();
+      })
+
+      $('.items-in-type').empty();
+      $('.interesse-in').empty();
 
       $.ajax({
-          url: 'index.php?page=all',
+          url: 'index.php?page=all_other_data',
           type: 'POST',
           dataType: 'json'
         })
         .done(function(data) {
+          var activitiesData = data[0];
+          var locationsData = data[1];
+          var typesData = data[2];
+          var durationsData = data[3];
+          var allLocations = data[4];
+      
             //console.log(data, typeGroep);
             var allActivities = [];
-            for(var i=0; i<data.length; i++){
-              if(data[i].categorieId == idCategorie){
-                allActivities.push(data[i]);
+            for(var i=0; i<activitiesData.length; i++){
+              if(activitiesData[i].categorieId == idCategorie){
+                allActivities.push(activitiesData[i]);
               }
 
             }
@@ -730,12 +745,36 @@ Handlebars.registerHelper("case", function(value, options) {
 
 
 
-
+            //console.log(typesData);
             $(allActivities).each(function(index, activity) {
-             
+
+          for (var i = 0; i < typesData.length; i++) {
+              if(activity.id == typesData[i].activiteitId){
+                activity.typeId = typesData[i].typeId;
+
+               }
+             }
+
+          for (var i = 0; i < durationsData.length; i++) {
+              if(activity.id == durationsData[i].activiteitId){
+                activity.duurId = durationsData[i].duurId;
+
+               }
+             }
+          
+        
+             if(activity.typeId == 3){
               var html = activity_template(activity);
+              //console.log(html)
+              var typeOverview = $('#items-type-pakket');
+              $(typeOverview).append($(html));
+
+             }else{
+              var html = activity_template(activity);
+              //console.log(html)
               var typeOverview = $('#items-type-' + activity.categorieId);
               $(typeOverview).append($(html));
+            }
 
               
             })
@@ -745,11 +784,14 @@ Handlebars.registerHelper("case", function(value, options) {
               //console.log(this, hasChildren)
               if(hasChildren == 0){
                 $(this).parent().hide();
+              }else{
+                $(this).parent().show();
               }
             })
 
             $('#filter-term').each(function() {
                 var elem = $(this);
+                elem.unbind('change');
                 elem.data('oldVal', elem.val());
                 elem.bind("propertychange change click keyup input paste", function(event) {
 
@@ -794,22 +836,22 @@ Handlebars.registerHelper("case", function(value, options) {
             });
 
 
-          step2();
+          step2(allActivities);
 
         })
 
   }
 
-  function step2() {
+  function step2(activities) {
 
     var idSelected;
 
     $('.checkbox-activity').on('change', function() {
-      $('.interesse-in').html("")
+      $('.interesse-in').html("");
 
       idSelected = [];
       var selected = [];
-      var checkedCheckboxes = $('.checkbox-activity:checked')
+      var checkedCheckboxes = $('.checkbox-activity:checked');
       checkedCheckboxes.each(function(index) {
         selected.push($(checkedCheckboxes[index]).attr('name'));
         idSelected.push($(checkedCheckboxes[index]).data('id'));
@@ -829,35 +871,233 @@ Handlebars.registerHelper("case", function(value, options) {
 
         $('#to-step-3').removeClass('not-active');
         $('.geen-activiteiten').hide();
-        $('#to-step-3').attr('disabled', false)
+        $('#to-step-3').attr('disabled', false);
 
       } else {
         $('.geen-activiteiten').show();
         $('#to-step-3').addClass('not-active');
-        $('#to-step-3').attr('disabled', true)
+        $('#to-step-3').attr('disabled', true);
 
       }
 
     })
 
+    $('#to-step-3').unbind('click');
+
     $('#to-step-3').on('click', function() {
-      step3(idSelected);
+     
+      if(activities && idSelected){
+      step3(idSelected, activities);
+      $('#to-step-3').attr('disabled', false);
+      $('#stap2').hide();
+      $('#stap3').fadeIn();
+      $('.stap-header [data-stap-id=2]').removeClass('active');
+      $('.stap-header [data-stap-id=3]').addClass('active');
+    }else{
+    $('#to-step-3').attr('disabled', true);
+
+  }
+    });
+  
+
+  }
+
+  function step3(ids, activities) {
+    
+    
+    var idsActivties = ids;
+    var multipleDays = false;
+
+    var chosenActivities = [];
+    for (var i = 0; i < idsActivties.length; i++) {
+       for (var j = 0; j < activities.length; j++) {
+        if(activities[j].id == idsActivties[i]){
+          chosenActivities.push(activities[j])
+          if(activities[j].duurId == 4){
+            multipleDays = true;
+          }
+        }
+
+        }
+    }
+    console.log(chosenActivities);
+
+    if(multipleDays){
+
+    $('#datePicker').multiDatesPicker({
+
+    });
+  }else{
+
+    $('#datePicker').multiDatesPicker({
+      maxPicks:1
+
     });
 
   }
 
-  function step3(ids) {
-    //console.log(ids);
-    $('#stap2').hide();
-    $('#stap3').show();
-    var idsActivties = ids;
-    var chosenActivities = [];
-    for (var i = 0; i < idsActivties.length; i++) {
-      //json_getById(locations[i], locationAdresses).adres
-      //console.log(idsActivties[i], idsActivties)
-      chosenActivities.push(json_getById(idsActivties[i], allActivities))
+  
+
+  
+
+ 
+  $('#to-step-4').unbind('click');
+   $('#to-step-4').on('click', function() {
+     
+      var dateValue = $('#datePicker').multiDatesPicker('getDates');
+      step4(dateValue, chosenActivities);
+      $('#stap3').hide();
+      $('#stap4').fadeIn();
+      $('.stap-header [data-stap-id=3]').removeClass('active');
+      $('.stap-header [data-stap-id=4]').addClass('active');
+     });
+
+
+  }
+
+  function step4(dates, activities){
+    var formUsed;
+    if(typeGroepId_global == 1){
+      formUsed = $('#form-school');
+    }else{
+      formUsed = $('#form-standaard');
     }
-    console.log(chosenActivities)
+    console.log(activities);
+
+    var typeGroep;
+    switch (typeGroepId_global){
+      case 1: 
+      typeGroep = "School"
+      break;
+
+      case 1: 
+      typeGroep = "Jeugdgroep -18j"
+      break;
+
+      case 1: 
+      typeGroep = "Bedrijf"
+      break;
+
+      case 1: 
+      typeGroep = "Vriendengroep"
+      break;
+    }
+
+    formUsed.show();
+    $('#send-form').unbind('click');
+    $('#send-form').on('click', function(){
+    var formData = {};
+    formData.dates = dates;
+    formData.activities = activities;
+    formData.opmerking = formUsed.find('#gegevens-opmerkingen').val();
+    formData.typeGroep = typeGroep;
+    formData.taal = currentTaal;
+
+
+
+    var allowSubmit = true;
+    $('label').removeClass('error-label');
+    $('input').removeClass('error');
+
+    if(formUsed.find('#gegevens-naam')){
+      if(formUsed.find('#gegevens-naam').val()){
+        formData.name = formUsed.find('#gegevens-naam').val();
+      }else{
+        formUsed.find('#gegevens-naam').addClass('error');
+        formUsed.find('#gegevens-naam').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+
+    if(formUsed.find('#gegevens-tel')){
+      if(formUsed.find('#gegevens-tel').val()){
+        formData.tel = formUsed.find('#gegevens-tel').val();
+      }else{
+        formUsed.find('#gegevens-tel').addClass('error');
+        formUsed.find('#gegevens-tel').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+
+    if(formUsed.find('#gegevens-mail')){
+      if(formUsed.find('#gegevens-mail').val()){
+        formData.email = formUsed.find('#gegevens-mail').val();
+      }else{
+        formUsed.find('#gegevens-mail').addClass('error');
+        formUsed.find('#gegevens-mail').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+
+    if(formUsed.find('#gegevens-deelnemers')){
+      if(formUsed.find('#gegevens-deelnemers').val()){
+        formData.deelnemers = formUsed.find('#gegevens-deelnemers').val();
+      }else{
+        formUsed.find('#gegevens-deelnemers').addClass('error');
+        formUsed.find('#gegevens-deelnemers').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+
+    if(formUsed.find('#gegevens-aankomst')){
+      if(formUsed.find('#gegevens-aankomst').val()){
+        formData.aankomst = formUsed.find('#gegevens-aankomst').val();
+      }else{
+        formUsed.find('#gegevens-aankomst').addClass('error');
+        formUsed.find('#gegevens-aankomst').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+
+   
+    if(typeGroepId_global == 1){
+    if(formUsed.find('#gegevens-vertrek')){
+      if(formUsed.find('#gegevens-vertrek').val()){
+        formData.vertrek = formUsed.find('#gegevens-vertrek').val();
+      }else{
+        formUsed.find('#gegevens-vertrek').addClass('error');
+        formUsed.find('#gegevens-vertrek').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+  }
+
+    if(allowSubmit){
+      $('.error-text').hide();
+
+    submitAanvraagForm(formData);
+    formUsed.find('input').val('');
+
+  }else{
+    $('.error-text').show();
+  }
+  })
+
+}
+
+  function submitAanvraagForm(formData){
+    //console.log('formData', formData);
+    var formData = formData;
+    console.log('FORM SEND')
+
+    $.ajax({
+
+        type: "POST",
+        url: 'sendAanvraag.php',
+        data: formData,
+        success: function() {
+
+          console.log(formData);
+
+          $('.form-item input:not([type=submit])').val('');
+          $('.form-item textarea').val('');
+          $('.show-succes').show();
+          $('.show-error').hide();
+
+        },
+
+
+      })
 
   }
 

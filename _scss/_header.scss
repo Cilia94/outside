@@ -231,6 +231,8 @@ li a.active-item {
     left: auto;
     //margin-top: 5px;
     min-width: 100%;
+    width: auto !important;
+    width: 100%;
 }
 .navbar-nav > li li:hover > ul {
     left: 100%;
@@ -302,6 +304,8 @@ li a.active-item {
         left: auto;
         //margin-top: 5px;
         min-width: 100%;
+        width: auto !important;
+        width: 100%;
     }
     .arrow-menu {
         display: none;
