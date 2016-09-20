@@ -87,6 +87,7 @@
 </ul>
 
 </script>
+<!--
 
 <script id="handlebars-template-prijzen" type="text/template">
 <div class="container-all-prices">
@@ -183,3 +184,4 @@
         </div>
 
 </script>
+-->

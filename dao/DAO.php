@@ -3,7 +3,7 @@ class DAO {
 
 
 	private static $dbHost = "localhost";
-	private static $dbName = "outside_509";
+	private static $dbName = "outside_2009";
 	private static $dbUser = "devuser";
 	private static $dbPass = "devpass";
 	private static $sharedPDO;
