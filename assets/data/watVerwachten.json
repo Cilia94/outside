@@ -3,7 +3,7 @@
       {
          "id":1,
          "name": "Template 1",
-         "forActivities": [61,130,89,4,133,194,204,210,216,225,228,232,254,374,410,412],
+         "forActivities": [61,130,89,4,103,133,190,194,204,210,216,225,228,254,374,407,410,412,417,462,521],
          "startTemplate": 1,
          "info voor dev":"tocht met verchillende locaties"
          
@@ -116,9 +116,9 @@
          "info voor dev": "vlaamse velden",
          "forActivities": [243],
          "customFields": true,
-         "customFields_nl": ["Gebruik van een fiets + terugrit met de bus"],
-         "customFields_fr": ["Gebruik van een fiets + terugrit met de bus"],
-         "customFields_en": ["Gebruik van een fiets + terugrit met de bus"],
+         "customFields_nl": ["Gebruik van een fiets + terugrit met de bus","Gespecialiseerde gidsen op de verschillende locaties"],
+         "customFields_fr": ["Gebruik van een fiets + terugrit met de bus","Gespecialiseerde gidsen op de verschillende locaties"],
+         "customFields_en": ["Gebruik van een fiets + terugrit met de bus","Gespecialiseerde gidsen op de verschillende locaties"],
          
          "startTemplate": 1
          
@@ -164,7 +164,33 @@
          "customFields_en": ["Installatie door professionele installateurs"],
          "startTemplate": 2
          
+      },
+	  {
+         "id":14,
+         "name": "Installateur",
+         "info voor dev":"installateur",
+         "forActivities": [505],
+         "customFields": true,
+         "customFields_nl": ["Verblijf in een vakantiehuis op de top van de rodeberg - overnachting in kamers van 2, 4 of 6 personen (met douche en toilet op de kamer)"],
+         "customFields_fr": ["Verblijf in een vakantiehuis op de top van de rodeberg - overnachting in kamers van 2, 4 of 6 personen (met douche en toilet op de kamer)"],
+         "customFields_en": ["Verblijf in een vakantiehuis op de top van de rodeberg - overnachting in kamers van 2, 4 of 6 personen (met douche en toilet op de kamer)"],
+         "startTemplate": 1
+         
+      },
+	  {
+         "id":14,
+         "name": "Installateur",
+         "info voor dev":"installateur",
+         "forActivities": [232],
+         "customFields": true,
+         "customFields_nl": ["1 basisconsuptie in een lokaal cafeetje"],
+         "customFields_fr": ["1 basisconsuptie in een lokaal cafeetje"],
+         "customFields_en": ["1 basisconsuptie in een lokaal cafeetje"],
+         "startTemplate": 1
+         
       }
+	  
+	  
 
 
 

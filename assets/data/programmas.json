@@ -232,6 +232,14 @@
       },
       {
          "activityId":137,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Het aanvangsuur van dit programma kan je zelf bepalen. Hieronder bieden we alvast een voorstel aan.",
+         "opmerking_fr":"Opmerking: Het aanvangsuur van dit programma kan je zelf bepalen. Hieronder bieden we alvast een voorstel aan.",
+         "opmerking_eng":"Opmerking: Het aanvangsuur van dit programma kan je zelf bepalen. Hieronder bieden we alvast een voorstel aan.",
+         
+		 
+		 
+	
          
          "subProgrammas":[
             {
@@ -394,7 +402,7 @@
          
          "subProgrammas":[
             {
-               "header_nl":"Programma",
+               "header_nl":"Voorbeeldprogramma",
                "header_fr":"Programme",
                "header_eng":"Program",
                "activiteiten":[
@@ -875,7 +883,7 @@
       {
          "activityId":228,
          "opmerking":true,
-         "opmerking_nl":"Opmerking: het stadsspel kan ook ’s avonds georganiseerd worden. De tijdsindeling kan volledig toegespitst worden op jullie wensen",
+         "opmerking_nl":"Het stadsspel kan ook ’s avonds georganiseerd worden. De tijdsindeling kan volledig toegespitst worden op jullie wensen</br>U kan het stadsspel afronden met een lekkere maaltijd in een lokaal restaurantje.",
          
          "subProgrammas":[
             {
@@ -938,6 +946,10 @@
       },
       {
          "activityId":246,
+         "opmerking":true,
+         "opmerking_nl":"Met minder deelnemers kan de activiteit doorgaan, maar moet 525 euro forfait betaald worden.",
+         "opmerking_fr":"Met minder deelnemers kan de activiteit doorgaan, maar moet 525 euro forfait betaald worden.",
+         "opmerking_eng":"Met minder deelnemers kan de activiteit doorgaan, maar moet 525 euro forfait betaald worden.",
          
          "subProgrammas":[
             {
@@ -1669,6 +1681,625 @@
                      "tijdstip":"...",
                      "info":false
                   }
+               ]
+            }
+         ]
+      },
+	  {
+         "activityId":644,
+         "subProgrammas":[
+            {
+               "header_nl":"Dag 1",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"/",
+                     "titel_fr":"/",
+                     "titel_en":"/",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+					{
+                     "titel_nl":"Aankomst + Installatie in de kamers",
+                     "titel_fr":"Aankomst + Installatie in de kamers",
+                     "titel_en":"Aankomst + Installatie in de kamers",
+                     "tijdstip":"09:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"Opeten eigen lunchpakket",
+                     "titel_fr":"Opeten eigen lunchpakket",
+                     "titel_en":"Opeten eigen lunchpakket",
+                     "tijdstip":"12:00",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Mountainbike + vlottenbouw",
+                     "titel_fr":"Mountainbike + vlottenbouw",
+                     "titel_en":"Mountainbike + vlottenbouw",
+                     "tijdstip":"13:30",
+                     "info":false,
+					 "info_nl":"",
+                     "info_fr":"",
+					 "info_en":""
+                     },
+                  {
+                     "titel_nl":"Avondmaal",
+                     "titel_fr":"Avondmaal",
+                     "titel_en":"Avondmaal",
+                     "tijdstip":"18:00",
+                     "info":false
+                     }
+               ]
+            },
+			{
+               "header_nl":"Dag 2",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"Paintball",
+                     "titel_fr":"Paintball",
+                     "titel_en":"Paintball",
+                     "tijdstip":"09:30",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Middagmaal",
+                     "titel_fr":"Middagmaal",
+                     "titel_en":"Middagmaal",
+                     "tijdstip":"12:00",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Kanotoch op de IJzer",
+                     "titel_fr":"Kanotoch op de IJzer",
+                     "titel_en":"Kanotoch op de IJzer",
+                     "tijdstip":"13:30",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Avondmaal",
+                     "titel_fr":"Avondmaal",
+                     "titel_en":"Avondmaal",
+                     "tijdstip":"18:00",
+                     "info":false
+                  }
+               ]
+            },
+			{
+               "header_nl":"Dag 3",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"Teambuilding + boogschieten",
+                     "titel_fr":"Teambuilding + boogschieten",
+                     "titel_en":"Teambuilding + boogschieten",
+                     "tijdstip":"09:30",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Middagmaal",
+                     "titel_fr":"Middagmaal",
+                     "titel_en":"Middagmaal",
+                     "tijdstip":"12:00",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Muurklimmen + Pamperpaal + Avonturengracht + BMX",
+                     "titel_fr":"Muurklimmen + Pamperpaal + Avonturengracht + BMX",
+                     "titel_en":"Muurklimmen + Pamperpaal + Avonturengracht + BMX",
+                     "tijdstip":"13:30",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Avondmaal",
+                     "titel_fr":"Avondmaal",
+                     "titel_en":"Avondmaal",
+                     "tijdstip":"18:00",
+                     "info":false
+                  }
+               ]
+            },
+			{
+               "header_nl":"Dag 4",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"High Ropes + Death ride + speleo",
+                     "titel_fr":"High Ropes + Death ride + speleo",
+                     "titel_en":"High Ropes + Death ride + speleo",
+                     "tijdstip":"09:30",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Middagmaal",
+                     "titel_fr":"Middagmaal",
+                     "titel_en":"Middagmaal",
+                     "tijdstip":"12:00",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Quadrijden + Wakeboarden",
+                     "titel_fr":"Quadrijden + Wakeboarden",
+                     "titel_en":"Quadrijden + Wakeboarden",
+                     "tijdstip":"13:30",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Avondmaal",
+                     "titel_fr":"Avondmaal",
+                     "titel_en":"Avondmaal",
+                     "tijdstip":"18:00",
+                     "info":false
+                  }
+               ]
+            },
+			{
+               "header_nl":"Dag 5",
+               "header_fr":"Programme",
+               "header_eng":"Program",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"08:30",
+                     "info":false
+                    },
+                  {
+                     "titel_nl":"GPS-oriëntatie + Bosspel",
+                     "titel_fr":"GPS-oriëntatie + Bosspel",
+                     "titel_en":"GPS-oriëntatie + Bosspel",
+                     "tijdstip":"09:30",
+                     "info":false
+					 },
+                  {
+                     "titel_nl":"Middagmaal",
+                     "titel_fr":"Middagmaal",
+                     "titel_en":"Middagmaal",
+                     "tijdstip":"12:00",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vertrek",
+                     "titel_fr":"Vertrek",
+                     "titel_en":"Vertrek",
+                     "tijdstip":"13:30",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"/",
+                     "titel_fr":"/",
+                     "titel_en":"/",
+                     "tijdstip":"18:30",
+                     "info":false
+                     }
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":664,
+         
+         "subProgrammas":[
+            {
+               "header_nl":"Dag 1",
+               "header_fr":"Dag 1",
+               "header_eng":"Dag 1",
+               "activiteiten":[
+                  {
+                     "titel_nl":"/",
+                     "titel_fr":"/",
+                     "titel_en":"/",
+                     "tijdstip":"Ochtend",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Aankomst met bus/trein in Ieper + mogelijkheid tot verkenning stad",
+                     "titel_fr":"Aankomst met bus/trein in Ieper + mogelijkheid tot verkenning stad",
+                     "titel_en":"Aankomst met bus/trein in Ieper + mogelijkheid tot verkenning stad",
+                     "tijdstip":"Voormiddag",
+                     "info":true,
+                     "info_nl":"Bagage wordt door Outside opgehaald",
+                     "info_fr":"Bagage wordt door Outside opgehaald",
+                     "info_en":"Bagage wordt door Outside opgehaald"
+                     },
+                  {
+                     "titel_nl":"Opeten eigen lunchpakket",
+                     "titel_fr":"Opeten eigen lunchpakket",
+                     "titel_en":"Opeten eigen lunchpakket",
+                     "tijdstip":"Lunch",
+                     "info":false,
+                     "info_nl":"",
+                     "info_fr":"",
+                     "info_en":""
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Stadswandeling Ieper met gids",
+                     "titel_fr":"Stadswandeling Ieper met gids",
+                     "titel_en":"Stadswandeling Ieper met gids",
+                     "tijdstip":"Namiddag",
+                     "info":true,
+                     "info_nl":"Bezoek aan o.a. Menenpoort, militaire begraafplaats & In Flanders Fields Museum",
+                     "info_fr":"Bezoek aan o.a. Menenpoort, militaire begraafplaats & In Flanders Fields Museum",
+                     "info_en":"Bezoek aan o.a. Menenpoort, militaire begraafplaats & In Flanders Fields Museum"
+                     
+                     },
+                  {
+                     "titel_nl":"Warm avondmaal",
+                     "titel_fr":"Warm avondmaal",
+                     "titel_en":"Warm avondmaal",
+                     "tijdstip":"Avond",
+                     "info":false                     
+                     }
+
+               ]
+            },
+			{
+               "header_nl":"Dag 2",
+               "header_fr":"Dag 2",
+               "header_eng":"Dag 2",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"Ochtend",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Bezoek Poperinge, stad achter het front.",
+                     "titel_fr":"Bezoek Poperinge, stad achter het front.",
+                     "titel_en":"Bezoek Poperinge, stad achter het front.",
+                     "tijdstip":"Voormiddag",
+                     "info":true,
+                     "info_nl":"Bezoek o.a. Talbot House, Dodencellen & Executiepaal & Lijssenthoek",
+                     "info_fr":"Bezoek o.a. Talbot House, Dodencellen & Executiepaal & Lijssenthoek",
+                     "info_en":"Bezoek o.a. Talbot House, Dodencellen & Executiepaal & Lijssenthoek"
+                     },
+                  {
+                     "titel_nl":"Warm middagmaal",
+                     "titel_fr":"Warm middagmaal",
+                     "titel_en":"Warm middagmaal",
+                     "tijdstip":"Lunch",
+                     "info":false,
+                     "info_nl":"",
+                     "info_fr":"",
+                     "info_en":""
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Bezoek Diksmuide met IJzertoren + Dodengang",
+                     "titel_fr":"Bezoek Diksmuide met IJzertoren + Dodengang",
+                     "titel_en":"Bezoek Diksmuide met IJzertoren + Dodengang",
+                     "tijdstip":"Namiddag",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Avondmaal + bezoek Last Post Ieper",
+                     "titel_fr":"Avondmaal + bezoek Last Post Ieper",
+                     "titel_en":"Avondmaal + bezoek Last Post Ieper",
+                     "tijdstip":"Avond",
+                     "info":false
+                     }
+
+               ]
+            },
+			{
+               "header_nl":"Dag 3",
+               "header_fr":"Dag 3",
+               "header_eng":"Dag 3",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Ontbijt",
+                     "titel_fr":"Ontbijt",
+                     "titel_en":"Ontbijt",
+                     "tijdstip":"Ochtend",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Bezoek Zonnebeke met Memorial Museum Passendale + Tynecot",
+                     "titel_fr":"Bezoek Zonnebeke met Memorial Museum Passendale + Tynecot",
+                     "titel_en":"Bezoek Zonnebeke met Memorial Museum Passendale + Tynecot",
+                     "tijdstip":"Voormiddag",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Warm middagmaal",
+                     "titel_fr":"Warm middagmaal",
+                     "titel_en":"Warm middagmaal",
+                     "tijdstip":"Lunch",
+                     "info":false,
+                     "info_nl":"",
+                     "info_fr":"",
+                     "info_en":""
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Vertrek",
+                     "titel_fr":"Vertrek",
+                     "titel_en":"Vertrek",
+                     "tijdstip":"Namiddag",
+                     "info":false
+                     
+                     }
+
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":698,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_fr":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_eng":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         
+         "subProgrammas":[
+            {
+               "header_nl":"Tarieven",
+               "header_fr":"Tarieven",
+               "header_eng":"Tarieven",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_fr":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_en":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "tijdstip":"€1430",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_fr":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_en":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "tijdstip":"€1800",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_fr":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_en":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "tijdstip":"€1080",
+                     "info":false,
+                     "info_nl":"Uitgezonderd laatste weekend augustus",
+                     "info_fr":"Uitgezonderd laatste weekend augustus",
+                     "info_en":"Uitgezonderd laatste weekend augustus"
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Pinksterweekend",
+                     "titel_fr":"Pinksterweekend",
+                     "titel_en":"Pinksterweekend",
+                     "tijdstip":"€1815",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Hemelvaartweekend",
+                     "titel_fr":"Hemelvaartweekend",
+                     "titel_en":"Hemelvaartweekend",
+                     "tijdstip":"€1930",
+                     "info":false
+                     
+                     }
+
+               ]
+            },
+			{
+               "header_nl":"Tarieven scholen & groepen in de week",
+               "header_fr":"Tarieven scholen & groepen in de week",
+               "header_eng":"Tarieven scholen & groepen in de week",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Overnachting eerste nacht",
+                     "titel_fr":"Overnachting eerste nacht",
+                     "titel_en":"Overnachting eerste nacht",
+                     "tijdstip":"€25",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Overnachting extra nachten",
+                     "titel_fr":"Overnachting extra nachten",
+                     "titel_en":"Overnachting extra nachten",
+                     "tijdstip":"€20",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Half pension: eerste nacht",
+                     "titel_fr":"Half pension: eerste nacht",
+                     "titel_en":"Half pension: eerste nacht",
+                     "tijdstip":"€30",
+                     "info":false
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Half board: extra nachten",
+                     "titel_fr":"Half board: extra nachten",
+                     "titel_en":"Half board: extra nachten",
+                     "tijdstip":"€25",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: eerste nacht",
+                     "titel_fr":"Vol pension: eerste nacht",
+                     "titel_en":"Vol pension: eerste nacht",
+                     "tijdstip":"€35",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: extra nachten",
+                     "titel_fr":"Vol pension: extra nachten",
+                     "titel_en":"Vol pension: extra nachten",
+                     "tijdstip":"€30",
+                     "info":false
+                     }
+
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":693,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_fr":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_eng":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         
+         "subProgrammas":[
+            {
+               "header_nl":"Tarieven",
+               "header_fr":"Tarieven",
+               "header_eng":"Tarieven",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_fr":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_en":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "tijdstip":"€1580",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_fr":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_en":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "tijdstip":"€1950",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_fr":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_en":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "tijdstip":"€1265",
+                     "info":false,
+                     "info_nl":"Uitgezonderd laatste weekend augustus",
+                     "info_fr":"Uitgezonderd laatste weekend augustus",
+                     "info_en":"Uitgezonderd laatste weekend augustus"
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Kerst",
+                     "titel_fr":"Kerst",
+                     "titel_en":"Kerst",
+                     "tijdstip":"€2000",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Nieuwjaar",
+                     "titel_fr":"Nieuwjaar",
+                     "titel_en":"Nieuwjaar",
+                     "tijdstip":"€2100",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Pinksterweekend",
+                     "titel_fr":"Pinksterweekend",
+                     "titel_en":"Pinksterweekend",
+                     "tijdstip":"€1855",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Hemelvaartweekend",
+                     "titel_fr":"Hemelvaartweekend",
+                     "titel_en":"Hemelvaartweekend",
+                     "tijdstip":"€2080",
+                     "info":false
+                     
+                     }
+
+               ]
+            },
+			{
+               "header_nl":"Tarieven scholen & groepen in de week",
+               "header_fr":"Tarieven scholen & groepen in de week",
+               "header_eng":"Tarieven scholen & groepen in de week",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Overnachting eerste nacht",
+                     "titel_fr":"Overnachting eerste nacht",
+                     "titel_en":"Overnachting eerste nacht",
+                     "tijdstip":"€25",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Overnachting extra nachten",
+                     "titel_fr":"Overnachting extra nachten",
+                     "titel_en":"Overnachting extra nachten",
+                     "tijdstip":"€20",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Half pension: eerste nacht",
+                     "titel_fr":"Half pension: eerste nacht",
+                     "titel_en":"Half pension: eerste nacht",
+                     "tijdstip":"€30",
+                     "info":false
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Half board: extra nachten",
+                     "titel_fr":"Half board: extra nachten",
+                     "titel_en":"Half board: extra nachten",
+                     "tijdstip":"€25",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: eerste nacht",
+                     "titel_fr":"Vol pension: eerste nacht",
+                     "titel_en":"Vol pension: eerste nacht",
+                     "tijdstip":"€35",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: extra nachten",
+                     "titel_fr":"Vol pension: extra nachten",
+                     "titel_en":"Vol pension: extra nachten",
+                     "tijdstip":"€30",
+                     "info":false
+                     }
+
                ]
             }
          ]
