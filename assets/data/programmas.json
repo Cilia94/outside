@@ -2059,6 +2059,250 @@
                ]
             }
          ]
+      },
+      {
+         "activityId":698,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_fr":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_eng":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         
+         "subProgrammas":[
+            {
+               "header_nl":"Tarieven",
+               "header_fr":"Tarieven",
+               "header_eng":"Tarieven",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_fr":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_en":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "tijdstip":"€1430",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_fr":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_en":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "tijdstip":"€1800",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_fr":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_en":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "tijdstip":"€1080",
+                     "info":false,
+                     "info_nl":"Uitgezonderd laatste weekend augustus",
+                     "info_fr":"Uitgezonderd laatste weekend augustus",
+                     "info_en":"Uitgezonderd laatste weekend augustus"
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Pinksterweekend",
+                     "titel_fr":"Pinksterweekend",
+                     "titel_en":"Pinksterweekend",
+                     "tijdstip":"€1815",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Hemelvaartweekend",
+                     "titel_fr":"Hemelvaartweekend",
+                     "titel_en":"Hemelvaartweekend",
+                     "tijdstip":"€1930",
+                     "info":false
+                     
+                     }
+
+               ]
+            },
+			{
+               "header_nl":"Tarieven scholen & groepen in de week",
+               "header_fr":"Tarieven scholen & groepen in de week",
+               "header_eng":"Tarieven scholen & groepen in de week",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Overnachting eerste nacht",
+                     "titel_fr":"Overnachting eerste nacht",
+                     "titel_en":"Overnachting eerste nacht",
+                     "tijdstip":"€25",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Overnachting extra nachten",
+                     "titel_fr":"Overnachting extra nachten",
+                     "titel_en":"Overnachting extra nachten",
+                     "tijdstip":"€20",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Half pension: eerste nacht",
+                     "titel_fr":"Half pension: eerste nacht",
+                     "titel_en":"Half pension: eerste nacht",
+                     "tijdstip":"€30",
+                     "info":false
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Half board: extra nachten",
+                     "titel_fr":"Half board: extra nachten",
+                     "titel_en":"Half board: extra nachten",
+                     "tijdstip":"€25",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: eerste nacht",
+                     "titel_fr":"Vol pension: eerste nacht",
+                     "titel_en":"Vol pension: eerste nacht",
+                     "tijdstip":"€35",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: extra nachten",
+                     "titel_fr":"Vol pension: extra nachten",
+                     "titel_en":"Vol pension: extra nachten",
+                     "tijdstip":"€30",
+                     "info":false
+                     }
+
+               ]
+            }
+         ]
+      },
+      {
+         "activityId":693,
+         "opmerking":true,
+         "opmerking_nl":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_fr":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         "opmerking_eng":"Opmerking: Eindschoonmaak, elektriciteit en verwarming is inbegrepen.",
+         
+         "subProgrammas":[
+            {
+               "header_nl":"Tarieven",
+               "header_fr":"Tarieven",
+               "header_eng":"Tarieven",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_fr":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "titel_en":"Weekend (vrijdag 18:00 tot zondag 18:00)",
+                     "tijdstip":"€1580",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_fr":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "titel_en":"Midweek (maandag 10:00 tot vrijdag 15:00)",
+                     "tijdstip":"€1950",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_fr":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "titel_en":"Grote vakantie (vrijdag 18:00 tot zondag 16:00)",
+                     "tijdstip":"€1265",
+                     "info":false,
+                     "info_nl":"Uitgezonderd laatste weekend augustus",
+                     "info_fr":"Uitgezonderd laatste weekend augustus",
+                     "info_en":"Uitgezonderd laatste weekend augustus"
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Kerst",
+                     "titel_fr":"Kerst",
+                     "titel_en":"Kerst",
+                     "tijdstip":"€2000",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Nieuwjaar",
+                     "titel_fr":"Nieuwjaar",
+                     "titel_en":"Nieuwjaar",
+                     "tijdstip":"€2100",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Pinksterweekend",
+                     "titel_fr":"Pinksterweekend",
+                     "titel_en":"Pinksterweekend",
+                     "tijdstip":"€1855",
+                     "info":false
+                     
+                     },
+                  {
+                     "titel_nl":"Hemelvaartweekend",
+                     "titel_fr":"Hemelvaartweekend",
+                     "titel_en":"Hemelvaartweekend",
+                     "tijdstip":"€2080",
+                     "info":false
+                     
+                     }
+
+               ]
+            },
+			{
+               "header_nl":"Tarieven scholen & groepen in de week",
+               "header_fr":"Tarieven scholen & groepen in de week",
+               "header_eng":"Tarieven scholen & groepen in de week",
+               "activiteiten":[
+                  {
+                     "titel_nl":"Overnachting eerste nacht",
+                     "titel_fr":"Overnachting eerste nacht",
+                     "titel_en":"Overnachting eerste nacht",
+                     "tijdstip":"€25",
+                     "info":false
+                  
+                    },
+                  {
+                     "titel_nl":"Overnachting extra nachten",
+                     "titel_fr":"Overnachting extra nachten",
+                     "titel_en":"Overnachting extra nachten",
+                     "tijdstip":"€20",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Half pension: eerste nacht",
+                     "titel_fr":"Half pension: eerste nacht",
+                     "titel_en":"Half pension: eerste nacht",
+                     "tijdstip":"€30",
+                     "info":false
+                     
+                     
+                     },
+                  {
+                     "titel_nl":"Half board: extra nachten",
+                     "titel_fr":"Half board: extra nachten",
+                     "titel_en":"Half board: extra nachten",
+                     "tijdstip":"€25",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: eerste nacht",
+                     "titel_fr":"Vol pension: eerste nacht",
+                     "titel_en":"Vol pension: eerste nacht",
+                     "tijdstip":"€35",
+                     "info":false
+                     },
+                  {
+                     "titel_nl":"Vol pension: extra nachten",
+                     "titel_fr":"Vol pension: extra nachten",
+                     "titel_en":"Vol pension: extra nachten",
+                     "tijdstip":"€30",
+                     "info":false
+                     }
+
+               ]
+            }
+         ]
       }
 
    ]
