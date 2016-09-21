@@ -132,6 +132,13 @@
 
             </ul>
 
+            <div class="search-nav">
+            <div class="search-nav-content">
+                                <input id="search-input-header" placeholder="Zoeken..." type="text">
+                                <a href="#"><i class="search-icon fa fa-search" aria-hidden="true"></i></a>
+                                </div>
+                                </div>
+
         <div class="lang-select">
             <ul class="taal-kiezen">
         <li class="current-taal">
@@ -151,14 +158,13 @@
         </div>
 
 
+
+
         </div>
       
-        <!--
-                              <div class="search-nav">
-                                <input class="" placeholder="Zoeken..." type="text">
-                                <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                </div>
-                                -->
+       
+                              
+                               
 
 
     </nav>

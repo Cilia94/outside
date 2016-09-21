@@ -28,15 +28,28 @@ $mail->addAddress($_POST['email'], $_POST['name']);
 
 $mail->Subject = "Aanvraag " . $_POST['name'];
 $name = $_POST['name'];
+if($_POST['opmerking']){
 $message = $_POST['opmerking'];
+}else{
+	$message = "Geen opmerking"
+}
 $activities = $_POST['activities'];
 $email = $_POST['email'];
+$_POST['dates']{
 $dates = $_POST['dates'];
+}else{
+	$dates = "Niet ingevuld";
+}
 $typeGroep = $_POST['typeGroep'];
 $subject = "Aanvraag " . $name;
 $taal = $_POST['taal'];
 $aankomst = $_POST['aankomst'];
+if($_POST['vertrek']){
 $vertrek = $_POST['vertrek'];
+}else{
+	$vertrek = "n.v.t"
+
+}
 $deelnemers = $_POST['deelnemers'];
 
 $datesString = implode(",", $dates);

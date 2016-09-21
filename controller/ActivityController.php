@@ -225,12 +225,13 @@ if(!empty($_GET['id'])){
     public function search(){
 
         //$this->set('search_results',$this->activityDAO->search($_POST));
-        $search_results = $this->activityDAO->search($_POST);
-            
+        $search_results = $this->activityDAO->search($_GET['s']);
+        $this->set("activities", $search_results);
+      
 
-        header('Content-Type: application/json');
-            echo json_encode($search_results);
-            die();
+        // header('Content-Type: application/json');
+        //     echo json_encode($search_results);
+        //     die();
 
 
     }

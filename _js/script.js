@@ -108,6 +108,29 @@ Handlebars.registerHelper("case", function(value, options) {
         });
       });
 
+      $('.search-icon').on('click',function(e){
+        e.preventDefault();
+       var searchItem = $(this).parent().parent().find('input').val();
+       if(searchItem.length > 0){
+       searchActivities(searchItem);
+     }
+      })
+
+      $('#search-input-header').bind("enterKey",function(e){
+        var searchItem = $('#search-input-header').val();
+       if(searchItem.length > 0){
+       searchActivities(searchItem);
+     }
+    });
+      
+    $('#search-input-header').keyup(function(e){
+
+    if(e.keyCode == 13)
+    {
+        $(this).trigger("enterKey");
+    }
+    });
+
 
 
       $('img').each(function() {
@@ -690,6 +713,8 @@ Handlebars.registerHelper("case", function(value, options) {
       
       $('.ga-terug').on('click', function(){
         var goToStap = $(this).data('stap');
+        $('.stap-header [data-stap-id=' + parseInt(goToStap + 1) + ']').removeClass('active');
+      $('.stap-header [data-stap-id='+ goToStap + ']').addClass('active');
         $('#stap' + parseInt(goToStap + 1)).hide();
         //console.log($('#stap' + parseInt(goToStap + 1)));
         $('#stap' + goToStap).fadeIn();
@@ -966,6 +991,9 @@ Handlebars.registerHelper("case", function(value, options) {
       case 1: 
       typeGroep = "Vriendengroep"
       break;
+
+      default:
+      typeGroep = "Onbekend"
     }
 
     formUsed.show();
@@ -1172,6 +1200,36 @@ Handlebars.registerHelper("case", function(value, options) {
 
     }
 
+
+  }
+
+  function searchActivities(searchTerm){
+    console.log('SEARCH ACT')
+
+    var postData = {
+      search: searchTerm
+    }
+
+    window.location.href = "index.php?page=search&s=" + searchTerm;
+
+    // $.ajax({
+
+    //     type: "POST",
+    //     url: 'index.php?page=search',
+    //     data: postData,
+    //     success: function(data) {
+    //       console.log('succes');
+    //       console.log(data);
+          
+
+    //     },
+
+    //     error: function(err){
+    //       console.log(err)
+    //     }
+
+
+    //   })
 
   }
 

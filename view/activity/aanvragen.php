@@ -52,7 +52,7 @@
 
                   
                   <div class="buttons">
-                  <button disabled="true" class="next-step not-active" id="to-step-2"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
+                  <button disabled="true" class="next-step not-active" id="to-step-2">Volgende stap<span class=" glyphicon glyphicon-chevron-right"></span></button>
                </div>
             
             </div>  
@@ -158,7 +158,7 @@
                   </ul>
                   <div class="buttons">
                   <button class="next-step ga-terug" data-stap="1"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
-                  <button disabled="true" class="next-step not-active" id="to-step-3"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
+                  <button disabled="true" class="next-step not-active" id="to-step-3">Volgende stap<span class=" glyphicon glyphicon-chevron-right"></span></button>
                </div>
              </div>
             </div>
@@ -174,7 +174,7 @@
                   
                   <ul class="interesse-in">
                   </ul>
-                <!--   <button disabled="true" class="next-step not-active" id="to-step-2"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
+                <!--   <button disabled="true" class="next-step not-active" id="to-step-2"><span class=" glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
                 -->
               </div>
             </div>
@@ -184,7 +184,7 @@
             <div id="datePicker"></div>
             <div class="buttons">
             <button class="next-step ga-terug" data-stap="2"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
-             <button class="next-step " id="to-step-4"><span class="arrow-menu arrow-down glyphicon glyphicon-chevron-right"></span>Volgende stap</button>
+             <button class="next-step " id="to-step-4">Volgende stap<span class=" glyphicon glyphicon-chevron-right"></span></button>
            </div>
       </div>        
       </div>
@@ -193,7 +193,7 @@
       <div id="stap4" style="display:none" class="aanvraag-activiteiten aanvraag-container">
          <div class="aanvraag-activiteiten-flex">
             <div class="container-in-flex container-stap-content container-winkelwagen">
-               <div class="container-in-flex container-winkelwagen">
+               <div class="container-in-flex">
                <div class="container-winkelwagen-content">
                   <ul class="interesse-in">
                   </ul>
