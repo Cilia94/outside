@@ -87,7 +87,7 @@
 </ul>
 
 </script>
-<!--
+
 
 <script id="handlebars-template-prijzen" type="text/template">
 <div class="container-all-prices">
@@ -97,25 +97,25 @@
 <?php switch($_SESSION[ 'session_taal']){
 
      case "NL": ?>
-     {{header_nl}}
+     {{titel_nl}}
      <?php
       break; 
 
 
       case "FR": ?>
-      {{header_fr}}
+      {{titel_fr}}
       <?php
       break; 
 
       case "ENG": 
       ?>
-      {{header_en}}
+      {{titel_en}}
       <?php 
       break; 
 } ?></div>
 
 
-       {{#each subPrijzen}}
+      
         <li class="top-border">
             <div class="prijs-container">
             <span class="prijs">
@@ -129,42 +129,42 @@
     <?php switch($_SESSION[ 'session_taal']){
 
      case "NL": ?>
-     {{titelPrijs_nl}}
+     {{prijs_nl}}
      <?php
       break; 
 
 
       case "FR": ?>
-      {{titelPrijs_fr}}
+      {{prijs_nl}}
       <?php
       break; 
 
       case "ENG": 
       ?>
-      {{titelPrijs_en}}
+      {{prijs_nl}}
       <?php 
       break; 
 } ?>
                 
             </span>
-            {{#if info}}
+         
             <p class="info-prijs">
                <?php switch($_SESSION[ 'session_taal']){
 
      case "NL": ?>
-     {{info_nl}}
+     {{extra_nl}}
      <?php
       break; 
 
 
       case "FR": ?>
-      {{info_fr}}
+      {{extra_nl}}
       <?php
       break; 
 
       case "ENG": 
       ?>
-      {{info_en}}
+      {{extra_nl}}
       <?php 
       break; 
 } ?>
@@ -172,16 +172,15 @@
                <br><a href="#"> Prijslijst catering</a>
                {{/if}}
            </p>
-           {{/if}}
+          
            </div>
         </li>
 
 
-        {{/each}}
+       
         </article>
         {{/each}}
 
         </div>
 
 </script>
--->

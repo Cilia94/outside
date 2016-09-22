@@ -122,7 +122,7 @@ Handlebars.registerHelper("case", function(value, options) {
        searchActivities(searchItem);
      }
     });
-      
+
     $('#search-input-header').keyup(function(e){
 
     if(e.keyCode == 13)
@@ -304,24 +304,37 @@ Handlebars.registerHelper("case", function(value, options) {
       if (type) {
         var pageType = type.split('=')[1];
         if (window.location.search) {
+              var checkGlobal = window.location.search.split('globalItem&id=');
+              console.log("ID ",checkGlobal[1].split('&')[0])
+              var idOfActivity = checkGlobal[1].split('&')[0];
 
-          var kindOfPage = window.location.search.split('=')[1]
-          if (kindOfPage) {
-            var idCheck = window.location.search.split('&')[1];
-            if (idCheck) {
-              var idOfActivity = idCheck.split('=')[1];
-
-
-              //console.log(kindOfPage, idOfActivity);
-
-              if (kindOfPage == "globalItem&id" && idOfActivity) {
-                //console.log(json_getById(idOfActivity, allActivities))
-                getAllPrices();
+              if (idOfActivity) {
+                 var dataPost = {};
+                 dataPost.id = idOfActivity;
+                 $.ajax({
+                  data:dataPost,
+                  url: 'index.php?page=get_prices_of_activity',
+                  type: 'POST',
+                  dataType: 'json'
+                })
+                .done(function(data) {
+                 var prijsData = {};
+                 prijsData.allePrijzen = data;
+                 console.log(prijsData)
+                 var prijsContainer = $('#handlebars-template-prijzen').text();
+                
+                var prijs_template = Handlebars.compile(prijsContainer);
+                
+                var html = prijs_template(prijsData);
+                //console.log("html",html)
+                $('#append-prijzen').append($(html));
+                });
+    
                 getAllVerwacht();
-                getAllPrograms()
+                getAllPrograms();
               }
-            }
-          }
+            
+          
         }
 
       }
@@ -421,15 +434,18 @@ Handlebars.registerHelper("case", function(value, options) {
     function getSinglePrice(prijzen) {
 
       //console.log(prijzen);
-      var idOfActivity = window.location.search.split('&')[1].split('=')[1]
+      var idOfActivity = window.location.search.split('&')[2].split('=')[1]
 
       var prijs = json_getByActivityId(idOfActivity, prijzen);
       if (prijs) {
-        console.log(prijs);
+        console.log("prijs ",prijs);
+        console.log($('#handlebars-template-prijzen'))
         var prijsContainer = $('#handlebars-template-prijzen').text();
+        console.log("prijscontainer", prijsContainer)
         var prijs_template = Handlebars.compile(prijsContainer);
-
+        //console.log("prijstemplate", prijs_template)
         var html = prijs_template(prijs);
+        console.log("html",html)
         $('#append-prijzen').append($(html));
       }
 
@@ -442,7 +458,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
       var programma = json_getByActivityId(idOfActivity, programmas);
       if (programma) {
-        console.log(programma);
+        //console.log(programma);
         var programmaContainer = $('#handlebars-template-programmas').text();
         var programma_template = Handlebars.compile(programmaContainer);
 
@@ -973,6 +989,7 @@ Handlebars.registerHelper("case", function(value, options) {
       formUsed = $('#form-standaard');
     }
     console.log(activities);
+    console.log(typeGroepId_global);
 
     var typeGroep;
     switch (typeGroepId_global){
@@ -980,15 +997,15 @@ Handlebars.registerHelper("case", function(value, options) {
       typeGroep = "School"
       break;
 
-      case 1: 
+      case 2: 
       typeGroep = "Jeugdgroep -18j"
       break;
 
-      case 1: 
+      case 3: 
       typeGroep = "Bedrijf"
       break;
 
-      case 1: 
+      case 4: 
       typeGroep = "Vriendengroep"
       break;
 
@@ -996,13 +1013,22 @@ Handlebars.registerHelper("case", function(value, options) {
       typeGroep = "Onbekend"
     }
 
+    console.log(typeGroep);
+
     formUsed.show();
     $('#send-form').unbind('click');
     $('#send-form').on('click', function(){
     var formData = {};
     formData.dates = dates;
+    if(formData.dates.length<1){
+      formData.dates = "niet ingevuld";
+    }
+
     formData.activities = activities;
     formData.opmerking = formUsed.find('#gegevens-opmerkingen').val();
+    if(formData.opmerking.length<1){
+      formData.opmerking = "niet ingevuld";
+    }
     formData.typeGroep = typeGroep;
     formData.taal = currentTaal;
 
@@ -1073,7 +1099,12 @@ Handlebars.registerHelper("case", function(value, options) {
         allowSubmit = false;
       }
     }
+  }else{
+    formData.vertrek = "n.v.t";
+
   }
+
+
 
     if(allowSubmit){
       $('.error-text').hide();

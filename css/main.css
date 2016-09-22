@@ -1022,6 +1022,16 @@ ul.prijzen li p.info-prijs {
   opacity: 1;
 }
 
+.forfait-opmerking {
+  background-color: #fea680;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.forfait-opmerking p {
+  padding: 10px;
+}
+
 @media only screen and (min-width: 1200px) {
   ul.planning-from-template {
     display: -ms-flexbox;
@@ -1076,10 +1086,12 @@ ul.prijzen li p.info-prijs {
 
 footer {
   padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 footer p {
-  text-align: center;
+  text-align: center !important;
   margin: 0px;
   margin-bottom: 0px;
 }

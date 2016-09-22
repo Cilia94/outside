@@ -122,25 +122,52 @@
 
       <img class="subcategory-img" 
       src="css/assets/images/activityPhotos/{{afbeelding}}_th.jpg">
-                         
-      <a href="index.php?page=globalItem&id={{id}}" class="gridLink-sub"> 
+      <?php 
+        switch($_SESSION['session_taal']){
+          case 'NL':
+         ?>              
+      <a href="index.php?page=globalItem&id={{id}}&name={{name_nl}}" class="gridLink-sub"> 
       <div class="overlay-img">
         <span> 
         {{naam_nl}} 
 
         </span>
-        </div></a></div>
+        </div></a>
+        <?php break; 
+        case 'FR': ?>
+        <a href="index.php?page=globalItem&id={{id}}&name={{name_fr}}" class="gridLink-sub"> 
+      <div class="overlay-img">
+        <span> 
+        {{naam_fr}} 
+
+        </span>
+        </div></a>
+
+         <?php break; 
+        case 'ENG': ?>
+
+        <a href="index.php?page=globalItem&id={{id}}&name={{name_en}}" class="gridLink-sub"> 
+      <div class="overlay-img">
+        <span> 
+        {{naam_en}} 
+
+        </span>
+        </div></a>
+        <?php break; } ?>
+
+
+  </div>
         -->
 
   <div class="grid-sub">
         <div class="filtered-item">
-        <a href="index.php?page=globalItem&id={{id}}">
+        <a href="index.php?page=globalItem&id={{id}}&name={{name_nl}}">
         <section style="background-image:url('assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
         
         </section>
         </a>
         <h3>
-        <a href="index.php?page=globalItem&id={{id}}">
+        <a href="index.php?page=globalItem&id={{id}}&name={{name_nl}}">
         <?php 
         switch($_SESSION['session_taal']){
 

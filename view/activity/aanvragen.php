@@ -248,7 +248,7 @@
                   <label for="gegevens-opmerkingen">
                     <?php echo taal('Eventuele opmerkingen','',''); ?>
                   </label>
-                  <textarea id="gegevens-opmerkingen" class="gegevens-input">
+                  <textarea id="gegevens-opmerkingen" rows="6" class="gegevens-input">
                   </textarea>
                 </article>
 
@@ -304,7 +304,7 @@
                   <label for="gegevens-opmerkingen">
                     <?php echo taal('Eventuele opmerkingen','',''); ?>
                   </label>
-                  <textarea id="gegevens-opmerkingen" class="gegevens-input">
+                  <textarea id="gegevens-opmerkingen" rows="6" class="gegevens-input">
                   </textarea>
                 </article>
 

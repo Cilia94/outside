@@ -77,6 +77,13 @@ class ActivityController extends Controller {
 
     }
 
+    public function get_prices_of_activity(){
+        $prices = $this->activityDAO->getRegularPricesById($_POST['id']);
+        header('Content-Type: application/json');
+        echo json_encode($prices);
+        die();
+    }
+
     public function all_other_data(){
        $resultsActivities = $this->activityDAO->selectAll();
        $resultsCategories = $this->categoryDAO->selectAllCategoriesWithActivities();

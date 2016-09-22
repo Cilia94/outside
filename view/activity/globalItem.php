@@ -250,8 +250,21 @@
        
      
     </ul>
+    <!--Met minder dan -minAantal- deelnemers kan de activiteit doorgaan, 
+    maar moet het forfait van -minAantal- x de prijs betaald worden.
+-->
+<div class="forfait-opmerking">
+    <p>
+        <?php 
+$forfNL = "Met minder dan " . $activity['minAantal'] . " deelnemers kan de activiteit doorgaan, maar moet een forfait van " . 35*$activity['minAantal'] . "€ betaald worden.";
+echo taal($forfNL,$forfNL,$forfNL);
+?>
+    </p>
+</div>
 
-<?php include("verwacht_templates.php"); ?>
+
+<?php include("verwacht_templates.php");
+ ?>
 
 </div>
 </div>

@@ -56,7 +56,7 @@
                     
            </label>
 
-           <a href="index.php?page=globalItem&id={{id}}" class="activity-info-link">
+           <a href="index.php?page=globalItem&id={{id}}&name={{naam_nl}}" class="activity-info-link">
                 <i class=" fa fa-info-circle" 
                 aria-hidden="true"></i>
             </a>
