@@ -121,6 +121,11 @@ $routes = array(
     'action'=> 'all_other_data'
      ),
 
+  'get_prices_of_activity' => array(
+    'controller'=> 'Activity',
+    'action'=> 'get_prices_of_activity'
+     ),
+
   'all_category_types' => array(
     'controller'=> 'Activity',
     'action'=> 'all_category_types'

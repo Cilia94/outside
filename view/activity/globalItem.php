@@ -110,22 +110,7 @@
 
             </span>
 
-            <!--
-            <span class="value-grid-item">
-                <?php 
-                // switch ($activity['locatieId']){
-                //     case 0: echo "Outside Adventure Park <br>(Westouterseweg 3, 8970 Poperinge)";
-                //     break;
-
-                //     case 1: echo "Outside Adventure Park <br>(Westouterseweg 3, 8970 Poperinge)";
-                //     break;
-
-                //     default: echo "Outside Adventure Parkje <br>(Westouterseweg 3, 8970 Poperinge)";
-                
-                // } 
-                ?>
-                
-            </span>
+        
         
 
 		
@@ -250,8 +235,21 @@
        
      
     </ul>
+    <!--Met minder dan -minAantal- deelnemers kan de activiteit doorgaan, 
+    maar moet het forfait van -minAantal- x de prijs betaald worden.
+-->
+<div class="forfait-opmerking">
+    <p>
+        <?php 
+$forfNL = "Met minder dan " . $activity['minAantal'] . " deelnemers kan de activiteit doorgaan, maar moet een forfait van " . 35*$activity['minAantal'] . "€ betaald worden.";
+echo taal($forfNL,$forfNL,$forfNL);
+?>
+    </p>
+</div>
 
-<?php include("verwacht_templates.php"); ?>
+
+<?php include("verwacht_templates.php");
+ ?>
 
 </div>
 </div>

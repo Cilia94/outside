@@ -6,15 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 
-function filterVars($var){
-    if(is_array($var)){
-        $str = "<table>";
-        foreach($var as $k=>$v) $str .= "<tr><td>$k</td><td>$v</td></tr>";
-        $str .= "</table>";
-        $var = $str;
-    }
-    return $var;
- }
+
 
 $mail = new PHPMailer;
 //$mail->setLanguage('nl', WWW_ROOT  . DS . 'PHPMailer-master' . DS . 'language' . DS . 'phpmailer.lang-nl.php');
@@ -28,18 +20,24 @@ $mail->addAddress($_POST['email'], $_POST['name']);
 
 $mail->Subject = "Aanvraag " . $_POST['name'];
 $name = $_POST['name'];
+
 $message = $_POST['opmerking'];
+
 $activities = $_POST['activities'];
 $email = $_POST['email'];
+
 $dates = $_POST['dates'];
+
 $typeGroep = $_POST['typeGroep'];
 $subject = "Aanvraag " . $name;
 $taal = $_POST['taal'];
 $aankomst = $_POST['aankomst'];
+
 $vertrek = $_POST['vertrek'];
+
 $deelnemers = $_POST['deelnemers'];
 
-$datesString = implode(",", $dates);
+$datesString = implode(", ", $dates);
 $arrayActivitiesName = [];
 
 for($i = 0; $i< count($activities); $i++ ){
@@ -48,7 +46,7 @@ for($i = 0; $i< count($activities); $i++ ){
 
 
 }
-$activitiesString = implode(",", $arrayActivitiesName);
+$activitiesString = implode(", ", $arrayActivitiesName);
 
 $mailTemplate = file_get_contents(dirname(__FILE__) . '/assets/aanvraagTemplate.php');
 

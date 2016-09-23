@@ -56,6 +56,7 @@ ul.planning-from-template {
         }
         span.titel-planned-activity {
             font-weight: bold;
+            width: 80%;
         }
         p.info-planned-activity {
             text-align: left;
@@ -195,9 +196,9 @@ ul.prijzen {
     // }
     li {
         //width: 400px;
-        flex-basis: 175px;
+        flex-basis: 200px;
         display: block;
-        margin-right: 25px;
+        margin-right: 35px;
         margin-bottom: 20px;
         i {
             //float: left;
@@ -221,6 +222,7 @@ ul.prijzen {
             //margin-left: 35px;
             color: $outside-light-bright-orange;
             margin-bottom: 15px;
+            width: 80%;
         }
     }
 }
@@ -233,13 +235,13 @@ ul.prijzen {
 
 .info-photos{
     font-size: 1.05em;
-    text-align: center;
+    text-align: center!important;
     font-style: italic;
     font-weight: bolder;
     //display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    width: 350px;
+    width: 100%;
 }
 .activity-photos {
     width: 90%;
@@ -346,6 +348,15 @@ ul.prijzen {
         opacity: 1;
     }
 }
+
+.forfait-opmerking{
+    background-color: lighten($outside-flue-orange,10%);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    p{
+        padding: 10px;
+    }
+}
 @media only screen and (min-width: 1200px) {
     ul.planning-from-template {
         display: -webkit-flex;
@@ -365,4 +376,45 @@ ul.prijzen {
             }
         }
     }
+}
+
+@media only screen and (max-width: 600px) {
+    ul.planning-from-template li p.info-planned-activity{
+        margin-left: 50px;
+    }
+
+    ul.planning-from-template li span.tijdstip{
+        width: 50px;
+    }
+
+    .grid-praktisch li{
+        margin-right: 7.5px;
+    }
+    
+}
+
+@media only screen and (max-width: 450px) {
+
+ul.planning-from-template li span{
+display: block; 
+font-size: 1.15em;
+}
+
+ul.planning-from-template li p.info-planned-activity{
+        margin-left: 0px;
+    }
+
+    ul.planning-from-template li span.tijdstip{
+        margin-bottom: 5px;
+
+    }
+
+    ul.planning-from-template li{
+        padding: 10px 15px;
+    }
+
+    ul.planning-from-template li span.titel-planned-activity{
+        width: 100%;
+    }
+
 }

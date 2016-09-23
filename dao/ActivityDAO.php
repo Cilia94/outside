@@ -128,5 +128,31 @@ class ActivityDAO extends DAO {
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function search($search) {
+
+		switch($_SESSION['session_taal']){
+			case 'NL':
+			$sql = "SELECT * FROM inhoud 
+				WHERE (inhoud_nl LIKE :search OR naam_nl LIKE :search2) ORDER BY ID ASC";
+			break;
+
+			case 'FR':
+			$sql = "SELECT * FROM inhoud 
+				WHERE (inhoud_fr LIKE :search OR naam_fr LIKE :search2) ORDER BY ID ASC";
+			break;
+
+			case 'ENG':
+			$sql = "SELECT * FROM inhoud 
+				WHERE (inhoud_en LIKE :search OR naam_en LIKE :search2) ORDER BY ID ASC";
+			break;
+		}
+		
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':search', '%' . $search . '%');
+		$stmt->bindValue(':search2', '%' . $search . '%');
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 
 }

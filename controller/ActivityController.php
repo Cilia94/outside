@@ -77,6 +77,13 @@ class ActivityController extends Controller {
 
     }
 
+    public function get_prices_of_activity(){
+        $prices = $this->activityDAO->getRegularPricesById($_POST['id']);
+        header('Content-Type: application/json');
+        echo json_encode($prices);
+        die();
+    }
+
     public function all_other_data(){
        $resultsActivities = $this->activityDAO->selectAll();
        $resultsCategories = $this->categoryDAO->selectAllCategoriesWithActivities();
@@ -225,12 +232,13 @@ if(!empty($_GET['id'])){
     public function search(){
 
         //$this->set('search_results',$this->activityDAO->search($_POST));
-        $search_results = $this->activityDAO->search($_POST);
-            
+        $search_results = $this->activityDAO->search($_GET['s']);
+        $this->set("activities", $search_results);
+      
 
-        header('Content-Type: application/json');
-            echo json_encode($search_results);
-            die();
+        // header('Content-Type: application/json');
+        //     echo json_encode($search_results);
+        //     die();
 
 
     }

@@ -29,7 +29,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
     
     <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
@@ -64,6 +64,9 @@
                               </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        <div class="close-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar"><i class="fa fa-times" aria-hidden="true">
+        </i></div>
+        
             <ul class="nav navbar-nav">
                 <li class="global-menu-item active-item">
                     <a class="link-item" href="index.php">Ons aanbod
@@ -132,6 +135,13 @@
 
             </ul>
 
+            <div class="search-nav">
+            <div class="search-nav-content">
+                                <input id="search-input-header" placeholder="Zoeken..." type="text">
+                                <a href="#"><i class="search-icon fa fa-search" aria-hidden="true"></i></a>
+                                </div>
+                                </div>
+
         <div class="lang-select">
             <ul class="taal-kiezen">
         <li class="current-taal">
@@ -151,14 +161,13 @@
         </div>
 
 
+
+
         </div>
       
-        <!--
-                              <div class="search-nav">
-                                <input class="" placeholder="Zoeken..." type="text">
-                                <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                </div>
-                                -->
+       
+                              
+                               
 
 
     </nav>

@@ -3,7 +3,7 @@
 <div class="container-middle container-info no-header">
 
     <h1 id="page-name"class="titel-header">
-        <?php echo taal($category['type'],'','');
+        <?php echo taal($category['type'],$category['type'],$category['type']);
         ?>
 
     </h1>
@@ -13,6 +13,7 @@
 
    
 <div class="content_info">
+    <?php //echo taal($category['inhoud_nl'],$category['inhoud_fr'],$category['inhoud_en']); ?>
 
 
 
@@ -23,16 +24,18 @@
                 <?php 
                 if(isset($activities)){ 
                   foreach ($activities as $activitySub) { 
+                    if($activitySub['id']){
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img class=\"subcategory-img\" 
                         src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
-                         echo "<a href=\"index.php?page=globalItem&id={$activitySub['id']}\" class=\"gridLink-sub\">"; 
-                         echo "<div class=\"overlay-img\">"; 
+                         $name = preg_replace('/\s+/', '', taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']));
+                         echo "<a href=\"index.php?page=globalItem&id={$activitySub['id']}&name=" . $name . "\" class=\"gridLink-sub\">";echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
                 echo taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']); 
                 echo "</span>"; 
                 echo "</div></a></div>"; 
           } 
+      }
     } ?>
 
             </div>

@@ -8,7 +8,8 @@
 
     //margin-left: -35px;
     //margin-top: -20px;
-    position: relative;
+    -webkit-transform: translate3d(0,0,0);
+    position: static;
      //filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     
    
@@ -17,7 +18,7 @@
  .text-on-header{
         position: absolute;
         display: block;
-        z-index: 99;
+        z-index: 98;
 
         //background-color: blue;
         float: left;
@@ -200,5 +201,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .gridItem .nameGrid {
     margin-top: -50px;
-    z-index: 99;
+    z-index: 98;
 }
