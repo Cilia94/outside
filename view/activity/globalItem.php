@@ -110,22 +110,7 @@
 
             </span>
 
-            <!--
-            <span class="value-grid-item">
-                <?php 
-                // switch ($activity['locatieId']){
-                //     case 0: echo "Outside Adventure Park <br>(Westouterseweg 3, 8970 Poperinge)";
-                //     break;
-
-                //     case 1: echo "Outside Adventure Park <br>(Westouterseweg 3, 8970 Poperinge)";
-                //     break;
-
-                //     default: echo "Outside Adventure Parkje <br>(Westouterseweg 3, 8970 Poperinge)";
-                
-                // } 
-                ?>
-                
-            </span>
+        
         
 
 		

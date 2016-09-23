@@ -3,12 +3,19 @@ ul {
   
 }
 
+select{
+    font-size: 16px!important;
+}
+
+.content{
+    -webkit-transform: translate3d(0,0,0);
+    position: relative;
+}
+
 .opmerking-container{
     display: none;
         border: solid 3px lighten($outside-flue-orange,0%);
-        //background-color: $outside-flue-orange;
         border-radius: 10px;
-        //color: white;
         padding: 2px;
         margin-bottom: 35px;
         margin-top: 25px;
@@ -194,6 +201,11 @@ box-shadow: inset 0px -15px 25px 0px rgba(0,0,0,0.9);
     p{
 
     }
+}
+
+.content{
+    -webkit-transform: translate3d(0,0,0);
+
 }
 
 @media screen and (max-width: 380px) {

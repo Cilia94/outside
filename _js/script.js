@@ -82,6 +82,9 @@ Handlebars.registerHelper("case", function(value, options) {
 
     function init() {
       console.log('init');
+      // $('.close-menu').on('click', function(){
+      //   $('#navbar').css('height','1px')
+      // })
 
 
       if ($('#page-name').html()) {

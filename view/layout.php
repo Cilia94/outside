@@ -64,6 +64,8 @@
                               </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        <div class="close-menu"><i class="fa fa-times" aria-hidden="true"></i></div>
+        
             <ul class="nav navbar-nav">
                 <li class="global-menu-item active-item">
                     <a class="link-item" href="index.php">Ons aanbod

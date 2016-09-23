@@ -13,9 +13,16 @@ footer {
 .special-menu-item {
     background-color: $darker-grey;
 }
+
+.close-menu{
+    display: none;
+}
 nav.navbar {
-    //background-image: url('../assets/images/woodbg.png');
+
     background-color: black;
+    position: relative;
+
+
     //height: 30px;
     //font-family: $typewriter-font;
     font-family: $basic-medium;
@@ -28,9 +35,16 @@ nav.navbar {
     }
 }
 ul.navbar-nav {
+    //position: relative;
     float: none;
     margin-left: 32%;
     display: block;
+    position: absolute;
+
+    li{
+        
+    }
+
     .divider-menu {
         display: none;
         width: 20%;
@@ -149,6 +163,7 @@ li a.active-item {
     display: inline-block;
     background-color: black;
     position: relative;
+    
     //color:red;
     padding: 0px 5px 5px 5px;
     text-transform: uppercase;
@@ -213,11 +228,12 @@ li a.active-item {
     right: 5px;
 }
 .navbar-nav ul {
+    //position: absolute;
     position: absolute;
     white-space: nowrap;
     background-color: black;
     border-bottom: 3px solid $outside-light-bright-orange;
-    z-index: 1;
+    z-index: 99;
     left: -99999em;
     list-style: none;
     li {
@@ -273,8 +289,10 @@ li a.active-item {
     }
 }
 @media only screen and (max-width: 768px) {
+
     ul.navbar-nav {
-        margin-top: 105px;
+        //margin-top: 105px;
+
         li {
             text-transform: uppercase;
             //border: solid 1px white;
@@ -283,14 +301,29 @@ li a.active-item {
             display: inline-block;
         }
     }
+
+    .close-menu{
+        display: block;
+        font-size: 2.5em;
+        margin-left: 2%;
+        color: white;
+        text-align: center;
+        margin-top: 140px;
+
+        &:hover{
+            color:$outside-flue-orange;
+        }
+
+    }
     .navbar-nav ul {
-        position: relative;
+        position: absolute;
+        
         white-space: nowrap;
         background-color: black;
         border-bottom: none;
         //border-bottom: 2px solid  $mid-grey-1;
         margin-bottom: 10px;
-        z-index: 1;
+        z-index: 99;
         left: -99999em;
         list-style: none;
         li {
@@ -353,7 +386,7 @@ li a.active-item {
         position: relative;
         overflow: hidden;
         height: 50px;
-        width: 200px;
+        //width: 200px;
         display: block;
         float: none;
 
@@ -399,12 +432,25 @@ li a.active-item {
         // position: absolute;
         // left: 0;
         // margin-left: 50px;
-        .navbar-nav {
+        ul.navbar-nav {
             margin-left: 0%;
             text-align: center;
-            margin-top: 140px;
+            position: relative;
+           // margin-top: 140px;
         }
+
+        .navbar-nav ul {
+    position: relative;
+    //position: relative;
+}
+
+      
+
     }
+
+       
+
+
 }
 
 @media only screen and (max-width: 1100px) {
