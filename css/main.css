@@ -427,7 +427,6 @@ li a.active-item {
 
 @media only screen and (min-width: 768px) {
   .taal-kiezen {
-    margin-top: -50px;
     position: absolute;
     right: 0;
     margin-right: 25px;
@@ -500,6 +499,8 @@ li a.active-item {
     overflow: hidden;
     position: relative;
     padding-left: 40px;
+    margin-right: 0px;
+    text-align: center;
   }
   #navbar .search-nav .search-nav-content {
     clear: both;
@@ -508,7 +509,7 @@ li a.active-item {
     position: relative;
     overflow: hidden;
     height: 50px;
-    display: block;
+    display: inline;
     float: none;
   }
 }
@@ -1520,6 +1521,9 @@ button.next-step:not(.not-active):hover {
     width: 100%;
   }
   #stap4 form.gegevens-form article.gegevens-article input {
+    width: 90%;
+  }
+  #stap4 form.gegevens-form article.gegevens-article textarea {
     width: 90%;
   }
 }

@@ -280,7 +280,7 @@ li a.active-item {
 @media only screen and (min-width: 768px) {
     .taal-kiezen {
         //color:blue;
-        margin-top: -50px;
+        //margin-top: -50px;
         position: absolute;
         right: 0;
         margin-right: 25px;
@@ -376,9 +376,12 @@ li a.active-item {
         overflow: hidden;
         position: relative;
         padding-left: 40px;
+        margin-right: 0px;
+        text-align: center;
         
 
         .search-nav-content{
+
 
         clear: both;
         margin-left: auto;
@@ -387,7 +390,7 @@ li a.active-item {
         overflow: hidden;
         height: 50px;
         //width: 200px;
-        display: block;
+        display: inline;
         float: none;
 
         }
