@@ -971,8 +971,10 @@ Handlebars.registerHelper("case", function(value, options) {
     var formUsed;
     if(typeGroepId_global == 1){
       formUsed = $('#form-school');
+      $('#form-standaard').hide();
     }else{
       formUsed = $('#form-standaard');
+      $('#form-school').hide();
     }
     console.log(activities);
     console.log(typeGroepId_global);
@@ -1085,8 +1087,18 @@ Handlebars.registerHelper("case", function(value, options) {
         allowSubmit = false;
       }
     }
+    if(formUsed.find('#gegevens-leeftijd')){
+      if(formUsed.find('#gegevens-leeftijd').val()){
+        formData.leeftijd = formUsed.find('#gegevens-leeftijd').val();
+      }else{
+        formUsed.find('#gegevens-leeftijd').addClass('error');
+        formUsed.find('#gegevens-leeftijd').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
   }else{
     formData.vertrek = "n.v.t";
+    formData.leeftijd = "n.v.t";
 
   }
 

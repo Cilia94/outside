@@ -1,5 +1,110 @@
 
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Cilia Email Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+  
+  <table align="center" cellpadding="0" cellspacing="0" 
+  width="100%" style="border-collapse: collapse;" >
+  <tr>
+   <td align="center" 
+   style="padding-top: 10px; padding-right: 10px; padding-bottom: 8px; padding-left: 5px;">
+    <img src="../assets/images/logo-outside.png" alt="logo-outside" 
+    style="display:block"
+    height="123" width="287"
+   </td>
+
+
+  </tr>
+<tr>
+  <td align="center"
+  style="padding-top: 10px; padding-right: 10px; 
+  padding-bottom: 8px; padding-left: 5px;"
+  >
+  
+    <h1 style="padding-top: 5px; padding-right: 5px; 
+    padding-bottom: 4px; padding-left: 3px; 
+    background-color:#E6C373;">Aanvraag van %name%:
+       </h1></td>
+      </tr>
+      <table align="center">
+       <tr>
+               <td width="100%">
+           <h3>Activities: <small>%activities%</small></h3>
+         </td> </tr>
+       </table>
+      
+      <table align="center">
+       <tr>
+               <td width="38%">
+           <h3>Type groep: <small>%typeGroep%</small></h3>
+         </td>
+          <td width="38%">
+           <h3>Deelnemers: <small>%deelnemers%</small></h3>
+         </td>
+     
+         <td width="38%">
+           <h3>Leeftijd: <small>%leeftijd%</small></h3>
+         </td> </tr>
+       </table>
+
+        <table align="center">
+       <tr>
+               <td width="100%">
+           <h3>Datum(s): <small>%dates%</small></h3>
+         </td> </tr>
+       </table>
+
+       <table align="center">
+       <tr>
+        <td width="45%">
+           <h3>Aankomst tijd: <small>%aankomst%</small></h3>
+         </td>
+        <td width="45%">
+           <h3>Vertrek tijd: <small>%vertrek%</small></h3>
+        </td>
+      </tr>
+       </table>
+       
+</tr>
+<!--   <row>
+    <h3>Activities: <small>%activities%</small></h3>
+    <h3>Activities: <small>%activities%</small></h3>
+  </row>
+    <row >
+    <columns small="12">
+ 
+       
+      <h3>Email: <small>%email%</small></h3>
+      <h3>Taal: <small>%taal%</small></h3>
+
+
+ 
+      <callout class="primary">
+        <p>Opmerkingen: <br>
+          %message%
+        </p>
+      </callout>
+
+         
+     
+     
+
+    </columns>
+  </row> -->
+ </table>
+
+</body>
+
+
+</html>
+
 <style type="text/css">
 
   @font-face {
@@ -86,13 +191,13 @@
   }
 
   table{
-    background: #BA1335;
+   
 
   }
 </style>
 
 
-
+<!-- 
 <container>
 
   <spacer size="16"></spacer>
@@ -129,4 +234,4 @@
 </table>
       
 
-</container>
+</container> -->

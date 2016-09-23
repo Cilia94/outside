@@ -287,6 +287,13 @@
                 </article>
 
                 <article class="gegevens-article">
+                  <label for="gegevens-leeftijd">
+                    <?php echo taal('Leeftijd leerlingen','',''); ?>
+                  </label>
+                  <input id="gegevens-leeftijd" class="gegevens-input" type="time">
+                </article>
+
+                <article class="gegevens-article">
                   <label for="gegevens-aankomst">
                     <?php echo taal('Aankomst tijd','',''); ?>
                   </label>
