@@ -305,34 +305,17 @@ Handlebars.registerHelper("case", function(value, options) {
         var pageType = type.split('=')[1];
         if (window.location.search) {
               var checkGlobal = window.location.search.split('globalItem&id=');
+              
+              if(checkGlobal[1]){
               console.log("ID ",checkGlobal[1].split('&')[0])
               var idOfActivity = checkGlobal[1].split('&')[0];
 
               if (idOfActivity) {
-                 var dataPost = {};
-                 dataPost.id = idOfActivity;
-                 $.ajax({
-                  data:dataPost,
-                  url: 'index.php?page=get_prices_of_activity',
-                  type: 'POST',
-                  dataType: 'json'
-                })
-                .done(function(data) {
-                 var prijsData = {};
-                 prijsData.allePrijzen = data;
-                 console.log(prijsData)
-                 var prijsContainer = $('#handlebars-template-prijzen').text();
                 
-                var prijs_template = Handlebars.compile(prijsContainer);
-                
-                var html = prijs_template(prijsData);
-                //console.log("html",html)
-                $('#append-prijzen').append($(html));
-                });
-    
                 getAllVerwacht();
                 getAllPrograms();
               }
+            }
             
           
         }

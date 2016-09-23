@@ -129,7 +129,7 @@
     <?php switch($_SESSION[ 'session_taal']){
 
      case "NL": ?>
-     {{prijs_nl}}
+     {{{prijs_nl}}}
      <?php
       break; 
 
