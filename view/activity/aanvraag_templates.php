@@ -101,3 +101,43 @@
        <div id="items-type-{{id}}" class="items-in-type">
        </div>
        </script>
+
+
+
+       <script id="handlebars-template-vakantiehuis" type="text/template">
+  <a class="click" data-name="{{naam_nl}}" href="#">
+  <li>
+
+            <span>
+               <?php 
+        switch($_SESSION['session_taal']){
+
+          case 'NL': 
+         ?>
+         {{naam_nl}}
+
+         <?php 
+
+         break;
+
+         case 'FR':
+         ?>
+          {{naam_fr}}
+<?php
+          break;
+
+        case 'ENG':
+         ?>
+          {{naam_en}}
+<?php
+          break;
+        }
+
+        ?>
+        </span>
+                    
+           </li></a>
+
+           
+            
+</script>

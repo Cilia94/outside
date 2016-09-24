@@ -1428,50 +1428,31 @@ button.next-step:not(.not-active):hover {
   margin-right: auto;
 }
 
-#stap3 #datePicker .ui-widget-header {
-  background: none;
-  background-color: #fe834d !important;
-  border: none;
-}
-
-#stap3 #datePicker .ui-state-highlight, #stap3 #datePicker .ui-widget-content .ui-state-highlight, #stap3 #datePicker .ui-widget-header .ui-state-highlight {
-  border: 1px solid #d94636;
-}
-
-#stap3 #datePicker .ui-state-highlight, #stap3 #datePicker .ui-widget-content .ui-state-highlight, #stap3 #datePicker .ui-widget-header .ui-state-highlight {
-  background: none;
-  background-color: #ffcab2;
-}
-
-#stap3 #datePicker .ui-state-active, #stap3 #datePicker .ui-widget-content .ui-state-active, #stap3 #datePicker .ui-widget-header .ui-state-active {
-  border: none;
-}
-
-#stap4 .container-form {
+#stap5 .container-form {
   background-color: #3a3a3a;
   padding: 20px;
   width: 60%;
 }
 
-#stap4 .container-winkelwagen {
+#stap5 .container-winkelwagen {
   width: 35%;
 }
 
-#stap4 form.gegevens-form {
+#stap5 form.gegevens-form {
   display: none;
 }
 
-#stap4 form.gegevens-form article.gegevens-article {
+#stap5 form.gegevens-form article.gegevens-article {
   display: block;
   color: white;
   margin-bottom: 9px;
 }
 
-#stap4 form.gegevens-form article.gegevens-article label {
+#stap5 form.gegevens-form article.gegevens-article label {
   width: 150px;
 }
 
-#stap4 form.gegevens-form article.gegevens-article input {
+#stap5 form.gegevens-form article.gegevens-article input {
   padding: 4px;
   padding-left: 8px;
   border: 2px solid transparent;
@@ -1480,7 +1461,7 @@ button.next-step:not(.not-active):hover {
   width: 60%;
 }
 
-#stap4 form.gegevens-form article.gegevens-article textarea {
+#stap5 form.gegevens-form article.gegevens-article textarea {
   width: 60%;
   padding: 4px;
   border: 2px solid transparent;
@@ -1488,16 +1469,101 @@ button.next-step:not(.not-active):hover {
   color: #2a2a2a;
 }
 
-#stap4 form.gegevens-form article.gegevens-article .error {
+#stap5 form.gegevens-form article.gegevens-article .error {
   border: 2px solid red;
 }
 
-#stap4 form.gegevens-form article.gegevens-article .error-label {
+#stap5 form.gegevens-form article.gegevens-article .error-label {
   color: red;
 }
 
-#stap4 button {
+#stap5 button {
   margin-top: 20px;
+}
+
+.container-vakantiehuis {
+  width: 60%;
+}
+
+.container-vakantiehuis .vakantiehuis-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-vakantiehuis .vakantiehuis-content p {
+  color: #fff;
+  text-align: center;
+}
+
+.container-vakantiehuis .vakantiehuis-content ul.ja-nee {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  height: 140px;
+}
+
+.container-vakantiehuis .vakantiehuis-content ul.ja-nee a, .container-vakantiehuis .vakantiehuis-content ul.ja-nee a:hover, .container-vakantiehuis .vakantiehuis-content ul.ja-nee a:visited {
+  list-style: none;
+  color: #a0a0a0;
+}
+
+.container-vakantiehuis .vakantiehuis-content ul.ja-nee li {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: solid 3px transparent;
+}
+
+.container-vakantiehuis .vakantiehuis-content ul.ja-nee li:hover {
+  border-color: #c83627;
+}
+
+.container-vakantiehuis .vakantiehuis-content ul.ja-nee .active {
+  border-color: #c83627;
+}
+
+.container-vakantiehuis .vakantiehuis-content button.ja-nee {
+  width: 100px;
+  padding: 10px;
+}
+
+.container-vakantiehuis .vakantiehuizen {
+  display: none;
+}
+
+.container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul a.click, .container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul a.click:hover, .container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul a.click:visited {
+  list-style: none;
+  color: #a0a0a0;
+}
+
+.container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul li {
+  background-color: #1a1a1a;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border: solid 3px transparent;
+}
+
+.container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul li:hover {
+  border-color: #c83627;
+}
+
+.container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul .active {
+  border-color: #c83627;
+}
+
+.container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul .vakantiehuis-item {
+  padding: 10px;
+  background-color: #1a1a1a;
 }
 
 @media only screen and (max-width: 481px) {
@@ -1520,10 +1586,13 @@ button.next-step:not(.not-active):hover {
   #stap4 .container-in-flex {
     width: 100%;
   }
-  #stap4 form.gegevens-form article.gegevens-article input {
+  #stap5 .container-in-flex {
+    width: 100%;
+  }
+  #stap5 form.gegevens-form article.gegevens-article input {
     width: 90%;
   }
-  #stap4 form.gegevens-form article.gegevens-article textarea {
+  #stap5 form.gegevens-form article.gegevens-article textarea {
     width: 90%;
   }
 }

@@ -348,29 +348,29 @@ button.next-step {
 
     	}
 
-    	.ui-widget-header{
-    		background: none;
-    		background-color: $outside-flue-orange!important;
-    		border:none;
-    	}
+   //  	.ui-widget-header{
+   //  		background: none;
+   //  		background-color: $outside-flue-orange!important;
+   //  		border:none;
+   //  	}
 
-    	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-			border: 1px solid $outside-light-orange;
-			}
+   //  	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+			// border: 1px solid $outside-light-orange;
+			// }
 
-    	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-			background: none;
-    		background-color: lighten($outside-flue-orange,20%);
+   //  	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+			// background: none;
+   //  		background-color: lighten($outside-flue-orange,20%);
     	
-    	}
+   //  	}
 
-    	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
-			border: none;
-    	}
+   //  	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+			// border: none;
+   //  	}
     }
 }
 
-#stap4{
+#stap5{
 	.container-form{
 		background-color: $mid-grey-1;
 		padding: 20px;
@@ -436,6 +436,113 @@ button.next-step {
 			}
 }
 
+.container-vakantiehuis{
+    width: 60%;
+
+    .vakantiehuis-content{
+        margin-left: auto;
+        margin-right: auto;
+
+
+        p{
+            color: #fff;
+            text-align: center;
+        }
+
+        ul.ja-nee{
+        list-style: none;
+        margin-left: 0px;
+        padding-left: 0px;
+        height: 140px;
+
+
+        a, a:hover, a:visited{
+                list-style: none;
+                color: darken(lightgrey,20%);
+            }
+
+        li{
+            background-color: $darker-grey;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            border: solid 3px transparent;
+
+            &:hover{
+                border-color: $outside-bright-orange;
+            }
+    
+        }
+
+        .active{
+                border-color: $outside-bright-orange;
+        }
+
+           
+    }
+
+        button.ja-nee{
+            width: 100px;
+            padding: 10px;
+
+        }
+
+
+    }
+    
+
+.vakantiehuizen{
+   
+   display: none;
+
+   ul#vakantiehuizen-ul{
+
+       list-style: none;
+        margin-left: 0px;
+        padding-left: 0px;
+        //height: 140px;
+        color:#fff;
+        margin-bottom: 20px;
+
+
+        a.click, a.click:hover, a.click:visited{
+                list-style: none;
+                color: darken(lightgrey,20%);
+            }
+
+        li{
+            background-color: $darker-grey;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            border: solid 3px transparent;
+
+            span{
+            }
+
+            &:hover{
+                border-color: $outside-bright-orange;
+            }
+    
+        }
+
+        .active{
+                border-color: $outside-bright-orange;
+        }
+
+        .vakantiehuis-item{
+            padding: 10px;
+            background-color: $darker-grey;
+
+
+
+        }
+
+   }
+
+}
+}
+
 @media only screen and (max-width: 481px) {
     .container-aanvraag .aanvraag-activiteiten .activiteiten-zelf {
         width: 100%;
@@ -447,7 +554,7 @@ button.next-step {
 
 
 
-    #stap4{
+    #stap5{
 
     form.gegevens-form{
 
@@ -474,10 +581,15 @@ button.next-step {
 
 }
 @media only screen and (max-width: 808px) {
-
-
-
     #stap4{
+
+        .container-in-flex{
+            width: 100%;
+        }
+    }
+
+
+    #stap5{
 
         .container-in-flex{
             width: 100%;

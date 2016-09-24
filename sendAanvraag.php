@@ -35,6 +35,7 @@ $aankomst = $_POST['aankomst'];
 
 $vertrek = $_POST['vertrek'];
 $leeftijd = $_POST['leeftijd'];
+$vakantiehuis = $_POST['vakantiehuis'];
 
 $deelnemers = $_POST['deelnemers'];
 
@@ -58,6 +59,7 @@ $mailTemplate = str_replace('%activities%', $activitiesString, $mailTemplate);
 $mailTemplate = str_replace('%email%', $email, $mailTemplate);
 $mailTemplate = str_replace('%leeftijd%', $leeftijd, $mailTemplate);
 $mailTemplate = str_replace('%subject%', $subject, $mailTemplate);
+$mailTemplate = str_replace('%vakantiehuis%', $vakantiehuis, $mailTemplate);
 $mailTemplate = str_replace('%typeGroep%', $typeGroep, $mailTemplate);
 
 $mailTemplate = str_replace('%taal%', $taal, $mailTemplate);

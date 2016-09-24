@@ -113,8 +113,11 @@
         
         
 
-		
-        <?php for ($i = 0; $i < count($activity['adressen']); $i++){
+        <!--		
+        <?php
+        var_dump($activity['adressen']);
+
+         for ($i = 0; $i < count($activity['adressen']); $i++){
             echo "<span class=\"value-grid-item\">";
             echo $activity['adressen'][$i];
             echo "</span>";

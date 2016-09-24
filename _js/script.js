@@ -818,7 +818,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
             $('#filter-term').each(function() {
                 var elem = $(this);
-                elem.unbind('change');
+                elem.unbind('propertychange change click keyup input paste');
                 $(this).val("");
                 elem.data('oldVal', elem.val());
                 elem.bind("propertychange change click keyup input paste", function(event) {
@@ -864,13 +864,13 @@ Handlebars.registerHelper("case", function(value, options) {
             });
 
 
-          step2(allActivities);
+          step2(allActivities, activitiesData);
 
         })
 
   }
 
-  function step2(activities) {
+  function step2(activities, allActivities) {
 
     var idSelected;
 
@@ -879,7 +879,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
       idSelected = [];
       var selected = [];
-      var checkedCheckboxes = $('.checkbox-activity:checked');
+      var checkedCheckboxes = $('.activiteiten-zelf .checkbox-activity:checked');
       checkedCheckboxes.each(function(index) {
         selected.push($(checkedCheckboxes[index]).attr('name'));
         idSelected.push($(checkedCheckboxes[index]).data('id'));
@@ -915,7 +915,7 @@ Handlebars.registerHelper("case", function(value, options) {
     $('#to-step-3').on('click', function() {
      
       if(activities && idSelected){
-      step3(idSelected, activities);
+      step3(idSelected, activities, allActivities);
       $('#to-step-3').attr('disabled', false);
       $('#stap2').hide();
       $('#stap3').fadeIn();
@@ -930,10 +930,11 @@ Handlebars.registerHelper("case", function(value, options) {
 
   }
 
-  function step3(ids, activities) {
+  function step3(ids, activities, allActivities) {
     
     
     var idsActivties = ids;
+    var allActivities = allActivities;
 
     var chosenActivities = [];
     for (var i = 0; i < idsActivties.length; i++) {
@@ -957,17 +958,93 @@ Handlebars.registerHelper("case", function(value, options) {
    $('#to-step-4').on('click', function() {
      
       var dateValue = $('#datePicker').multiDatesPicker('getDates');
-      step4(dateValue, chosenActivities);
+     
+      step4(dateValue, chosenActivities,allActivities);
       $('#stap3').hide();
       $('#stap4').fadeIn();
       $('.stap-header [data-stap-id=3]').removeClass('active');
       $('.stap-header [data-stap-id=4]').addClass('active');
+      
      });
+
 
 
   }
 
-  function step4(dates, activities){
+  function step4(dateValue,chosenActivities, allActivities){
+
+    var vakantiehuis = false;
+    $('.ja-nee a').unbind('click');
+    $('.ja-nee a').on('click', function(e){
+        e.preventDefault();
+        if($('.ja-nee li.active')){
+        $('.ja-nee li.active').removeClass('active');
+      }
+      //var typeId = $('.container-stap-1 .type-groepen a li.active').data('type-id');
+        
+      $(this).find('li').addClass('active');
+      $('#to-step-5').attr('disabled',false);
+      if($('#to-step-5').hasClass('not-active')){
+        $('#to-step-5').removeClass('not-active');
+      }
+
+      if($('.ja-nee a li.active').data('antwoord') == "nee"){
+        vakantiehuis = 'n.v.t';
+        $('.vakantiehuizen').hide();
+      }else{
+        $('.vakantiehuizen').show();
+
+      }
+
+
+      })
+    $('#vakantiehuizen-ul').empty();
+
+     var house_hb = $('#handlebars-template-vakantiehuis').text();
+     var house_template = Handlebars.compile(house_hb);
+
+
+    $(allActivities).each(function(index, house) {
+
+             if(house.categorieId == 4){
+              var html = house_template(house);
+              //console.log(html)
+              var typeOverview = $('#vakantiehuizen-ul');
+              $(typeOverview).append($(html));
+
+             }
+
+              
+            })
+    $('#vakantiehuizen-ul a.click').unbind('click');
+
+    $('#vakantiehuizen-ul a.click').on('click', function(e){
+        e.preventDefault();
+        if($('#vakantiehuizen-ul li.active')){
+        $('#vakantiehuizen-ul li.active').removeClass('active');
+      }
+      $(this).find('li').addClass('active');
+      vakantiehuis = $(this).data('name');
+    })
+
+
+
+
+
+   $('#to-step-5').unbind('click');
+   $('#to-step-5').on('click', function() {
+     
+      //var dateValue = $('#datePicker').multiDatesPicker('getDates');
+      step5(dateValue, chosenActivities, vakantiehuis);
+      $('#stap4').hide();
+      $('#stap5').fadeIn();
+      $('.stap-header [data-stap-id=4]').removeClass('active');
+      $('.stap-header [data-stap-id=5]').addClass('active');
+     });
+
+  }
+
+  function step5(dates, activities, vakantiehuis){
     var formUsed;
     if(typeGroepId_global == 1){
       formUsed = $('#form-school');
@@ -976,8 +1053,6 @@ Handlebars.registerHelper("case", function(value, options) {
       formUsed = $('#form-standaard');
       $('#form-school').hide();
     }
-    console.log(activities);
-    console.log(typeGroepId_global);
 
     var typeGroep;
     switch (typeGroepId_global){
@@ -1001,13 +1076,13 @@ Handlebars.registerHelper("case", function(value, options) {
       typeGroep = "Onbekend"
     }
 
-    console.log(typeGroep);
 
     formUsed.show();
     $('#send-form').unbind('click');
     $('#send-form').on('click', function(){
     var formData = {};
     formData.dates = dates;
+    formData.vakantiehuis = vakantiehuis;
     if(formData.dates.length<1){
       formData.dates = "niet ingevuld";
     }

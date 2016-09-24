@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Cilia Email Design</title>
+  <title>Aanvraag activiteit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
@@ -13,12 +13,7 @@
   <table align="center" cellpadding="0" cellspacing="0" 
   width="100%" style="border-collapse: collapse;" >
   <tr>
-   <td align="center" 
-   style="padding-top: 10px; padding-right: 10px; padding-bottom: 8px; padding-left: 5px;">
-    <img src="../assets/images/logo-outside.png" alt="logo-outside" 
-    style="display:block"
-    height="123" width="287"
-   </td>
+   
 
 
   </tr>
@@ -28,61 +23,89 @@
   padding-bottom: 8px; padding-left: 5px;"
   >
   
-    <h1 style="padding-top: 5px; padding-right: 5px; 
-    padding-bottom: 4px; padding-left: 3px; 
-    background-color:#E6C373;">Aanvraag van %name%:
+    <h1 style="padding-top: 15px;  
+    padding-bottom: 15px;  
+    background-color:#fe834d;">Aanvraag van %name%:
        </h1></td>
       </tr>
-      <table align="center">
+      <table align="">
        <tr>
                <td width="100%">
-           <h3>Activities: <small>%activities%</small></h3>
+           <h3>Activiteiten:</h3> <span>%activities%</span>
          </td> </tr>
        </table>
       
-      <table align="center">
+      <table align="">
        <tr>
-               <td width="38%">
-           <h3>Type groep: <small>%typeGroep%</small></h3>
+               <td width="40%">
+           <h3>Type groep:</h3> <span>%typeGroep%</span>
          </td>
-          <td width="38%">
-           <h3>Deelnemers: <small>%deelnemers%</small></h3>
+          <td width="40%">
+           <h3>Deelnemers:</h3> <span>%deelnemers%</span>
          </td>
      
-         <td width="38%">
-           <h3>Leeftijd: <small>%leeftijd%</small></h3>
+         <td width="40%">
+           <h3>Leeftijd:</h3> <span>%leeftijd%</span>
          </td> </tr>
        </table>
 
-        <table align="center">
+        <table align="">
        <tr>
                <td width="100%">
-           <h3>Datum(s): <small>%dates%</small></h3>
+           <h3>Datum(s):</h3> <span>%dates%</span>
          </td> </tr>
        </table>
 
-       <table align="center">
+       <table align="">
        <tr>
         <td width="45%">
-           <h3>Aankomst tijd: <small>%aankomst%</small></h3>
+           <h3>Aankomst tijd:</h3> <span>%aankomst%</span>
          </td>
         <td width="45%">
-           <h3>Vertrek tijd: <small>%vertrek%</small></h3>
+           <h3>Vertrek tijd:</h3> <span>%vertrek%</span>
         </td>
       </tr>
+       </table>
+
+       <table align="">
+       <tr>
+         <td width="100%">
+           <h3>Vakantiehuis: </h3><span>%vakantiehuis%</span>
+         </td> </tr>
+       </table>
+
+       <table align="">
+       <tr>
+        <td width="45%">
+           <h3>Email: </h3><span>%email%</span>
+         </td>
+        <td width="45%">
+           <h3>Contact taal: </h3><span>%taal%</span>
+        </td>
+      </tr>
+       </table>
+
+       <table align="">
+       <tr>
+         <td width="100%">
+           <h3>Opmerkingen:</h3>
+           <p>
+          %message%
+        </p>
+         </td> </tr>
        </table>
        
 </tr>
 <!--   <row>
-    <h3>Activities: <small>%activities%</small></h3>
-    <h3>Activities: <small>%activities%</small></h3>
+    <h3>Activities: <span>%activities%</span></h3>
+    <h3>Activities: <span>%activities%</span></h3>
   </row>
     <row >
-    <columns small="12">
+    <columns span="12">
  
        
-      <h3>Email: <small>%email%</small></h3>
-      <h3>Taal: <small>%taal%</small></h3>
+      <h3>Email: <span>%email%</span></h3>
+      <h3>Taal: <span>%taal%</span></h3>
 
 
  
@@ -135,7 +158,7 @@
 
 }
 
-  p{
+  p, span{
     font-family: 'ralewayregular','Arial', sans-serif;
   }
 
@@ -204,17 +227,17 @@
   <table width="100%" border="0" cellspacing="0" cellpadding="20">
 
   <row>
-    <columns small="12">
+    <columns span="12">
       <h1>Aanvraag van %name%:
        </h1>
-       <h3>Activities: <small>%activities%</small></h3>
-       <h3>Aantal deelnemers: <small>%deelnemers%</small></h3>
-       <h3>Datums: <small>%dates%</small></h3>
-       <h3>Aankomst tijd: <small>%aankomst%</small></h3>
-       <h3>Vertrek tijd: <small>%vertrek%</small></h3>
-      <h3>Email: <small>%email%</small></h3>
-      <h3>Taal: <small>%taal%</small></h3>
-      <h3>Type groep: <small>%typeGroep%</small></h3>
+       <h3>Activities: <span>%activities%</span></h3>
+       <h3>Aantal deelnemers: <span>%deelnemers%</span></h3>
+       <h3>Datums: <span>%dates%</span></h3>
+       <h3>Aankomst tijd: <span>%aankomst%</span></h3>
+       <h3>Vertrek tijd: <span>%vertrek%</span></h3>
+      <h3>Email: <span>%email%</span></h3>
+      <h3>Taal: <span>%taal%</span></h3>
+      <h3>Type groep: <span>%typeGroep%</span></h3>
 
 
  

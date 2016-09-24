@@ -212,6 +212,8 @@ if(!empty($_GET['id'])){
 
         //$locatiesFromDB = $this->locationDAO->selectAll();
         $thisItem = $this->activityDAO->selectById($_GET['id']);
+        $locationsActivity = $this->locationDAO->selectLocationsByActivity($_GET['id']);
+         $thisItem['adressen'] = $locationsActivity;
         if($thisItem){
 
         $this->set('activity',$thisItem);

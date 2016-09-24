@@ -18,6 +18,10 @@
           <li data-stap-id="4" >
             <span>Stap 4</span>
          </li>
+
+          <li data-stap-id="5" >
+            <span>Stap 5</span>
+         </li>
       </ul>
       <div id="stap1" style="display:block" class="aanvraag-activiteiten aanvraag-container">
          
@@ -189,8 +193,61 @@
       </div>        
       </div>
     </div>
+    <div id="stap4" style="display:none" class="aanvraag-activiteiten aanvraag-container">
+         <div class="aanvraag-activiteiten-flex">
+            <div class="container-in-flex container-stap-content container-winkelwagen">
+               <div class="container-in-flex">
+               <div class="container-winkelwagen-content">
+                  <ul class="interesse-in">
+                  </ul>
+                  
+                  
+               </div>
+            </div>
+            </div>
+           
 
-      <div id="stap4" style="display:none" class="aanvraag-activiteiten aanvraag-container">
+            <div class="container-in-flex container-vakantiehuis">
+               <div class="container-winkelwagen-content vakantiehuis-content">
+                <p>Wilt u een vakantiehuis huren?</p>
+                  <ul class="ja-nee">
+                    <a href=""><li data-antwoord="nee">
+                      
+                      <span>Nee</span>
+                    </li></a>
+
+                    <a href=""><li data-antwoord="ja">
+                      
+                      <span>Ja</span>
+                     
+                    </li> </a>
+                  </ul>
+                  <div class="vakantiehuizen">
+                    <p>Maak een keuze uit onze vakantiehuizen<br>
+                      <a href="http://localhost/outside/index.php?page=category&id=4">Meer info?</a>
+                    </p>
+
+                <ul id="vakantiehuizen-ul">
+                  
+
+
+                  
+                </ul>
+              </div>
+                
+                  <div class="buttons">
+                  <button class="next-step ga-terug" data-stap="3"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+                  <button class="next-step not-active" id="to-step-5">
+                    <?php echo taal('Volgende stap','','Next step'); ?>
+                  </button></div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+      <div id="stap5" style="display:none" class="aanvraag-activiteiten aanvraag-container">
          <div class="aanvraag-activiteiten-flex">
             <div class="container-in-flex container-stap-content container-winkelwagen">
                <div class="container-in-flex">
@@ -322,7 +379,7 @@
                   <?php echo taal('Gelieve alle velden in te vullen','','Please fill in all the fields'); ?>
                 </p>
                   <div class="buttons">
-                  <button class="next-step ga-terug" data-stap="3"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+                  <button class="next-step ga-terug" data-stap="4"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
                   <button class="next-step not-active" id="send-form">
                     <?php echo taal('Versturen','','Send'); ?>
                   </button></div>
