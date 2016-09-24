@@ -973,7 +973,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
   function step4(dateValue,chosenActivities, allActivities){
 
-    var vakantiehuis = false;
+    var vakantiehuis = "n.v.t";
     $('.ja-nee a').unbind('click');
     $('.ja-nee a').on('click', function(e){
         e.preventDefault();
@@ -1210,6 +1210,9 @@ Handlebars.registerHelper("case", function(value, options) {
           $('.form-item textarea').val('');
           $('.show-succes').show();
           $('.show-error').hide();
+          $('#stap5').fadeOut();
+          $('#succes-form').fadeIn();
+
 
         },
 

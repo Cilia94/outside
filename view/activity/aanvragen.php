@@ -347,7 +347,7 @@
                   <label for="gegevens-leeftijd">
                     <?php echo taal('Leeftijd leerlingen','',''); ?>
                   </label>
-                  <input id="gegevens-leeftijd" class="gegevens-input" type="time">
+                  <input id="gegevens-leeftijd" class="gegevens-input" type="number">
                 </article>
 
                 <article class="gegevens-article">
@@ -387,6 +387,22 @@
             </div>
          </div>
       </div>
+
+      <div id="succes-form" style="display:none" class="aanvraag-activiteiten aanvraag-container">
+         
+         
+               <div class="container-stap-content aanvraag-activiteiten-flex">
+                <div class="container-stap-1">
+                  <h1>Bedankt voor u aanvraag</h1>
+                  <p>U zult zo snel mogelijk een antwoord ontvangen.</p>
+                  
+
+                  
+                 
+            
+            </div>  
+            </div>
+          </div> 
 
 
 
