@@ -51,9 +51,13 @@
 
         <table align="">
        <tr>
-               <td width="100%">
-           <h3>Datum(s):</h3> <span>%dates%</span>
-         </td> </tr>
+               <td width="50%">
+           <h3>Startdatum:</h3> <span>%dates%</span>
+         </td> 
+         <td width="50%">
+           <h3>Einddatum:</h3> <span>%datesTot%</span>
+         </td> 
+       </tr>
        </table>
 
        <table align="">
@@ -76,10 +80,13 @@
 
        <table align="">
        <tr>
-        <td width="45%">
+        <td width="32%">
            <h3>Email: </h3><span>%email%</span>
          </td>
-        <td width="45%">
+         <td width="32%">
+           <h3>Telefoonnummer: </h3><span>%tel%</span>
+         </td>
+        <td width="32%">
            <h3>Contact taal: </h3><span>%taal%</span>
         </td>
       </tr>

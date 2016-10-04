@@ -13,7 +13,7 @@ fallback.load({
 
 	Handlebars: 'js/vendor/handlebars.min.js',
 
-	'jQuery.ui':["//code.jquery.com/ui/1.12.0/jquery-ui.min.js"],
+	'jQuery.ui':["//code.jquery.com/ui/1.12.0/jquery-ui.min.js", "js/vendor/jquery-ui.min.js"],
 
 	'MultiDatesPicker':["js/vendor/MultiDatesPicker/jquery-ui.multidatespicker.js"],
 	//.multidatespicker

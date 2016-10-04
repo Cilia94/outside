@@ -1,3 +1,7 @@
+#meerdereDagen{
+    margin-top: 15px;
+}
+
 .container-aanvraag {
 
 	.error-text{
@@ -331,16 +335,38 @@ button.next-step {
 
 
 	p{
-		color: #FFF;
+		color: darken(white,10%);
 		text-align: center;
 		margin-top: 15px;
 	}
 
+    label{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        color: darken(white,10%);
+        text-align: center;
+    }
 
 
 
-    #datePicker{
-    	padding: 30px 0;
+
+    .both-datepickers{
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    // -webkit-align-items: center;
+    // align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .datepick-container{
+        //margin-right: 25px;
+        width: 330px;
+    }
 
     	.ui-datepicker{
     		margin-left: auto;
@@ -541,6 +567,12 @@ button.next-step {
    }
 
 }
+}
+
+.b_dag{
+    font-family: 'ralewaybold'; 
+    
+
 }
 
 @media only screen and (max-width: 481px) {

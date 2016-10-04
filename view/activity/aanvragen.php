@@ -7,20 +7,20 @@
    <div class="aanvraag-activiteiten">
       <ul class="stap-header">
          <li  data-stap-id="1" class="active">
-            <span>Stap 1</span>
+            <span><?php echo taal('Stap','Stap','Step'); ?>1</span>
          </li>
          <li data-stap-id="2" >
-            <span>Stap 2</span>
+            <span><?php echo taal('Stap','Stap','Step'); ?>2</span>
          </li>
          <li data-stap-id="3" >
-            <span>Stap 3</span>
+            <span><?php echo taal('Stap','Stap','Step'); ?>3</span>
          </li>
           <li data-stap-id="4" >
-            <span>Stap 4</span>
+            <span><?php echo taal('Stap','Stap','Step'); ?>4</span>
          </li>
 
           <li data-stap-id="5" >
-            <span>Stap 5</span>
+            <span><?php echo taal('Stap','Stap','Step'); ?>5</span>
          </li>
       </ul>
       <div id="stap1" style="display:block" class="aanvraag-activiteiten aanvraag-container">
@@ -28,35 +28,37 @@
          
                <div class="container-stap-content aanvraag-activiteiten-flex">
                 <div class="container-stap-1">
-                  <h1>Selecteer uw type groep:</h1>
+                  <h1><?php echo taal('Selecteer uw type groep:','',''); ?></h1>
                   <ul class="type-groepen">
                     <a href=""><li data-type-id="1">
                       
-                      <span>School</span>
+                      <span><?php echo taal('School','',''); ?> </span>
                     </li></a>
 
                     <a href=""><li data-type-id="2">
                       
-                      <span>Jeugdgroep -18J</span>
+                      <span><?php echo taal('Jeugdgroepen -18J','',''); ?> </span>
                      
                     </li> </a>
 
                     <a href=""><li data-type-id="3">
                       
-                      <span>Bedrijf</span>
+                      <span><?php echo taal('Bedrijven','',''); ?> </span>
                       
                     </li></a>
                     <a href="">
                     <li data-type-id="4">
                       
-                      <span>Vriendengroep</span>
+                      <span><?php echo taal('Vriendengroep','',''); ?> </span>
                      
                     </li> </a>
                   </ul>
 
                   
                   <div class="buttons">
-                  <button disabled="true" class="next-step not-active" id="to-step-2">Volgende stap<span class=" glyphicon glyphicon-chevron-right"></span></button>
+                  <button disabled="true" class="next-step not-active" id="to-step-2">
+                    <?php echo taal('Volgende stap','',''); ?>
+                    <span class=" glyphicon glyphicon-chevron-right"></span></button>
                </div>
             
             </div>  
@@ -67,7 +69,7 @@
       <div id="stap2" style="display:none" class="aanvraag-container">
          <div class="filter-aanvraag">
             <span><i class="fa fa-search" aria-hidden="true"></i></span>
-            <span>Filter</span>
+            <span><?php echo taal('Filter','',''); ?> </span>
             <input type="text" id="filter-term">
          </div>
 
@@ -154,15 +156,19 @@
             </div>
             <div class="container-in-flex container-stap-content container-winkelwagen">
                <div class="container-winkelwagen-content">
-                  <h1>Interesse in</h1>
+                  <h1><?php echo taal('Interesse in','',''); ?> </h1>
                   <span class="geen-activiteiten">
-                    U hebt nog geen activiteiten aangeduid
+                    <?php echo taal('U hebt nog geen activiteiten aangeduid','',''); ?>
                   </span>
                   <ul class="interesse-in">
                   </ul>
                   <div class="buttons">
-                  <button class="next-step ga-terug" data-stap="1"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
-                  <button disabled="true" class="next-step not-active" id="to-step-3">Volgende stap<span class=" glyphicon glyphicon-chevron-right"></span></button>
+                  <button class="next-step ga-terug" data-stap="1"><span class="glyphicon glyphicon-chevron-left"></span> 
+                  <?php echo taal('Vorige stap','',''); ?>
+                </button>
+                  <button disabled="true" class="next-step not-active" id="to-step-3">
+                    <?php echo taal('Volgende stap','',''); ?>
+                    <span class=" glyphicon glyphicon-chevron-right"></span></button>
                </div>
              </div>
             </div>
@@ -184,11 +190,32 @@
             </div>
 
             <div class="container-in-flex activiteiten-zelf aanvraag-activiteiten-input">
-            <p>Duid aan op welke dag(en) de activiteit(en) doorgaan.</p>
-            <div id="datePicker"></div>
+            <label id="meerdereDagen">
+              <input type="checkbox" class="checkMultipleDays" />
+              <?php echo taal('Gaan de activiteiten door op meerdere dagen?','',''); ?>
+            </label>
+            <div class="both-datepickers">
+            <div class="date_van datepick-container">
+            <p><?php echo taal('Duid aan op welke dag de activiteit(en)', '',''); ?>
+             <span class="b_dag"><?php echo taal('start','',''); ?> </span>.</p>
+            
+            <div class="datepicker" id="datePicker_van"></div>
+          </div>
+
+          <div style="display:none" class="date_tot datepick-container">
+            <p><?php echo taal('Duid aan op welke dag de activiteit(en)','',''); ?>
+             <span class="b_dag"><?php echo taal('eindigt','',''); ?> </span>.</p>
+            
+            <div class="datepicker" id="datePicker_tot"></div>
+          </div>
+        </div>
+
             <div class="buttons">
-            <button class="next-step ga-terug" data-stap="2"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
-             <button class="next-step " id="to-step-4">Volgende stap<span class=" glyphicon glyphicon-chevron-right"></span></button>
+            <button class="next-step ga-terug" data-stap="2"><span class="glyphicon glyphicon-chevron-left"></span>  
+              <?php echo taal('Vorige stap','',''); ?>
+            </button>
+             <button class="next-step " id="to-step-4">
+              <?php echo taal('Volgende stap','',''); ?><span class=" glyphicon glyphicon-chevron-right"></span></button>
            </div>
       </div>        
       </div>
@@ -209,22 +236,30 @@
 
             <div class="container-in-flex container-vakantiehuis">
                <div class="container-winkelwagen-content vakantiehuis-content">
-                <p>Wilt u een vakantiehuis huren?</p>
+                <p>
+                  <?php echo taal('Wilt u een vakantiehuis huren?','',''); ?>
+                </p>
                   <ul class="ja-nee">
                     <a href=""><li data-antwoord="nee">
                       
-                      <span>Nee</span>
+                      <span>
+                        <?php echo taal('Nee','',''); ?></span>
                     </li></a>
 
                     <a href=""><li data-antwoord="ja">
                       
-                      <span>Ja</span>
+                      <span>
+                        <?php echo taal('Ja','',''); ?> </span>
                      
                     </li> </a>
                   </ul>
                   <div class="vakantiehuizen">
-                    <p>Maak een keuze uit onze vakantiehuizen<br>
-                      <a href="http://localhost/outside/index.php?page=category&id=4">Meer info?</a>
+                    <p>
+                      <?php echo taal('Maak een keuze uit onze vakantiehuizen','',''); ?>
+                       <br>
+                      <a href="http://localhost/outside/index.php?page=category&id=4">
+                        <?php echo taal('Meer info?','',''); ?>
+                      </a>
                     </p>
 
                 <ul id="vakantiehuizen-ul">
@@ -236,7 +271,9 @@
               </div>
                 
                   <div class="buttons">
-                  <button class="next-step ga-terug" data-stap="3"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+                  <button class="next-step ga-terug" data-stap="3"><span class="glyphicon glyphicon-chevron-left"></span> 
+                  <?php echo taal('Vorige stap','',''); ?>
+                </button>
                   <button class="next-step not-active" id="to-step-5">
                     <?php echo taal('Volgende stap','','Next step'); ?>
                   </button></div>
@@ -379,7 +416,9 @@
                   <?php echo taal('Gelieve alle velden in te vullen','','Please fill in all the fields'); ?>
                 </p>
                   <div class="buttons">
-                  <button class="next-step ga-terug" data-stap="4"><span class="glyphicon glyphicon-chevron-left"></span> Vorige stap</button>
+                  <button class="next-step ga-terug" data-stap="4"><span class="glyphicon glyphicon-chevron-left"></span> 
+                  <?php echo taal('Vorige stap','',''); ?>
+                </button>
                   <button class="next-step not-active" id="send-form">
                     <?php echo taal('Versturen','','Send'); ?>
                   </button></div>
@@ -392,9 +431,9 @@
          
          
                <div class="container-stap-content aanvraag-activiteiten-flex">
-                <div class="container-stap-1">
-                  <h1>Bedankt voor u aanvraag</h1>
-                  <p>U zult zo snel mogelijk een antwoord ontvangen.</p>
+                <div style="height:445px" class="container-stap-1">
+                  <h1><?php echo taal('Bedankt voor u aanvraag','',''); ?></php> </h1>
+                  <p><?php echo taal('U zult zo snel mogelijk een antwoord ontvangen.','',''); ?> </p>
                   
 
                   

@@ -44,7 +44,8 @@
 
         <li class="top-border same-type-info-following sub-contact-header">
             <i class="fa fa-home" aria-hidden="true"></i> 
-            <span class="name-info">Adres</span><br>
+            <span class="name-info">
+                <?php echo taal('Adres','',''); ?> </span><br>
             
         </li>
     
@@ -117,9 +118,13 @@
         <div class="header-openingsuren">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
             
-            <span>Openingsuren kantoor</span></div>
+            <span>
+                <?php echo taal('Openingsuren kantoor','',''); ?>
+            </span></div>
         <li class="dag">
-            <span class="naam-dag">Maandag</span>
+            <span class="naam-dag">
+                <?php echo taal('Maandag','Lundi','Monday'); ?>
+            </span>
             <div class="beide-uren">
             <div class="uren voormiddag">09:00 - 12:00</div>
             <div class="uren namiddag">13:30 - 18:00</div>
@@ -127,7 +132,8 @@
         </li>
 
         <li class="dag top-border">
-            <span class="naam-dag">Dinsdag</span>
+            <span class="naam-dag">
+                <?php echo taal('Dinsdag','Mardi','Tuesday'); ?></span>
             <div class="beide-uren">
             <div class="uren voormiddag">09:00 - 12:00</div>
             <div class="uren namiddag">13:30 - 18:00</div>
@@ -135,7 +141,8 @@
         </li>
 
         <li class="dag top-border">
-            <span class="naam-dag">Woensdag</span>
+            <span class="naam-dag">
+                <?php echo taal('Woensdag','Mercredi','Wednesday'); ?></span>
             <div class="beide-uren">
             <div class="uren voormiddag">09:00 - 12:00</div>
             <div class="uren namiddag">13:30 - 18:00</div>
@@ -143,7 +150,8 @@
         </li>
 
         <li class="dag top-border">
-            <span class="naam-dag">Donderdag</span>
+            <span class="naam-dag">
+                <?php echo taal('Donderdag','Jeudi','Thursday'); ?></span>
             <div class="beide-uren">
             <div class="uren voormiddag">09:00 - 12:00</div>
             <div class="uren namiddag">13:30 - 18:00</div>
@@ -151,7 +159,8 @@
         </li>
 
         <li class="dag top-border">
-            <span class="naam-dag">Vrijdag</span>
+            <span class="naam-dag">
+                <?php echo taal('Vrijdag','Vendredi','Friday'); ?></span>
             <div class="beide-uren">
             <div class="uren voormiddag">09:00 - 12:00</div>
             <div class="uren namiddag">13:30 - 18:00</div>
@@ -159,24 +168,29 @@
         </li>
 
         <li class="dag top-border">
-            <span class="naam-dag">Zaterdag</span>
+            <span class="naam-dag">
+                <?php echo taal('Zaterdag','Samedi','Saterday'); ?></span>
             <div class="beide-uren">
             <div class="uren voormiddag">09:00 - 12:00</div>
-            <div class="uren namiddag">gesloten</div>
+            <div class="uren namiddag"><?php echo taal('gesloten','','closed'); ?></div>
         </div>
         </li>
 
         <li class="dag top-border">
-            <span class="naam-dag">Zondag</span>
+            <span class="naam-dag">
+                <?php echo taal('Zondag','Dimanche','Sunday'); ?></span>
             <div class="beide-uren">
-            <div class="uren hele-dag">gesloten</div>
+            <div class="uren hele-dag"><?php echo taal('gesloten','','closed'); ?> </div>
         </div>
         </li>
 <li class="top-border li-opmerking">
         <p class="opmerking">
-    <strong>Opmerking:</strong> ons Adventure Park is 7/7 open.
-    Alle activiteiten moeten echter op voorhand gereserveerd worden via 
-    <a href="mailto:info@outsidetravel.be">info@outsidetravel.be</a> of 
+    <strong>
+        <?php echo taal('Opmerking','',''); ?>
+        :</strong> <?php echo taal('ons Adventure Park is 7/7 open.
+    Alle activiteiten moeten echter op voorhand gereserveerd worden via ','',''); ?>
+    <a href="mailto:info@outsidetravel.be">info@outsidetravel.be</a> 
+    <?php echo taal('of','',''); ?> 
     <a href="tel:0479508660">0479/50.86.60</a></p>
 </li>
     </ul>

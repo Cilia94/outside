@@ -1065,6 +1065,7 @@ ul.prijzen li p.info-prijs {
 
 @media only screen and (min-width: 1200px) {
   ul.planning-from-template {
+    margin-top: 25px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1077,7 +1078,6 @@ ul.prijzen li p.info-prijs {
   }
   ul.planning-from-template article {
     margin-right: 10px;
-    max-width: 550px;
   }
   ul.planning-from-template article .header-planning {
     margin-top: 0px;
@@ -1125,6 +1125,10 @@ footer p {
   text-align: center !important;
   margin: 0px;
   margin-bottom: 0px;
+}
+
+#meerdereDagen {
+  margin-top: 15px;
 }
 
 .container-aanvraag .error-text {
@@ -1414,16 +1418,36 @@ button.next-step:not(.not-active):hover {
 }
 
 #stap3 p {
-  color: #FFF;
+  color: #e6e6e6;
   text-align: center;
   margin-top: 15px;
 }
 
-#stap3 #datePicker {
-  padding: 30px 0;
+#stap3 label {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: #e6e6e6;
+  text-align: center;
 }
 
-#stap3 #datePicker .ui-datepicker {
+#stap3 .both-datepickers {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#stap3 .both-datepickers .datepick-container {
+  width: 330px;
+}
+
+#stap3 .both-datepickers .ui-datepicker {
   margin-left: auto;
   margin-right: auto;
 }
@@ -1564,6 +1588,10 @@ button.next-step:not(.not-active):hover {
 .container-vakantiehuis .vakantiehuizen ul#vakantiehuizen-ul .vakantiehuis-item {
   padding: 10px;
   background-color: #1a1a1a;
+}
+
+.b_dag {
+  font-family: 'ralewaybold';
 }
 
 @media only screen and (max-width: 481px) {
@@ -2266,7 +2294,7 @@ ul.openingsuren .li-opmerking {
         flex-wrap: wrap;
   }
   .map-items-text .map-item-text .item-large-section section.item-photos img {
-    width: 300px;
+    width: 150px;
     margin-right: 10px;
     margin-bottom: 5px;
   }

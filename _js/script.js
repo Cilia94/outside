@@ -77,6 +77,18 @@ Handlebars.registerHelper("case", function(value, options) {
   }
 });
 
+Handlebars.registerHelper("switchPrijs", function(value, options) {
+    this._switch_value_ = value;
+    var html = options.fn(this); // Process the body of the switch block
+    delete this._switch_value_;
+    return html;
+});
+
+Handlebars.registerHelper("casePrijs", function(value, options) {
+    if (value == this._switch_value_) {
+        return options.fn(this);
+    }
+});
 
 (function() {
 
@@ -544,15 +556,20 @@ Handlebars.registerHelper("case", function(value, options) {
     function filterSearch(data, locatieData, typeData, duurklasseData, allLocations) {
 
       $('#filtered-activities').empty();
+      var duurklasseData = duurklasseData;
+      console.log(duurklasseData);
 
       var activity = $('#handlebars-template-activity').text();
       var activity_template = Handlebars.compile(activity);
+      //console.log(data);
       
 
       var filteredData = data;
       filteredData.sort(function(a,b) {
+
               switch(currentTaal){
-                case "NL":
+
+            case "NL":
               return (a.naam_nl > b.naam_nl) ? 1 : ((b.naam_nl > a.naam_nl) ? -1 : 0);
             break;
 
@@ -563,7 +580,9 @@ Handlebars.registerHelper("case", function(value, options) {
             case "ENG":
               return (a.naam_en > b.naam_en) ? 1 : ((b.naam_en > a.naam_en) ? -1 : 0);
             break;
+
             } 
+
             });
       //console.log(filteredData);
       var location_filter = $('#location_filter').val();
@@ -571,6 +590,23 @@ Handlebars.registerHelper("case", function(value, options) {
       var participants_filter = $('#participants_filter').val();
       var duration_filter = $('#duration_filter').val();
       var price_filter = $('#price_filter').val();
+      console.log(filteredData);
+
+
+
+
+
+      $(filteredData).each(function(index){
+        //filteredData[index].duurId = 10;
+
+       for (var i = 0; i < duurklasseData.length; i++) {
+              if(filteredData[index].id == duurklasseData[i].activiteitId){
+                filteredData[index].duurId = duurklasseData[i].duurId;
+
+               }
+             }
+      })
+
 
 
        if (duration_filter != "all") {
@@ -788,6 +824,7 @@ Handlebars.registerHelper("case", function(value, options) {
 
                }
              }
+            
           
         
              if(activity.typeId == 3){
@@ -949,17 +986,47 @@ Handlebars.registerHelper("case", function(value, options) {
         }
     }
     console.log(chosenActivities);
+   
+    var totWaarde = false;
 
-    $('#datePicker').multiDatesPicker({
+    $('#datePicker_van').multiDatesPicker({
+      maxPicks: 1
 
     });
+
+    $('#datePicker_tot').multiDatesPicker({
+      maxPicks: 1
+
+    });
+    $('.checkMultipleDays').unbind('change');
+    
+
+    $('.checkMultipleDays').on('change', function(){
+      if($(this).is(':checked')){
+        totWaarde = true;
+        $('.date_tot').show();
+
+
+        console.log('checked');
+        
+
+      }else{
+        totWaarde = false;
+        $('.date_tot').hide();
+      }
+    })
  
   $('#to-step-4').unbind('click');
    $('#to-step-4').on('click', function() {
+     var activiteitDatums = {};
      
-      var dateValue = $('#datePicker').multiDatesPicker('getDates');
+      activiteitDatums.vanaf = $('#datePicker_van').multiDatesPicker('getDates');
+      if(totWaarde){
+      activiteitDatums.tot = $('#datePicker_tot').multiDatesPicker('getDates');
+      }
+        console.log(activiteitDatums);
      
-      step4(dateValue, chosenActivities,allActivities);
+      step4(activiteitDatums, chosenActivities,allActivities);
       $('#stap3').hide();
       $('#stap4').fadeIn();
       $('.stap-header [data-stap-id=3]').removeClass('active');
@@ -1147,6 +1214,16 @@ Handlebars.registerHelper("case", function(value, options) {
       }else{
         formUsed.find('#gegevens-aankomst').addClass('error');
         formUsed.find('#gegevens-aankomst').parent().find('label').addClass('error-label');
+        allowSubmit = false;
+      }
+    }
+
+    if(formUsed.find('#gegevens-tel')){
+      if(formUsed.find('#gegevens-tel').val()){
+        formData.tel = formUsed.find('#gegevens-tel').val();
+      }else{
+        formUsed.find('#gegevens-tel').addClass('error');
+        formUsed.find('#gegevens-tel').parent().find('label').addClass('error-label');
         allowSubmit = false;
       }
     }

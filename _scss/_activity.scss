@@ -9,6 +9,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+
 .container-info {
     //max-width: 800px;
     margin-left: auto;
@@ -359,6 +361,7 @@ ul.prijzen {
 }
 @media only screen and (min-width: 1200px) {
     ul.planning-from-template {
+        margin-top: 25px;
         display: -webkit-flex;
         display: flex;
         -webkit-flex-direction: row;
@@ -370,7 +373,7 @@ ul.prijzen {
         flex-wrap: wrap;
         article {
             margin-right: 10px;
-            max-width: 550px;
+            //max-width: 550px;
             .header-planning {
                 margin-top: 0px;
             }

@@ -46,7 +46,7 @@
       <?php echo taal('Locatie','',''); ?>
     </span>
     <select class="parameter-input" id="location_filter">
-      <option value="all">Alle</option>
+      <option value="all"><?php echo taal('Alle','','All'); ?> </option>
      <!--  <option value="own-location">Eigen locatie</option> -->
       <option value="1">Heuvelland - Westhoek</option>
       <option value="2">Vlaanderen & De Kust</option>
@@ -71,11 +71,15 @@
       <?php echo taal('Duur','',''); ?></span>
 
     <select class="parameter-input" id="duration_filter">
-      <option value="all">Alle</option>
-      <option value="1">Een aantal uren</option>
-      <option value="2">Een halve dag</option>
-      <option value="3">Een hele dag</option>
-      <option value="4">Meerdere dagen</option>
+      <option value="all"><?php echo taal('Alle','','All'); ?></option>
+      <option value="1">
+       <?php echo taal('Enkele uren','',''); ?></option>
+      <option value="2">
+        <?php echo taal('Een halve dag','',''); ?></option>
+      <option value="3">
+        <?php echo taal('Een hele dag','',''); ?></option>
+      <option value="4">
+        <?php echo taal('Meerdere dag','',''); ?></option>
     </select>
   </div>
 
@@ -86,7 +90,7 @@
       <?php echo taal('Prijsklasse','',''); ?>
     </span>
     <select class="parameter-input" id="price_filter">
-      <option value="all">Alle</option>
+      <option value="all"><?php echo taal('Alle','','All'); ?></option>
       <option value="1">€10 - €20</option>
       <option value="2">€21 - €30</option>
       <option value="3">€31 - €40</option>
@@ -126,7 +130,7 @@
         switch($_SESSION['session_taal']){
           case 'NL':
          ?>              
-      <a href="index.php?page=globalItem&id={{id}}&name={{name_nl}}" class="gridLink-sub"> 
+      <a href="index.php?page=globalItem&id={{id}}&name={{naam_nl}}" class="gridLink-sub"> 
       <div class="overlay-img">
         <span> 
         {{naam_nl}} 
@@ -135,7 +139,7 @@
         </div></a>
         <?php break; 
         case 'FR': ?>
-        <a href="index.php?page=globalItem&id={{id}}&name={{name_fr}}" class="gridLink-sub"> 
+        <a href="index.php?page=globalItem&id={{id}}&name={{naam_fr}}" class="gridLink-sub"> 
       <div class="overlay-img">
         <span> 
         {{naam_fr}} 
@@ -146,7 +150,7 @@
          <?php break; 
         case 'ENG': ?>
 
-        <a href="index.php?page=globalItem&id={{id}}&name={{name_en}}" class="gridLink-sub"> 
+        <a href="index.php?page=globalItem&id={{id}}&name={{naam_en}}" class="gridLink-sub"> 
       <div class="overlay-img">
         <span> 
         {{naam_en}} 
@@ -161,13 +165,13 @@
 
   <div class="grid-sub">
         <div class="filtered-item">
-        <a href="index.php?page=globalItem&id={{id}}&name={{name_nl}}">
+        <a href="index.php?page=globalItem&id={{id}}&name={{naam_nl}}">
         <section style="background-image:url('assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
         
         </section>
         </a>
         <h3>
-        <a href="index.php?page=globalItem&id={{id}}&name={{name_nl}}">
+        <a href="index.php?page=globalItem&id={{id}}&name={{naam_nl}}">
         <?php 
         switch($_SESSION['session_taal']){
 
@@ -206,88 +210,182 @@
         <div class="filter-info-types">
         <article class="praktisch">
         <i class="fa fa-users" aria-hidden="true"></i>
-        <span> vanaf {{minAantal}} personen</span>
+        <span> <?php 
+        switch($_SESSION['session_taal']){
+
+          case 'NL':
+         
+          
+         ?>
+         vanaf {{minAantal}} personen
+
+         <?php 
+
+         break;
+
+         case 'FR':
+         ?>
+          vanaf {{minAantal}} personen
+<?php
+          break;
+        
+
+        case 'ENG':
+         ?>
+          vanaf {{minAantal}} personen
+<?php
+          break;
+        }
+
+        ?></span>
         </article>
         </div>
         {{/if}}
 
-        {{#if pricesActivity}}
+        {{#if prijsklasseId}}
         <div class="filter-info-types">
-        {{#each pricesActivity}}
+        
         <article class="praktisch">
         <i class="fa fa-euro" aria-hidden="true"></i>
 
          <span>
-         {{#switch this}}
-         {{#case "1"}}
-         10-25
+         {{#switchPrijs prijsklasseId}}
+         {{#casePrijs "1"}}
+         €10-€20
         
-        {{/case}}
+        {{/casePrijs}}
 
-        {{#case "2"}}
-        25-40
+        {{#casePrijs "2"}}
+        €21-€30
         
-        {{/case}}
+        {{/casePrijs}}
 
-        {{#case "3"}}
-        40-55
+        {{#casePrijs "3"}}
+        €31-€40
 
         
-        {{/case}}
+        {{/casePrijs}}
         
-        {{#case "4"}}
-       55+
+        {{#casePrijs "4"}}
+       €41-€60
         
        
-        {{/case}}
+        {{/casePrijs}}
 
-        {{/switch}}
+        {{#casePrijs "5"}}
+       €60+
+        
+       
+        {{/casePrijs}}
+
+        {{/switchPrijs}}
         </span>
         </article>
-        {{/each}}
+     
        
         
         </div>
          {{/if}}
 
-        {{#if durationActivity}}
-
+         {{#if duurId}}
         <div class="filter-info-types">
-        {{#each durationActivity}}
+        
         <article class="praktisch">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
 
          <span>
-         {{#switch this}}
-         {{#case "1"}}
+         {{#switchPrijs duurId}}
+         {{#casePrijs "1"}}
+         <?php 
+        switch($_SESSION['session_taal']){
+
+          case 'NL': ?>
          Enkele uren
-        
-        {{/case}}
+         <?php break;
 
-        {{#case "2"}}
-        Een halve dag
-        
-        {{/case}}
+         case 'FR': ?>
+         Enkele uren
+         <?php break;
 
-        {{#case "3"}}
-        Een volledige dag
+        case 'ENG': ?>
+         Enkele uren
+         <?php break; }
 
+        ?>
         
-        {{/case}}
-        
-        {{#case "4"}}
-       Meerdere dagen
-        
-       
-        {{/case}}
+        {{/casePrijs}}
 
-        {{/switch}}
+        {{#casePrijs "2"}}
+         <?php 
+        switch($_SESSION['session_taal']){
+
+          case 'NL': ?>
+         Een halve dag
+         <?php break;
+
+         case 'FR': ?>
+         Een halve dag
+         <?php break;
+
+        case 'ENG': ?>
+         Een halve dag
+         <?php break; }
+
+        ?>
+        
+        {{/casePrijs}}
+
+        {{#casePrijs "3"}}
+         <?php 
+        switch($_SESSION['session_taal']){
+
+          case 'NL': ?>
+         De hele dag
+         <?php break;
+
+         case 'FR': ?>
+         De hele dag
+         <?php break;
+
+        case 'ENG': ?>
+         De hele dag
+         <?php break; }
+
+        ?>
+        
+        {{/casePrijs}}
+
+        {{#casePrijs "4"}}
+         <?php 
+        switch($_SESSION['session_taal']){
+
+          case 'NL': ?>
+         Meerdere dagen
+         <?php break;
+
+         case 'FR': ?>
+         Meerdere dagen
+         <?php break;
+
+        case 'ENG': ?>
+         Meerdere dagen
+         <?php break; }
+
+        ?>
+        
+        {{/casePrijs}}
+
+
+        {{/switchPrijs}}
         </span>
         </article>
-        {{/each}}
+     
+       
         
         </div>
-        {{/if}}
+         {{/if}}
+
+      
 
         
         {{#if locationsActivity}}

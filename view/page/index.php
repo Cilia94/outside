@@ -35,21 +35,22 @@
             <div class="gridItem">
                 <a href="index.php?page=category&amp;id=1" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-activity.png">
-                    <span>Outdoor activiteiten</span>
+                    <span>
+                        <?php echo taal('Outdoor activiteiten','',''); ?> </span>
                 </a>
             </div>
 
             <div class="gridItem">
                 <a href="index.php?page=category&amp;id=2" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-feesten.png">
-                    <span>Events</span>
+                    <span><?php echo taal('Events','',''); ?> </span>
                 </a>
             </div>
 
             <div class="gridItem">
                 <a href="index.php?page=globalItem&amp;id=485" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-vrijgezellen.png">
-                    <span>Vrijgezellenfeestjes actie fun</span>
+                    <span><?php echo taal('Vrijgezellenfeestjes actie fun','',''); ?> </span>
                 </a>
             </div>
 
@@ -60,28 +61,28 @@
             <div class="gridItem">
                 <a href="index.php?page=categoryType&amp;id=4" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-jeugdgroepen.png">
-                    <span>Jeugdgroepen -18J</span>
+                    <span><?php echo taal('Jeugdgroepen -18J','',''); ?> </span>
                 </a>
             </div>
 
             <div class="gridItem">
                 <a href="index.php?page=category&amp;id=3" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-school.png">
-                    <span>Scholen sportdagen</span>
+                    <span><?php echo taal('Scholen sportdagen','',''); ?> </span>
                 </a>
             </div>
 
             <div class="gridItem">
                 <a href="index.php?page=categoryType&amp;id=3" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-pakket.png">
-                    <span>Outdoor paketten</span>
+                    <span><?php echo taal('Outdoor paketten','',''); ?> </span>
                 </a>
             </div>
 
             <div class="gridItem">
                 <a href="index.php?page=category&amp;id=4" class="gridLink">
                     <img style="margin-top:20px;" class="imageGrid" src="assets/images/icons/icon-hoeve.png">
-                    <span style="bottom:20px; ">Vakantiehuizen</span>
+                    <span style="bottom:20px; "><?php echo taal('Vakantiehuizen','',''); ?> </span>
                 </a>
             </div>
             

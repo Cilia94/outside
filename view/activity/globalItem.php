@@ -101,7 +101,7 @@
         <li>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <span class="name-grid-item">
-                Plaats van afspraak
+               <?php echo taal('Plaats van afspraak','',''); ?>
             </span>
 			
 			<span class="value-grid-item">
@@ -280,12 +280,14 @@ echo taal($forfNL,$forfNL,$forfNL);
         </div>
         <div class="clear">&nbsp;</div>
     -->
-    <h1 class="titel-header">Fotos</h1>
+    <h1 class="titel-header"><?php echo taal("Foto's",'','Photos'); ?></h1>
 
     <div class="titel-img-container">
     <img class="titel-img" src="assets/images/titel-underline.png">
     </div>
-    <p class="info-photos">Klik op een foto om hem in ware grote te bekijken</p>
+    <p class="info-photos">
+        <?php echo taal('Klik op een foto om hem in ware grote te bekijken','',''); ?>
+    </p>
 
         <div class="activity-photos-grid">
             <?php

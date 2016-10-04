@@ -25,6 +25,7 @@ $message = $_POST['opmerking'];
 
 $activities = $_POST['activities'];
 $email = $_POST['email'];
+$tel = $_POST['tel'];
 
 $dates = $_POST['dates'];
 
@@ -39,7 +40,9 @@ $vakantiehuis = $_POST['vakantiehuis'];
 
 $deelnemers = $_POST['deelnemers'];
 
-$datesString = implode(", ", $dates);
+//$datesString = implode(", ", $dates);
+$datesString = $_POST['dates']['vanaf'][0];
+$datesString_tot = $_POST['dates']['tot'][0];
 $arrayActivitiesName = [];
 
 for($i = 0; $i< count($activities); $i++ ){
@@ -55,6 +58,7 @@ $mailTemplate = file_get_contents(dirname(__FILE__) . '/assets/aanvraagTemplate.
 $mailTemplate = str_replace('%name%', $name, $mailTemplate);
 $mailTemplate = str_replace('%message%', $message, $mailTemplate);
 $mailTemplate = str_replace('%dates%', $datesString, $mailTemplate);
+$mailTemplate = str_replace('%datesTot%', $datesString_tot, $mailTemplate);
 $mailTemplate = str_replace('%activities%', $activitiesString, $mailTemplate);
 $mailTemplate = str_replace('%email%', $email, $mailTemplate);
 $mailTemplate = str_replace('%leeftijd%', $leeftijd, $mailTemplate);
@@ -63,6 +67,7 @@ $mailTemplate = str_replace('%vakantiehuis%', $vakantiehuis, $mailTemplate);
 $mailTemplate = str_replace('%typeGroep%', $typeGroep, $mailTemplate);
 
 $mailTemplate = str_replace('%taal%', $taal, $mailTemplate);
+$mailTemplate = str_replace('%tel%', $tel, $mailTemplate);
 $mailTemplate = str_replace('%aankomst%', $aankomst, $mailTemplate);
 $mailTemplate = str_replace('%vertrek%', $vertrek, $mailTemplate);
 $mailTemplate = str_replace('%deelnemers%', $deelnemers, $mailTemplate);
