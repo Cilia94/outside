@@ -48,7 +48,7 @@
             </div>
 
             <div class="gridItem">
-                <a href="index.php?page=globalItem&amp;id=485" class="gridLink">
+                <a href="index.php?page=activiteit&amp;id=485" class="gridLink">
                     <img class="imageGrid" src="assets/images/icons/icon-vrijgezellen.png">
                     <span><?php echo taal('Vrijgezellenfeestjes actie fun','',''); ?> </span>
                 </a>

@@ -228,10 +228,23 @@
        
      
     </div>
+    <div class="opmerkingen">
     <div class="opmerking-container">
     <i class="fa fa-info-circle bg-border opmerking-icon" aria-hidden="true"></i>
       <p id="append-opmerking"></p>
   </div>
+
+  <div class="opmerking-container forfait-opmerking">
+    <i class="fa fa-info-circle bg-border opmerking-icon" aria-hidden="true"></i>
+      <p>
+        <?php
+          $forfNL = "Met minder dan " . $activity['minAantal'] . " deelnemers kan de activiteit doorgaan, maar moet een forfait van " . 35*$activity['minAantal'] . "€ betaald worden.";
+echo taal($forfNL,$forfNL,$forfNL);
+?>
+      </p>
+  </div>
+
+</div>
 
 <div class="prijzen_verwacht">
 <ul id="append-prijzen" class="prijzen">
@@ -241,14 +254,7 @@
     <!--Met minder dan -minAantal- deelnemers kan de activiteit doorgaan, 
     maar moet het forfait van -minAantal- x de prijs betaald worden.
 -->
-<div class="forfait-opmerking">
-    <p>
-        <?php 
-$forfNL = "Met minder dan " . $activity['minAantal'] . " deelnemers kan de activiteit doorgaan, maar moet een forfait van " . 35*$activity['minAantal'] . "€ betaald worden.";
-echo taal($forfNL,$forfNL,$forfNL);
-?>
-    </p>
-</div>
+
 
 
 <?php include("verwacht_templates.php");

@@ -41,8 +41,8 @@ $vakantiehuis = $_POST['vakantiehuis'];
 $deelnemers = $_POST['deelnemers'];
 
 //$datesString = implode(", ", $dates);
-$datesString = $_POST['dates']['vanaf'][0];
-$datesString_tot = $_POST['dates']['tot'][0];
+$datesString = $_POST['dates']['vanaf'];
+$datesString_tot = $_POST['dates']['tot'];
 $arrayActivitiesName = [];
 
 for($i = 0; $i< count($activities); $i++ ){

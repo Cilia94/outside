@@ -351,52 +351,9 @@ button.next-step {
 
 
 
-    .both-datepickers{
-
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    // -webkit-align-items: center;
-    // align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .datepick-container{
-        //margin-right: 25px;
-        width: 330px;
-    }
-
-    	.ui-datepicker{
-    		margin-left: auto;
-    		margin-right: auto;
-
-    	}
-
-   //  	.ui-widget-header{
-   //  		background: none;
-   //  		background-color: $outside-flue-orange!important;
-   //  		border:none;
-   //  	}
-
-   //  	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-			// border: 1px solid $outside-light-orange;
-			// }
-
-   //  	.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
-			// background: none;
-   //  		background-color: lighten($outside-flue-orange,20%);
-    	
-   //  	}
-
-   //  	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
-			// border: none;
-   //  	}
-    }
 }
 
-#stap5{
+#stap4{
 	.container-form{
 		background-color: $mid-grey-1;
 		padding: 20px;
@@ -417,9 +374,22 @@ button.next-step {
 
 			label{
 				width: 150px;
+                vertical-align: top;
 			}
 
+            p{
+                display: inline-block;
+                width: 150px;
+                padding-right: 20px;
+            }
+
+            label#meerdereDagen{
+                width: auto!important;
+                //margin-left: 15px;
+            }
+
 			input{
+                
 
 				padding: 4px;
 				padding-left: 8px;
@@ -427,8 +397,14 @@ button.next-step {
 				background-color: lighten($mid-grey-2, 25%);
 				color: $dark-grey;
                 width: 60%;
+                vertical-align: top;
+            
 
 			}
+
+            input.checkMultipleDays{
+                width: auto!important;
+            }
 
 			textarea{
                 width: 60%;
@@ -460,6 +436,55 @@ button.next-step {
 		margin-top: 20px;
 				
 			}
+
+
+    .both-datepickers{
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    // -webkit-align-items: center;
+    // align-items: center;
+    //-webkit-justify-content: center;
+    //justify-content: center;
+    flex-wrap: wrap;
+
+    .datepick-container{
+        margin-right: 25px;
+        width: 100%;
+
+        input{
+            //width: auto!important;
+        }
+    }
+
+        // .ui-datepicker{
+        //  margin-left: auto;
+        //  margin-right: auto;
+
+        // }
+
+   //   .ui-widget-header{
+   //       background: none;
+   //       background-color: $outside-flue-orange!important;
+   //       border:none;
+   //   }
+
+   //   .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+            // border: 1px solid $outside-light-orange;
+            // }
+
+   //   .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+            // background: none;
+   //       background-color: lighten($outside-flue-orange,20%);
+        
+   //   }
+
+   //   .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+            // border: none;
+   //   }
+    }
 }
 
 .container-vakantiehuis{
@@ -586,7 +611,7 @@ button.next-step {
 
 
 
-    #stap5{
+    #stap4{
 
     form.gegevens-form{
 
@@ -621,7 +646,7 @@ button.next-step {
     }
 
 
-    #stap5{
+    #stap4{
 
         .container-in-flex{
             width: 100%;
@@ -633,7 +658,9 @@ button.next-step {
 
 
             input{
+                &:not(.hasDatepicker){
                 width: 90%;
+            }
             }
             textarea{
                 width: 90%;

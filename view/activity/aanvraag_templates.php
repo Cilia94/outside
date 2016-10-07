@@ -56,7 +56,7 @@
                     
            </label>
 
-           <a href="index.php?page=globalItem&id={{id}}&name={{naam_nl}}" class="activity-info-link">
+           <a href="index.php?page=activiteit&id={{id}}&name={{naam_nl}}" class="activity-info-link">
                 <i class=" fa fa-info-circle" 
                 aria-hidden="true"></i>
             </a>
@@ -94,7 +94,7 @@
 
         ?>
             </h1>
-            <a href="index.php?page=globalItem&id={{id}}" class="link-type" data-type="outside-activiteiten">
+            <a href="index.php?page=activiteit&id={{id}}" class="link-type" data-type="outside-activiteiten">
           <span class="arrow-down glyphicon glyphicon-chevron-down"></span>
         </a>
     </div>

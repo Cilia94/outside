@@ -206,7 +206,7 @@ if(!empty($_GET['id'])){
 
     }
 
-    public function globalItem(){
+    public function activiteit(){
 
         if(!empty($_GET['id'])){
 

@@ -1054,7 +1054,6 @@ ul.prijzen li p.info-prijs {
 }
 
 .forfait-opmerking {
-  background-color: #fea680;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -1431,61 +1430,56 @@ button.next-step:not(.not-active):hover {
   text-align: center;
 }
 
-#stap3 .both-datepickers {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#stap3 .both-datepickers .datepick-container {
-  width: 330px;
-}
-
-#stap3 .both-datepickers .ui-datepicker {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#stap5 .container-form {
+#stap4 .container-form {
   background-color: #3a3a3a;
   padding: 20px;
   width: 60%;
 }
 
-#stap5 .container-winkelwagen {
+#stap4 .container-winkelwagen {
   width: 35%;
 }
 
-#stap5 form.gegevens-form {
+#stap4 form.gegevens-form {
   display: none;
 }
 
-#stap5 form.gegevens-form article.gegevens-article {
+#stap4 form.gegevens-form article.gegevens-article {
   display: block;
   color: white;
   margin-bottom: 9px;
 }
 
-#stap5 form.gegevens-form article.gegevens-article label {
+#stap4 form.gegevens-form article.gegevens-article label {
   width: 150px;
+  vertical-align: top;
 }
 
-#stap5 form.gegevens-form article.gegevens-article input {
+#stap4 form.gegevens-form article.gegevens-article p {
+  display: inline-block;
+  width: 150px;
+  padding-right: 20px;
+}
+
+#stap4 form.gegevens-form article.gegevens-article label#meerdereDagen {
+  width: auto !important;
+}
+
+#stap4 form.gegevens-form article.gegevens-article input {
   padding: 4px;
   padding-left: 8px;
   border: 2px solid transparent;
   background-color: #e1e1e1;
   color: #2a2a2a;
   width: 60%;
+  vertical-align: top;
 }
 
-#stap5 form.gegevens-form article.gegevens-article textarea {
+#stap4 form.gegevens-form article.gegevens-article input.checkMultipleDays {
+  width: auto !important;
+}
+
+#stap4 form.gegevens-form article.gegevens-article textarea {
   width: 60%;
   padding: 4px;
   border: 2px solid transparent;
@@ -1493,16 +1487,31 @@ button.next-step:not(.not-active):hover {
   color: #2a2a2a;
 }
 
-#stap5 form.gegevens-form article.gegevens-article .error {
+#stap4 form.gegevens-form article.gegevens-article .error {
   border: 2px solid red;
 }
 
-#stap5 form.gegevens-form article.gegevens-article .error-label {
+#stap4 form.gegevens-form article.gegevens-article .error-label {
   color: red;
 }
 
-#stap5 button {
+#stap4 button {
   margin-top: 20px;
+}
+
+#stap4 .both-datepickers {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#stap4 .both-datepickers .datepick-container {
+  margin-right: 25px;
+  width: 100%;
 }
 
 .container-vakantiehuis {
@@ -1614,13 +1623,13 @@ button.next-step:not(.not-active):hover {
   #stap4 .container-in-flex {
     width: 100%;
   }
-  #stap5 .container-in-flex {
+  #stap4 .container-in-flex {
     width: 100%;
   }
-  #stap5 form.gegevens-form article.gegevens-article input {
+  #stap4 form.gegevens-form article.gegevens-article input:not(.hasDatepicker) {
     width: 90%;
   }
-  #stap5 form.gegevens-form article.gegevens-article textarea {
+  #stap4 form.gegevens-form article.gegevens-article textarea {
     width: 90%;
   }
 }

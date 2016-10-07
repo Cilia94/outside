@@ -42,7 +42,7 @@
                         echo "<img class=\"subcategory-img\" 
                         src=\"assets/images/activityPhotos/{$category['afbeelding']}_th.jpg\">";
                          $name = preg_replace('/\s+/', '', taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']));
-                         echo "<a href=\"index.php?page=globalItem&id={$activitySub['id']}&name=" . $name . "\" class=\"gridLink-sub\">";echo "<div class=\"overlay-img\">"; 
+                         echo "<a href=\"index.php?page=activiteit&id={$activitySub['id']}&name=" . $name . "\" class=\"gridLink-sub\">";echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
                 echo taal($category['naam_nl'],$category['naam_fr'],$category['naam_en']); 
                 echo "</span>"; 

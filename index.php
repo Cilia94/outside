@@ -96,9 +96,9 @@ $routes = array(
     'action' => 'locaties'
     ),
 
-  'globalItem' => array(
+  'activiteit' => array(
     'controller' => 'Activity',
-    'action' => 'globalItem'
+    'action' => 'activiteit'
     ),
 
   'search' => array(

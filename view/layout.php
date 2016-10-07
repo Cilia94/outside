@@ -26,17 +26,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Outside Adventure & Fun</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Outside Adventure is een " />
+    <meta name="keywords" content="outside, adventure, activities, poperinge, westouter, outdoor" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Cilia Vandenameele" />
+    <meta name="copyright" content="Outside Adventure" />
+    <meta name="application-name" content="Outside Adventure" />
+    <meta property="og:title" content="Outside Adventure" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Outside Adventure" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favs.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     
     <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
+  <!--   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
 
     <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.css">
     <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.structure.css">
     <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.theme.css">
+    -->
     <link rel="stylesheet" href="css/main.css">
     
  
@@ -83,7 +103,7 @@
         <li><a href="index.php?page=category&id=2">
         <?php echo taal('Events','','Parties'); ?>
         </a></li>
-        <li><a href="index.php?page=globalItem&id=485">
+        <li><a href="index.php?page=activiteit&id=485">
         <?php echo taal('Vrijgezellenfeestjes','','Bachelor parties'); ?>
         </a></li>
         <li><a href="index.php?page=categoryType&id=4">
@@ -191,8 +211,7 @@
 
 
     <script type="text/javascript" src="js/vendor/fallback/fallback.min.js"></script>
-   
-    <script type="text/javascript" src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="js/vendor/magnific/magnific-popup.min.js">
     </</script>
   

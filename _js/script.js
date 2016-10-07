@@ -6,6 +6,8 @@ import {
 
 var locationAdresses;
 var currentTaal = $('#current-taal').data('taal');
+var regexMail= new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$');
+
 var typeGroepId_global;
 function compare(a,b,key) {
   if (a[key] < b[key])
@@ -94,9 +96,6 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
     function init() {
       console.log('init');
-      // $('.close-menu').on('click', function(){
-      //   $('#navbar').css('height','1px')
-      // })
 
 
       if ($('#page-name').html()) {
@@ -152,8 +151,9 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
         var filename = $(this).attr('src')
           //console.log(filename.split('/'))
         if (filename) {
-          var filenameWithPath = filename.split('/')[filename.split.length];
+          var filenameWithPath = filename.split('/')[filename.split('/').length - 1];
           //console.log(filenameWithPath);
+          console.log(filenameWithPath.split('.')[0])
           if (filenameWithPath) {
             $(this).attr('alt', filenameWithPath.split('.')[0]);
           }
@@ -173,7 +173,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
 
 
-      $
+      
       $('#contact-form').on('submit', submitContact);
 
 
@@ -319,7 +319,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
       if (type) {
         var pageType = type.split('=')[1];
         if (window.location.search) {
-              var checkGlobal = window.location.search.split('globalItem&id=');
+              var checkGlobal = window.location.search.split('activiteit&id=');
               
               if(checkGlobal[1]){
               console.log("ID ",checkGlobal[1].split('&')[0])
@@ -590,7 +590,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
       var participants_filter = $('#participants_filter').val();
       var duration_filter = $('#duration_filter').val();
       var price_filter = $('#price_filter').val();
-      console.log(filteredData);
+      //console.log(filteredData);
 
 
 
@@ -978,67 +978,23 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
        for (var j = 0; j < activities.length; j++) {
         if(activities[j].id == idsActivties[i]){
           chosenActivities.push(activities[j])
-          // if(activities[j].duurId == 4){
-          //   multipleDays = true;
-          // }
+          
         }
 
         }
     }
-    console.log(chosenActivities);
-   
-    var totWaarde = false;
 
-    $('#datePicker_van').multiDatesPicker({
-      maxPicks: 1
+    step4(chosenActivities,allActivities);
 
-    });
-
-    $('#datePicker_tot').multiDatesPicker({
-      maxPicks: 1
-
-    });
-    $('.checkMultipleDays').unbind('change');
-    
-
-    $('.checkMultipleDays').on('change', function(){
-      if($(this).is(':checked')){
-        totWaarde = true;
-        $('.date_tot').show();
-
-
-        console.log('checked');
-        
-
-      }else{
-        totWaarde = false;
-        $('.date_tot').hide();
-      }
-    })
+    $('.stap-header [data-stap-id=3]').removeClass('active');
+    $('.stap-header [data-stap-id=4]').addClass('active');
  
-  $('#to-step-4').unbind('click');
-   $('#to-step-4').on('click', function() {
-     var activiteitDatums = {};
-     
-      activiteitDatums.vanaf = $('#datePicker_van').multiDatesPicker('getDates');
-      if(totWaarde){
-      activiteitDatums.tot = $('#datePicker_tot').multiDatesPicker('getDates');
-      }
-        console.log(activiteitDatums);
-     
-      step4(activiteitDatums, chosenActivities,allActivities);
-      $('#stap3').hide();
-      $('#stap4').fadeIn();
-      $('.stap-header [data-stap-id=3]').removeClass('active');
-      $('.stap-header [data-stap-id=4]').addClass('active');
-      
-     });
 
 
 
   }
 
-  function step4(dateValue,chosenActivities, allActivities){
+  function step4(chosenActivities, allActivities){
 
     var vakantiehuis = "n.v.t";
     $('.ja-nee a').unbind('click');
@@ -1095,23 +1051,57 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     })
 
 
-
-
-
    $('#to-step-5').unbind('click');
    $('#to-step-5').on('click', function() {
      
       //var dateValue = $('#datePicker').multiDatesPicker('getDates');
-      step5(dateValue, chosenActivities, vakantiehuis);
-      $('#stap4').hide();
-      $('#stap5').fadeIn();
-      $('.stap-header [data-stap-id=4]').removeClass('active');
-      $('.stap-header [data-stap-id=5]').addClass('active');
+      step5(chosenActivities, vakantiehuis);
+     
+      $('#stap3').hide();
+      $('#stap4').fadeIn();
+      $('.stap-header [data-stap-id=3]').removeClass('active');
+      $('.stap-header [data-stap-id=4]').addClass('active');
      });
 
   }
 
-  function step5(dates, activities, vakantiehuis){
+  function step5(activities, vakantiehuis){
+    var datepicker_tot;
+    var datepicker_van;
+    
+
+    if(typeGroepId_global == 1){
+      datepicker_tot = $('#datePicker_tot_school');
+      datepicker_van = $('#datePicker_van_school');
+
+    }else{
+
+      datepicker_tot = $('#datePicker_tot');
+      datepicker_van = $('#datePicker_van');
+
+    }
+    $('#ui-datepicker-div').removeClass('ui-helper-hidden-accessible');
+    $('#ui-datepicker-div').css('clip', 'auto'); 
+    datepicker_tot.datepicker({ dateFormat: 'dd-mm-yy' });
+    datepicker_van.datepicker({ dateFormat: 'dd-mm-yy' });
+
+    $('.checkMultipleDays').unbind('change');
+
+    var totWaarde = false;
+    
+
+    $('.checkMultipleDays').on('change', function(){
+      if($(this).is(':checked')){
+        totWaarde = true;
+        $('.date_tot').show();
+        
+
+      }else{
+        totWaarde = false;
+        $('.date_tot').hide();
+      }
+    })
+
     var formUsed;
     if(typeGroepId_global == 1){
       formUsed = $('#form-school');
@@ -1148,7 +1138,40 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     $('#send-form').unbind('click');
     $('#send-form').on('click', function(){
     var formData = {};
-    formData.dates = dates;
+    var activiteitDatums = {};
+
+
+    if(datepicker_van.datepicker({ dateFormat: 'dd/mm/yy' }).val() !== ""){
+      console.log(datepicker_van.datepicker({ dateFormat: 'dd/mm/yy' }).val())
+
+      activiteitDatums.vanaf = datepicker_van.datepicker({ dateFormat: 'dd/mm/yy' }).val();
+
+    }else{
+      allowSubmit = false;
+      console.log('no date');
+      datepicker_van.addClass('error');
+      formUsed.find('#datePicker_van').addClass('error');
+
+    }
+
+    
+    
+    if(totWaarde){
+      if(datepicker_tot.datepicker({ dateFormat: 'dd/mm/yy' }).val() !== ""){
+      console.log(datepicker_tot.datepicker({ dateFormat: 'dd/mm/yy' }).val())
+
+      activiteitDatums.tot = datepicker_tot.datepicker({ dateFormat: 'dd/mm/yy' }).val();
+
+    }else{
+      allowSubmit = false;
+      console.log('no date');
+      formUsed.find('#datePicker_tot').addClass('error');
+
+    }
+  }else{
+    activiteitDatums.tot = "n.v.t";
+  }
+    formData.dates = activiteitDatums;
     formData.vakantiehuis = vakantiehuis;
     if(formData.dates.length<1){
       formData.dates = "niet ingevuld";
@@ -1189,8 +1212,12 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     }
 
     if(formUsed.find('#gegevens-mail')){
-      if(formUsed.find('#gegevens-mail').val()){
+
+      
+      if(formUsed.find('#gegevens-mail').val() && !regexMail.test(formUsed.find('#gegevens-mail').val())){
+
         formData.email = formUsed.find('#gegevens-mail').val();
+      
       }else{
         formUsed.find('#gegevens-mail').addClass('error');
         formUsed.find('#gegevens-mail').parent().find('label').addClass('error-label');
@@ -1219,6 +1246,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     }
 
     if(formUsed.find('#gegevens-tel')){
+      
       if(formUsed.find('#gegevens-tel').val()){
         formData.tel = formUsed.find('#gegevens-tel').val();
       }else{
@@ -1230,6 +1258,8 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
    
     if(typeGroepId_global == 1){
+
+
     if(formUsed.find('#gegevens-vertrek')){
       if(formUsed.find('#gegevens-vertrek').val()){
         formData.vertrek = formUsed.find('#gegevens-vertrek').val();
@@ -1287,7 +1317,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
           $('.form-item textarea').val('');
           $('.show-succes').show();
           $('.show-error').hide();
-          $('#stap5').fadeOut();
+          $('#stap4').fadeOut();
           $('#succes-form').fadeIn();
 
 
@@ -1316,7 +1346,8 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     }
 
     var input_email = $('#input-email').val();
-    if (input_email.length == 0) {
+    
+    if (input_email.length == 0 || !regexMail.test(input_email)) {
       $('#input-email').addClass('error-field');
       dataFilled = false;
     } else {
@@ -1326,7 +1357,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     }
 
     var input_gsm = $('#input-gsm').val();
-    if (input_gsm.length == 0) {
+    if (input_gsm.length == 0 ) {
       $('#input-gsm').addClass('error-field');
       dataFilled = false;
     } else {
