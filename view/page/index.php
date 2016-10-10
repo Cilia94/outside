@@ -23,7 +23,7 @@
 <video playsinline autoplay muted loop class="full-video"
  poster="assets/images/still-video.jpg" id="bgvid">
    <source src="assets/video_min.mp4" type="video/mp4">
-    <source src="assets/video_min.webm" type="video/webm">
+   <source src="assets/video_min.webm" type="video/webm">
     
 
 </video>
