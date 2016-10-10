@@ -124,7 +124,7 @@
   <!--
   <div class="grid-sub">
 
-      <img class="subcategory-img" 
+      <img class="subcategory-img lazyload" 
       src="css/assets/images/activityPhotos/{{afbeelding}}_th.jpg">
       <?php 
         switch($_SESSION['session_taal']){

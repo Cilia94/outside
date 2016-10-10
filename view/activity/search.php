@@ -28,7 +28,7 @@
                   foreach ($activities as $activitySub) { 
                     if($activitySub['id']){
                         echo "<div class=\"grid-sub\">"; 
-                        echo "<img class=\"subcategory-img\" 
+                        echo "<img width=\"200px\" height=\"200px\" class=\"subcategory-img lazyload\" 
                         src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
                          $name = preg_replace('/\s+/', '', taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']));
                          echo "<a href=\"index.php?page=activiteit&id={$activitySub['id']}&name=" . $name . "\" class=\"gridLink-sub\">";

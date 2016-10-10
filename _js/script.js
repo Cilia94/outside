@@ -96,6 +96,8 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
     function init() {
       console.log('init');
+      $('img.lazyload').lazyload();
+      $('img.map-asset').lazyload();
       $('#bgvid').on('click', function(){
         //console.log($(this));
         if(this.paused){
@@ -172,7 +174,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
         if (filename) {
           var filenameWithPath = filename.split('/')[filename.split('/').length - 1];
           //console.log(filenameWithPath);
-          console.log(filenameWithPath.split('.')[0])
+          //console.log(filenameWithPath.split('.')[0])
           if (filenameWithPath) {
             $(this).attr('alt', filenameWithPath.split('.')[0]);
           }
@@ -290,23 +292,44 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
       })
 
-      $('.arrow-map-item').on('click', function(e) {
+      // $('.arrow-map-item').on('click', function(e) {
+      //   e.preventDefault();
+      //   console.log($(this));
+      //   if ($(this).parent().parent().parent().find('.item-large-section').css('display') == 'none') {
+      //     $(this).parent().parent().parent().find('.item-large-section').show();
+      //     $(this).addClass('glyphicon-chevron-up');
+      //     $(this).removeClass('glyphicon-chevron-down');
+
+      //   } else {
+
+      //     //console.log($(this).parent().parent().parent().data('asset-id'))
+      //     $(this).parent().parent().parent().find('.item-large-section').hide();
+      //     $(this).addClass('glyphicon-chevron-down');
+      //     $(this).removeClass('glyphicon-chevron-up');
+
+
+      //   }
+      // })
+
+      $('.item-text-header').on('click', function(e) {
+        
+        if($('.arrow-map-item').css('display') == 'inline-block' | $('.arrow-map-item').css('display') == 'block'){
         e.preventDefault();
-        console.log($(this));
-        if ($(this).parent().parent().parent().find('.item-large-section').css('display') == 'none') {
-          $(this).parent().parent().parent().find('.item-large-section').show();
-          $(this).addClass('glyphicon-chevron-up');
-          $(this).removeClass('glyphicon-chevron-down');
+        if ($(this).parent().find('.item-large-section').css('display') == 'none') {
+          $(this).parent().find('.item-large-section').show();
+          $(this).find('.arrow-map-item').addClass('glyphicon-chevron-up');
+          $(this).find('.arrow-map-item').removeClass('glyphicon-chevron-down');
 
         } else {
 
           //console.log($(this).parent().parent().parent().data('asset-id'))
-          $(this).parent().parent().parent().find('.item-large-section').hide();
-          $(this).addClass('glyphicon-chevron-down');
-          $(this).removeClass('glyphicon-chevron-up');
+          $(this).parent().find('.item-large-section').hide();
+          $(this).find('.arrow-map-item').addClass('glyphicon-chevron-down');
+          $(this).find('.arrow-map-item').removeClass('glyphicon-chevron-up');
 
 
         }
+      }
       })
     }
 

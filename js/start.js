@@ -12,6 +12,7 @@ fallback.load({
 	'js/vendor/bootstrap.js'],
 
 	Handlebars: 'js/vendor/handlebars.min.js',
+	'lazyloading': 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js',
 
 	'jQuery.ui':['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js'],
 
@@ -20,9 +21,10 @@ fallback.load({
 }, {
 	shim: {
 		'script.js' :['jQuery', 'Handlebars','jQuery.ui'],
-		'index.php': ['script.js','FontAwesome'],
+		'index.php': ['script.js','FontAwesome','lazyloading'],
 		'Bootstrap': ['jQuery'],
 		'Handlebars': ['jQuery'],
+		'lazyloading': ['jQuery'],
 		'jQuery.ui': ['jQuery']
 		//,'jquery.magnific-popup': 'jQuery'
 	},

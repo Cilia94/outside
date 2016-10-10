@@ -109,7 +109,7 @@
 </div>
 <section class="map-items-text">
     <article data-asset-id="1" class="map-item-text">
-       <div class="item-text-header"> <h2> <?php echo taal('Painball terrein','',''); ?></h2>
+       <div class="item-text-header"> <h2><?php echo taal('Paintball','',''); ?></h2>
         <a href="#">
         <span class="arrow-map-item glyphicon glyphicon-chevron-down">
             

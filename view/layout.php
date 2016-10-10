@@ -28,7 +28,7 @@
     <title>Outside Adventure & Fun</title>
     <meta name="description" content="Outside Adventure is een " />
     <meta name="keywords" content="outside, adventure, activities, poperinge, westouter, outdoor" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 " />
     <meta name="author" content="Cilia Vandenameele" />
     <meta name="copyright" content="Outside Adventure" />
     <meta name="application-name" content="Outside Adventure" />
@@ -50,18 +50,9 @@
 
     
     <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
-  <!--   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- 
-
-    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.css">
-    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.structure.css">
-    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/jquery-ui.theme.css">
-    -->
+  
     <link rel="stylesheet" href="css/main.css">
     
- 
-    <link rel="stylesheet" href="js/vendor/MultiDatesPicker/css/prettify.css">
-
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="js/vendor/modernizr-mask.js"></script>
 </head>
@@ -78,7 +69,10 @@
         </div>
         </a>
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" 
+            data-toggle="collapse" data-target="#navbar" 
+            aria-expanded="false" aria-controls="navbar">
+
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -86,7 +80,10 @@
                               </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <div class="close-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar"><i class="fa fa-times" aria-hidden="true">
+        <div class="close-menu navbar-toggle" 
+        data-toggle="collapse" data-target="#navbar" 
+        aria-expanded="true" aria-controls="navbar">
+        <i class="fa fa-times" aria-hidden="true">
         </i></div>
         
             <ul class="nav navbar-nav">
@@ -214,6 +211,7 @@
 
     <script type="text/javascript" src="js/vendor/fallback/fallback.min.js"></script>
     <script type="text/javascript" src="js/vendor/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script type="text/javascript" src="js/vendor/magnific/magnific-popup.min.js">
     </</script>
   
