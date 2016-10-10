@@ -96,6 +96,25 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
     function init() {
       console.log('init');
+      $('#bgvid').on('click', function(){
+        //console.log($(this));
+        if(this.paused){
+
+          this.play() 
+          $('.paused').hide();
+          $('.playing').fadeIn();
+          setTimeout(function(){
+            $('.playing').fadeOut(1000);
+          }, 500);
+
+
+
+        }else{
+          this.pause() ;
+
+          $('.paused').fadeIn();
+        }
+      })
 
 
       if ($('#page-name').html()) {
@@ -370,9 +389,9 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
 
     function getSingleVerwacht(verwacht) {
 
-      var idOfActivity = window.location.search.split('&')[1].split('=')[1]
+      var idOfActivity = window.location.search.split('&')[1].split('=')[1];
 
-      var welke_template = json_getTemplateId(parseInt(idOfActivity), verwacht)
+      var welke_template = json_getTemplateId(parseInt(idOfActivity), verwacht);
 
 
       if (welke_template) {

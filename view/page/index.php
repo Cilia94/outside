@@ -1,5 +1,5 @@
 
-
+<!--
 <div class="intro-image shadow ">
   <div class="header-image-outside inner-shadow masked ">
         
@@ -8,7 +8,35 @@
 
 
 <div class="text-on-header"><p class="text-shadow">Adventure and fun</p></div>
+-->
+<div class="video-container">
+    <div class="event-controls">
+    <div class="paused control">
+        <i class="fa fa-pause" aria-hidden="true"></i>
+    </div>
 
+    <div class="playing control">
+        <i class="fa fa-play" aria-hidden="true"></i>
+    </div>
+</div>
+
+<video playsinline autoplay muted loop class="full-video"
+ poster="assets/images/still-video.jpg" id="bgvid">
+   
+    <source src="assets/video_min.mp4" type="video/mp4">
+    <source src="assets/video_min.mp4" type="video/mp4">
+
+
+</video>
+
+<div class='content-on-video'>
+   <h1>Adventure and fun </h1> 
+   <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi blanditiis quisquam sint, voluptatem incidunt a nesciunt quod earum animi? Adipisci cum maxime distinctio iure eveniet culpa harum, ipsam aspernatur perferendis!
+   </p>
+</div>
+</div>
+<!--
 <div class="container-middle container-aanbod">
     <h1 class="titel-header">
         <?php 
@@ -29,66 +57,8 @@
 </div>
 
 <div class="container-aanbod-grid">
-    <div class="grid">
-        <div class="row gridFlex">
-
-            <div class="gridItem">
-                <a href="index.php?page=category&amp;id=1" class="gridLink">
-                    <img class="imageGrid" src="assets/images/icons/icon-activity.png">
-                    <span>
-                        <?php echo taal('Outdoor activiteiten','',''); ?> </span>
-                </a>
-            </div>
-
-            <div class="gridItem">
-                <a href="index.php?page=category&amp;id=2" class="gridLink">
-                    <img class="imageGrid" src="assets/images/icons/icon-feesten.png">
-                    <span><?php echo taal('Events','',''); ?> </span>
-                </a>
-            </div>
-
-            <div class="gridItem">
-                <a href="index.php?page=activiteit&amp;id=485" class="gridLink">
-                    <img class="imageGrid" src="assets/images/icons/icon-vrijgezellen.png">
-                    <span><?php echo taal('Vrijgezellenfeestjes actie fun','',''); ?> </span>
-                </a>
-            </div>
-
-            
-
-            
-
-            <div class="gridItem">
-                <a href="index.php?page=categoryType&amp;id=4" class="gridLink">
-                    <img class="imageGrid" src="assets/images/icons/icon-jeugdgroepen.png">
-                    <span><?php echo taal('Jeugdgroepen -18J','',''); ?> </span>
-                </a>
-            </div>
-
-            <div class="gridItem">
-                <a href="index.php?page=category&amp;id=3" class="gridLink">
-                    <img class="imageGrid" src="assets/images/icons/icon-school.png">
-                    <span><?php echo taal('Scholen sportdagen','',''); ?> </span>
-                </a>
-            </div>
-
-            <div class="gridItem">
-                <a href="index.php?page=categoryType&amp;id=3" class="gridLink">
-                    <img class="imageGrid" src="assets/images/icons/icon-pakket.png">
-                    <span><?php echo taal('Outdoor paketten','',''); ?> </span>
-                </a>
-            </div>
-
-            <div class="gridItem">
-                <a href="index.php?page=category&amp;id=4" class="gridLink">
-                    <img style="margin-top:20px;" class="imageGrid" src="assets/images/icons/icon-hoeve.png">
-                    <span style="bottom:20px; "><?php echo taal('Vakantiehuizen','',''); ?> </span>
-                </a>
-            </div>
-            
-
-        </div>
-    </div>
+   
 </div>
 <div class="clear">&nbsp;</div>
 <hr>
+-->

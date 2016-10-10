@@ -7,7 +7,6 @@ select {
 }
 
 .content {
-  transform: translate3d(0, 0, 0);
   position: relative;
 }
 
@@ -153,10 +152,6 @@ select {
 .content_info h2, .content_info h3 {
   font-size: 1.15em;
   font-weight: bold;
-}
-
-.content {
-  transform: translate3d(0, 0, 0);
 }
 
 @media screen and (max-width: 380px) {
@@ -556,6 +551,66 @@ li a.active-item {
   .search-nav {
     display: none;
   }
+}
+
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  background: url(assets/images/still-video.jpg) no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+.event-controls {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  z-index: 2;
+  font-size: 5em;
+  transform: translate(-50%, -50%);
+  transition: 1s display;
+}
+
+.event-controls .control {
+  display: none;
+  color: #FFF;
+  text-shadow: 4px 4px 15px #000;
+}
+
+.content-on-video {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-top: 50px;
+  padding: 20px;
+  width: 100%;
+  color: #FFF;
+  z-index: 3;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.85) 50%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.85) 50%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0, 0, 0, 0)', endColorstr='rgba(166, 0, 0, 0)',GradientType=0 );
+  /* IE6-9 */
+}
+
+.content-on-video h1 {
+  font-size: 2.5em;
+  font-family: 'ralewaybold';
+  margin-bottom: 20px;
+}
+
+.content-on-video p {
+  color: #7a7a7a;
 }
 
 .header-image-outside {
