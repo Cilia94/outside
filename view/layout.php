@@ -63,13 +63,13 @@
 
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <a href="index.php">
+        <a class="link-logo" href="index.php">
         <div class="outside-logo">
             <img src="assets/images/logo-outside.png">
         </div>
         </a>
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" 
+            <button type="button" class="navbar-toggle def collapsed" 
             data-toggle="collapse" data-target="#navbar" 
             aria-expanded="false" aria-controls="navbar">
 
@@ -80,11 +80,11 @@
                               </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <div class="close-menu navbar-toggle" 
+        <button type="button" class="navbar-toggle close-menu " 
         data-toggle="collapse" data-target="#navbar" 
         aria-expanded="true" aria-controls="navbar">
         <i class="fa fa-times" aria-hidden="true">
-        </i></div>
+        </i></button>
         
             <ul class="nav navbar-nav">
                 <li class="global-menu-item active-item">

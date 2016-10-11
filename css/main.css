@@ -190,6 +190,10 @@ nav.navbar {
   margin-bottom: -20px;
 }
 
+nav.navbar .link-logo {
+  position: relative;
+}
+
 nav.navbar li {
   position: relative;
 }
@@ -438,10 +442,11 @@ li a.active-item {
   .close-menu {
     display: block;
     font-size: 2.5em;
-    margin-left: 2%;
     color: white;
     text-align: center;
     margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .close-menu:hover {
     color: #fe834d;
@@ -510,6 +515,9 @@ li a.active-item {
 }
 
 @media screen and (max-width: 382px) {
+  nav.navbar .link-logo {
+    z-index: 99;
+  }
   .outside-logo {
     margin-left: 0px;
     float: left;

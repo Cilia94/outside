@@ -3960,7 +3960,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-left: -15px;
   }
 }
-button.navbar-toggle {
+button.navbar-toggle.def {
   position: relative;
   float: right;
   padding: 9px 10px;
