@@ -154,9 +154,6 @@
 .map-items-text {
     .map-item-text {
         display: none;
-        min-width: 320px;
-        width: auto !important;
-        width: 320px;
 
         .item-text-header {
             //padding: 0px;
@@ -185,15 +182,10 @@
                 text-align: left;
             }
             section.item-photos {
-                display: -webkit-flex;
-                display: flex;
-                -webkit-flex-direction: row;
-                flex-direction: row;
-                -webkit-align-items: center;
-                align-items: center;
-                //-webkit-justify-content: center;
-                //justify-content: center;
-                flex-wrap: wrap;
+
+                @include flex(row,  wrap,  center,  false);
+
+               
                 img {
                     width: 200px;
                     margin-right: 10px;
@@ -208,9 +200,7 @@
         .map-item-text {
             margin-bottom: 5px;
             display: block;
-            min-width: 320px;
-            width: auto !important;
-            width: 320px;
+
             .item-text-header {
                 padding: 0px;
                 padding-left: 15px;
@@ -255,15 +245,16 @@
                     text-align: left;
                 }
                 section.item-photos {
-                    display: -webkit-flex;
-                    display: flex;
-                    -webkit-flex-direction: row;
-                    flex-direction: row;
-                    -webkit-align-items: center;
-                    align-items: center;
-                    //-webkit-justify-content: center;
-                    //justify-content: center;
-                    flex-wrap: wrap;
+                    @include flex(row,  wrap,  center,  false);
+                    // display: -webkit-flex;
+                    // display: flex;
+                    // -webkit-flex-direction: row;
+                    // flex-direction: row;
+                    // -webkit-align-items: center;
+                    // align-items: center;
+                    // //-webkit-justify-content: center;
+                    // //justify-content: center;
+                    // flex-wrap: wrap;
                     img {
                         width: 150px;
                         margin-right: 10px;

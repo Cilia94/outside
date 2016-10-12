@@ -20,16 +20,8 @@
 
 
 .parameters{
+    @include flex(row,  wrap,  center,  left);
 
-	display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: left;
-    justify-content: left;
-    flex-wrap: wrap;
 
     .parameter{
     	//flex-basis: 200px;

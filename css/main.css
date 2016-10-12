@@ -10,6 +10,10 @@ select {
   position: relative;
 }
 
+.wf-inactive {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
 .opmerking-container {
   display: none;
   border: solid 3px #fe834d;
@@ -737,7 +741,6 @@ video#bgvid {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  /* works with row or column */
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-align: center;
@@ -915,10 +918,10 @@ ul.prijzen li .prijs-container {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
   -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
   text-align: center;
   position: absolute;
 }
@@ -1404,6 +1407,8 @@ footer p {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-wrap: wrap;
@@ -1705,12 +1710,12 @@ button.next-step:not(.not-active):hover {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  -ms-flex-align: start;
-      align-items: flex-start;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1753,10 +1758,12 @@ button.next-step:not(.not-active):hover {
 .container-sub-grid .grid .gridFlex-vrijgezellen {
   margin-top: 35px;
   width: 95%;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-align: start;
-          -ms-grid-row-align: flex-start;
       align-items: flex-start;
   -ms-flex-pack: start;
       justify-content: flex-start;
@@ -2266,9 +2273,6 @@ ul.openingsuren .li-opmerking {
 
 .map-items-text .map-item-text {
   display: none;
-  min-width: 320px;
-  width: auto !important;
-  width: 320px;
 }
 
 .map-items-text .map-item-text .item-text-header h2 {
@@ -2314,9 +2318,6 @@ ul.openingsuren .li-opmerking {
   .map-items-text .map-item-text {
     margin-bottom: 5px;
     display: block;
-    min-width: 320px;
-    width: auto !important;
-    width: 320px;
   }
   .map-items-text .map-item-text .item-text-header {
     padding: 0px;

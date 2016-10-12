@@ -12,6 +12,16 @@ select{
     position: relative;
 }
 
+.wf-loading{
+
+}
+.wf-active{
+
+}
+ .wf-inactive{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+ }
+
 .opmerking-container{
     display: none;
         border: solid 3px lighten($outside-flue-orange,0%);

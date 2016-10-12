@@ -53,18 +53,8 @@
 // }
 
 .contact-sections{
-
-	display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: left;
-    align-items: left;
-
-    justify-content: center;
-
-    
-    flex-wrap: wrap;
+	@include flex(row,  wrap,  left,  center);
+	
 
     margin: 10px -10px;
 
@@ -266,19 +256,8 @@ ul.openingsuren{
 
 	//background-color: #E3E3E3;
 	//padding: 20px 0px;
-
-	display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: left;
-    align-items: left;
-
-    justify-content: center;
-    //space-between:
-
-    
-    flex-wrap: wrap;
+	@include flex(row,  wrap,  left,  center);
+	
 
     margin: 0 -15px;
     //padding: 10px;
