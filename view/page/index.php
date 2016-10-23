@@ -9,8 +9,8 @@
         <i class="fa fa-play" aria-hidden="true"></i>
     </div>
 </div>
-<!-- autoplay -->
-<video playsinline muted loop class="full-video"
+<!--  -->
+<video playsinline autoplay muted loop class="full-video"
  poster="assets/images/still-video.jpg" id="bgvid">
    <source src="assets/video_min.mp4" type="video/mp4">
    <source src="assets/video_min.webm" type="video/webm">
