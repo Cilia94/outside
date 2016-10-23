@@ -318,6 +318,9 @@ li a.active-item {
         margin-top: 140px;
         margin-left: auto;
         margin-right: auto;
+        background: transparent !important;
+        border: 1px solid #FFF !important;
+        border-radius: 5px;
 
         &:hover{
             color:$outside-flue-orange;
@@ -355,15 +358,13 @@ li a.active-item {
         display: none;
     }
     .navbar-nav > li > a:first-child:nth-last-child(2):before {
-        //border-top-color: #aaa; 
+       
     }
     .navbar-nav > li > a:first-child:nth-last-child(2):before {
-        //border: none; 
-        //border-bottom-color: orange; 
-        //margin-top:-5px
+    
     }
     .navbar-nav li li > a:first-child:nth-last-child(2) {
-        //border-left-color: #aaa; 
+        
         display: block;
         margin-bottom: 50px;
     }

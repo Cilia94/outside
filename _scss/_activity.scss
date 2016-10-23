@@ -1,4 +1,12 @@
+#page-name{
 
+//display: flex;
+  //flex-direction: column;
+
+    span{
+        display: inline;
+    }
+}
 .header-image-activity {
     //margin-right: 0px;
     //width: 100vw;
@@ -302,14 +310,9 @@ ul.prijzen {
 }
 
 .forfait-opmerking{
-    //background-color: lighten($outside-flue-orange,10%);
     margin-top: 10px;
-    //height: 50px;
-    //width: 100%;
     margin-bottom: 10px;
-    p{
-        padding: 10px;
-    }
+   
 }
 @media only screen and (min-width: 1200px) {
     ul.planning-from-template {

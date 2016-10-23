@@ -1,5 +1,6 @@
 <?php
 
+
 function taal($nl,$fr,$eng){
   
         switch($_SESSION['session_taal']){

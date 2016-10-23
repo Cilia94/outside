@@ -15,13 +15,16 @@ select {
 }
 
 .opmerking-container {
-  display: none;
   border: solid 3px #fe834d;
   border-radius: 10px;
   padding: 2px;
   margin-bottom: 35px;
   margin-top: 25px;
   background-color: #ffdbcc;
+}
+
+.opmerking-container:not(.forfait-opmerking) {
+  display: none;
 }
 
 .opmerking-container i {
@@ -40,6 +43,7 @@ select {
 
 .opmerking-container p {
   text-align: left;
+  padding: 5px;
   display: block;
   width: 90%;
   margin-top: 7px;
@@ -59,16 +63,16 @@ select {
 }
 
 .container-middle .titel-img-container {
-  width: 100%;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-middle .titel-img {
-  margin-top: -15px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 50%;
-  max-width: 300px;
+  width: 100%;
   text-align: center;
   margin-bottom: 25px;
 }
@@ -451,6 +455,9 @@ li a.active-item {
     margin-top: 140px;
     margin-left: auto;
     margin-right: auto;
+    background: transparent !important;
+    border: 1px solid #FFF !important;
+    border-radius: 5px;
   }
   .close-menu:hover {
     color: #fe834d;
@@ -567,14 +574,14 @@ li a.active-item {
 
 video#bgvid {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   z-index: 1;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   background: url(assets/images/still-video.jpg) no-repeat;
   background-size: cover;
   transition: 1s opacity;
@@ -623,6 +630,69 @@ video#bgvid {
 
 .content-on-video p {
   color: #7a7a7a;
+  padding: 15px;
+}
+
+.content-on-video button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #ff4d00;
+  border: 2px solid #000;
+  color: #000;
+  padding: 10px;
+}
+
+.content-on-video .arrow-up {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 28px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.content-on-video .arrow-up:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.content-on-video .aanbod-content {
+  display: none;
+}
+
+.content-on-video .aanbod-content.resize-transition {
+  transition: margin-bottom 1s;
+}
+
+.content-on-video .aanbod-flex {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content-on-video .aanbod-flex a {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.content-on-video .aanbod-flex a li {
+  background-color: #000;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 10px;
+  display: inline-block;
 }
 
 .header-image-outside {
@@ -778,6 +848,10 @@ video#bgvid {
 .gridItem .nameGrid {
   margin-top: -50px;
   z-index: 98;
+}
+
+#page-name span {
+  display: inline;
 }
 
 .header-image-activity {
@@ -1122,10 +1196,6 @@ ul.prijzen li p.info-prijs {
 .forfait-opmerking {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.forfait-opmerking p {
-  padding: 10px;
 }
 
 @media only screen and (min-width: 1200px) {

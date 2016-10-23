@@ -1,8 +1,12 @@
 <div class="container-middle container-aanvraag no-header">
-   <h1 id="page-name" class="titel-header">Aanvraagformulier</h1>
-   <img class="titel-img" src="css/assets/images/titel-underline.png">
-   <!-- <p class="center-text"> Duid de activiteit(en) aan waar u interesse in heeft</p>
-      --> 
+ <h1 id="page-name" class="titel-header">  <span>
+ <?php echo taal('Aanvraagformulier','',''); ?>   </span>
+<div class="titel-img-container">
+    <img class="titel-img" src="css/assets/images/titel-underline.png">
+     </div>
+</h1>
+
+  
 
 
    

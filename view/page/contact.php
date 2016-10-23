@@ -9,7 +9,7 @@
  -->
 <div class="container-middle container-aanbod no-header">
     <h1 id="page-name" class="titel-header">
-        <?php 
+       <span> <?php 
         switch($_SESSION['session_taal']){
             case "NL":
             ?>
@@ -31,10 +31,11 @@
             } ?>
 
 
-        </h1>
-  
+        </span>
+          <div class="titel-img-container">
     <img class="titel-img" src="css/assets/images/titel-underline.png">
  
+</div></h1>
 
     <div class="contact-sections">
       
@@ -202,12 +203,16 @@
 
 <form id="contact-form"  method="post" class="darker-bg-2">
 
-    <h1>
+    <h1 class="titel-header">
+        <span>
         <?php 
         echo taal("Stuur een bericht", "Contacter nous", "Send a message"); ?>
+   </span>
+   <div class="titel-img-container">
+    <img class="titel-img" src="assets/images/titel-underline.png">
+    </div>
     </h1>
-    <img class="titel-img" src="css/assets/images/titel-underline.png">
-
+   
     <div class="section-wrapper">
 
     <section>

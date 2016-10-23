@@ -2,13 +2,13 @@
 <div class="container-middle container-info  no-header">
 
     <h1 id="page-name"class="titel-header">
-        <?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
-        ?>
-
-    </h1>
+        <span><?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
+        ?></span>
 <div class="titel-img-container">
     <img class="titel-img" src="assets/images/titel-underline.png">
     </div>
+    </h1>
+
 
 
 <div class="content_info">

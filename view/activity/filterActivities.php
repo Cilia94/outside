@@ -5,13 +5,15 @@
 
 <div class="container-middle container-aanbod no-header">
     <h1 id="page-name" class="titel-header">
-        <?php 
+       <span> <?php 
         echo taal('Vind je activiteit','',''); 
-        ?>
+        ?></span>
+        <div class="titel-img-container">
+    <img class="titel-img" src="assets/images/titel-underline.png">
+    </div>
         </h1>
    
-    <img class="titel-img" src="css/assets/images/titel-underline.png">
-
+   
 
 <!--     <p>
     Lorem ipsum dolor sit amet, 

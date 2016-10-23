@@ -8,14 +8,13 @@
 <div class="container-middle container-info">
 
     <h1 id="page-name"class="titel-header">
-        <?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
-        ?>
-
-    </h1>
+            <span><?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
+        ?></span>
 <div class="titel-img-container">
-    <!--<img class="titel-img" src="assets/images/titel-underline.png">-->
-	<img class="titel-img" src="assets/images/titel-img2.png">
+    <img class="titel-img" src="assets/images/titel-img.png">
     </div>
+    </h1>
+
 	
 	<?php 	$prices_nl = explode(';', $activity['prijs_nl']);
 			$prices_fr = explode(';', $activity['prijs_fr']);
@@ -233,16 +232,23 @@
     <i class="fa fa-info-circle bg-border opmerking-icon" aria-hidden="true"></i>
       <p id="append-opmerking"></p>
   </div>
-
+<?php
+        if($activity['forfait'] !== 0){
+            ?>
   <div class="opmerking-container forfait-opmerking">
     <i class="fa fa-info-circle bg-border opmerking-icon" aria-hidden="true"></i>
       <p>
         <?php
-          $forfNL = "Met minder dan " . $activity['minAantal'] . " deelnemers kan de activiteit doorgaan, maar moet een forfait van " . 35*$activity['minAantal'] . "€ betaald worden.";
-echo taal($forfNL,$forfNL,$forfNL);
+        
+          $forfNL = "Met minder dan " . $activity['minAantal'] . " deelnemers kan de activiteit doorgaan, maar moet een forfait van " . $activity['forfait'] . "€ betaald worden.";
+        echo taal($forfNL,$forfNL,$forfNL);
+        
 ?>
       </p>
   </div>
+  <?php 
+  }
+?>
 
 </div>
 

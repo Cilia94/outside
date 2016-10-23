@@ -3,15 +3,15 @@
 <div class="container-middle container-info no-header">
 
     <h1 id="page-name"class="titel-header">
-        <?php echo taal('Zoekresultaten voor ','Zoekresultaten voor ','Zoekresultaten voor ');
+        <span><?php echo taal('Zoekresultaten voor ','Zoekresultaten voor ','Zoekresultaten voor ');
         echo "'" . $_GET['s'] . "'";
-        ?>
+        ?></span>
 
-
-    </h1>
 <div class="titel-img-container">
     <img class="titel-img" src="assets/images/titel-underline.png">
     </div>
+    </h1>
+
 
    
 <div class="content_info">

@@ -5,13 +5,14 @@
 </div>
 <div class="container-middle container-aanbod">
     <h1 id="page-name" class="titel-header">
-        <?php echo taal('Ons park','','Our park'); ?>
-
-
-        </h1>
-   
+        <span><?php echo taal('Ons park','','Our park'); ?>
+</span>
+<div class="titel-img-container">
     <img class="titel-img" src="css/assets/images/titel-underline.png">
-       <p>
+     </div>
+        </h1>
+    
+      <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, aliquid aspernatur, 
     sapiente doloribus praesentium vel. Ipsa dolorem deleniti voluptatibus fugit, 
     explicabo ipsum quos, nam commodi officia illo iste numquam sunt.</p>

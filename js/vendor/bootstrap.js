@@ -728,7 +728,6 @@ if (typeof jQuery === 'undefined') {
 
   $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
     var $this   = $(this)
-    console.log('collapse data api')
 
     if (!$this.attr('data-target')) e.preventDefault()
 

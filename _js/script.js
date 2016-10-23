@@ -1,15 +1,19 @@
-'use strict'
+"use strict"
+
 
 import {
   html
 } from './helpers/util.js';
 
-var locationAdresses;
-var currentTaal = $('#current-taal').data('taal');
-var regexMail= new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$');
 
-var typeGroepId_global;
-function compare(a,b,key) {
+var DEBUG = true;
+
+      if(!DEBUG){
+        console.log = function() {}
+
+      }
+
+ function compare(a,b,key) {
   if (a[key] < b[key])
     return -1;
   if (a[key] > b[key])
@@ -45,6 +49,8 @@ function json_getByActivityId(key, data) {
 
   return found;
 }
+
+
 
 
 function json_getTemplateId(key, data) {
@@ -92,9 +98,40 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     }
 });
 
+
+var locationAdresses;
+var currentTaal = $('#current-taal').data('taal');
+var regexMail= new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$');
+
+var typeGroepId_global;
+
+
 (function() {
 
     function init() {
+
+      aanbodContentPosition();
+      $('.aanbod-content').show();
+
+      $('.show-aanbod').on('click', function(){
+        
+        if(!$('.aanbod-content').hasClass('in-view')){
+        $('.show-aanbod.glyphicon').addClass('glyphicon-chevron-down');
+        $('.show-aanbod.glyphicon').removeClass('glyphicon-chevron-up');
+
+        $('.aanbod-content').css('margin-bottom','0px');
+        $('.aanbod-content').addClass('in-view');
+
+      }else{
+        $('.aanbod-content').removeClass('in-view');
+        $('.show-aanbod.glyphicon').removeClass('glyphicon-chevron-down');
+        $('.show-aanbod.glyphicon').addClass('glyphicon-chevron-up');
+        aanbodContentPosition();
+      }
+      })
+
+      $(window).on('resize', resizeWindow);
+      
       console.log('init');
       $('img.lazyload').lazyload();
       $('img.map-asset').lazyload();
@@ -118,9 +155,16 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
         }
       })
 
+      var w_span = $('.titel-header span').width();
+      $('.titel-img-container').css('opacity',1);
 
+      var viewportWidth = $(window).width();
+      if( (w_span+50) < viewportWidth){
+
+      $('.titel-img-container').css('width',w_span + 50);
+    }
       if ($('#page-name').html()) {
-        document.title = $('#page-name').html()
+        document.title = $('#page-name span').html()
       }
 
       $('.item-photos').each(function() {
@@ -142,6 +186,7 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
           }
         });
       });
+      
 
       $('.search-icon').on('click',function(e){
         e.preventDefault();
@@ -1458,6 +1503,32 @@ Handlebars.registerHelper("casePrijs", function(value, options) {
     }
 
 
+  }
+
+  function resizeWindow(){
+    aanbodContentPosition();
+  }
+
+  function aanbodContentPosition(){
+    if(!$('.aanbod-content').hasClass('in-view')){
+    var a_c = $('.aanbod-content').height();
+   
+    $('.aanbod-content').removeClass('resize-transition');
+    $('.aanbod-content').css('margin-bottom', -(a_c+20));
+    $('.aanbod-content').addClass('resize-transition');
+    }
+
+    var w_span = $('#page-name span').width();
+    
+      var viewportWidth = $(window).width();
+      if( (w_span+50) < viewportWidth){
+
+      $('.titel-img-container').css('width',w_span + 50);
+    }else{
+      $('.titel-img-container').css('width','auto');
+    
+
+    }
   }
 
   function searchActivities(searchTerm){

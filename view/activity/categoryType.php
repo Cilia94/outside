@@ -3,13 +3,14 @@
 <div class="container-middle container-info no-header">
 
     <h1 id="page-name"class="titel-header">
+      <span>
         <?php echo taal($category['type'],$category['type'],$category['type']);
-        ?>
-
-    </h1>
+        ?></span>
 <div class="titel-img-container">
     <img class="titel-img" src="assets/images/titel-underline.png">
     </div>
+    </h1>
+
 
    
 <div class="content_info">
