@@ -14,8 +14,9 @@
 
    
 <div class="content_info">
-    <?php //echo taal($category['inhoud_nl'],$category['inhoud_fr'],$category['inhoud_en']); ?>
-
+  <div class="center-text">
+    <?php echo taal($category['inhoud_nl'],$category['inhoud_fr'],$category['inhoud_en']); ?>
+</div>
 
 
     <div id="grid-feesten" class="container-sub-grid">

@@ -102,8 +102,8 @@
         <li><a href="index.php?page=category&id=2">
         <?php echo taal('Events','','Parties'); ?>
         </a></li>
-        <li><a href="index.php?page=activiteit&id=485">
-        <?php echo taal('Vrijgezellenfeestjes','','Bachelor parties'); ?>
+        <li><a href="index.php?page=activiteit&id=275&name=Paintball">
+        <?php echo taal('Paintball','','Paintball'); ?>
         </a></li>
         <li><a href="index.php?page=categoryType&id=4">
         <?php echo taal('Jeugdgroepen -18J','',''); ?>

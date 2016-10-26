@@ -589,6 +589,7 @@ var typeGroepId_global;
           var typesData = data[2];
           var durationsData = data[3];
           var allLocations = data[4];
+          console.log(data)
 
           filterSearch(activitiesData,locationsData,typesData, durationsData, allLocations);
 
@@ -860,7 +861,7 @@ var typeGroepId_global;
           var durationsData = data[3];
           var allLocations = data[4];
       
-            //console.log(data, typeGroep);
+           
             var allActivities = [];
             for(var i=0; i<activitiesData.length; i++){
               if(activitiesData[i].categorieId == idCategorie){
