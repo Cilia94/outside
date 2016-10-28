@@ -1,62 +1,12 @@
 
 <script id="handlebars-template-activity-aanvraag" type="text/template">
-  <article id="activity-{{id}}" class=""><label>
-                <input type="checkbox"  data-id="{{id}}" name="<?php 
-        switch($_SESSION['session_taal']){
+  <article id="activity-{{id}}" class="">
+		<label>
+            <input type="checkbox"  data-id="{{id}}" name="{{naam}}" class="checkbox-activity">
+				{{naam}}
+        </label>
 
-          case 'NL': 
-         ?>
-         {{naam_nl}}
-
-         <?php 
-
-         break;
-
-         case 'FR':
-         ?>
-          {{naam_fr}}
-<?php
-          break;
-        
-
-        case 'ENG':
-         ?>
-          {{naam_en}}
-<?php
-          break;
-        }
-
-        ?>" class="checkbox-activity">
-               <?php 
-        switch($_SESSION['session_taal']){
-
-          case 'NL': 
-         ?>
-         {{naam_nl}}
-
-         <?php 
-
-         break;
-
-         case 'FR':
-         ?>
-          {{naam_fr}}
-<?php
-          break;
-        
-
-        case 'ENG':
-         ?>
-          {{naam_en}}
-<?php
-          break;
-        }
-
-        ?>
-                    
-           </label>
-
-           <a href="index.php?page=activiteit&id={{id}}&name={{naam_nl}}" class="activity-info-link">
+           <a href="index.php?page=activiteit&id={{id}}&name={{naam}}" class="activity-info-link">
                 <i class=" fa fa-info-circle" 
                 aria-hidden="true"></i>
             </a>
@@ -67,32 +17,9 @@
 <section class="aanvraag-activity-type overview-type">
             <div class="activity-type-header">
             <h1 class="activity-type-h1">
-            <?php 
-        switch($_SESSION['session_taal']){
-
-          case 'NL': 
-         ?>
-         {{naam_nl}}
-
-         <?php 
-
-         break;
-
-         case 'FR':
-         ?>
-          {{naam_fr}}
-<?php
-          break;
-        
-
-        case 'ENG':
-         ?>
-          {{naam_en}}
-<?php
-          break;
-        }
-
-        ?>
+           
+         {{naam}}
+		 
             </h1>
             <a href="index.php?page=activiteit&id={{id}}" class="link-type" data-type="outside-activiteiten">
           <span class="arrow-down glyphicon glyphicon-chevron-down"></span>
@@ -105,35 +32,13 @@
 
 
        <script id="handlebars-template-vakantiehuis" type="text/template">
-  <a class="click" data-name="{{naam_nl}}" href="#">
+  <a class="click" data-name="{{naam}}" href="#">
   <li>
 
             <span>
-               <?php 
-        switch($_SESSION['session_taal']){
+              
+         {{naam}}
 
-          case 'NL': 
-         ?>
-         {{naam_nl}}
-
-         <?php 
-
-         break;
-
-         case 'FR':
-         ?>
-          {{naam_fr}}
-<?php
-          break;
-
-        case 'ENG':
-         ?>
-          {{naam_en}}
-<?php
-          break;
-        }
-
-        ?>
         </span>
                     
            </li></a>

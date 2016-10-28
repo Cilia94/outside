@@ -2,7 +2,7 @@
 <div class="container-middle container-info  no-header">
 
     <h1 id="page-name"class="titel-header">
-        <span><?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
+        <span><?php echo $activity['naam'];
         ?></span>
 <div class="titel-img-container">
     <img class="titel-img" src="assets/images/titel-underline.png">
@@ -14,19 +14,9 @@
 <div class="content_info">
         
 
-    <?php switch($_SESSION[ 'session_taal']){
-
-     case "NL": 
-     echo $activity[ 'inhoud_nl'];
-      break; 
-
-      case "FR": 
-      echo $activity[ 'inhoud_fr']; 
-      break; 
-
-      case "ENG": echo $activity[ 'inhoud_en']; 
-      break; 
-} ?>
+    <?php
+		echo $activity[ 'inhoud'];
+	?>
 
 </div>
 

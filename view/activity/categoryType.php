@@ -1,10 +1,11 @@
 
+<?php include 'helpfunctions.php' ?>
 
 <div class="container-middle container-info no-header">
 
     <h1 id="page-name"class="titel-header">
       <span>
-        <?php echo taal($category['type'],$category['type'],$category['type']);
+        <?php echo $category['naam'];
         ?></span>
 <div class="titel-img-container">
     <img class="titel-img" src="assets/images/titel-underline.png">
@@ -15,7 +16,7 @@
    
 <div class="content_info">
   <div class="center-text">
-    <?php echo taal($category['inhoud_nl'],$category['inhoud_fr'],$category['inhoud_en']); ?>
+    <?php echo $category['inhoud']; ?>
 </div>
 
 
@@ -30,12 +31,13 @@
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img width=\"200px\" height=\"200px\" class=\"subcategory-img lazyload\" 
                         src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
-                         $name = preg_replace('/\s+/', '', taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']));
-                         echo "<a href=\"index.php?page=activiteit&id={$activitySub['id']}&name=" . $name . "\" class=\"gridLink-sub\">";
+                         
+						 $name = slugify($activitySub['naam']);
+                         echo "<a href=\"/activiteit/" . $activitySub['id'] . "/" . $name .  "\" class=\"gridLink-sub\">";
                          
                          echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
-                echo taal($activitySub['naam_nl'],$activitySub['naam_fr'],$activitySub['naam_en']); 
+                echo $activitySub['naam']; 
                 echo "</span>"; 
                 echo "</div></a></div>"; 
           } 

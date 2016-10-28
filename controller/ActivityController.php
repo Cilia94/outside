@@ -38,7 +38,7 @@ class ActivityController extends Controller {
 
      public function all_activities(){
 
-       $results = $this->activityDAO->selectAll();
+       $results = $this->activityDAO->selectAll($_SESSION['session_taal']);
             
 
         header('Content-Type: application/json');
@@ -52,7 +52,7 @@ class ActivityController extends Controller {
 
     public function all_locations(){
 
-       $results = $this->locationDAO->selectAll();           
+       $results = $this->locationDAO->selectAll($_SESSION['session_taal']);           
         header('Content-Type: application/json');
         echo json_encode($results);
         die();
@@ -87,12 +87,12 @@ class ActivityController extends Controller {
     }
 
     public function all_other_data(){
-       $resultsActivities = $this->activityDAO->selectAll();
+       $resultsActivities = $this->activityDAO->selectAll($_SESSION['session_taal']);
        $resultsCategories = $this->categoryDAO->selectAllCategoriesWithActivities();
        $resultsLocations = $this->locationDAO->selectAllLocationsWithActivities();
        $resultsAllLocations = $this->locationDAO->selectAll();
        
-       //$resultsPrices = $this->categoryDAO->selectAllPricesWithActivities();
+       //-$resultsPrices = $this->categoryDAO->selectAllPricesWithActivities();
        $resultsDurations = $this->categoryDAO->selectAllDurationsWithActivities();
        $dataObject = new ArrayObject();
        $dataObject->append($resultsActivities);
@@ -101,7 +101,7 @@ class ActivityController extends Controller {
        
        $dataObject->append($resultsDurations);
        $dataObject->append($resultsAllLocations);
-       //$dataObject->append($resultsPrices);
+       //-$dataObject->append($resultsPrices);
 
         header('Content-Type: application/json');
         echo json_encode($dataObject);
@@ -162,17 +162,7 @@ if(!empty($_GET['id'])){
 
     }
 
-     public function category(){
-
-        if(!empty($_GET['id'])){
-        $this->set('category',$this->categoryDAO->selectById($_GET['id']));
-        $this->set('activities',$this->activityDAO->getByCategory($_GET['id']));
-        }else{
-            header('Location: index.php');
-   
-        }
-
-    }
+     
 
     public function getPriceByActivityId(){
 
@@ -185,16 +175,27 @@ if(!empty($_GET['id'])){
             die();
         
     }
+	
+	public function category(){
+
+        if(!empty($_GET['id'])){
+			$this->set('category',$this->categoryDAO->selectById($_GET['id']));
+			$this->set('activities',$this->activityDAO->getByCategory($_GET['id'],$_SESSION['session_taal']));
+        }else{
+            header('Location: /');
+        }
+
+    }
 
     public function categoryType(){
 
         if(!empty($_GET['id'])){
-        $this->set('category',$this->categoryDAO->selectByTypeId($_GET['id']));
+        $this->set('category',$this->categoryDAO->selectByTypeId($_GET['id'],$_SESSION['session_taal']));
 
         $idsOfActivities = $this->activityDAO->getByCategoryType($_GET['id']);
         $activitiesOfType = [];
         for ($i = 0; $i < count($idsOfActivities); $i++) {
-            $contentActivity = $this->activityDAO->selectById($idsOfActivities[$i]['activiteitId']);
+            $contentActivity = $this->activityDAO->selectById($idsOfActivities[$i]['activiteitId'],$_SESSION['session_taal']);
             array_push($activitiesOfType, $contentActivity);
             //$activitiesOfType-> append($contentActivity);
         }
@@ -202,7 +203,7 @@ if(!empty($_GET['id'])){
         $this->set('activities',$activitiesOfType);
         //$this->set('activities',$idsOfActivities);
         }else{
-            header('Location: index.php');
+            header('Location: /');
    
         }
 
@@ -211,23 +212,32 @@ if(!empty($_GET['id'])){
     public function activiteit(){
 
         if(!empty($_GET['id'])){
+			
+			
 
         //$locatiesFromDB = $this->locationDAO->selectAll();
-        $thisItem = $this->activityDAO->selectById($_GET['id']);
+        $thisItem = $this->activityDAO->selectById($_GET['id'],$_SESSION['session_taal']);
         $locationsActivity = $this->locationDAO->selectLocationsByActivity($_GET['id']);
-         $thisItem['adressen'] = $locationsActivity;
+		$prices = $this->activityDAO->selectPricesByActivity($_GET['id'],$_SESSION['session_taal']);
+		$supplements = $this->activityDAO->selectSupplementsByActivity($_GET['id'],$_SESSION['session_taal']);
+        $thisItem['adressen'] = $locationsActivity;
         if($thisItem){
 
-        $this->set('activity',$thisItem);
-             $this->set("photos", $this->photoDAO->selectByActivityId($_GET['id']));
-       
-    }else{
-        header('Location: index.php');
-    }
+			$this->set('activity',$thisItem);
+			$this->set('prices',$prices);
+			$this->set('supplements',$supplements);
+			$this->set("photos", $this->photoDAO->selectByActivityId($_GET['id']));
+			
+			
+				 //header('Location: activiteit/'.$_GET['id'].'/'.$thisItem['naam_nl']);
+     
+		}else{
+			header('Location: /');
+		}
 
         
         }else{
-            header('Location: index.php');
+            header('Location: /');
         //$this->set('images',$this->imageDAO->selectByTourId(1));
         }
 
@@ -278,7 +288,7 @@ if(!empty($_GET['id'])){
 
         
 if(!empty($_GET['id'])){
-        $this->set("activity", $this->activityDAO->selectById($_GET['id']));
+        $this->set("activity", $this->activityDAO->selectById($_GET['id'],$_SESSION['session_taal']));
         $this->set("photos", $this->photoDAO->selectByActivityId($_GET['id']));
         }else{
            

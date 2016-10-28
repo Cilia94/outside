@@ -7,14 +7,14 @@
         WebFontConfig = {
             custom: {
                 families: ['traveling__typewriterregular', 'raleway'],
-                urls: ['assets/fonts/webfontkit-20160803-123322/stylesheet.css', 'assets/fonts/raleway/stylesheet.css']
+                urls: ['/assets/fonts/webfontkit-20160803-123322/stylesheet.css', '/assets/fonts/raleway/stylesheet.css']
             }
         };
 
         (function() {
             var wf = document.createElement('script');
             wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js';
-            wf.src = 'js/vendor/webfontloader/webfontloader.js';
+            wf.src = '/js/vendor/webfontloader/webfontloader.js';
             wf.type = 'text/javascript';
 
             wf.async = 'true';
@@ -41,20 +41,22 @@
     <meta name="twitter:title" content="Outside Adventure" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favs.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favs.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     
-    <link rel="stylesheet" href="js/vendor/magnific/magnific-popup.css">
+    <link rel="stylesheet" href="/js/vendor/magnific/magnific-popup.css">
   
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <script src="js/vendor/modernizr-mask.js"></script>
+    <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="/js/vendor/modernizr-mask.js"></script>
+	<base href="/">
+	
 </head>
 
 <body>
@@ -63,9 +65,9 @@
 
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <a class="link-logo" href="index.php">
+        <a class="link-logo" href="/">
         <div class="outside-logo">
-            <img src="assets/images/logo-outside.png">
+            <img src="/assets/images/logo-outside.png">
         </div>
         </a>
         <div class="navbar-header">
@@ -88,47 +90,47 @@
         
             <ul class="nav navbar-nav">
                 <li class="global-menu-item active-item">
-                    <a class="link-item" href="index.php">Ons aanbod
+                    <a class="link-item" href="/">Ons aanbod
                                     <span class="sr-only">(current)</span>
                                      <span class="arrow-menu arrow-down glyphicon glyphicon-chevron-down"></span>
                                   </a>
                                   <ul>
     
         
-        <li><a href="index.php?page=category&id=1">
+        <li><a href="/categorie/1/outdoor-activiteiten">
         <?php echo taal('Outdoor activiteiten','','Outdoor activities'); ?></a>
         
          </li>
-        <li><a href="index.php?page=category&id=2">
-        <?php echo taal('Events','','Parties'); ?>
+        <li><a href="/categorie/2/feesten">
+        <?php echo taal('Feesten','','Parties'); ?>
         </a></li>
-        <li><a href="index.php?page=activiteit&id=275&name=Paintball">
+        <li><a href="/activiteit/275/paintball">
         <?php echo taal('Paintball','','Paintball'); ?>
         </a></li>
-        <li><a href="index.php?page=categoryType&id=4">
+        <li><a href="/activiteit-categorie/4/jeugdgroepen">
         <?php echo taal('Jeugdgroepen -18J','',''); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=3">
+        <li><a href="/categorie/3/scholen-sportdagen">
         <?php echo taal('Scholen sportdagen','',''); ?>
         </a></li>
-        <li><a href="index.php?page=categoryType&id=3">
+        <li><a href="/activiteit-categorie/3/outdoor-pakketten">
         <?php echo taal('Outdoor paketten','',''); ?>
         </a></li>
-        <li><a href="index.php?page=category&id=4">
+        <li><a href="/categorie/4/vakantiehuizen">
         <?php echo taal('Vakantiehuizen','',''); ?>
         </a></li>
-        <li><a href="index.php?page=categoryType&id=2">
+        <li><a href="/activiteit-categorie/2/easy-leisure">
         <?php echo taal('Easy Leisure','',''); ?>
         </a></li>
 
-            <li class="special-menu-item"><a href="index.php?page=filter">
+            <li class="special-menu-item"><a href="/filter">
         <?php echo taal('Vind je ideale activiteit!','',''); ?>
         </a></li>
       </ul>
                 </li>
                 <div class="divider-menu">&nbsp;</div>
                 <li class="global-menu-item ">
-                    <a class="link-item" href="index.php?page=adventurePark">
+                    <a class="link-item" href="/adventure-park">
                     <?php echo taal('Ons park','Votre locations','Our locations'); ?>
                                     <span class="sr-only">(current)</span>
                                      </a>
@@ -137,14 +139,14 @@
                 </li>
                 <div class="divider-menu">&nbsp;</div>
                 <li class="global-menu-item ">
-                    <a class="link-item" href="index.php?page=aanvragen">Aanvragen
+                    <a class="link-item" href="/aanvragen">Aanvragen
                                     <span class="sr-only">(current)</span>
 
                                   </a>
                 </li>
                 <div class="divider-menu">&nbsp;</div>
                 <li class="global-menu-item">
-                    <a class=" link-item" href="index.php?page=contact">Contact
+                    <a class=" link-item" href="/contact">Contact
                                     <span class="sr-only">(current)</span>
 
                                   </a>
@@ -212,13 +214,13 @@
 
 
 
-    <script type="text/javascript" src="js/vendor/fallback/fallback.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="/js/vendor/fallback/fallback.min.js"></script>
+    <script type="text/javascript" src="/js/vendor/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
-    <script type="text/javascript" src="js/vendor/magnific/magnific-popup.min.js">
+    <script type="text/javascript" src="/js/vendor/magnific/magnific-popup.min.js">
     </</script>
   
-    <script type="text/javascript" src="js/start.js"></script>
+    <script type="text/javascript" src="/js/start.js"></script>
     
     <!-- 
     Google Analytics: change UA-XXXXX-X to be your site's ID. 

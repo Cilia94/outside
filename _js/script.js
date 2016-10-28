@@ -215,7 +215,7 @@ var typeGroepId_global;
 
       $('img').each(function() {
         var filename = $(this).attr('src')
-          //console.log(filename.split('/'))
+          console.log(filename.split('/'))
         if (filename) {
           var filenameWithPath = filename.split('/')[filename.split('/').length - 1];
           //console.log(filenameWithPath);
@@ -429,7 +429,7 @@ var typeGroepId_global;
 
     function getAllPrices() {
 
-      $.getJSON('assets/data/prijzen.json', function(data) {
+      $.getJSON('/assets/data/prijzen.json', function(data) {
 
         getSinglePrice(data.prijzen)
       })
@@ -438,7 +438,7 @@ var typeGroepId_global;
 
     function getAllPrograms() {
 
-      $.getJSON('assets/data/programmas.json', function(data) {
+      $.getJSON('/assets/data/programmas.json', function(data) {
 
         getSingleProgram(data.programmas)
       })
@@ -447,7 +447,7 @@ var typeGroepId_global;
 
     function getAllVerwacht() {
 
-      $.getJSON('assets/data/watVerwachten.json', function(data) {
+      $.getJSON('/assets/data/watVerwachten.json', function(data) {
 
         getSingleVerwacht(data.wat_verwachten)
 

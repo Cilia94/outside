@@ -1,6 +1,6 @@
 
 <div class="intro-image">
-    <div class="header-image-activity masked" style="background-image: url('assets/images/activityPhotos/<?php echo $activity['afbeelding_header'];?>.jpg')">
+    <div class="header-image-activity masked" style="background-image: url('/assets/images/activityPhotos/<?php echo $activity['afbeelding_header'];?>.jpg')">
     </div>
 
 </div>
@@ -8,72 +8,51 @@
 <div class="container-middle container-info">
 
     <h1 id="page-name"class="titel-header">
-            <span><?php echo taal($activity['naam_nl'],$activity['naam_fr'],$activity['naam_en']);
+            <span><?php echo $activity['naam'];
         ?></span>
 <div class="titel-img-container">
-    <img class="titel-img" src="assets/images/titel-img.png">
+    <img class="titel-img" src="/assets/images/titel-img.png">
     </div>
     </h1>
 
 	
-	<?php 	$prices_nl = explode(';', $activity['prijs_nl']);
-			$prices_fr = explode(';', $activity['prijs_fr']);
-			$prices_en = explode(';', $activity['prijs_en']);
-			$price_titles_nl = explode(';', $activity['prijs_titel_nl']);
-			$price_titles_fr = explode(';', $activity['prijs_titel_fr']);
-			$price_titles_en = explode(';', $activity['prijs_titel_en']);
-			$supplements_nl = explode(';', $activity['supplement_nl']) ;
-			$supplements_fr = explode(';', $activity['supplement_fr']) ;
-			$supplements_en = explode(';', $activity['supplement_en']) ;
-			$supplement_titles_nl = explode(';', $activity['supplement_titel_nl']);
-			$supplement_titles_en = explode(';', $activity['supplement_titel_fr']);
-			$supplement_titles_fr = explode(';', $activity['supplement_titel_en']);
-	?>
-	
 
-    <?php if( !empty(taal($prices_nl,$prices_fr,$prices_en)) | !empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
+    <?php if( !empty($activity[ 'minAantal']) | !empty($activity[ 'locatieId']) | !empty($activity[ 'max-personen']) | !empty($activity[ 'duur']) | !			empty($activity[ 'locatieId']) | !empty($activity[ 'idealePeriode']) | !empty($activity[ 'leeftijd'])){ 
       ?>
     <ul class="grid-praktisch">
 		
 		<?php
-			for ($x = 0; $x < sizeof(taal($prices_nl,$prices_fr,$prices_en)); $x++) {
+			  for ($x = 0; $x < sizeof($prices); $x++) {
 				?>
-					<?php if(!empty(taal($prices_nl[$x],$prices_fr[$x],$prices_en[$x]))){ ?>
-						<li>
-							<i class="fa fa-eur" aria-hidden="true"></i>
-							<span class="name-grid-item">
-								<?php echo taal($price_titles_nl[$x],$price_titles_fr[$x],$price_titles_en[$x]); ?>
-							</span>
-							<span class="value-grid-item">
-								<?php echo taal($prices_nl[$x],$prices_fr[$x],$prices_en[$x]); ?>
-								
-							</span>
-						</li>
-						<div class="clear">&nbsp;</div>
+					<li>
+						<i class="fa fa-eur" aria-hidden="true"></i>
+						<span class="name-grid-item">
+							<?php echo $prices[$x]['titel']; ?>
+						</span>
+						<span class="value-grid-item">
+							<?php echo $prices[$x]['prijs']; ?>
+							
+						</span>
+					</li>
+					<div class="clear">&nbsp;</div>
 
-					<?php } ?>
 				<?php
 			}
 		?> 
 		
-		
 		<?php
-			for ($x = 0; $x < sizeof(taal($supplements_nl,$supplements_fr,$supplements_en)); $x++) {
+			for ($x = 0; $x < sizeof($supplements); $x++) {
 				?>
-					<?php if(!empty(taal($supplements_nl[$x],$supplements_fr[$x],$supplements_en[$x]))){ ?>
 						<li>
 							<i class="fa fa-plus" aria-hidden="true"></i>
 							<span class="name-grid-item">
-								<?php echo taal($supplement_titles_nl[$x],$supplement_titles_fr[$x],$supplement_titles_en[$x]); ?>
+								<?php echo $supplements[$x]['titel']; ?>
 							</span>
 							<span class="value-grid-item">
-								<?php echo taal($supplements_nl[$x],$supplements_fr[$x],$supplements_en[$x]); ?>
-								
+								<?php echo $supplements[$x]['prijs']; ?>
 							</span>
 						</li>
 						<div class="clear">&nbsp;</div>
-
-					<?php } ?>
 				<?php
 			}
 		?> 
@@ -96,7 +75,7 @@
 
         <?php } ?>
 
-        <?php if(!empty(taal($activity['afspraak_nl'],$activity['afspraak_fr'],$activity['afspraak_en']))){ ?>
+        <?php if(!empty($activity['afspraak'])){ ?>
         <li>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <span class="name-grid-item">
@@ -105,7 +84,7 @@
 			
 			<span class="value-grid-item">
 
-                <?php echo taal($activity['afspraak_nl'],$activity['afspraak_fr'],$activity['afspraak_en']); ?>
+                <?php echo $activity['afspraak']; ?>
 
             </span>
 
@@ -129,7 +108,7 @@
 
         <?php } ?>
 
-        <?php if(!empty(taal($activity['duur_nl'],$activity['duur_fr'],$activity['duur_en']))){ ?>
+        <?php if(!empty($activity['duur'])){ ?>
         <li>
             <i class="fa fa-clock-o" aria-hidden="true"></i>
             <span class="name-grid-item">
@@ -139,7 +118,7 @@
             </span>
             <span class="value-grid-item">
 
-                <?php echo taal($activity['duur_nl'],$activity['duur_fr'],$activity['duur_en']); ?>
+                <?php echo $activity['duur']; ?>
 
             </span>
         </li>
@@ -147,14 +126,14 @@
 
         <?php } ?>
 
-        <?php if(!empty(taal($activity['periode_nl'],$activity['periode_fr'],$activity['periode_en']))){ ?>
+        <?php if(!empty($activity['periode'])){ ?>
         <li>
             <i class="fa fa-calendar" aria-hidden="true"></i>
             <span class="name-grid-item">
                 <?php echo taal("Ideale periode","Ideale periode","Ideale periode"); ?>
         </span>
             <span class="value-grid-item">
-                <?php echo taal($activity['periode_nl'],$activity['periode_fr'],$activity['periode_en']); ?>
+                <?php echo $activity['periode']; ?>
         </span>
         </li>
         <div class="clear">&nbsp;</div>
@@ -210,19 +189,9 @@
 <div class="content_info">
         
 
-    <?php switch($_SESSION[ 'session_taal']){
-
-     case "NL": 
-     echo $activity[ 'inhoud_nl'];
-      break; 
-
-      case "FR": 
-      echo $activity[ 'inhoud_fr']; 
-      break; 
-
-      case "ENG": echo $activity[ 'inhoud_en']; 
-      break; 
-} ?>
+    <?php 
+		echo $activity['inhoud'];
+	?>
 <div id="append-programmas" class="">
        
      
@@ -295,7 +264,7 @@
     <h1 class="titel-header"><?php echo taal("Foto's",'','Photos'); ?></h1>
 
     <div class="titel-img-container">
-    <img class="titel-img" src="assets/images/titel-underline.png">
+		<img class="titel-img" src="/assets/images/titel-underline.png">
     </div>
     <p class="info-photos">
         <?php echo taal('Klik op een foto om hem in ware grote te bekijken','',''); ?>
@@ -304,16 +273,16 @@
         <div class="activity-photos-grid">
             <?php
            
-                        foreach ($photos as $photo){ 
-                            echo "<a href=\"assets/images/activityPhotos/{$photo['bestandsnaam']}\">";
-                        echo "<div class=\"thumbOverlay\">";
-        echo "<img src=\"assets/images/activityPhotos/{$photo['bestandsnaam']}\" class=\"thumb\" alt=\"\">";
-        echo "</div>";
-        echo "</a>";
-                  } 
+                foreach ($photos as $photo){ 
+					echo "<a href=\"/assets/images/activityPhotos/{$photo['bestandsnaam']}\">";
+					echo "<div class=\"thumbOverlay\">";
+					echo "<img src=\"/assets/images/activityPhotos/{$photo['bestandsnaam']}\" class=\"thumb\" alt=\"\">";
+					echo "</div>";
+					echo "</a>";
+                } 
             }
-             } 
-             ?>
+        } 
+    ?>
 
         </div>
     </div>

@@ -127,39 +127,15 @@
   <div class="grid-sub">
 
       <img class="subcategory-img lazyload" 
-      src="css/assets/images/activityPhotos/{{afbeelding}}_th.jpg">
-      <?php 
-        switch($_SESSION['session_taal']){
-          case 'NL':
-         ?>              
-      <a href="index.php?page=activiteit&id={{id}}&name={{naam_nl}}" class="gridLink-sub"> 
+      src="css/assets/images/activityPhotos/{{afbeelding}}_th.jpg">              
+      <a href="index.php?page=activiteit&id={{id}}&name={{naam}}" class="gridLink-sub"> 
       <div class="overlay-img">
         <span> 
-        {{naam_nl}} 
+        {{naam}} 
 
         </span>
         </div></a>
-        <?php break; 
-        case 'FR': ?>
-        <a href="index.php?page=activiteit&id={{id}}&name={{naam_fr}}" class="gridLink-sub"> 
-      <div class="overlay-img">
-        <span> 
-        {{naam_fr}} 
-
-        </span>
-        </div></a>
-
-         <?php break; 
-        case 'ENG': ?>
-
-        <a href="index.php?page=activiteit&id={{id}}&name={{naam_en}}" class="gridLink-sub"> 
-      <div class="overlay-img">
-        <span> 
-        {{naam_en}} 
-
-        </span>
-        </div></a>
-        <?php break; } ?>
+       
 
 
   </div>
@@ -167,41 +143,16 @@
 
   <div class="grid-sub">
         <div class="filtered-item">
-        <a href="index.php?page=activiteit&id={{id}}&name={{naam_nl}}">
+        <a href="index.php?page=activiteit&id={{id}}&name={{naam}}">
         <section style="background-image:url('assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
         
         </section>
         </a>
         <h3>
-        <a href="index.php?page=activiteit&id={{id}}&name={{naam_nl}}">
-        <?php 
-        switch($_SESSION['session_taal']){
+        <a href="index.php?page=activiteit&id={{id}}&name={{naam}}">
+       
+         {{naam}}
 
-          case 'NL':
-         
-          
-         ?>
-         {{naam_nl}}
-
-         <?php 
-
-         break;
-
-         case 'FR':
-         ?>
-          {{naam_fr}}
-<?php
-          break;
-        
-
-        case 'ENG':
-         ?>
-          {{naam_en}}
-<?php
-          break;
-        }
-
-        ?>
         </a></h3>
 
 

@@ -25,37 +25,39 @@
   <button class="show-aanbod ons-aanbod">
     Ons aanbod
   </button>
+  
+  
 
   <div class="aanbod-content">
     <ul class="aanbod-flex">
-      <a href="index.php?page=category&id=1"><li>
+      <a href="/categorie/1/outdoor-activiteiten"><li>
         <?php echo taal('Outdoor activiteiten','a','a'); ?>
       </li></a>
 
-      <a href="index.php?page=category&id=2"><li>
-        <?php echo taal('Events','a','a'); ?>
+      <a href="/categorie/2/feesten"><li>
+        <?php echo taal('Feesten','a','a'); ?>
       </li></a>
 
-      <a href="index.php?page=activiteit&id=275&name=Paintball"><li>
+      <a href="/activiteit/275/paintball"><li>
         <?php echo taal('Paintball','Paintball','Paintball'); ?>
       </li></a>
-      <a href="index.php?page=categoryType&id=4"><li>
+      <a href="/activiteit-categorie/4/jeugdgroepen"><li>
         <?php echo taal('Jeugdgroepen -18J','a','a'); ?>
       </li></a>
 
-      <a href="index.php?page=category&id=3"><li>
+      <a href="/categorie/3/scholen-sportdagen"><li>
         <?php echo taal('Scholen sportdagen','a','a'); ?>
       </li></a>
 
-      <a href="index.php?page=categoryType&id=3"><li>
+      <a href="/activiteit-categorie/3/outdoor-pakketten"><li>
         <?php echo taal('Outdoorpaketten','a','a'); ?>
       </li></a>
 
-      <a href="index.php?page=category&id=4"><li>
+      <a href="/categorie/4/vakantiehuizen"><li>
         <?php echo taal('Vakantiehuizen','a','a'); ?>
       </li></a>
 
-      <a href="index.php?page=categoryType&id=2"><li>
+      <a href="/activiteit-categorie/2/easy-leisure"><li>
         <?php echo taal('Easy Leisure','a','a'); ?>
       </li></a>
 

@@ -1,0 +1,14 @@
+RewriteEngine On    # Turn on the rewriting engine
+RewriteBase /
+
+
+RewriteRule    ^vakantiehuis/([0-9]+)/.*$    /index.php?page=activiteit&id=$1  [NC,L]
+RewriteRule    ^activiteit/([0-9]+)/.*$    /index.php?page=activiteit&id=$1  [NC,L]
+RewriteRule    ^sportdag/([0-9]+)/.*$    /index.php?page=activiteit&id=$1  [NC,L]
+RewriteRule    ^categorie/([0-9]+)/.*$    /index.php?page=category&id=$1  [NC,L]
+RewriteRule    ^activiteit-categorie/([0-9]+)/.*$    /index.php?page=categoryType&id=$1  [NC,L]
+RewriteRule    ^filter$    /index.php?page=filter  [NC,L]
+RewriteRule    ^adventure-park$    /index.php?page=adventurePark  [NC,L]
+RewriteRule    ^aanvragen$    /index.php?page=aanvragen  [NC,L]
+RewriteRule    ^contact$    /index.php?page=contact  [NC,L]
+RewriteRule    ^zoeken/(.*)$    /index.php?page=search&s=$1  [NC,L]

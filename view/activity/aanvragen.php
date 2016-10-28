@@ -2,7 +2,7 @@
  <h1 id="page-name" class="titel-header">  <span>
  <?php echo taal('Aanvraagformulier','',''); ?>   </span>
 <div class="titel-img-container">
-    <img class="titel-img" src="css/assets/images/titel-underline.png">
+    <img class="titel-img" src="/css/assets/images/titel-underline.png">
      </div>
 </h1>
 
@@ -94,7 +94,7 @@
                            
                            ?>
                      </h1>
-                     <a href="index.php?page=category&id=1" class="link-type" data-type="outside-activiteiten">
+                     <a href="categorie/1/outdoor-activiteiten" class="link-type" data-type="outside-activiteiten">
                      </a>
                   </div>
                   <div id="items-type-pakket" class="items-in-type">
@@ -109,7 +109,7 @@
                            
                            ?>
                      </h1>
-                     <a href="index.php?page=category&id=1" class="link-type" data-type="outside-activiteiten">
+                     <a href="categorie/1/outdoor-activiteiten" class="link-type" data-type="outside-activiteiten">
                      </a>
                   </div>
                   <div id="items-type-1" class="items-in-type">
@@ -124,7 +124,7 @@
                            
                            ?>
                      </h1>
-                     <a href="index.php?page=category&id=2" class="link-type" data-type="outside-activiteiten">
+                     <a href="categorie/2/feesten" class="link-type" data-type="outside-activiteiten">
                      </a>
                   </div>
                   <div id="items-type-2" class="items-in-type">
@@ -138,7 +138,7 @@
                            
                            ?>
                      </h1>
-                     <a href="index.php?page=category&id=3" class="link-type" data-type="outside-activiteiten">
+                     <a href="categorie/3/scholen-sportdagen" class="link-type" data-type="outside-activiteiten">
                      </a>
                   </div>
                   <div id="items-type-3" class="items-in-type">
@@ -152,7 +152,7 @@
                            
                            ?>
                      </h1>
-                     <a href="index.php?page=category&id=4" class="link-type" data-type="outside-activiteiten">
+                     <a href="categorie/4/vakantiehuizen" class="link-type" data-type="outside-activiteiten">
                      </a>
                   </div>
                   <div id="items-type-4" class="items-in-type">
@@ -224,7 +224,7 @@
                     <p>
                       <?php echo taal('Maak een keuze uit onze vakantiehuizen','',''); ?>
                        <br>
-                      <a href="http://localhost/outside/index.php?page=category&id=4">
+                      <a href="categorie/4/vakantiehuizen">
                         <?php echo taal('Meer info?','',''); ?>
                       </a>
                     </p>

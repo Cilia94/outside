@@ -2,83 +2,69 @@
 require_once WWW_ROOT . 'dao' . DIRECTORY_SEPARATOR . 'DAO.php';
 class ActivityDAO extends DAO {
 	
-	public function selectAll() {
-		//$sql = "SELECT * FROM `inhoud` WHERE `actief` = 1 ORDER BY ID ASC";
+	public function selectAll($language) {
 		$sql = "SELECT * FROM inhoud 
-				INNER JOIN (SELECT activiteitId,GROUP_CONCAT(titel_nl SEPARATOR ';') as titel_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as titel_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as titel_en,typeId FROM inhoud_prijs
-				GROUP BY activiteitId) as tmp ON activiteitId = inhoud.id
-				WHERE actief = 1 ORDER BY ID ASC";
+				INNER JOIN inhoud_taal ON inhoud.id = inhoudId
+				WHERE actief = 1 AND inhoud_taal.taal = :language ORDER BY inhoud_taal.naam ASC";
+				
 		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':language', $language);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-	public function selectById($id) {
-		//$sql = "SELECT * FROM `inhoud` WHERE `id` = :id ";
-		/*$sql = "SELECT * FROM inhoud 
-				INNER JOIN (SELECT activiteitId,GROUP_CONCAT(titel_nl SEPARATOR ';') as titel_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as titel_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as titel_en,typeId FROM inhoud_prijs
-				GROUP BY activiteitId) as tmp ON activiteitId = inhoud.id
-				WHERE actief = 1 AND id= :id ORDER BY ID ASC";*/
-				
-		/*$sql = "SELECT * FROM `inhoud`
-				LEFT JOIN (SELECT * FROM (SELECT activiteitId,GROUP_CONCAT(titel_nl SEPARATOR ';') as prijs_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as prijs_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as prijs_en,typeId FROM inhoud_prijs
-				WHERE typeId = 1
-				GROUP BY activiteitId) as tmp
-				LEFT JOIN 
-				(SELECT activiteitId as activiteitId2,GROUP_CONCAT(titel_nl SEPARATOR ';') as supplement_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as supplement_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as supplement_en FROM inhoud_prijs
-				WHERE typeId = 2
-				GROUP BY activiteitId) as tmp2
-				ON tmp.activiteitId = tmp2.activiteitId2
-
-				UNION ALL 
-
-				SELECT * FROM (SELECT activiteitId,GROUP_CONCAT(titel_nl SEPARATOR ';') as prijs_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as prijs_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as prijs_en,typeId FROM inhoud_prijs
-				WHERE typeId = 1
-				GROUP BY activiteitId) as tmp
-				RIGHT JOIN 
-				(SELECT activiteitId as activiteitId2,GROUP_CONCAT(titel_nl SEPARATOR ';') as supplement_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as supplement_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as supplement_en FROM inhoud_prijs
-				WHERE typeId = 2
-				GROUP BY activiteitId) as tmp2
-				ON tmp.activiteitId = tmp2.activiteitId2) as tmp3
-				ON inhoud.id = tmp3.activiteitId
-				WHERE actief=1 AND id= :id";	
-				*/
+	public function selectById($id,$language) {
+	
 		$sql = "SELECT * FROM `inhoud`
-				LEFT JOIN (SELECT * FROM (SELECT activiteitId,GROUP_CONCAT(titel_nl SEPARATOR ';') as prijs_titel_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as prijs_titel_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as prijs_titel_en,GROUP_CONCAT(prijs_nl SEPARATOR ';') as prijs_nl,GROUP_CONCAT(prijs_fr SEPARATOR ';') as prijs_fr,GROUP_CONCAT(prijs_en SEPARATOR ';') as prijs_en,typeId FROM inhoud_prijs
-				WHERE typeId = 1
-				GROUP BY activiteitId) as tmp
-				LEFT JOIN 
-				(SELECT activiteitId as activiteitId2,GROUP_CONCAT(titel_nl SEPARATOR ';') as supplement_titel_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as supplement_titel_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as supplement_titel_en,GROUP_CONCAT(prijs_nl SEPARATOR ';') as supplement_nl,GROUP_CONCAT(prijs_fr SEPARATOR ';') as supplement_fr,GROUP_CONCAT(prijs_en SEPARATOR ';') as supplement_en FROM inhoud_prijs
-				WHERE typeId = 2
-				GROUP BY activiteitId) as tmp2
-				ON tmp.activiteitId = tmp2.activiteitId2
-
-				UNION ALL 
-
-				SELECT * FROM (SELECT activiteitId,GROUP_CONCAT(titel_nl SEPARATOR ';') as prijs_titel_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as prijs_titel_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as prijs_titel_en,GROUP_CONCAT(prijs_nl SEPARATOR ';') as prijs_nl,GROUP_CONCAT(prijs_fr SEPARATOR ';') as prijs_fr,GROUP_CONCAT(prijs_en SEPARATOR ';') as prijs_en,typeId FROM inhoud_prijs
-				WHERE typeId = 1
-				GROUP BY activiteitId) as tmp
-				RIGHT JOIN 
-				(SELECT activiteitId as activiteitId2,GROUP_CONCAT(titel_nl SEPARATOR ';') as supplement_titel_nl,GROUP_CONCAT(titel_fr SEPARATOR ';') as supplement_titel_fr,GROUP_CONCAT(titel_en SEPARATOR ';') as supplement_titel_en,GROUP_CONCAT(prijs_nl SEPARATOR ';') as supplement_nl,GROUP_CONCAT(prijs_fr SEPARATOR ';') as supplement_fr,GROUP_CONCAT(prijs_en SEPARATOR ';') as supplement_en FROM inhoud_prijs
-				WHERE typeId = 2
-				GROUP BY activiteitId) as tmp2
-				ON tmp.activiteitId = tmp2.activiteitId2) as tmp3
-				ON inhoud.id = tmp3.activiteitId
-				WHERE actief=1 AND id= :id	";
+				INNER JOIN `inhoud_taal` 
+				ON id = inhoudId
+				WHERE id = :id  AND taal=:language ";
+		
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
+		$stmt->bindValue(':language', $language);
 		$stmt->execute();
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
+	
+	public function selectPricesByActivity($id,$language){
+		
+		$sql = "SELECT * FROM `inhoud_prijs` 
+				INNER JOIN inhoud_prijs_taal
+				ON id=prijsId
+				WHERE activiteitId = :id AND typeId = 1 AND taal=:language ";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->bindValue(':language', $language);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+	
+	public function selectSupplementsByActivity($id,$language){
+		
+		$sql = "SELECT * FROM `inhoud_prijs` 
+				INNER JOIN inhoud_prijs_taal
+				ON id=prijsId
+				WHERE activiteitId = :id AND typeId = 2 AND taal=:language ";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		$stmt->bindValue(':language', $language);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
 
 	//get all activities with locationId x
-	public function selectByLocation($id){
-		
-		$sql = "SELECT * FROM (SELECT activiteitId,locatieId from `inhoud_activiteit_locatie`) as locatie
-				INNER JOIN inhoud ON inhoud.id = activiteitId
-				WHERE locatieId = :locatieId AND actief = 1 ";
+	public function selectByLocation($id,$language){
+	
+		$sql = "SELECT * FROM inhoud_activiteit_locatie 
+				INNER JOIN `inhoud` ON inhoud.id = activiteitId
+				INNER JOIN `inhoud_taal` ON id = inhoudId
+				WHERE id = :id  AND taal=:language ";
+				
+				
 		$stmt = $this->pdo->prepare($sql);
-		$stmt->bindValue(':locatieId', $id);
+		$stmt->bindValue(':id', $id);
+		$stmt->bindValue(':language', $language);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		
@@ -87,10 +73,15 @@ class ActivityDAO extends DAO {
 	}
 
 	//get all activities that belong to category with id x
-	public function getByCategory($id) {
-		$sql = "SELECT * FROM inhoud WHERE categorieId = :id AND actief = 1 ";
+	public function getByCategory($id,$language) {
+		$sql = "SELECT * FROM inhoud 
+				INNER JOIN `inhoud_taal` ON inhoud.id = inhoudId
+				WHERE actief = 1 AND inhoud_taal.taal = :language AND categorieId=:id ORDER BY inhoud_taal.naam ASC";
+		
+		
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
+		$stmt->bindValue(':language', $language);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
@@ -129,27 +120,15 @@ class ActivityDAO extends DAO {
 	}
 
 	public function search($search) {
-
-		switch($_SESSION['session_taal']){
-			case 'NL':
-			$sql = "SELECT * FROM inhoud 
-				WHERE (inhoud_nl LIKE :search OR naam_nl LIKE :search2) ORDER BY ID ASC";
-			break;
-
-			case 'FR':
-			$sql = "SELECT * FROM inhoud 
-				WHERE (inhoud_fr LIKE :search OR naam_fr LIKE :search2) ORDER BY ID ASC";
-			break;
-
-			case 'ENG':
-			$sql = "SELECT * FROM inhoud 
-				WHERE (inhoud_en LIKE :search OR naam_en LIKE :search2) ORDER BY ID ASC";
-			break;
-		}
+		$sql = "SELECT * FROM `inhoud`
+				INNER JOIN `inhoud_taal` 
+				ON id = inhoudId
+				WHERE taal=:language AND (inhoud LIKE :search OR naam LIKE :search2) ORDER BY ID ASC";
 		
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':search', '%' . $search . '%');
 		$stmt->bindValue(':search2', '%' . $search . '%');
+		$stmt->bindValue(':language', $_SESSION['session_taal']);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
