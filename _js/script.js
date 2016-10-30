@@ -410,7 +410,7 @@ var typeGroepId_global;
       if(pathA.includes('vakantiehuis')){
         typeOfActivitiy = 'vakantiehuis';
       }
-      console.log(typeOfActivitiy);
+      //console.log(typeOfActivitiy);
      
 
       //var type = window.location.search;
@@ -540,11 +540,9 @@ var typeGroepId_global;
         console.log("prijs ",prijs);
         console.log($('#handlebars-template-prijzen'))
         var prijsContainer = $('#handlebars-template-prijzen').text();
-        console.log("prijscontainer", prijsContainer)
         var prijs_template = Handlebars.compile(prijsContainer);
         //console.log("prijstemplate", prijs_template)
         var html = prijs_template(prijs);
-        console.log("html",html)
         $('#append-prijzen').append($(html));
       }
 

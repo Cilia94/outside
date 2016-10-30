@@ -29,6 +29,10 @@
   
 
   <div class="aanbod-content">
+    <p class="center-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Ex, nobis error sapiente esse nostrum placeat nulla necessitatibus facere porro commodi.
+    </p>
     <ul class="aanbod-flex">
       <a href="/categorie/1/outdoor-activiteiten"><li>
         <?php echo taal('Outdoor activiteiten','a','a'); ?>

@@ -672,6 +672,12 @@ video#bgvid {
   display: none;
 }
 
+.content-on-video .aanbod-content p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
 .content-on-video .aanbod-content.resize-transition {
   transition: margin-bottom 1s;
 }
