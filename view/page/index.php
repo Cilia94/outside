@@ -50,7 +50,7 @@
       </li></a>
 
       <a href="/activiteit-categorie/3/outdoor-pakketten"><li>
-        <?php echo taal('Outdoorpaketten','a','a'); ?>
+        <?php echo taal('Outdoorpakketten','a','a'); ?>
       </li></a>
 
       <a href="/categorie/4/vakantiehuizen"><li>

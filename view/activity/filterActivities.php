@@ -9,7 +9,7 @@
         echo taal('Vind je activiteit','',''); 
         ?></span>
         <div class="titel-img-container">
-    <img class="titel-img" src="assets/images/titel-underline.png">
+    <img class="titel-img" src="/assets/images/titel-underline.png">
     </div>
         </h1>
    
@@ -123,33 +123,19 @@
 
 
 <script id="handlebars-template-activity" type="text/template">
-  <!--
-  <div class="grid-sub">
 
-      <img class="subcategory-img lazyload" 
-      src="css/assets/images/activityPhotos/{{afbeelding}}_th.jpg">              
-      <a href="index.php?page=activiteit&id={{id}}&name={{naam}}" class="gridLink-sub"> 
-      <div class="overlay-img">
-        <span> 
-        {{naam}} 
-
-        </span>
-        </div></a>
-       
-
-
-  </div>
-        -->
 
   <div class="grid-sub">
         <div class="filtered-item">
-        <a href="index.php?page=activiteit&id={{id}}&name={{naam}}">
+
+
+        <a href="/{{type}}/{{id}}/{{naam}}">
         <section style="background-image:url('assets/images/activityPhotos/{{afbeelding}}_th.jpg')" class="filter-photo">
         
         </section>
         </a>
         <h3>
-        <a href="index.php?page=activiteit&id={{id}}&name={{naam}}">
+        <a href="/{{type}}/{{id}}/{{naam}}">
        
          {{naam}}
 

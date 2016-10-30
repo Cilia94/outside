@@ -263,8 +263,8 @@
     -->
     <h1 class="titel-header"><?php echo taal("Foto's",'','Photos'); ?></h1>
 
-    <div class="titel-img-container">
-		<img class="titel-img" src="/assets/images/titel-underline.png">
+    <div class="">
+		<img class="titel-img titel-img-photos" src="/assets/images/titel-underline.png">
     </div>
     <p class="info-photos">
         <?php echo taal('Klik op een foto om hem in ware grote te bekijken','',''); ?>

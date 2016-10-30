@@ -41,8 +41,8 @@
     <meta name="twitter:title" content="Outside Adventure" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="" />
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favs.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favs.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
 
@@ -55,8 +55,6 @@
     
     <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="/js/vendor/modernizr-mask.js"></script>
-	<base href="/">
-	
 </head>
 
 <body>
@@ -65,7 +63,7 @@
 
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <a class="link-logo" href="/">
+        <a class="link-logo" href="/index.php">
         <div class="outside-logo">
             <img src="/assets/images/logo-outside.png">
         </div>
@@ -102,7 +100,7 @@
         
          </li>
         <li><a href="/categorie/2/feesten">
-        <?php echo taal('Feesten','','Parties'); ?>
+        <?php echo taal('Events','','Parties'); ?>
         </a></li>
         <li><a href="/activiteit/275/paintball">
         <?php echo taal('Paintball','','Paintball'); ?>
@@ -114,12 +112,12 @@
         <?php echo taal('Scholen sportdagen','',''); ?>
         </a></li>
         <li><a href="/activiteit-categorie/3/outdoor-pakketten">
-        <?php echo taal('Outdoor paketten','',''); ?>
+        <?php echo taal('Outdoor pakketten','',''); ?>
         </a></li>
         <li><a href="/categorie/4/vakantiehuizen">
         <?php echo taal('Vakantiehuizen','',''); ?>
         </a></li>
-        <li><a href="/activiteit-categorie/2/easy-leisure">
+        <li><a href="/activiteit-categorie/2/outdoor-activiteiten">
         <?php echo taal('Easy Leisure','',''); ?>
         </a></li>
 

@@ -8,7 +8,7 @@
         ?></span>
 
 <div class="titel-img-container">
-    <img class="titel-img" src="assets/images/titel-underline.png">
+    <img class="titel-img" src="/assets/images/titel-underline.png">
     </div>
     </h1>
 
@@ -29,9 +29,30 @@
                     if($activitySub['id']){
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img width=\"200px\" height=\"200px\" class=\"subcategory-img lazyload\" 
-                        src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
+                        src=\"/assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
+
                          $name = preg_replace('/\s+/', '', $activitySub['naam']);
-                         echo "<a href=\"index.php?page=activiteit&id={$activitySub['id']}&name=" . $name . "\" class=\"gridLink-sub\">";
+                         $categorie;
+                         switch ($activitySub['categorieId']) {
+                           case 1:
+                             $categorie = 'activiteit';
+                             break;
+                            case 2:
+                             $categorie = 'feesten';
+                             break;
+                            case 3:
+                             $categorie = 'sportdag';
+                             break;
+                            case 4:
+                             $categorie = 'vakantiehuis';
+                             break;
+                           
+                           default:
+                             $categorie = 'activiteit';
+                             break;
+                         }
+
+                         echo "<a href=/". $categorie . "/{$activitySub['id']}/" . $name ." class=\"gridLink-sub\">";
                          echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
                 echo $activitySub['naam']; 

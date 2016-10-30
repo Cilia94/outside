@@ -2,21 +2,21 @@
 fallback.load({
 
 	jQuery: ['http://code.jquery.com/jquery-3.1.1.js',
-	'js/vendor/jquery-3.1.1.js'
+	'/js/vendor/jquery-3.1.1.js'
 	],
 
 	FontAwesome: ['//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', 
-	'js/vendor/fontawesome/css/font-awesome.css'],
+	'/js/vendor/fontawesome/css/font-awesome.css'],
 
 	'Bootstrap': ['//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js', 
-	'js/vendor/bootstrap.js'],
+	'/js/vendor/bootstrap.js'],
 
-	Handlebars: 'js/vendor/handlebars.min.js',
+	Handlebars: '/js/vendor/handlebars.min.js',
 	'lazyloading': 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js',
 
 	'jQuery.ui':['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js'],
 
-	'script.js': 'js/script.js'
+	'script.js': '/js/script.js'
 	
 }, {
 	shim: {

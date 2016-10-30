@@ -99,6 +99,11 @@
                   </div>
                   <div id="items-type-pakket" class="items-in-type">
                   </div>
+                   <p class="no-results">
+       <?php echo 
+       taal('Er zijn geen resultaten die overeenkomen met uw zoekterm in deze categorie','','');
+       ?>
+       </p>
                </section>
 
                <section class="aanvraag-activity-type overview-type">
@@ -113,7 +118,13 @@
                      </a>
                   </div>
                   <div id="items-type-1" class="items-in-type">
+
                   </div>
+                   <p class="no-results">
+       <?php echo 
+       taal('Er zijn geen resultaten die overeenkomen met uw zoekterm in deze categorie','','');
+       ?>
+       </p>
                </section>
                
                <section class="aanvraag-activity-type overview-type">
@@ -128,7 +139,14 @@
                      </a>
                   </div>
                   <div id="items-type-2" class="items-in-type">
+
                   </div>
+                   <p class="no-results">
+       <?php echo 
+       taal('Er zijn geen resultaten die overeenkomen met uw zoekterm in deze categorie','','');
+       ?>
+       </p>
+
                </section>
                <section class="aanvraag-activity-type overview-type">
                   <div class="activity-type-header">
@@ -142,7 +160,13 @@
                      </a>
                   </div>
                   <div id="items-type-3" class="items-in-type">
+
                   </div>
+                   <p class="no-results">
+       <?php echo 
+       taal('Er zijn geen resultaten die overeenkomen met uw zoekterm in deze categorie','','');
+       ?>
+       </p>
                </section>
                <section class="aanvraag-activity-type overview-type">
                   <div class="activity-type-header">
@@ -156,7 +180,13 @@
                      </a>
                   </div>
                   <div id="items-type-4" class="items-in-type">
+
                   </div>
+                   <p class="no-results">
+       <?php echo 
+       taal('Er zijn geen resultaten die overeenkomen met uw zoekterm in deze categorie','','');
+       ?>
+       </p>
                </section>
                <!-- <section class="aanvraag-activity-type single-type">
                   <p>Andere</p>

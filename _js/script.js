@@ -215,7 +215,7 @@ var typeGroepId_global;
 
       $('img').each(function() {
         var filename = $(this).attr('src')
-          console.log(filename.split('/'))
+          //console.log(filename.split('/'))
         if (filename) {
           var filenameWithPath = filename.split('/')[filename.split('/').length - 1];
           //console.log(filenameWithPath);
@@ -228,6 +228,7 @@ var typeGroepId_global;
 
       
       var url = window.location.pathname.split('?');
+      console.log(window.location.pathname);
       var pageName = url[url.length - 1];
       var type = window.location.search;
       var pageType = type.split('=')[1];
@@ -254,7 +255,7 @@ var typeGroepId_global;
 
       $('.change-taal').on('click', function() {
         var chosen_lang = $(this).data('taal')
-        $.post('session_write.php', {
+        $.post('/session_write.php', {
             session_taal: chosen_lang
           },
           function() {
@@ -275,20 +276,11 @@ var typeGroepId_global;
         }
       });
 
-
-
-      // if(window.location.pathname==="/"){
-      //     window.location.pathname = "/index.php";
-      // }
-
-      switch (pageType) {
-
-
-        case "aanvragen":
+      if($('.aanvraag-activiteiten').length){
           stap1Aanvraagformulier();
-
-          break;
       }
+
+      
 
       $('.link-type').on('click', function() {
         var thisItems = $(this).parent().parent().find('.items-in-type');
@@ -392,6 +384,7 @@ var typeGroepId_global;
     }
 
     function activePage() {
+      
 
       $('.active-item').removeClass('active-item');
       var currentPage = "index.php" + window.location.search
@@ -402,62 +395,83 @@ var typeGroepId_global;
 
       var url = window.location.pathname.split('?');
       var pageName = url[url.length - 1];
-      var type = window.location.search;
-      if (type) {
-        var pageType = type.split('=')[1];
-        if (window.location.search) {
-              var checkGlobal = window.location.search.split('activiteit&id=');
+      var pathA = window.location.pathname.split('/');
+      var activiteitPage;
+      var typeOfActivitiy;
+      if(pathA.includes('activiteit')){
+        typeOfActivitiy = 'activiteit';
+      }
+      if(pathA.includes('sportdag')){
+        typeOfActivitiy = 'sportdag';
+      }
+      if(pathA.includes('feesten')){
+        typeOfActivitiy = 'feesten';
+      }
+      if(pathA.includes('vakantiehuis')){
+        typeOfActivitiy = 'vakantiehuis';
+      }
+      console.log(typeOfActivitiy);
+     
+
+      //var type = window.location.search;
+
+      if (typeOfActivitiy) {
+        //var pageType = type.split('=')[1];
+        //if (window.location.search) {
+          var idOfActivity = pathA[pathA.indexOf(typeOfActivitiy)+1];
+
+              // var checkGlobal = window.location.pathname.split('activiteit&id=');
               
-              if(checkGlobal[1]){
-              console.log("ID ",checkGlobal[1].split('&')[0])
-              var idOfActivity = checkGlobal[1].split('&')[0];
+              // if(checkGlobal[1]){
+              // console.log("ID ",checkGlobal[1].split('&')[0])
+              // var idOfActivity = checkGlobal[1].split('&')[0];
 
               if (idOfActivity) {
                 
-                getAllVerwacht();
-                getAllPrograms();
+                getAllVerwacht(idOfActivity);
+                getAllPrograms(idOfActivity);
               }
-            }
+            //}
             
           
-        }
+        //}
 
       }
 
 
     }
 
-    function getAllPrices() {
+    // function getAllPrices() {
 
-      $.getJSON('/assets/data/prijzen.json', function(data) {
+    //   $.getJSON('/assets/data/prijzen.json', function(data) {
 
-        getSinglePrice(data.prijzen)
-      })
+    //     getSinglePrice(data.prijzen, idActivity)
+    //   })
 
-    }
+    // }
 
-    function getAllPrograms() {
+    function getAllPrograms(idActivity) {
 
       $.getJSON('/assets/data/programmas.json', function(data) {
 
-        getSingleProgram(data.programmas)
+        getSingleProgram(data.programmas, idActivity)
       })
 
     }
 
-    function getAllVerwacht() {
+    function getAllVerwacht(idActivity) {
 
       $.getJSON('/assets/data/watVerwachten.json', function(data) {
 
-        getSingleVerwacht(data.wat_verwachten)
+        getSingleVerwacht(data.wat_verwachten, idActivity)
 
       })
 
     }
 
-    function getSingleVerwacht(verwacht) {
+    function getSingleVerwacht(verwacht, idOfActivity) {
 
-      var idOfActivity = window.location.search.split('&')[1].split('=')[1];
+      //var idOfActivity = window.location.search.split('&')[1].split('=')[1];
 
       var welke_template = json_getTemplateId(parseInt(idOfActivity), verwacht);
 
@@ -516,10 +530,10 @@ var typeGroepId_global;
 
 
 
-    function getSinglePrice(prijzen) {
+    function getSinglePrice(prijzen, idOfActivity) {
 
       //console.log(prijzen);
-      var idOfActivity = window.location.search.split('&')[2].split('=')[1]
+      //var idOfActivity = window.location.search.split('&')[2].split('=')[1]
 
       var prijs = json_getByActivityId(idOfActivity, prijzen);
       if (prijs) {
@@ -536,10 +550,10 @@ var typeGroepId_global;
 
     }
 
-    function getSingleProgram(programmas) {
+    function getSingleProgram(programmas, idOfActivity) {
 
       //console.log("PROGRAMMA");
-      var idOfActivity = window.location.search.split('&')[1].split('=')[1]
+      //var idOfActivity = window.location.search.split('&')[1].split('=')[1]
 
       var programma = json_getByActivityId(idOfActivity, programmas);
       if (programma) {
@@ -693,6 +707,30 @@ var typeGroepId_global;
 
                }
              }
+
+             switch (filteredData[index].categorieId){
+              case 1:
+              filteredData[index].type = 'activiteit';
+              break;
+
+              case 2:
+              filteredData[index].type = 'feest';
+              break;
+             
+              case 3:
+              filteredData[index].type = 'sportdag';
+              break;
+
+              case 4:
+              filteredData[index].type = 'vakantiehuis';
+              break;
+
+              default:
+              filteredData[index].type = 'activiteit';
+              break;
+            }
+              
+             
       })
 
 
@@ -860,11 +898,35 @@ var typeGroepId_global;
           var typesData = data[2];
           var durationsData = data[3];
           var allLocations = data[4];
+
+          var a_type;
+
+          switch (idCategorie){
+            case 1:
+             a_type = 'activiteit';
+             break;
+            case 2:
+             a_type = 'feesten';
+             break;
+            case 3:
+             a_type = 'sportdag';
+             break;
+            case 4:
+             a_type = 'vakantiehuis';
+             break;
+           
+           default:
+             a_type = 'activiteit';
+             break;
+          }
       
            
             var allActivities = [];
             for(var i=0; i<activitiesData.length; i++){
               if(activitiesData[i].categorieId == idCategorie){
+
+                activitiesData[i].type = a_type;
+
                 allActivities.push(activitiesData[i]);
               }
 
@@ -954,21 +1016,27 @@ var typeGroepId_global;
 
 
                       $(allActivities).each(function(index, activity) {
+                        //console.log(activity)
 
                       
-                        switch (currentTaal) {
-                          case "NL":
-                            var termToCheck = activity.naam_nl.toLowerCase();
-                            break;
+                        // switch (currentTaal) {
+                        //   case "NL":
+                        //     var termToCheck = activity.naam_nl.toLowerCase();
+                        //     break;
 
-                          case "FR":
-                            var termToCheck = activity.naam_fr.toLowerCase();
-                            break;
+                        //   case "FR":
+                        //     var termToCheck = activity.naam_fr.toLowerCase();
+                        //     break;
 
-                          case "ENG":
-                            var termToCheck = activity.naam_en.toLowerCase();
-                            break;
-                        }
+                        //   case "ENG":
+                        //     var termToCheck = activity.naam_en.toLowerCase();
+                        //     break;
+                        // }
+
+                        var termToCheck = activity.naam.toLowerCase();
+
+
+
                         if (searchTerm != "") {
                           if (termToCheck.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
 
@@ -983,6 +1051,18 @@ var typeGroepId_global;
 
                         }
                         })
+
+
+                        $('.items-in-type:visible').each(function(index, type_container) {
+                        if($(type_container).children(':visible').length == 0) {
+                          $(type_container).parent().find('.no-results').show();
+                        // action when all are hidden
+                        }else{
+                          $(type_container).parent().find('.no-results').hide();
+
+                          
+                        }
+                         })
                       }
                   
                 });
@@ -1539,7 +1619,7 @@ var typeGroepId_global;
       search: searchTerm
     }
 
-    window.location.href = "index.php?page=search&s=" + searchTerm;
+    window.location.href = "/zoeken/" + searchTerm;
 
     // $.ajax({
 

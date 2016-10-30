@@ -8,7 +8,7 @@
         <?php echo $category['naam'];
         ?></span>
 <div class="titel-img-container">
-    <img class="titel-img" src="assets/images/titel-underline.png">
+    <img class="titel-img" src="/assets/images/titel-underline.png">
     </div>
     </h1>
 
@@ -30,10 +30,10 @@
                     if($activitySub['id']){
                         echo "<div class=\"grid-sub\">"; 
                         echo "<img width=\"200px\" height=\"200px\" class=\"subcategory-img lazyload\" 
-                        src=\"assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
+                        src=\"/assets/images/activityPhotos/{$activitySub['afbeelding']}_th.jpg \">";
                          
 						 $name = slugify($activitySub['naam']);
-                         echo "<a href=\"/activiteit/" . $activitySub['id'] . "/" . $name .  "\" class=\"gridLink-sub\">";
+                         echo "<a href=\"/activiteit/" . "/" . $activitySub['id'] . "/" . $name .  "\" class=\"gridLink-sub\">";
                          
                          echo "<div class=\"overlay-img\">"; 
                          echo "<span>"; 
