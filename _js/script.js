@@ -1152,9 +1152,7 @@ var typeGroepId_global;
 
     step4(chosenActivities,allActivities);
 
-    $('.stap-header [data-stap-id=3]').removeClass('active');
-    $('.stap-header [data-stap-id=4]').addClass('active');
- 
+    
 
 
 
